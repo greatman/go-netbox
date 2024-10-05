@@ -22,12 +22,1295 @@ import (
 )
 
 
+type VpnAPI interface {
+
+	/*
+	VpnIkePoliciesBulkDestroy Method for VpnIkePoliciesBulkDestroy
+
+	Delete a list of IKE policy objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIkePoliciesBulkDestroyRequest
+	*/
+	VpnIkePoliciesBulkDestroy(ctx context.Context) ApiVpnIkePoliciesBulkDestroyRequest
+
+	// VpnIkePoliciesBulkDestroyExecute executes the request
+	VpnIkePoliciesBulkDestroyExecute(r ApiVpnIkePoliciesBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnIkePoliciesBulkPartialUpdate Method for VpnIkePoliciesBulkPartialUpdate
+
+	Patch a list of IKE policy objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIkePoliciesBulkPartialUpdateRequest
+	*/
+	VpnIkePoliciesBulkPartialUpdate(ctx context.Context) ApiVpnIkePoliciesBulkPartialUpdateRequest
+
+	// VpnIkePoliciesBulkPartialUpdateExecute executes the request
+	//  @return []IKEPolicy
+	VpnIkePoliciesBulkPartialUpdateExecute(r ApiVpnIkePoliciesBulkPartialUpdateRequest) ([]IKEPolicy, *http.Response, error)
+
+	/*
+	VpnIkePoliciesBulkUpdate Method for VpnIkePoliciesBulkUpdate
+
+	Put a list of IKE policy objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIkePoliciesBulkUpdateRequest
+	*/
+	VpnIkePoliciesBulkUpdate(ctx context.Context) ApiVpnIkePoliciesBulkUpdateRequest
+
+	// VpnIkePoliciesBulkUpdateExecute executes the request
+	//  @return []IKEPolicy
+	VpnIkePoliciesBulkUpdateExecute(r ApiVpnIkePoliciesBulkUpdateRequest) ([]IKEPolicy, *http.Response, error)
+
+	/*
+	VpnIkePoliciesCreate Method for VpnIkePoliciesCreate
+
+	Post a list of IKE policy objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIkePoliciesCreateRequest
+	*/
+	VpnIkePoliciesCreate(ctx context.Context) ApiVpnIkePoliciesCreateRequest
+
+	// VpnIkePoliciesCreateExecute executes the request
+	//  @return IKEPolicy
+	VpnIkePoliciesCreateExecute(r ApiVpnIkePoliciesCreateRequest) (*IKEPolicy, *http.Response, error)
+
+	/*
+	VpnIkePoliciesDestroy Method for VpnIkePoliciesDestroy
+
+	Delete a IKE policy object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IKE policy.
+	@return ApiVpnIkePoliciesDestroyRequest
+	*/
+	VpnIkePoliciesDestroy(ctx context.Context, id int32) ApiVpnIkePoliciesDestroyRequest
+
+	// VpnIkePoliciesDestroyExecute executes the request
+	VpnIkePoliciesDestroyExecute(r ApiVpnIkePoliciesDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnIkePoliciesList Method for VpnIkePoliciesList
+
+	Get a list of IKE policy objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIkePoliciesListRequest
+	*/
+	VpnIkePoliciesList(ctx context.Context) ApiVpnIkePoliciesListRequest
+
+	// VpnIkePoliciesListExecute executes the request
+	//  @return PaginatedIKEPolicyList
+	VpnIkePoliciesListExecute(r ApiVpnIkePoliciesListRequest) (*PaginatedIKEPolicyList, *http.Response, error)
+
+	/*
+	VpnIkePoliciesPartialUpdate Method for VpnIkePoliciesPartialUpdate
+
+	Patch a IKE policy object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IKE policy.
+	@return ApiVpnIkePoliciesPartialUpdateRequest
+	*/
+	VpnIkePoliciesPartialUpdate(ctx context.Context, id int32) ApiVpnIkePoliciesPartialUpdateRequest
+
+	// VpnIkePoliciesPartialUpdateExecute executes the request
+	//  @return IKEPolicy
+	VpnIkePoliciesPartialUpdateExecute(r ApiVpnIkePoliciesPartialUpdateRequest) (*IKEPolicy, *http.Response, error)
+
+	/*
+	VpnIkePoliciesRetrieve Method for VpnIkePoliciesRetrieve
+
+	Get a IKE policy object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IKE policy.
+	@return ApiVpnIkePoliciesRetrieveRequest
+	*/
+	VpnIkePoliciesRetrieve(ctx context.Context, id int32) ApiVpnIkePoliciesRetrieveRequest
+
+	// VpnIkePoliciesRetrieveExecute executes the request
+	//  @return IKEPolicy
+	VpnIkePoliciesRetrieveExecute(r ApiVpnIkePoliciesRetrieveRequest) (*IKEPolicy, *http.Response, error)
+
+	/*
+	VpnIkePoliciesUpdate Method for VpnIkePoliciesUpdate
+
+	Put a IKE policy object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IKE policy.
+	@return ApiVpnIkePoliciesUpdateRequest
+	*/
+	VpnIkePoliciesUpdate(ctx context.Context, id int32) ApiVpnIkePoliciesUpdateRequest
+
+	// VpnIkePoliciesUpdateExecute executes the request
+	//  @return IKEPolicy
+	VpnIkePoliciesUpdateExecute(r ApiVpnIkePoliciesUpdateRequest) (*IKEPolicy, *http.Response, error)
+
+	/*
+	VpnIkeProposalsBulkDestroy Method for VpnIkeProposalsBulkDestroy
+
+	Delete a list of IKE proposal objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIkeProposalsBulkDestroyRequest
+	*/
+	VpnIkeProposalsBulkDestroy(ctx context.Context) ApiVpnIkeProposalsBulkDestroyRequest
+
+	// VpnIkeProposalsBulkDestroyExecute executes the request
+	VpnIkeProposalsBulkDestroyExecute(r ApiVpnIkeProposalsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnIkeProposalsBulkPartialUpdate Method for VpnIkeProposalsBulkPartialUpdate
+
+	Patch a list of IKE proposal objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIkeProposalsBulkPartialUpdateRequest
+	*/
+	VpnIkeProposalsBulkPartialUpdate(ctx context.Context) ApiVpnIkeProposalsBulkPartialUpdateRequest
+
+	// VpnIkeProposalsBulkPartialUpdateExecute executes the request
+	//  @return []IKEProposal
+	VpnIkeProposalsBulkPartialUpdateExecute(r ApiVpnIkeProposalsBulkPartialUpdateRequest) ([]IKEProposal, *http.Response, error)
+
+	/*
+	VpnIkeProposalsBulkUpdate Method for VpnIkeProposalsBulkUpdate
+
+	Put a list of IKE proposal objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIkeProposalsBulkUpdateRequest
+	*/
+	VpnIkeProposalsBulkUpdate(ctx context.Context) ApiVpnIkeProposalsBulkUpdateRequest
+
+	// VpnIkeProposalsBulkUpdateExecute executes the request
+	//  @return []IKEProposal
+	VpnIkeProposalsBulkUpdateExecute(r ApiVpnIkeProposalsBulkUpdateRequest) ([]IKEProposal, *http.Response, error)
+
+	/*
+	VpnIkeProposalsCreate Method for VpnIkeProposalsCreate
+
+	Post a list of IKE proposal objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIkeProposalsCreateRequest
+	*/
+	VpnIkeProposalsCreate(ctx context.Context) ApiVpnIkeProposalsCreateRequest
+
+	// VpnIkeProposalsCreateExecute executes the request
+	//  @return IKEProposal
+	VpnIkeProposalsCreateExecute(r ApiVpnIkeProposalsCreateRequest) (*IKEProposal, *http.Response, error)
+
+	/*
+	VpnIkeProposalsDestroy Method for VpnIkeProposalsDestroy
+
+	Delete a IKE proposal object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IKE proposal.
+	@return ApiVpnIkeProposalsDestroyRequest
+	*/
+	VpnIkeProposalsDestroy(ctx context.Context, id int32) ApiVpnIkeProposalsDestroyRequest
+
+	// VpnIkeProposalsDestroyExecute executes the request
+	VpnIkeProposalsDestroyExecute(r ApiVpnIkeProposalsDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnIkeProposalsList Method for VpnIkeProposalsList
+
+	Get a list of IKE proposal objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIkeProposalsListRequest
+	*/
+	VpnIkeProposalsList(ctx context.Context) ApiVpnIkeProposalsListRequest
+
+	// VpnIkeProposalsListExecute executes the request
+	//  @return PaginatedIKEProposalList
+	VpnIkeProposalsListExecute(r ApiVpnIkeProposalsListRequest) (*PaginatedIKEProposalList, *http.Response, error)
+
+	/*
+	VpnIkeProposalsPartialUpdate Method for VpnIkeProposalsPartialUpdate
+
+	Patch a IKE proposal object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IKE proposal.
+	@return ApiVpnIkeProposalsPartialUpdateRequest
+	*/
+	VpnIkeProposalsPartialUpdate(ctx context.Context, id int32) ApiVpnIkeProposalsPartialUpdateRequest
+
+	// VpnIkeProposalsPartialUpdateExecute executes the request
+	//  @return IKEProposal
+	VpnIkeProposalsPartialUpdateExecute(r ApiVpnIkeProposalsPartialUpdateRequest) (*IKEProposal, *http.Response, error)
+
+	/*
+	VpnIkeProposalsRetrieve Method for VpnIkeProposalsRetrieve
+
+	Get a IKE proposal object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IKE proposal.
+	@return ApiVpnIkeProposalsRetrieveRequest
+	*/
+	VpnIkeProposalsRetrieve(ctx context.Context, id int32) ApiVpnIkeProposalsRetrieveRequest
+
+	// VpnIkeProposalsRetrieveExecute executes the request
+	//  @return IKEProposal
+	VpnIkeProposalsRetrieveExecute(r ApiVpnIkeProposalsRetrieveRequest) (*IKEProposal, *http.Response, error)
+
+	/*
+	VpnIkeProposalsUpdate Method for VpnIkeProposalsUpdate
+
+	Put a IKE proposal object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IKE proposal.
+	@return ApiVpnIkeProposalsUpdateRequest
+	*/
+	VpnIkeProposalsUpdate(ctx context.Context, id int32) ApiVpnIkeProposalsUpdateRequest
+
+	// VpnIkeProposalsUpdateExecute executes the request
+	//  @return IKEProposal
+	VpnIkeProposalsUpdateExecute(r ApiVpnIkeProposalsUpdateRequest) (*IKEProposal, *http.Response, error)
+
+	/*
+	VpnIpsecPoliciesBulkDestroy Method for VpnIpsecPoliciesBulkDestroy
+
+	Delete a list of IPSec policy objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecPoliciesBulkDestroyRequest
+	*/
+	VpnIpsecPoliciesBulkDestroy(ctx context.Context) ApiVpnIpsecPoliciesBulkDestroyRequest
+
+	// VpnIpsecPoliciesBulkDestroyExecute executes the request
+	VpnIpsecPoliciesBulkDestroyExecute(r ApiVpnIpsecPoliciesBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnIpsecPoliciesBulkPartialUpdate Method for VpnIpsecPoliciesBulkPartialUpdate
+
+	Patch a list of IPSec policy objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecPoliciesBulkPartialUpdateRequest
+	*/
+	VpnIpsecPoliciesBulkPartialUpdate(ctx context.Context) ApiVpnIpsecPoliciesBulkPartialUpdateRequest
+
+	// VpnIpsecPoliciesBulkPartialUpdateExecute executes the request
+	//  @return []IPSecPolicy
+	VpnIpsecPoliciesBulkPartialUpdateExecute(r ApiVpnIpsecPoliciesBulkPartialUpdateRequest) ([]IPSecPolicy, *http.Response, error)
+
+	/*
+	VpnIpsecPoliciesBulkUpdate Method for VpnIpsecPoliciesBulkUpdate
+
+	Put a list of IPSec policy objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecPoliciesBulkUpdateRequest
+	*/
+	VpnIpsecPoliciesBulkUpdate(ctx context.Context) ApiVpnIpsecPoliciesBulkUpdateRequest
+
+	// VpnIpsecPoliciesBulkUpdateExecute executes the request
+	//  @return []IPSecPolicy
+	VpnIpsecPoliciesBulkUpdateExecute(r ApiVpnIpsecPoliciesBulkUpdateRequest) ([]IPSecPolicy, *http.Response, error)
+
+	/*
+	VpnIpsecPoliciesCreate Method for VpnIpsecPoliciesCreate
+
+	Post a list of IPSec policy objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecPoliciesCreateRequest
+	*/
+	VpnIpsecPoliciesCreate(ctx context.Context) ApiVpnIpsecPoliciesCreateRequest
+
+	// VpnIpsecPoliciesCreateExecute executes the request
+	//  @return IPSecPolicy
+	VpnIpsecPoliciesCreateExecute(r ApiVpnIpsecPoliciesCreateRequest) (*IPSecPolicy, *http.Response, error)
+
+	/*
+	VpnIpsecPoliciesDestroy Method for VpnIpsecPoliciesDestroy
+
+	Delete a IPSec policy object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec policy.
+	@return ApiVpnIpsecPoliciesDestroyRequest
+	*/
+	VpnIpsecPoliciesDestroy(ctx context.Context, id int32) ApiVpnIpsecPoliciesDestroyRequest
+
+	// VpnIpsecPoliciesDestroyExecute executes the request
+	VpnIpsecPoliciesDestroyExecute(r ApiVpnIpsecPoliciesDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnIpsecPoliciesList Method for VpnIpsecPoliciesList
+
+	Get a list of IPSec policy objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecPoliciesListRequest
+	*/
+	VpnIpsecPoliciesList(ctx context.Context) ApiVpnIpsecPoliciesListRequest
+
+	// VpnIpsecPoliciesListExecute executes the request
+	//  @return PaginatedIPSecPolicyList
+	VpnIpsecPoliciesListExecute(r ApiVpnIpsecPoliciesListRequest) (*PaginatedIPSecPolicyList, *http.Response, error)
+
+	/*
+	VpnIpsecPoliciesPartialUpdate Method for VpnIpsecPoliciesPartialUpdate
+
+	Patch a IPSec policy object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec policy.
+	@return ApiVpnIpsecPoliciesPartialUpdateRequest
+	*/
+	VpnIpsecPoliciesPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecPoliciesPartialUpdateRequest
+
+	// VpnIpsecPoliciesPartialUpdateExecute executes the request
+	//  @return IPSecPolicy
+	VpnIpsecPoliciesPartialUpdateExecute(r ApiVpnIpsecPoliciesPartialUpdateRequest) (*IPSecPolicy, *http.Response, error)
+
+	/*
+	VpnIpsecPoliciesRetrieve Method for VpnIpsecPoliciesRetrieve
+
+	Get a IPSec policy object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec policy.
+	@return ApiVpnIpsecPoliciesRetrieveRequest
+	*/
+	VpnIpsecPoliciesRetrieve(ctx context.Context, id int32) ApiVpnIpsecPoliciesRetrieveRequest
+
+	// VpnIpsecPoliciesRetrieveExecute executes the request
+	//  @return IPSecPolicy
+	VpnIpsecPoliciesRetrieveExecute(r ApiVpnIpsecPoliciesRetrieveRequest) (*IPSecPolicy, *http.Response, error)
+
+	/*
+	VpnIpsecPoliciesUpdate Method for VpnIpsecPoliciesUpdate
+
+	Put a IPSec policy object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec policy.
+	@return ApiVpnIpsecPoliciesUpdateRequest
+	*/
+	VpnIpsecPoliciesUpdate(ctx context.Context, id int32) ApiVpnIpsecPoliciesUpdateRequest
+
+	// VpnIpsecPoliciesUpdateExecute executes the request
+	//  @return IPSecPolicy
+	VpnIpsecPoliciesUpdateExecute(r ApiVpnIpsecPoliciesUpdateRequest) (*IPSecPolicy, *http.Response, error)
+
+	/*
+	VpnIpsecProfilesBulkDestroy Method for VpnIpsecProfilesBulkDestroy
+
+	Delete a list of IPSec profile objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecProfilesBulkDestroyRequest
+	*/
+	VpnIpsecProfilesBulkDestroy(ctx context.Context) ApiVpnIpsecProfilesBulkDestroyRequest
+
+	// VpnIpsecProfilesBulkDestroyExecute executes the request
+	VpnIpsecProfilesBulkDestroyExecute(r ApiVpnIpsecProfilesBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnIpsecProfilesBulkPartialUpdate Method for VpnIpsecProfilesBulkPartialUpdate
+
+	Patch a list of IPSec profile objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecProfilesBulkPartialUpdateRequest
+	*/
+	VpnIpsecProfilesBulkPartialUpdate(ctx context.Context) ApiVpnIpsecProfilesBulkPartialUpdateRequest
+
+	// VpnIpsecProfilesBulkPartialUpdateExecute executes the request
+	//  @return []IPSecProfile
+	VpnIpsecProfilesBulkPartialUpdateExecute(r ApiVpnIpsecProfilesBulkPartialUpdateRequest) ([]IPSecProfile, *http.Response, error)
+
+	/*
+	VpnIpsecProfilesBulkUpdate Method for VpnIpsecProfilesBulkUpdate
+
+	Put a list of IPSec profile objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecProfilesBulkUpdateRequest
+	*/
+	VpnIpsecProfilesBulkUpdate(ctx context.Context) ApiVpnIpsecProfilesBulkUpdateRequest
+
+	// VpnIpsecProfilesBulkUpdateExecute executes the request
+	//  @return []IPSecProfile
+	VpnIpsecProfilesBulkUpdateExecute(r ApiVpnIpsecProfilesBulkUpdateRequest) ([]IPSecProfile, *http.Response, error)
+
+	/*
+	VpnIpsecProfilesCreate Method for VpnIpsecProfilesCreate
+
+	Post a list of IPSec profile objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecProfilesCreateRequest
+	*/
+	VpnIpsecProfilesCreate(ctx context.Context) ApiVpnIpsecProfilesCreateRequest
+
+	// VpnIpsecProfilesCreateExecute executes the request
+	//  @return IPSecProfile
+	VpnIpsecProfilesCreateExecute(r ApiVpnIpsecProfilesCreateRequest) (*IPSecProfile, *http.Response, error)
+
+	/*
+	VpnIpsecProfilesDestroy Method for VpnIpsecProfilesDestroy
+
+	Delete a IPSec profile object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec profile.
+	@return ApiVpnIpsecProfilesDestroyRequest
+	*/
+	VpnIpsecProfilesDestroy(ctx context.Context, id int32) ApiVpnIpsecProfilesDestroyRequest
+
+	// VpnIpsecProfilesDestroyExecute executes the request
+	VpnIpsecProfilesDestroyExecute(r ApiVpnIpsecProfilesDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnIpsecProfilesList Method for VpnIpsecProfilesList
+
+	Get a list of IPSec profile objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecProfilesListRequest
+	*/
+	VpnIpsecProfilesList(ctx context.Context) ApiVpnIpsecProfilesListRequest
+
+	// VpnIpsecProfilesListExecute executes the request
+	//  @return PaginatedIPSecProfileList
+	VpnIpsecProfilesListExecute(r ApiVpnIpsecProfilesListRequest) (*PaginatedIPSecProfileList, *http.Response, error)
+
+	/*
+	VpnIpsecProfilesPartialUpdate Method for VpnIpsecProfilesPartialUpdate
+
+	Patch a IPSec profile object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec profile.
+	@return ApiVpnIpsecProfilesPartialUpdateRequest
+	*/
+	VpnIpsecProfilesPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecProfilesPartialUpdateRequest
+
+	// VpnIpsecProfilesPartialUpdateExecute executes the request
+	//  @return IPSecProfile
+	VpnIpsecProfilesPartialUpdateExecute(r ApiVpnIpsecProfilesPartialUpdateRequest) (*IPSecProfile, *http.Response, error)
+
+	/*
+	VpnIpsecProfilesRetrieve Method for VpnIpsecProfilesRetrieve
+
+	Get a IPSec profile object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec profile.
+	@return ApiVpnIpsecProfilesRetrieveRequest
+	*/
+	VpnIpsecProfilesRetrieve(ctx context.Context, id int32) ApiVpnIpsecProfilesRetrieveRequest
+
+	// VpnIpsecProfilesRetrieveExecute executes the request
+	//  @return IPSecProfile
+	VpnIpsecProfilesRetrieveExecute(r ApiVpnIpsecProfilesRetrieveRequest) (*IPSecProfile, *http.Response, error)
+
+	/*
+	VpnIpsecProfilesUpdate Method for VpnIpsecProfilesUpdate
+
+	Put a IPSec profile object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec profile.
+	@return ApiVpnIpsecProfilesUpdateRequest
+	*/
+	VpnIpsecProfilesUpdate(ctx context.Context, id int32) ApiVpnIpsecProfilesUpdateRequest
+
+	// VpnIpsecProfilesUpdateExecute executes the request
+	//  @return IPSecProfile
+	VpnIpsecProfilesUpdateExecute(r ApiVpnIpsecProfilesUpdateRequest) (*IPSecProfile, *http.Response, error)
+
+	/*
+	VpnIpsecProposalsBulkDestroy Method for VpnIpsecProposalsBulkDestroy
+
+	Delete a list of IPSec proposal objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecProposalsBulkDestroyRequest
+	*/
+	VpnIpsecProposalsBulkDestroy(ctx context.Context) ApiVpnIpsecProposalsBulkDestroyRequest
+
+	// VpnIpsecProposalsBulkDestroyExecute executes the request
+	VpnIpsecProposalsBulkDestroyExecute(r ApiVpnIpsecProposalsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnIpsecProposalsBulkPartialUpdate Method for VpnIpsecProposalsBulkPartialUpdate
+
+	Patch a list of IPSec proposal objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecProposalsBulkPartialUpdateRequest
+	*/
+	VpnIpsecProposalsBulkPartialUpdate(ctx context.Context) ApiVpnIpsecProposalsBulkPartialUpdateRequest
+
+	// VpnIpsecProposalsBulkPartialUpdateExecute executes the request
+	//  @return []IPSecProposal
+	VpnIpsecProposalsBulkPartialUpdateExecute(r ApiVpnIpsecProposalsBulkPartialUpdateRequest) ([]IPSecProposal, *http.Response, error)
+
+	/*
+	VpnIpsecProposalsBulkUpdate Method for VpnIpsecProposalsBulkUpdate
+
+	Put a list of IPSec proposal objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecProposalsBulkUpdateRequest
+	*/
+	VpnIpsecProposalsBulkUpdate(ctx context.Context) ApiVpnIpsecProposalsBulkUpdateRequest
+
+	// VpnIpsecProposalsBulkUpdateExecute executes the request
+	//  @return []IPSecProposal
+	VpnIpsecProposalsBulkUpdateExecute(r ApiVpnIpsecProposalsBulkUpdateRequest) ([]IPSecProposal, *http.Response, error)
+
+	/*
+	VpnIpsecProposalsCreate Method for VpnIpsecProposalsCreate
+
+	Post a list of IPSec proposal objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecProposalsCreateRequest
+	*/
+	VpnIpsecProposalsCreate(ctx context.Context) ApiVpnIpsecProposalsCreateRequest
+
+	// VpnIpsecProposalsCreateExecute executes the request
+	//  @return IPSecProposal
+	VpnIpsecProposalsCreateExecute(r ApiVpnIpsecProposalsCreateRequest) (*IPSecProposal, *http.Response, error)
+
+	/*
+	VpnIpsecProposalsDestroy Method for VpnIpsecProposalsDestroy
+
+	Delete a IPSec proposal object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec proposal.
+	@return ApiVpnIpsecProposalsDestroyRequest
+	*/
+	VpnIpsecProposalsDestroy(ctx context.Context, id int32) ApiVpnIpsecProposalsDestroyRequest
+
+	// VpnIpsecProposalsDestroyExecute executes the request
+	VpnIpsecProposalsDestroyExecute(r ApiVpnIpsecProposalsDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnIpsecProposalsList Method for VpnIpsecProposalsList
+
+	Get a list of IPSec proposal objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnIpsecProposalsListRequest
+	*/
+	VpnIpsecProposalsList(ctx context.Context) ApiVpnIpsecProposalsListRequest
+
+	// VpnIpsecProposalsListExecute executes the request
+	//  @return PaginatedIPSecProposalList
+	VpnIpsecProposalsListExecute(r ApiVpnIpsecProposalsListRequest) (*PaginatedIPSecProposalList, *http.Response, error)
+
+	/*
+	VpnIpsecProposalsPartialUpdate Method for VpnIpsecProposalsPartialUpdate
+
+	Patch a IPSec proposal object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec proposal.
+	@return ApiVpnIpsecProposalsPartialUpdateRequest
+	*/
+	VpnIpsecProposalsPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecProposalsPartialUpdateRequest
+
+	// VpnIpsecProposalsPartialUpdateExecute executes the request
+	//  @return IPSecProposal
+	VpnIpsecProposalsPartialUpdateExecute(r ApiVpnIpsecProposalsPartialUpdateRequest) (*IPSecProposal, *http.Response, error)
+
+	/*
+	VpnIpsecProposalsRetrieve Method for VpnIpsecProposalsRetrieve
+
+	Get a IPSec proposal object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec proposal.
+	@return ApiVpnIpsecProposalsRetrieveRequest
+	*/
+	VpnIpsecProposalsRetrieve(ctx context.Context, id int32) ApiVpnIpsecProposalsRetrieveRequest
+
+	// VpnIpsecProposalsRetrieveExecute executes the request
+	//  @return IPSecProposal
+	VpnIpsecProposalsRetrieveExecute(r ApiVpnIpsecProposalsRetrieveRequest) (*IPSecProposal, *http.Response, error)
+
+	/*
+	VpnIpsecProposalsUpdate Method for VpnIpsecProposalsUpdate
+
+	Put a IPSec proposal object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this IPSec proposal.
+	@return ApiVpnIpsecProposalsUpdateRequest
+	*/
+	VpnIpsecProposalsUpdate(ctx context.Context, id int32) ApiVpnIpsecProposalsUpdateRequest
+
+	// VpnIpsecProposalsUpdateExecute executes the request
+	//  @return IPSecProposal
+	VpnIpsecProposalsUpdateExecute(r ApiVpnIpsecProposalsUpdateRequest) (*IPSecProposal, *http.Response, error)
+
+	/*
+	VpnL2vpnTerminationsBulkDestroy Method for VpnL2vpnTerminationsBulkDestroy
+
+	Delete a list of L2VPN termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnL2vpnTerminationsBulkDestroyRequest
+	*/
+	VpnL2vpnTerminationsBulkDestroy(ctx context.Context) ApiVpnL2vpnTerminationsBulkDestroyRequest
+
+	// VpnL2vpnTerminationsBulkDestroyExecute executes the request
+	VpnL2vpnTerminationsBulkDestroyExecute(r ApiVpnL2vpnTerminationsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnL2vpnTerminationsBulkPartialUpdate Method for VpnL2vpnTerminationsBulkPartialUpdate
+
+	Patch a list of L2VPN termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnL2vpnTerminationsBulkPartialUpdateRequest
+	*/
+	VpnL2vpnTerminationsBulkPartialUpdate(ctx context.Context) ApiVpnL2vpnTerminationsBulkPartialUpdateRequest
+
+	// VpnL2vpnTerminationsBulkPartialUpdateExecute executes the request
+	//  @return []L2VPNTermination
+	VpnL2vpnTerminationsBulkPartialUpdateExecute(r ApiVpnL2vpnTerminationsBulkPartialUpdateRequest) ([]L2VPNTermination, *http.Response, error)
+
+	/*
+	VpnL2vpnTerminationsBulkUpdate Method for VpnL2vpnTerminationsBulkUpdate
+
+	Put a list of L2VPN termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnL2vpnTerminationsBulkUpdateRequest
+	*/
+	VpnL2vpnTerminationsBulkUpdate(ctx context.Context) ApiVpnL2vpnTerminationsBulkUpdateRequest
+
+	// VpnL2vpnTerminationsBulkUpdateExecute executes the request
+	//  @return []L2VPNTermination
+	VpnL2vpnTerminationsBulkUpdateExecute(r ApiVpnL2vpnTerminationsBulkUpdateRequest) ([]L2VPNTermination, *http.Response, error)
+
+	/*
+	VpnL2vpnTerminationsCreate Method for VpnL2vpnTerminationsCreate
+
+	Post a list of L2VPN termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnL2vpnTerminationsCreateRequest
+	*/
+	VpnL2vpnTerminationsCreate(ctx context.Context) ApiVpnL2vpnTerminationsCreateRequest
+
+	// VpnL2vpnTerminationsCreateExecute executes the request
+	//  @return L2VPNTermination
+	VpnL2vpnTerminationsCreateExecute(r ApiVpnL2vpnTerminationsCreateRequest) (*L2VPNTermination, *http.Response, error)
+
+	/*
+	VpnL2vpnTerminationsDestroy Method for VpnL2vpnTerminationsDestroy
+
+	Delete a L2VPN termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this L2VPN termination.
+	@return ApiVpnL2vpnTerminationsDestroyRequest
+	*/
+	VpnL2vpnTerminationsDestroy(ctx context.Context, id int32) ApiVpnL2vpnTerminationsDestroyRequest
+
+	// VpnL2vpnTerminationsDestroyExecute executes the request
+	VpnL2vpnTerminationsDestroyExecute(r ApiVpnL2vpnTerminationsDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnL2vpnTerminationsList Method for VpnL2vpnTerminationsList
+
+	Get a list of L2VPN termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnL2vpnTerminationsListRequest
+	*/
+	VpnL2vpnTerminationsList(ctx context.Context) ApiVpnL2vpnTerminationsListRequest
+
+	// VpnL2vpnTerminationsListExecute executes the request
+	//  @return PaginatedL2VPNTerminationList
+	VpnL2vpnTerminationsListExecute(r ApiVpnL2vpnTerminationsListRequest) (*PaginatedL2VPNTerminationList, *http.Response, error)
+
+	/*
+	VpnL2vpnTerminationsPartialUpdate Method for VpnL2vpnTerminationsPartialUpdate
+
+	Patch a L2VPN termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this L2VPN termination.
+	@return ApiVpnL2vpnTerminationsPartialUpdateRequest
+	*/
+	VpnL2vpnTerminationsPartialUpdate(ctx context.Context, id int32) ApiVpnL2vpnTerminationsPartialUpdateRequest
+
+	// VpnL2vpnTerminationsPartialUpdateExecute executes the request
+	//  @return L2VPNTermination
+	VpnL2vpnTerminationsPartialUpdateExecute(r ApiVpnL2vpnTerminationsPartialUpdateRequest) (*L2VPNTermination, *http.Response, error)
+
+	/*
+	VpnL2vpnTerminationsRetrieve Method for VpnL2vpnTerminationsRetrieve
+
+	Get a L2VPN termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this L2VPN termination.
+	@return ApiVpnL2vpnTerminationsRetrieveRequest
+	*/
+	VpnL2vpnTerminationsRetrieve(ctx context.Context, id int32) ApiVpnL2vpnTerminationsRetrieveRequest
+
+	// VpnL2vpnTerminationsRetrieveExecute executes the request
+	//  @return L2VPNTermination
+	VpnL2vpnTerminationsRetrieveExecute(r ApiVpnL2vpnTerminationsRetrieveRequest) (*L2VPNTermination, *http.Response, error)
+
+	/*
+	VpnL2vpnTerminationsUpdate Method for VpnL2vpnTerminationsUpdate
+
+	Put a L2VPN termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this L2VPN termination.
+	@return ApiVpnL2vpnTerminationsUpdateRequest
+	*/
+	VpnL2vpnTerminationsUpdate(ctx context.Context, id int32) ApiVpnL2vpnTerminationsUpdateRequest
+
+	// VpnL2vpnTerminationsUpdateExecute executes the request
+	//  @return L2VPNTermination
+	VpnL2vpnTerminationsUpdateExecute(r ApiVpnL2vpnTerminationsUpdateRequest) (*L2VPNTermination, *http.Response, error)
+
+	/*
+	VpnL2vpnsBulkDestroy Method for VpnL2vpnsBulkDestroy
+
+	Delete a list of L2VPN objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnL2vpnsBulkDestroyRequest
+	*/
+	VpnL2vpnsBulkDestroy(ctx context.Context) ApiVpnL2vpnsBulkDestroyRequest
+
+	// VpnL2vpnsBulkDestroyExecute executes the request
+	VpnL2vpnsBulkDestroyExecute(r ApiVpnL2vpnsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnL2vpnsBulkPartialUpdate Method for VpnL2vpnsBulkPartialUpdate
+
+	Patch a list of L2VPN objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnL2vpnsBulkPartialUpdateRequest
+	*/
+	VpnL2vpnsBulkPartialUpdate(ctx context.Context) ApiVpnL2vpnsBulkPartialUpdateRequest
+
+	// VpnL2vpnsBulkPartialUpdateExecute executes the request
+	//  @return []L2VPN
+	VpnL2vpnsBulkPartialUpdateExecute(r ApiVpnL2vpnsBulkPartialUpdateRequest) ([]L2VPN, *http.Response, error)
+
+	/*
+	VpnL2vpnsBulkUpdate Method for VpnL2vpnsBulkUpdate
+
+	Put a list of L2VPN objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnL2vpnsBulkUpdateRequest
+	*/
+	VpnL2vpnsBulkUpdate(ctx context.Context) ApiVpnL2vpnsBulkUpdateRequest
+
+	// VpnL2vpnsBulkUpdateExecute executes the request
+	//  @return []L2VPN
+	VpnL2vpnsBulkUpdateExecute(r ApiVpnL2vpnsBulkUpdateRequest) ([]L2VPN, *http.Response, error)
+
+	/*
+	VpnL2vpnsCreate Method for VpnL2vpnsCreate
+
+	Post a list of L2VPN objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnL2vpnsCreateRequest
+	*/
+	VpnL2vpnsCreate(ctx context.Context) ApiVpnL2vpnsCreateRequest
+
+	// VpnL2vpnsCreateExecute executes the request
+	//  @return L2VPN
+	VpnL2vpnsCreateExecute(r ApiVpnL2vpnsCreateRequest) (*L2VPN, *http.Response, error)
+
+	/*
+	VpnL2vpnsDestroy Method for VpnL2vpnsDestroy
+
+	Delete a L2VPN object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this L2VPN.
+	@return ApiVpnL2vpnsDestroyRequest
+	*/
+	VpnL2vpnsDestroy(ctx context.Context, id int32) ApiVpnL2vpnsDestroyRequest
+
+	// VpnL2vpnsDestroyExecute executes the request
+	VpnL2vpnsDestroyExecute(r ApiVpnL2vpnsDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnL2vpnsList Method for VpnL2vpnsList
+
+	Get a list of L2VPN objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnL2vpnsListRequest
+	*/
+	VpnL2vpnsList(ctx context.Context) ApiVpnL2vpnsListRequest
+
+	// VpnL2vpnsListExecute executes the request
+	//  @return PaginatedL2VPNList
+	VpnL2vpnsListExecute(r ApiVpnL2vpnsListRequest) (*PaginatedL2VPNList, *http.Response, error)
+
+	/*
+	VpnL2vpnsPartialUpdate Method for VpnL2vpnsPartialUpdate
+
+	Patch a L2VPN object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this L2VPN.
+	@return ApiVpnL2vpnsPartialUpdateRequest
+	*/
+	VpnL2vpnsPartialUpdate(ctx context.Context, id int32) ApiVpnL2vpnsPartialUpdateRequest
+
+	// VpnL2vpnsPartialUpdateExecute executes the request
+	//  @return L2VPN
+	VpnL2vpnsPartialUpdateExecute(r ApiVpnL2vpnsPartialUpdateRequest) (*L2VPN, *http.Response, error)
+
+	/*
+	VpnL2vpnsRetrieve Method for VpnL2vpnsRetrieve
+
+	Get a L2VPN object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this L2VPN.
+	@return ApiVpnL2vpnsRetrieveRequest
+	*/
+	VpnL2vpnsRetrieve(ctx context.Context, id int32) ApiVpnL2vpnsRetrieveRequest
+
+	// VpnL2vpnsRetrieveExecute executes the request
+	//  @return L2VPN
+	VpnL2vpnsRetrieveExecute(r ApiVpnL2vpnsRetrieveRequest) (*L2VPN, *http.Response, error)
+
+	/*
+	VpnL2vpnsUpdate Method for VpnL2vpnsUpdate
+
+	Put a L2VPN object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this L2VPN.
+	@return ApiVpnL2vpnsUpdateRequest
+	*/
+	VpnL2vpnsUpdate(ctx context.Context, id int32) ApiVpnL2vpnsUpdateRequest
+
+	// VpnL2vpnsUpdateExecute executes the request
+	//  @return L2VPN
+	VpnL2vpnsUpdateExecute(r ApiVpnL2vpnsUpdateRequest) (*L2VPN, *http.Response, error)
+
+	/*
+	VpnTunnelGroupsBulkDestroy Method for VpnTunnelGroupsBulkDestroy
+
+	Delete a list of tunnel group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelGroupsBulkDestroyRequest
+	*/
+	VpnTunnelGroupsBulkDestroy(ctx context.Context) ApiVpnTunnelGroupsBulkDestroyRequest
+
+	// VpnTunnelGroupsBulkDestroyExecute executes the request
+	VpnTunnelGroupsBulkDestroyExecute(r ApiVpnTunnelGroupsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnTunnelGroupsBulkPartialUpdate Method for VpnTunnelGroupsBulkPartialUpdate
+
+	Patch a list of tunnel group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelGroupsBulkPartialUpdateRequest
+	*/
+	VpnTunnelGroupsBulkPartialUpdate(ctx context.Context) ApiVpnTunnelGroupsBulkPartialUpdateRequest
+
+	// VpnTunnelGroupsBulkPartialUpdateExecute executes the request
+	//  @return []TunnelGroup
+	VpnTunnelGroupsBulkPartialUpdateExecute(r ApiVpnTunnelGroupsBulkPartialUpdateRequest) ([]TunnelGroup, *http.Response, error)
+
+	/*
+	VpnTunnelGroupsBulkUpdate Method for VpnTunnelGroupsBulkUpdate
+
+	Put a list of tunnel group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelGroupsBulkUpdateRequest
+	*/
+	VpnTunnelGroupsBulkUpdate(ctx context.Context) ApiVpnTunnelGroupsBulkUpdateRequest
+
+	// VpnTunnelGroupsBulkUpdateExecute executes the request
+	//  @return []TunnelGroup
+	VpnTunnelGroupsBulkUpdateExecute(r ApiVpnTunnelGroupsBulkUpdateRequest) ([]TunnelGroup, *http.Response, error)
+
+	/*
+	VpnTunnelGroupsCreate Method for VpnTunnelGroupsCreate
+
+	Post a list of tunnel group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelGroupsCreateRequest
+	*/
+	VpnTunnelGroupsCreate(ctx context.Context) ApiVpnTunnelGroupsCreateRequest
+
+	// VpnTunnelGroupsCreateExecute executes the request
+	//  @return TunnelGroup
+	VpnTunnelGroupsCreateExecute(r ApiVpnTunnelGroupsCreateRequest) (*TunnelGroup, *http.Response, error)
+
+	/*
+	VpnTunnelGroupsDestroy Method for VpnTunnelGroupsDestroy
+
+	Delete a tunnel group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel group.
+	@return ApiVpnTunnelGroupsDestroyRequest
+	*/
+	VpnTunnelGroupsDestroy(ctx context.Context, id int32) ApiVpnTunnelGroupsDestroyRequest
+
+	// VpnTunnelGroupsDestroyExecute executes the request
+	VpnTunnelGroupsDestroyExecute(r ApiVpnTunnelGroupsDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnTunnelGroupsList Method for VpnTunnelGroupsList
+
+	Get a list of tunnel group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelGroupsListRequest
+	*/
+	VpnTunnelGroupsList(ctx context.Context) ApiVpnTunnelGroupsListRequest
+
+	// VpnTunnelGroupsListExecute executes the request
+	//  @return PaginatedTunnelGroupList
+	VpnTunnelGroupsListExecute(r ApiVpnTunnelGroupsListRequest) (*PaginatedTunnelGroupList, *http.Response, error)
+
+	/*
+	VpnTunnelGroupsPartialUpdate Method for VpnTunnelGroupsPartialUpdate
+
+	Patch a tunnel group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel group.
+	@return ApiVpnTunnelGroupsPartialUpdateRequest
+	*/
+	VpnTunnelGroupsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelGroupsPartialUpdateRequest
+
+	// VpnTunnelGroupsPartialUpdateExecute executes the request
+	//  @return TunnelGroup
+	VpnTunnelGroupsPartialUpdateExecute(r ApiVpnTunnelGroupsPartialUpdateRequest) (*TunnelGroup, *http.Response, error)
+
+	/*
+	VpnTunnelGroupsRetrieve Method for VpnTunnelGroupsRetrieve
+
+	Get a tunnel group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel group.
+	@return ApiVpnTunnelGroupsRetrieveRequest
+	*/
+	VpnTunnelGroupsRetrieve(ctx context.Context, id int32) ApiVpnTunnelGroupsRetrieveRequest
+
+	// VpnTunnelGroupsRetrieveExecute executes the request
+	//  @return TunnelGroup
+	VpnTunnelGroupsRetrieveExecute(r ApiVpnTunnelGroupsRetrieveRequest) (*TunnelGroup, *http.Response, error)
+
+	/*
+	VpnTunnelGroupsUpdate Method for VpnTunnelGroupsUpdate
+
+	Put a tunnel group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel group.
+	@return ApiVpnTunnelGroupsUpdateRequest
+	*/
+	VpnTunnelGroupsUpdate(ctx context.Context, id int32) ApiVpnTunnelGroupsUpdateRequest
+
+	// VpnTunnelGroupsUpdateExecute executes the request
+	//  @return TunnelGroup
+	VpnTunnelGroupsUpdateExecute(r ApiVpnTunnelGroupsUpdateRequest) (*TunnelGroup, *http.Response, error)
+
+	/*
+	VpnTunnelTerminationsBulkDestroy Method for VpnTunnelTerminationsBulkDestroy
+
+	Delete a list of tunnel termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelTerminationsBulkDestroyRequest
+	*/
+	VpnTunnelTerminationsBulkDestroy(ctx context.Context) ApiVpnTunnelTerminationsBulkDestroyRequest
+
+	// VpnTunnelTerminationsBulkDestroyExecute executes the request
+	VpnTunnelTerminationsBulkDestroyExecute(r ApiVpnTunnelTerminationsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnTunnelTerminationsBulkPartialUpdate Method for VpnTunnelTerminationsBulkPartialUpdate
+
+	Patch a list of tunnel termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelTerminationsBulkPartialUpdateRequest
+	*/
+	VpnTunnelTerminationsBulkPartialUpdate(ctx context.Context) ApiVpnTunnelTerminationsBulkPartialUpdateRequest
+
+	// VpnTunnelTerminationsBulkPartialUpdateExecute executes the request
+	//  @return []TunnelTermination
+	VpnTunnelTerminationsBulkPartialUpdateExecute(r ApiVpnTunnelTerminationsBulkPartialUpdateRequest) ([]TunnelTermination, *http.Response, error)
+
+	/*
+	VpnTunnelTerminationsBulkUpdate Method for VpnTunnelTerminationsBulkUpdate
+
+	Put a list of tunnel termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelTerminationsBulkUpdateRequest
+	*/
+	VpnTunnelTerminationsBulkUpdate(ctx context.Context) ApiVpnTunnelTerminationsBulkUpdateRequest
+
+	// VpnTunnelTerminationsBulkUpdateExecute executes the request
+	//  @return []TunnelTermination
+	VpnTunnelTerminationsBulkUpdateExecute(r ApiVpnTunnelTerminationsBulkUpdateRequest) ([]TunnelTermination, *http.Response, error)
+
+	/*
+	VpnTunnelTerminationsCreate Method for VpnTunnelTerminationsCreate
+
+	Post a list of tunnel termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelTerminationsCreateRequest
+	*/
+	VpnTunnelTerminationsCreate(ctx context.Context) ApiVpnTunnelTerminationsCreateRequest
+
+	// VpnTunnelTerminationsCreateExecute executes the request
+	//  @return TunnelTermination
+	VpnTunnelTerminationsCreateExecute(r ApiVpnTunnelTerminationsCreateRequest) (*TunnelTermination, *http.Response, error)
+
+	/*
+	VpnTunnelTerminationsDestroy Method for VpnTunnelTerminationsDestroy
+
+	Delete a tunnel termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel termination.
+	@return ApiVpnTunnelTerminationsDestroyRequest
+	*/
+	VpnTunnelTerminationsDestroy(ctx context.Context, id int32) ApiVpnTunnelTerminationsDestroyRequest
+
+	// VpnTunnelTerminationsDestroyExecute executes the request
+	VpnTunnelTerminationsDestroyExecute(r ApiVpnTunnelTerminationsDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnTunnelTerminationsList Method for VpnTunnelTerminationsList
+
+	Get a list of tunnel termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelTerminationsListRequest
+	*/
+	VpnTunnelTerminationsList(ctx context.Context) ApiVpnTunnelTerminationsListRequest
+
+	// VpnTunnelTerminationsListExecute executes the request
+	//  @return PaginatedTunnelTerminationList
+	VpnTunnelTerminationsListExecute(r ApiVpnTunnelTerminationsListRequest) (*PaginatedTunnelTerminationList, *http.Response, error)
+
+	/*
+	VpnTunnelTerminationsPartialUpdate Method for VpnTunnelTerminationsPartialUpdate
+
+	Patch a tunnel termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel termination.
+	@return ApiVpnTunnelTerminationsPartialUpdateRequest
+	*/
+	VpnTunnelTerminationsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelTerminationsPartialUpdateRequest
+
+	// VpnTunnelTerminationsPartialUpdateExecute executes the request
+	//  @return TunnelTermination
+	VpnTunnelTerminationsPartialUpdateExecute(r ApiVpnTunnelTerminationsPartialUpdateRequest) (*TunnelTermination, *http.Response, error)
+
+	/*
+	VpnTunnelTerminationsRetrieve Method for VpnTunnelTerminationsRetrieve
+
+	Get a tunnel termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel termination.
+	@return ApiVpnTunnelTerminationsRetrieveRequest
+	*/
+	VpnTunnelTerminationsRetrieve(ctx context.Context, id int32) ApiVpnTunnelTerminationsRetrieveRequest
+
+	// VpnTunnelTerminationsRetrieveExecute executes the request
+	//  @return TunnelTermination
+	VpnTunnelTerminationsRetrieveExecute(r ApiVpnTunnelTerminationsRetrieveRequest) (*TunnelTermination, *http.Response, error)
+
+	/*
+	VpnTunnelTerminationsUpdate Method for VpnTunnelTerminationsUpdate
+
+	Put a tunnel termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel termination.
+	@return ApiVpnTunnelTerminationsUpdateRequest
+	*/
+	VpnTunnelTerminationsUpdate(ctx context.Context, id int32) ApiVpnTunnelTerminationsUpdateRequest
+
+	// VpnTunnelTerminationsUpdateExecute executes the request
+	//  @return TunnelTermination
+	VpnTunnelTerminationsUpdateExecute(r ApiVpnTunnelTerminationsUpdateRequest) (*TunnelTermination, *http.Response, error)
+
+	/*
+	VpnTunnelsBulkDestroy Method for VpnTunnelsBulkDestroy
+
+	Delete a list of tunnel objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelsBulkDestroyRequest
+	*/
+	VpnTunnelsBulkDestroy(ctx context.Context) ApiVpnTunnelsBulkDestroyRequest
+
+	// VpnTunnelsBulkDestroyExecute executes the request
+	VpnTunnelsBulkDestroyExecute(r ApiVpnTunnelsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnTunnelsBulkPartialUpdate Method for VpnTunnelsBulkPartialUpdate
+
+	Patch a list of tunnel objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelsBulkPartialUpdateRequest
+	*/
+	VpnTunnelsBulkPartialUpdate(ctx context.Context) ApiVpnTunnelsBulkPartialUpdateRequest
+
+	// VpnTunnelsBulkPartialUpdateExecute executes the request
+	//  @return []Tunnel
+	VpnTunnelsBulkPartialUpdateExecute(r ApiVpnTunnelsBulkPartialUpdateRequest) ([]Tunnel, *http.Response, error)
+
+	/*
+	VpnTunnelsBulkUpdate Method for VpnTunnelsBulkUpdate
+
+	Put a list of tunnel objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelsBulkUpdateRequest
+	*/
+	VpnTunnelsBulkUpdate(ctx context.Context) ApiVpnTunnelsBulkUpdateRequest
+
+	// VpnTunnelsBulkUpdateExecute executes the request
+	//  @return []Tunnel
+	VpnTunnelsBulkUpdateExecute(r ApiVpnTunnelsBulkUpdateRequest) ([]Tunnel, *http.Response, error)
+
+	/*
+	VpnTunnelsCreate Method for VpnTunnelsCreate
+
+	Post a list of tunnel objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelsCreateRequest
+	*/
+	VpnTunnelsCreate(ctx context.Context) ApiVpnTunnelsCreateRequest
+
+	// VpnTunnelsCreateExecute executes the request
+	//  @return Tunnel
+	VpnTunnelsCreateExecute(r ApiVpnTunnelsCreateRequest) (*Tunnel, *http.Response, error)
+
+	/*
+	VpnTunnelsDestroy Method for VpnTunnelsDestroy
+
+	Delete a tunnel object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel.
+	@return ApiVpnTunnelsDestroyRequest
+	*/
+	VpnTunnelsDestroy(ctx context.Context, id int32) ApiVpnTunnelsDestroyRequest
+
+	// VpnTunnelsDestroyExecute executes the request
+	VpnTunnelsDestroyExecute(r ApiVpnTunnelsDestroyRequest) (*http.Response, error)
+
+	/*
+	VpnTunnelsList Method for VpnTunnelsList
+
+	Get a list of tunnel objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiVpnTunnelsListRequest
+	*/
+	VpnTunnelsList(ctx context.Context) ApiVpnTunnelsListRequest
+
+	// VpnTunnelsListExecute executes the request
+	//  @return PaginatedTunnelList
+	VpnTunnelsListExecute(r ApiVpnTunnelsListRequest) (*PaginatedTunnelList, *http.Response, error)
+
+	/*
+	VpnTunnelsPartialUpdate Method for VpnTunnelsPartialUpdate
+
+	Patch a tunnel object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel.
+	@return ApiVpnTunnelsPartialUpdateRequest
+	*/
+	VpnTunnelsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelsPartialUpdateRequest
+
+	// VpnTunnelsPartialUpdateExecute executes the request
+	//  @return Tunnel
+	VpnTunnelsPartialUpdateExecute(r ApiVpnTunnelsPartialUpdateRequest) (*Tunnel, *http.Response, error)
+
+	/*
+	VpnTunnelsRetrieve Method for VpnTunnelsRetrieve
+
+	Get a tunnel object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel.
+	@return ApiVpnTunnelsRetrieveRequest
+	*/
+	VpnTunnelsRetrieve(ctx context.Context, id int32) ApiVpnTunnelsRetrieveRequest
+
+	// VpnTunnelsRetrieveExecute executes the request
+	//  @return Tunnel
+	VpnTunnelsRetrieveExecute(r ApiVpnTunnelsRetrieveRequest) (*Tunnel, *http.Response, error)
+
+	/*
+	VpnTunnelsUpdate Method for VpnTunnelsUpdate
+
+	Put a tunnel object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tunnel.
+	@return ApiVpnTunnelsUpdateRequest
+	*/
+	VpnTunnelsUpdate(ctx context.Context, id int32) ApiVpnTunnelsUpdateRequest
+
+	// VpnTunnelsUpdateExecute executes the request
+	//  @return Tunnel
+	VpnTunnelsUpdateExecute(r ApiVpnTunnelsUpdateRequest) (*Tunnel, *http.Response, error)
+}
+
 // VpnAPIService VpnAPI service
 type VpnAPIService service
 
 type ApiVpnIkePoliciesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iKEPolicyRequest *[]IKEPolicyRequest
 }
 
@@ -140,7 +1423,7 @@ func (a *VpnAPIService) VpnIkePoliciesBulkDestroyExecute(r ApiVpnIkePoliciesBulk
 
 type ApiVpnIkePoliciesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iKEPolicyRequest *[]IKEPolicyRequest
 }
 
@@ -264,7 +1547,7 @@ func (a *VpnAPIService) VpnIkePoliciesBulkPartialUpdateExecute(r ApiVpnIkePolici
 
 type ApiVpnIkePoliciesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iKEPolicyRequest *[]IKEPolicyRequest
 }
 
@@ -388,7 +1671,7 @@ func (a *VpnAPIService) VpnIkePoliciesBulkUpdateExecute(r ApiVpnIkePoliciesBulkU
 
 type ApiVpnIkePoliciesCreateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	writableIKEPolicyRequest *WritableIKEPolicyRequest
 }
 
@@ -512,7 +1795,7 @@ func (a *VpnAPIService) VpnIkePoliciesCreateExecute(r ApiVpnIkePoliciesCreateReq
 
 type ApiVpnIkePoliciesDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -618,7 +1901,7 @@ func (a *VpnAPIService) VpnIkePoliciesDestroyExecute(r ApiVpnIkePoliciesDestroyR
 
 type ApiVpnIkePoliciesListRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -2064,7 +3347,7 @@ func (a *VpnAPIService) VpnIkePoliciesListExecute(r ApiVpnIkePoliciesListRequest
 
 type ApiVpnIkePoliciesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	patchedWritableIKEPolicyRequest *PatchedWritableIKEPolicyRequest
 }
@@ -2189,7 +3472,7 @@ func (a *VpnAPIService) VpnIkePoliciesPartialUpdateExecute(r ApiVpnIkePoliciesPa
 
 type ApiVpnIkePoliciesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -2306,7 +3589,7 @@ func (a *VpnAPIService) VpnIkePoliciesRetrieveExecute(r ApiVpnIkePoliciesRetriev
 
 type ApiVpnIkePoliciesUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	writableIKEPolicyRequest *WritableIKEPolicyRequest
 }
@@ -2434,7 +3717,7 @@ func (a *VpnAPIService) VpnIkePoliciesUpdateExecute(r ApiVpnIkePoliciesUpdateReq
 
 type ApiVpnIkeProposalsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iKEProposalRequest *[]IKEProposalRequest
 }
 
@@ -2547,7 +3830,7 @@ func (a *VpnAPIService) VpnIkeProposalsBulkDestroyExecute(r ApiVpnIkeProposalsBu
 
 type ApiVpnIkeProposalsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iKEProposalRequest *[]IKEProposalRequest
 }
 
@@ -2671,7 +3954,7 @@ func (a *VpnAPIService) VpnIkeProposalsBulkPartialUpdateExecute(r ApiVpnIkePropo
 
 type ApiVpnIkeProposalsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iKEProposalRequest *[]IKEProposalRequest
 }
 
@@ -2795,7 +4078,7 @@ func (a *VpnAPIService) VpnIkeProposalsBulkUpdateExecute(r ApiVpnIkeProposalsBul
 
 type ApiVpnIkeProposalsCreateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	writableIKEProposalRequest *WritableIKEProposalRequest
 }
 
@@ -2919,7 +4202,7 @@ func (a *VpnAPIService) VpnIkeProposalsCreateExecute(r ApiVpnIkeProposalsCreateR
 
 type ApiVpnIkeProposalsDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -3025,7 +4308,7 @@ func (a *VpnAPIService) VpnIkeProposalsDestroyExecute(r ApiVpnIkeProposalsDestro
 
 type ApiVpnIkeProposalsListRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	authenticationAlgorithm *[]string
 	authenticationAlgorithmEmpty *bool
 	authenticationAlgorithmIc *[]VpnIkeProposalsListAuthenticationAlgorithmIcParameterInner
@@ -4873,7 +6156,7 @@ func (a *VpnAPIService) VpnIkeProposalsListExecute(r ApiVpnIkeProposalsListReque
 
 type ApiVpnIkeProposalsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	patchedWritableIKEProposalRequest *PatchedWritableIKEProposalRequest
 }
@@ -4998,7 +6281,7 @@ func (a *VpnAPIService) VpnIkeProposalsPartialUpdateExecute(r ApiVpnIkeProposals
 
 type ApiVpnIkeProposalsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -5115,7 +6398,7 @@ func (a *VpnAPIService) VpnIkeProposalsRetrieveExecute(r ApiVpnIkeProposalsRetri
 
 type ApiVpnIkeProposalsUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	writableIKEProposalRequest *WritableIKEProposalRequest
 }
@@ -5243,7 +6526,7 @@ func (a *VpnAPIService) VpnIkeProposalsUpdateExecute(r ApiVpnIkeProposalsUpdateR
 
 type ApiVpnIpsecPoliciesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iPSecPolicyRequest *[]IPSecPolicyRequest
 }
 
@@ -5356,7 +6639,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesBulkDestroyExecute(r ApiVpnIpsecPolicies
 
 type ApiVpnIpsecPoliciesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iPSecPolicyRequest *[]IPSecPolicyRequest
 }
 
@@ -5480,7 +6763,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesBulkPartialUpdateExecute(r ApiVpnIpsecPo
 
 type ApiVpnIpsecPoliciesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iPSecPolicyRequest *[]IPSecPolicyRequest
 }
 
@@ -5604,7 +6887,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesBulkUpdateExecute(r ApiVpnIpsecPoliciesB
 
 type ApiVpnIpsecPoliciesCreateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	writableIPSecPolicyRequest *WritableIPSecPolicyRequest
 }
 
@@ -5728,7 +7011,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesCreateExecute(r ApiVpnIpsecPoliciesCreat
 
 type ApiVpnIpsecPoliciesDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -5834,7 +7117,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesDestroyExecute(r ApiVpnIpsecPoliciesDest
 
 type ApiVpnIpsecPoliciesListRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -7003,7 +8286,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesListExecute(r ApiVpnIpsecPoliciesListReq
 
 type ApiVpnIpsecPoliciesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	patchedWritableIPSecPolicyRequest *PatchedWritableIPSecPolicyRequest
 }
@@ -7128,7 +8411,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesPartialUpdateExecute(r ApiVpnIpsecPolici
 
 type ApiVpnIpsecPoliciesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -7245,7 +8528,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesRetrieveExecute(r ApiVpnIpsecPoliciesRet
 
 type ApiVpnIpsecPoliciesUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	writableIPSecPolicyRequest *WritableIPSecPolicyRequest
 }
@@ -7373,7 +8656,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesUpdateExecute(r ApiVpnIpsecPoliciesUpdat
 
 type ApiVpnIpsecProfilesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iPSecProfileRequest *[]IPSecProfileRequest
 }
 
@@ -7486,7 +8769,7 @@ func (a *VpnAPIService) VpnIpsecProfilesBulkDestroyExecute(r ApiVpnIpsecProfiles
 
 type ApiVpnIpsecProfilesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iPSecProfileRequest *[]IPSecProfileRequest
 }
 
@@ -7610,7 +8893,7 @@ func (a *VpnAPIService) VpnIpsecProfilesBulkPartialUpdateExecute(r ApiVpnIpsecPr
 
 type ApiVpnIpsecProfilesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iPSecProfileRequest *[]IPSecProfileRequest
 }
 
@@ -7734,7 +9017,7 @@ func (a *VpnAPIService) VpnIpsecProfilesBulkUpdateExecute(r ApiVpnIpsecProfilesB
 
 type ApiVpnIpsecProfilesCreateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	writableIPSecProfileRequest *WritableIPSecProfileRequest
 }
 
@@ -7858,7 +9141,7 @@ func (a *VpnAPIService) VpnIpsecProfilesCreateExecute(r ApiVpnIpsecProfilesCreat
 
 type ApiVpnIpsecProfilesDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -7964,7 +9247,7 @@ func (a *VpnAPIService) VpnIpsecProfilesDestroyExecute(r ApiVpnIpsecProfilesDest
 
 type ApiVpnIpsecProfilesListRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -9217,7 +10500,7 @@ func (a *VpnAPIService) VpnIpsecProfilesListExecute(r ApiVpnIpsecProfilesListReq
 
 type ApiVpnIpsecProfilesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	patchedWritableIPSecProfileRequest *PatchedWritableIPSecProfileRequest
 }
@@ -9342,7 +10625,7 @@ func (a *VpnAPIService) VpnIpsecProfilesPartialUpdateExecute(r ApiVpnIpsecProfil
 
 type ApiVpnIpsecProfilesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -9459,7 +10742,7 @@ func (a *VpnAPIService) VpnIpsecProfilesRetrieveExecute(r ApiVpnIpsecProfilesRet
 
 type ApiVpnIpsecProfilesUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	writableIPSecProfileRequest *WritableIPSecProfileRequest
 }
@@ -9587,7 +10870,7 @@ func (a *VpnAPIService) VpnIpsecProfilesUpdateExecute(r ApiVpnIpsecProfilesUpdat
 
 type ApiVpnIpsecProposalsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iPSecProposalRequest *[]IPSecProposalRequest
 }
 
@@ -9700,7 +10983,7 @@ func (a *VpnAPIService) VpnIpsecProposalsBulkDestroyExecute(r ApiVpnIpsecProposa
 
 type ApiVpnIpsecProposalsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iPSecProposalRequest *[]IPSecProposalRequest
 }
 
@@ -9824,7 +11107,7 @@ func (a *VpnAPIService) VpnIpsecProposalsBulkPartialUpdateExecute(r ApiVpnIpsecP
 
 type ApiVpnIpsecProposalsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	iPSecProposalRequest *[]IPSecProposalRequest
 }
 
@@ -9948,7 +11231,7 @@ func (a *VpnAPIService) VpnIpsecProposalsBulkUpdateExecute(r ApiVpnIpsecProposal
 
 type ApiVpnIpsecProposalsCreateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	writableIPSecProposalRequest *WritableIPSecProposalRequest
 }
 
@@ -10072,7 +11355,7 @@ func (a *VpnAPIService) VpnIpsecProposalsCreateExecute(r ApiVpnIpsecProposalsCre
 
 type ApiVpnIpsecProposalsDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -10178,7 +11461,7 @@ func (a *VpnAPIService) VpnIpsecProposalsDestroyExecute(r ApiVpnIpsecProposalsDe
 
 type ApiVpnIpsecProposalsListRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	authenticationAlgorithm *[]string
 	authenticationAlgorithmEmpty *bool
 	authenticationAlgorithmIc *[]Authentication
@@ -11769,7 +13052,7 @@ func (a *VpnAPIService) VpnIpsecProposalsListExecute(r ApiVpnIpsecProposalsListR
 
 type ApiVpnIpsecProposalsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	patchedWritableIPSecProposalRequest *PatchedWritableIPSecProposalRequest
 }
@@ -11894,7 +13177,7 @@ func (a *VpnAPIService) VpnIpsecProposalsPartialUpdateExecute(r ApiVpnIpsecPropo
 
 type ApiVpnIpsecProposalsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -12011,7 +13294,7 @@ func (a *VpnAPIService) VpnIpsecProposalsRetrieveExecute(r ApiVpnIpsecProposalsR
 
 type ApiVpnIpsecProposalsUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	writableIPSecProposalRequest *WritableIPSecProposalRequest
 }
@@ -12139,7 +13422,7 @@ func (a *VpnAPIService) VpnIpsecProposalsUpdateExecute(r ApiVpnIpsecProposalsUpd
 
 type ApiVpnL2vpnTerminationsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -12252,7 +13535,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsBulkDestroyExecute(r ApiVpnL2vpnTerm
 
 type ApiVpnL2vpnTerminationsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -12376,7 +13659,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsBulkPartialUpdateExecute(r ApiVpnL2v
 
 type ApiVpnL2vpnTerminationsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -12500,7 +13783,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsBulkUpdateExecute(r ApiVpnL2vpnTermi
 
 type ApiVpnL2vpnTerminationsCreateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	l2VPNTerminationRequest *L2VPNTerminationRequest
 }
 
@@ -12624,7 +13907,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsCreateExecute(r ApiVpnL2vpnTerminati
 
 type ApiVpnL2vpnTerminationsDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -12730,7 +14013,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsDestroyExecute(r ApiVpnL2vpnTerminat
 
 type ApiVpnL2vpnTerminationsListRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	assignedObjectId *[]int32
 	assignedObjectIdEmpty *bool
 	assignedObjectIdGt *[]int32
@@ -13992,7 +15275,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsListExecute(r ApiVpnL2vpnTermination
 
 type ApiVpnL2vpnTerminationsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	patchedL2VPNTerminationRequest *PatchedL2VPNTerminationRequest
 }
@@ -14117,7 +15400,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsPartialUpdateExecute(r ApiVpnL2vpnTe
 
 type ApiVpnL2vpnTerminationsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -14234,7 +15517,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsRetrieveExecute(r ApiVpnL2vpnTermina
 
 type ApiVpnL2vpnTerminationsUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	l2VPNTerminationRequest *L2VPNTerminationRequest
 }
@@ -14362,7 +15645,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsUpdateExecute(r ApiVpnL2vpnTerminati
 
 type ApiVpnL2vpnsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -14475,7 +15758,7 @@ func (a *VpnAPIService) VpnL2vpnsBulkDestroyExecute(r ApiVpnL2vpnsBulkDestroyReq
 
 type ApiVpnL2vpnsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -14599,7 +15882,7 @@ func (a *VpnAPIService) VpnL2vpnsBulkPartialUpdateExecute(r ApiVpnL2vpnsBulkPart
 
 type ApiVpnL2vpnsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -14723,7 +16006,7 @@ func (a *VpnAPIService) VpnL2vpnsBulkUpdateExecute(r ApiVpnL2vpnsBulkUpdateReque
 
 type ApiVpnL2vpnsCreateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	writableL2VPNRequest *WritableL2VPNRequest
 }
 
@@ -14847,7 +16130,7 @@ func (a *VpnAPIService) VpnL2vpnsCreateExecute(r ApiVpnL2vpnsCreateRequest) (*L2
 
 type ApiVpnL2vpnsDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -14953,7 +16236,7 @@ func (a *VpnAPIService) VpnL2vpnsDestroyExecute(r ApiVpnL2vpnsDestroyRequest) (*
 
 type ApiVpnL2vpnsListRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -16636,7 +17919,7 @@ func (a *VpnAPIService) VpnL2vpnsListExecute(r ApiVpnL2vpnsListRequest) (*Pagina
 
 type ApiVpnL2vpnsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	patchedWritableL2VPNRequest *PatchedWritableL2VPNRequest
 }
@@ -16761,7 +18044,7 @@ func (a *VpnAPIService) VpnL2vpnsPartialUpdateExecute(r ApiVpnL2vpnsPartialUpdat
 
 type ApiVpnL2vpnsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -16878,7 +18161,7 @@ func (a *VpnAPIService) VpnL2vpnsRetrieveExecute(r ApiVpnL2vpnsRetrieveRequest) 
 
 type ApiVpnL2vpnsUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	writableL2VPNRequest *WritableL2VPNRequest
 }
@@ -17006,7 +18289,7 @@ func (a *VpnAPIService) VpnL2vpnsUpdateExecute(r ApiVpnL2vpnsUpdateRequest) (*L2
 
 type ApiVpnTunnelGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	tunnelGroupRequest *[]TunnelGroupRequest
 }
 
@@ -17119,7 +18402,7 @@ func (a *VpnAPIService) VpnTunnelGroupsBulkDestroyExecute(r ApiVpnTunnelGroupsBu
 
 type ApiVpnTunnelGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	tunnelGroupRequest *[]TunnelGroupRequest
 }
 
@@ -17243,7 +18526,7 @@ func (a *VpnAPIService) VpnTunnelGroupsBulkPartialUpdateExecute(r ApiVpnTunnelGr
 
 type ApiVpnTunnelGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	tunnelGroupRequest *[]TunnelGroupRequest
 }
 
@@ -17367,7 +18650,7 @@ func (a *VpnAPIService) VpnTunnelGroupsBulkUpdateExecute(r ApiVpnTunnelGroupsBul
 
 type ApiVpnTunnelGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	tunnelGroupRequest *TunnelGroupRequest
 }
 
@@ -17491,7 +18774,7 @@ func (a *VpnAPIService) VpnTunnelGroupsCreateExecute(r ApiVpnTunnelGroupsCreateR
 
 type ApiVpnTunnelGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -17597,7 +18880,7 @@ func (a *VpnAPIService) VpnTunnelGroupsDestroyExecute(r ApiVpnTunnelGroupsDestro
 
 type ApiVpnTunnelGroupsListRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -18697,7 +19980,7 @@ func (a *VpnAPIService) VpnTunnelGroupsListExecute(r ApiVpnTunnelGroupsListReque
 
 type ApiVpnTunnelGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	patchedTunnelGroupRequest *PatchedTunnelGroupRequest
 }
@@ -18822,7 +20105,7 @@ func (a *VpnAPIService) VpnTunnelGroupsPartialUpdateExecute(r ApiVpnTunnelGroups
 
 type ApiVpnTunnelGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -18939,7 +20222,7 @@ func (a *VpnAPIService) VpnTunnelGroupsRetrieveExecute(r ApiVpnTunnelGroupsRetri
 
 type ApiVpnTunnelGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	tunnelGroupRequest *TunnelGroupRequest
 }
@@ -19067,7 +20350,7 @@ func (a *VpnAPIService) VpnTunnelGroupsUpdateExecute(r ApiVpnTunnelGroupsUpdateR
 
 type ApiVpnTunnelTerminationsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	tunnelTerminationRequest *[]TunnelTerminationRequest
 }
 
@@ -19180,7 +20463,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsBulkDestroyExecute(r ApiVpnTunnelTe
 
 type ApiVpnTunnelTerminationsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	tunnelTerminationRequest *[]TunnelTerminationRequest
 }
 
@@ -19304,7 +20587,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsBulkPartialUpdateExecute(r ApiVpnTu
 
 type ApiVpnTunnelTerminationsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	tunnelTerminationRequest *[]TunnelTerminationRequest
 }
 
@@ -19428,7 +20711,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsBulkUpdateExecute(r ApiVpnTunnelTer
 
 type ApiVpnTunnelTerminationsCreateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	writableTunnelTerminationRequest *WritableTunnelTerminationRequest
 }
 
@@ -19552,7 +20835,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsCreateExecute(r ApiVpnTunnelTermina
 
 type ApiVpnTunnelTerminationsDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -19658,7 +20941,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsDestroyExecute(r ApiVpnTunnelTermin
 
 type ApiVpnTunnelTerminationsListRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -20790,7 +22073,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsListExecute(r ApiVpnTunnelTerminati
 
 type ApiVpnTunnelTerminationsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	patchedWritableTunnelTerminationRequest *PatchedWritableTunnelTerminationRequest
 }
@@ -20915,7 +22198,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsPartialUpdateExecute(r ApiVpnTunnel
 
 type ApiVpnTunnelTerminationsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -21032,7 +22315,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsRetrieveExecute(r ApiVpnTunnelTermi
 
 type ApiVpnTunnelTerminationsUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	writableTunnelTerminationRequest *WritableTunnelTerminationRequest
 }
@@ -21160,7 +22443,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsUpdateExecute(r ApiVpnTunnelTermina
 
 type ApiVpnTunnelsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	tunnelRequest *[]TunnelRequest
 }
 
@@ -21273,7 +22556,7 @@ func (a *VpnAPIService) VpnTunnelsBulkDestroyExecute(r ApiVpnTunnelsBulkDestroyR
 
 type ApiVpnTunnelsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	tunnelRequest *[]TunnelRequest
 }
 
@@ -21397,7 +22680,7 @@ func (a *VpnAPIService) VpnTunnelsBulkPartialUpdateExecute(r ApiVpnTunnelsBulkPa
 
 type ApiVpnTunnelsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	tunnelRequest *[]TunnelRequest
 }
 
@@ -21521,7 +22804,7 @@ func (a *VpnAPIService) VpnTunnelsBulkUpdateExecute(r ApiVpnTunnelsBulkUpdateReq
 
 type ApiVpnTunnelsCreateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	writableTunnelRequest *WritableTunnelRequest
 }
 
@@ -21645,7 +22928,7 @@ func (a *VpnAPIService) VpnTunnelsCreateExecute(r ApiVpnTunnelsCreateRequest) (*
 
 type ApiVpnTunnelsDestroyRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -21751,7 +23034,7 @@ func (a *VpnAPIService) VpnTunnelsDestroyExecute(r ApiVpnTunnelsDestroyRequest) 
 
 type ApiVpnTunnelsListRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -23443,7 +24726,7 @@ func (a *VpnAPIService) VpnTunnelsListExecute(r ApiVpnTunnelsListRequest) (*Pagi
 
 type ApiVpnTunnelsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	patchedWritableTunnelRequest *PatchedWritableTunnelRequest
 }
@@ -23568,7 +24851,7 @@ func (a *VpnAPIService) VpnTunnelsPartialUpdateExecute(r ApiVpnTunnelsPartialUpd
 
 type ApiVpnTunnelsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 }
 
@@ -23685,7 +24968,7 @@ func (a *VpnAPIService) VpnTunnelsRetrieveExecute(r ApiVpnTunnelsRetrieveRequest
 
 type ApiVpnTunnelsUpdateRequest struct {
 	ctx context.Context
-	ApiService *VpnAPIService
+	ApiService VpnAPI
 	id int32
 	writableTunnelRequest *WritableTunnelRequest
 }

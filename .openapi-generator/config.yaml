@@ -3,7 +3,7 @@ generatorName: go
 gitHost: github.com
 gitUserId: greatman
 gitRepoId: go-netbox/v4
-
+generateInterfaces: true
 packageName: netbox
 
 globalProperty:

@@ -22,12 +22,245 @@ import (
 )
 
 
+type CoreAPI interface {
+
+	/*
+	CoreDataFilesList Method for CoreDataFilesList
+
+	Get a list of data file objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCoreDataFilesListRequest
+	*/
+	CoreDataFilesList(ctx context.Context) ApiCoreDataFilesListRequest
+
+	// CoreDataFilesListExecute executes the request
+	//  @return PaginatedDataFileList
+	CoreDataFilesListExecute(r ApiCoreDataFilesListRequest) (*PaginatedDataFileList, *http.Response, error)
+
+	/*
+	CoreDataFilesRetrieve Method for CoreDataFilesRetrieve
+
+	Get a data file object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this data file.
+	@return ApiCoreDataFilesRetrieveRequest
+	*/
+	CoreDataFilesRetrieve(ctx context.Context, id int32) ApiCoreDataFilesRetrieveRequest
+
+	// CoreDataFilesRetrieveExecute executes the request
+	//  @return DataFile
+	CoreDataFilesRetrieveExecute(r ApiCoreDataFilesRetrieveRequest) (*DataFile, *http.Response, error)
+
+	/*
+	CoreDataSourcesBulkDestroy Method for CoreDataSourcesBulkDestroy
+
+	Delete a list of data source objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCoreDataSourcesBulkDestroyRequest
+	*/
+	CoreDataSourcesBulkDestroy(ctx context.Context) ApiCoreDataSourcesBulkDestroyRequest
+
+	// CoreDataSourcesBulkDestroyExecute executes the request
+	CoreDataSourcesBulkDestroyExecute(r ApiCoreDataSourcesBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	CoreDataSourcesBulkPartialUpdate Method for CoreDataSourcesBulkPartialUpdate
+
+	Patch a list of data source objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCoreDataSourcesBulkPartialUpdateRequest
+	*/
+	CoreDataSourcesBulkPartialUpdate(ctx context.Context) ApiCoreDataSourcesBulkPartialUpdateRequest
+
+	// CoreDataSourcesBulkPartialUpdateExecute executes the request
+	//  @return []DataSource
+	CoreDataSourcesBulkPartialUpdateExecute(r ApiCoreDataSourcesBulkPartialUpdateRequest) ([]DataSource, *http.Response, error)
+
+	/*
+	CoreDataSourcesBulkUpdate Method for CoreDataSourcesBulkUpdate
+
+	Put a list of data source objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCoreDataSourcesBulkUpdateRequest
+	*/
+	CoreDataSourcesBulkUpdate(ctx context.Context) ApiCoreDataSourcesBulkUpdateRequest
+
+	// CoreDataSourcesBulkUpdateExecute executes the request
+	//  @return []DataSource
+	CoreDataSourcesBulkUpdateExecute(r ApiCoreDataSourcesBulkUpdateRequest) ([]DataSource, *http.Response, error)
+
+	/*
+	CoreDataSourcesCreate Method for CoreDataSourcesCreate
+
+	Post a list of data source objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCoreDataSourcesCreateRequest
+	*/
+	CoreDataSourcesCreate(ctx context.Context) ApiCoreDataSourcesCreateRequest
+
+	// CoreDataSourcesCreateExecute executes the request
+	//  @return DataSource
+	CoreDataSourcesCreateExecute(r ApiCoreDataSourcesCreateRequest) (*DataSource, *http.Response, error)
+
+	/*
+	CoreDataSourcesDestroy Method for CoreDataSourcesDestroy
+
+	Delete a data source object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this data source.
+	@return ApiCoreDataSourcesDestroyRequest
+	*/
+	CoreDataSourcesDestroy(ctx context.Context, id int32) ApiCoreDataSourcesDestroyRequest
+
+	// CoreDataSourcesDestroyExecute executes the request
+	CoreDataSourcesDestroyExecute(r ApiCoreDataSourcesDestroyRequest) (*http.Response, error)
+
+	/*
+	CoreDataSourcesList Method for CoreDataSourcesList
+
+	Get a list of data source objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCoreDataSourcesListRequest
+	*/
+	CoreDataSourcesList(ctx context.Context) ApiCoreDataSourcesListRequest
+
+	// CoreDataSourcesListExecute executes the request
+	//  @return PaginatedDataSourceList
+	CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequest) (*PaginatedDataSourceList, *http.Response, error)
+
+	/*
+	CoreDataSourcesPartialUpdate Method for CoreDataSourcesPartialUpdate
+
+	Patch a data source object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this data source.
+	@return ApiCoreDataSourcesPartialUpdateRequest
+	*/
+	CoreDataSourcesPartialUpdate(ctx context.Context, id int32) ApiCoreDataSourcesPartialUpdateRequest
+
+	// CoreDataSourcesPartialUpdateExecute executes the request
+	//  @return DataSource
+	CoreDataSourcesPartialUpdateExecute(r ApiCoreDataSourcesPartialUpdateRequest) (*DataSource, *http.Response, error)
+
+	/*
+	CoreDataSourcesRetrieve Method for CoreDataSourcesRetrieve
+
+	Get a data source object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this data source.
+	@return ApiCoreDataSourcesRetrieveRequest
+	*/
+	CoreDataSourcesRetrieve(ctx context.Context, id int32) ApiCoreDataSourcesRetrieveRequest
+
+	// CoreDataSourcesRetrieveExecute executes the request
+	//  @return DataSource
+	CoreDataSourcesRetrieveExecute(r ApiCoreDataSourcesRetrieveRequest) (*DataSource, *http.Response, error)
+
+	/*
+	CoreDataSourcesSyncCreate Method for CoreDataSourcesSyncCreate
+
+	Enqueue a job to synchronize the DataSource.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this data source.
+	@return ApiCoreDataSourcesSyncCreateRequest
+	*/
+	CoreDataSourcesSyncCreate(ctx context.Context, id int32) ApiCoreDataSourcesSyncCreateRequest
+
+	// CoreDataSourcesSyncCreateExecute executes the request
+	//  @return DataSource
+	CoreDataSourcesSyncCreateExecute(r ApiCoreDataSourcesSyncCreateRequest) (*DataSource, *http.Response, error)
+
+	/*
+	CoreDataSourcesUpdate Method for CoreDataSourcesUpdate
+
+	Put a data source object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this data source.
+	@return ApiCoreDataSourcesUpdateRequest
+	*/
+	CoreDataSourcesUpdate(ctx context.Context, id int32) ApiCoreDataSourcesUpdateRequest
+
+	// CoreDataSourcesUpdateExecute executes the request
+	//  @return DataSource
+	CoreDataSourcesUpdateExecute(r ApiCoreDataSourcesUpdateRequest) (*DataSource, *http.Response, error)
+
+	/*
+	CoreJobsList Method for CoreJobsList
+
+	Retrieve a list of job results
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCoreJobsListRequest
+	*/
+	CoreJobsList(ctx context.Context) ApiCoreJobsListRequest
+
+	// CoreJobsListExecute executes the request
+	//  @return PaginatedJobList
+	CoreJobsListExecute(r ApiCoreJobsListRequest) (*PaginatedJobList, *http.Response, error)
+
+	/*
+	CoreJobsRetrieve Method for CoreJobsRetrieve
+
+	Retrieve a list of job results
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this job.
+	@return ApiCoreJobsRetrieveRequest
+	*/
+	CoreJobsRetrieve(ctx context.Context, id int32) ApiCoreJobsRetrieveRequest
+
+	// CoreJobsRetrieveExecute executes the request
+	//  @return Job
+	CoreJobsRetrieveExecute(r ApiCoreJobsRetrieveRequest) (*Job, *http.Response, error)
+
+	/*
+	CoreObjectChangesList Method for CoreObjectChangesList
+
+	Retrieve a list of recent changes.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCoreObjectChangesListRequest
+	*/
+	CoreObjectChangesList(ctx context.Context) ApiCoreObjectChangesListRequest
+
+	// CoreObjectChangesListExecute executes the request
+	//  @return PaginatedObjectChangeList
+	CoreObjectChangesListExecute(r ApiCoreObjectChangesListRequest) (*PaginatedObjectChangeList, *http.Response, error)
+
+	/*
+	CoreObjectChangesRetrieve Method for CoreObjectChangesRetrieve
+
+	Retrieve a list of recent changes.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this object change.
+	@return ApiCoreObjectChangesRetrieveRequest
+	*/
+	CoreObjectChangesRetrieve(ctx context.Context, id int32) ApiCoreObjectChangesRetrieveRequest
+
+	// CoreObjectChangesRetrieveExecute executes the request
+	//  @return ObjectChange
+	CoreObjectChangesRetrieveExecute(r ApiCoreObjectChangesRetrieveRequest) (*ObjectChange, *http.Response, error)
+}
+
 // CoreAPIService CoreAPI service
 type CoreAPIService service
 
 type ApiCoreDataFilesListRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -1096,7 +1329,7 @@ func (a *CoreAPIService) CoreDataFilesListExecute(r ApiCoreDataFilesListRequest)
 
 type ApiCoreDataFilesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	id int32
 }
 
@@ -1213,7 +1446,7 @@ func (a *CoreAPIService) CoreDataFilesRetrieveExecute(r ApiCoreDataFilesRetrieve
 
 type ApiCoreDataSourcesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	dataSourceRequest *[]DataSourceRequest
 }
 
@@ -1326,7 +1559,7 @@ func (a *CoreAPIService) CoreDataSourcesBulkDestroyExecute(r ApiCoreDataSourcesB
 
 type ApiCoreDataSourcesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	dataSourceRequest *[]DataSourceRequest
 }
 
@@ -1450,7 +1683,7 @@ func (a *CoreAPIService) CoreDataSourcesBulkPartialUpdateExecute(r ApiCoreDataSo
 
 type ApiCoreDataSourcesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	dataSourceRequest *[]DataSourceRequest
 }
 
@@ -1574,7 +1807,7 @@ func (a *CoreAPIService) CoreDataSourcesBulkUpdateExecute(r ApiCoreDataSourcesBu
 
 type ApiCoreDataSourcesCreateRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	writableDataSourceRequest *WritableDataSourceRequest
 }
 
@@ -1698,7 +1931,7 @@ func (a *CoreAPIService) CoreDataSourcesCreateExecute(r ApiCoreDataSourcesCreate
 
 type ApiCoreDataSourcesDestroyRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	id int32
 }
 
@@ -1804,7 +2037,7 @@ func (a *CoreAPIService) CoreDataSourcesDestroyExecute(r ApiCoreDataSourcesDestr
 
 type ApiCoreDataSourcesListRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -3382,7 +3615,7 @@ func (a *CoreAPIService) CoreDataSourcesListExecute(r ApiCoreDataSourcesListRequ
 
 type ApiCoreDataSourcesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	id int32
 	patchedWritableDataSourceRequest *PatchedWritableDataSourceRequest
 }
@@ -3507,7 +3740,7 @@ func (a *CoreAPIService) CoreDataSourcesPartialUpdateExecute(r ApiCoreDataSource
 
 type ApiCoreDataSourcesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	id int32
 }
 
@@ -3624,7 +3857,7 @@ func (a *CoreAPIService) CoreDataSourcesRetrieveExecute(r ApiCoreDataSourcesRetr
 
 type ApiCoreDataSourcesSyncCreateRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	id int32
 	writableDataSourceRequest *WritableDataSourceRequest
 }
@@ -3752,7 +3985,7 @@ func (a *CoreAPIService) CoreDataSourcesSyncCreateExecute(r ApiCoreDataSourcesSy
 
 type ApiCoreDataSourcesUpdateRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	id int32
 	writableDataSourceRequest *WritableDataSourceRequest
 }
@@ -3880,7 +4113,7 @@ func (a *CoreAPIService) CoreDataSourcesUpdateExecute(r ApiCoreDataSourcesUpdate
 
 type ApiCoreJobsListRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	completed *time.Time
 	completedAfter *time.Time
 	completedBefore *time.Time
@@ -4886,7 +5119,7 @@ func (a *CoreAPIService) CoreJobsListExecute(r ApiCoreJobsListRequest) (*Paginat
 
 type ApiCoreJobsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	id int32
 }
 
@@ -5003,7 +5236,7 @@ func (a *CoreAPIService) CoreJobsRetrieveExecute(r ApiCoreJobsRetrieveRequest) (
 
 type ApiCoreObjectChangesListRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	action *CoreObjectChangesListActionParameter
 	changedObjectId *[]int32
 	changedObjectIdEmpty *bool
@@ -6026,7 +6259,7 @@ func (a *CoreAPIService) CoreObjectChangesListExecute(r ApiCoreObjectChangesList
 
 type ApiCoreObjectChangesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CoreAPIService
+	ApiService CoreAPI
 	id int32
 }
 

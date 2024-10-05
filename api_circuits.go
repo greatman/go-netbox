@@ -22,12 +22,1054 @@ import (
 )
 
 
+type CircuitsAPI interface {
+
+	/*
+	CircuitsCircuitGroupAssignmentsBulkDestroy Method for CircuitsCircuitGroupAssignmentsBulkDestroy
+
+	Delete a list of Circuit group assignment objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupAssignmentsBulkDestroyRequest
+	*/
+	CircuitsCircuitGroupAssignmentsBulkDestroy(ctx context.Context) ApiCircuitsCircuitGroupAssignmentsBulkDestroyRequest
+
+	// CircuitsCircuitGroupAssignmentsBulkDestroyExecute executes the request
+	CircuitsCircuitGroupAssignmentsBulkDestroyExecute(r ApiCircuitsCircuitGroupAssignmentsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsCircuitGroupAssignmentsBulkPartialUpdate Method for CircuitsCircuitGroupAssignmentsBulkPartialUpdate
+
+	Patch a list of Circuit group assignment objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupAssignmentsBulkPartialUpdateRequest
+	*/
+	CircuitsCircuitGroupAssignmentsBulkPartialUpdate(ctx context.Context) ApiCircuitsCircuitGroupAssignmentsBulkPartialUpdateRequest
+
+	// CircuitsCircuitGroupAssignmentsBulkPartialUpdateExecute executes the request
+	//  @return []CircuitGroupAssignment
+	CircuitsCircuitGroupAssignmentsBulkPartialUpdateExecute(r ApiCircuitsCircuitGroupAssignmentsBulkPartialUpdateRequest) ([]CircuitGroupAssignment, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupAssignmentsBulkUpdate Method for CircuitsCircuitGroupAssignmentsBulkUpdate
+
+	Put a list of Circuit group assignment objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupAssignmentsBulkUpdateRequest
+	*/
+	CircuitsCircuitGroupAssignmentsBulkUpdate(ctx context.Context) ApiCircuitsCircuitGroupAssignmentsBulkUpdateRequest
+
+	// CircuitsCircuitGroupAssignmentsBulkUpdateExecute executes the request
+	//  @return []CircuitGroupAssignment
+	CircuitsCircuitGroupAssignmentsBulkUpdateExecute(r ApiCircuitsCircuitGroupAssignmentsBulkUpdateRequest) ([]CircuitGroupAssignment, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupAssignmentsCreate Method for CircuitsCircuitGroupAssignmentsCreate
+
+	Post a list of Circuit group assignment objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupAssignmentsCreateRequest
+	*/
+	CircuitsCircuitGroupAssignmentsCreate(ctx context.Context) ApiCircuitsCircuitGroupAssignmentsCreateRequest
+
+	// CircuitsCircuitGroupAssignmentsCreateExecute executes the request
+	//  @return CircuitGroupAssignment
+	CircuitsCircuitGroupAssignmentsCreateExecute(r ApiCircuitsCircuitGroupAssignmentsCreateRequest) (*CircuitGroupAssignment, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupAssignmentsDestroy Method for CircuitsCircuitGroupAssignmentsDestroy
+
+	Delete a Circuit group assignment object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Circuit group assignment.
+	@return ApiCircuitsCircuitGroupAssignmentsDestroyRequest
+	*/
+	CircuitsCircuitGroupAssignmentsDestroy(ctx context.Context, id int32) ApiCircuitsCircuitGroupAssignmentsDestroyRequest
+
+	// CircuitsCircuitGroupAssignmentsDestroyExecute executes the request
+	CircuitsCircuitGroupAssignmentsDestroyExecute(r ApiCircuitsCircuitGroupAssignmentsDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsCircuitGroupAssignmentsList Method for CircuitsCircuitGroupAssignmentsList
+
+	Get a list of Circuit group assignment objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupAssignmentsListRequest
+	*/
+	CircuitsCircuitGroupAssignmentsList(ctx context.Context) ApiCircuitsCircuitGroupAssignmentsListRequest
+
+	// CircuitsCircuitGroupAssignmentsListExecute executes the request
+	//  @return PaginatedCircuitGroupAssignmentList
+	CircuitsCircuitGroupAssignmentsListExecute(r ApiCircuitsCircuitGroupAssignmentsListRequest) (*PaginatedCircuitGroupAssignmentList, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupAssignmentsPartialUpdate Method for CircuitsCircuitGroupAssignmentsPartialUpdate
+
+	Patch a Circuit group assignment object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Circuit group assignment.
+	@return ApiCircuitsCircuitGroupAssignmentsPartialUpdateRequest
+	*/
+	CircuitsCircuitGroupAssignmentsPartialUpdate(ctx context.Context, id int32) ApiCircuitsCircuitGroupAssignmentsPartialUpdateRequest
+
+	// CircuitsCircuitGroupAssignmentsPartialUpdateExecute executes the request
+	//  @return CircuitGroupAssignment
+	CircuitsCircuitGroupAssignmentsPartialUpdateExecute(r ApiCircuitsCircuitGroupAssignmentsPartialUpdateRequest) (*CircuitGroupAssignment, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupAssignmentsRetrieve Method for CircuitsCircuitGroupAssignmentsRetrieve
+
+	Get a Circuit group assignment object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Circuit group assignment.
+	@return ApiCircuitsCircuitGroupAssignmentsRetrieveRequest
+	*/
+	CircuitsCircuitGroupAssignmentsRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitGroupAssignmentsRetrieveRequest
+
+	// CircuitsCircuitGroupAssignmentsRetrieveExecute executes the request
+	//  @return CircuitGroupAssignment
+	CircuitsCircuitGroupAssignmentsRetrieveExecute(r ApiCircuitsCircuitGroupAssignmentsRetrieveRequest) (*CircuitGroupAssignment, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupAssignmentsUpdate Method for CircuitsCircuitGroupAssignmentsUpdate
+
+	Put a Circuit group assignment object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Circuit group assignment.
+	@return ApiCircuitsCircuitGroupAssignmentsUpdateRequest
+	*/
+	CircuitsCircuitGroupAssignmentsUpdate(ctx context.Context, id int32) ApiCircuitsCircuitGroupAssignmentsUpdateRequest
+
+	// CircuitsCircuitGroupAssignmentsUpdateExecute executes the request
+	//  @return CircuitGroupAssignment
+	CircuitsCircuitGroupAssignmentsUpdateExecute(r ApiCircuitsCircuitGroupAssignmentsUpdateRequest) (*CircuitGroupAssignment, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupsBulkDestroy Method for CircuitsCircuitGroupsBulkDestroy
+
+	Delete a list of circuit group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupsBulkDestroyRequest
+	*/
+	CircuitsCircuitGroupsBulkDestroy(ctx context.Context) ApiCircuitsCircuitGroupsBulkDestroyRequest
+
+	// CircuitsCircuitGroupsBulkDestroyExecute executes the request
+	CircuitsCircuitGroupsBulkDestroyExecute(r ApiCircuitsCircuitGroupsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsCircuitGroupsBulkPartialUpdate Method for CircuitsCircuitGroupsBulkPartialUpdate
+
+	Patch a list of circuit group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupsBulkPartialUpdateRequest
+	*/
+	CircuitsCircuitGroupsBulkPartialUpdate(ctx context.Context) ApiCircuitsCircuitGroupsBulkPartialUpdateRequest
+
+	// CircuitsCircuitGroupsBulkPartialUpdateExecute executes the request
+	//  @return []CircuitGroup
+	CircuitsCircuitGroupsBulkPartialUpdateExecute(r ApiCircuitsCircuitGroupsBulkPartialUpdateRequest) ([]CircuitGroup, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupsBulkUpdate Method for CircuitsCircuitGroupsBulkUpdate
+
+	Put a list of circuit group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupsBulkUpdateRequest
+	*/
+	CircuitsCircuitGroupsBulkUpdate(ctx context.Context) ApiCircuitsCircuitGroupsBulkUpdateRequest
+
+	// CircuitsCircuitGroupsBulkUpdateExecute executes the request
+	//  @return []CircuitGroup
+	CircuitsCircuitGroupsBulkUpdateExecute(r ApiCircuitsCircuitGroupsBulkUpdateRequest) ([]CircuitGroup, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupsCreate Method for CircuitsCircuitGroupsCreate
+
+	Post a list of circuit group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupsCreateRequest
+	*/
+	CircuitsCircuitGroupsCreate(ctx context.Context) ApiCircuitsCircuitGroupsCreateRequest
+
+	// CircuitsCircuitGroupsCreateExecute executes the request
+	//  @return CircuitGroup
+	CircuitsCircuitGroupsCreateExecute(r ApiCircuitsCircuitGroupsCreateRequest) (*CircuitGroup, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupsDestroy Method for CircuitsCircuitGroupsDestroy
+
+	Delete a circuit group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit group.
+	@return ApiCircuitsCircuitGroupsDestroyRequest
+	*/
+	CircuitsCircuitGroupsDestroy(ctx context.Context, id int32) ApiCircuitsCircuitGroupsDestroyRequest
+
+	// CircuitsCircuitGroupsDestroyExecute executes the request
+	CircuitsCircuitGroupsDestroyExecute(r ApiCircuitsCircuitGroupsDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsCircuitGroupsList Method for CircuitsCircuitGroupsList
+
+	Get a list of circuit group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitGroupsListRequest
+	*/
+	CircuitsCircuitGroupsList(ctx context.Context) ApiCircuitsCircuitGroupsListRequest
+
+	// CircuitsCircuitGroupsListExecute executes the request
+	//  @return PaginatedCircuitGroupList
+	CircuitsCircuitGroupsListExecute(r ApiCircuitsCircuitGroupsListRequest) (*PaginatedCircuitGroupList, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupsPartialUpdate Method for CircuitsCircuitGroupsPartialUpdate
+
+	Patch a circuit group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit group.
+	@return ApiCircuitsCircuitGroupsPartialUpdateRequest
+	*/
+	CircuitsCircuitGroupsPartialUpdate(ctx context.Context, id int32) ApiCircuitsCircuitGroupsPartialUpdateRequest
+
+	// CircuitsCircuitGroupsPartialUpdateExecute executes the request
+	//  @return CircuitGroup
+	CircuitsCircuitGroupsPartialUpdateExecute(r ApiCircuitsCircuitGroupsPartialUpdateRequest) (*CircuitGroup, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupsRetrieve Method for CircuitsCircuitGroupsRetrieve
+
+	Get a circuit group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit group.
+	@return ApiCircuitsCircuitGroupsRetrieveRequest
+	*/
+	CircuitsCircuitGroupsRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitGroupsRetrieveRequest
+
+	// CircuitsCircuitGroupsRetrieveExecute executes the request
+	//  @return CircuitGroup
+	CircuitsCircuitGroupsRetrieveExecute(r ApiCircuitsCircuitGroupsRetrieveRequest) (*CircuitGroup, *http.Response, error)
+
+	/*
+	CircuitsCircuitGroupsUpdate Method for CircuitsCircuitGroupsUpdate
+
+	Put a circuit group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit group.
+	@return ApiCircuitsCircuitGroupsUpdateRequest
+	*/
+	CircuitsCircuitGroupsUpdate(ctx context.Context, id int32) ApiCircuitsCircuitGroupsUpdateRequest
+
+	// CircuitsCircuitGroupsUpdateExecute executes the request
+	//  @return CircuitGroup
+	CircuitsCircuitGroupsUpdateExecute(r ApiCircuitsCircuitGroupsUpdateRequest) (*CircuitGroup, *http.Response, error)
+
+	/*
+	CircuitsCircuitTerminationsBulkDestroy Method for CircuitsCircuitTerminationsBulkDestroy
+
+	Delete a list of circuit termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTerminationsBulkDestroyRequest
+	*/
+	CircuitsCircuitTerminationsBulkDestroy(ctx context.Context) ApiCircuitsCircuitTerminationsBulkDestroyRequest
+
+	// CircuitsCircuitTerminationsBulkDestroyExecute executes the request
+	CircuitsCircuitTerminationsBulkDestroyExecute(r ApiCircuitsCircuitTerminationsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsCircuitTerminationsBulkPartialUpdate Method for CircuitsCircuitTerminationsBulkPartialUpdate
+
+	Patch a list of circuit termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTerminationsBulkPartialUpdateRequest
+	*/
+	CircuitsCircuitTerminationsBulkPartialUpdate(ctx context.Context) ApiCircuitsCircuitTerminationsBulkPartialUpdateRequest
+
+	// CircuitsCircuitTerminationsBulkPartialUpdateExecute executes the request
+	//  @return []CircuitTermination
+	CircuitsCircuitTerminationsBulkPartialUpdateExecute(r ApiCircuitsCircuitTerminationsBulkPartialUpdateRequest) ([]CircuitTermination, *http.Response, error)
+
+	/*
+	CircuitsCircuitTerminationsBulkUpdate Method for CircuitsCircuitTerminationsBulkUpdate
+
+	Put a list of circuit termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTerminationsBulkUpdateRequest
+	*/
+	CircuitsCircuitTerminationsBulkUpdate(ctx context.Context) ApiCircuitsCircuitTerminationsBulkUpdateRequest
+
+	// CircuitsCircuitTerminationsBulkUpdateExecute executes the request
+	//  @return []CircuitTermination
+	CircuitsCircuitTerminationsBulkUpdateExecute(r ApiCircuitsCircuitTerminationsBulkUpdateRequest) ([]CircuitTermination, *http.Response, error)
+
+	/*
+	CircuitsCircuitTerminationsCreate Method for CircuitsCircuitTerminationsCreate
+
+	Post a list of circuit termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTerminationsCreateRequest
+	*/
+	CircuitsCircuitTerminationsCreate(ctx context.Context) ApiCircuitsCircuitTerminationsCreateRequest
+
+	// CircuitsCircuitTerminationsCreateExecute executes the request
+	//  @return CircuitTermination
+	CircuitsCircuitTerminationsCreateExecute(r ApiCircuitsCircuitTerminationsCreateRequest) (*CircuitTermination, *http.Response, error)
+
+	/*
+	CircuitsCircuitTerminationsDestroy Method for CircuitsCircuitTerminationsDestroy
+
+	Delete a circuit termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit termination.
+	@return ApiCircuitsCircuitTerminationsDestroyRequest
+	*/
+	CircuitsCircuitTerminationsDestroy(ctx context.Context, id int32) ApiCircuitsCircuitTerminationsDestroyRequest
+
+	// CircuitsCircuitTerminationsDestroyExecute executes the request
+	CircuitsCircuitTerminationsDestroyExecute(r ApiCircuitsCircuitTerminationsDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsCircuitTerminationsList Method for CircuitsCircuitTerminationsList
+
+	Get a list of circuit termination objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTerminationsListRequest
+	*/
+	CircuitsCircuitTerminationsList(ctx context.Context) ApiCircuitsCircuitTerminationsListRequest
+
+	// CircuitsCircuitTerminationsListExecute executes the request
+	//  @return PaginatedCircuitTerminationList
+	CircuitsCircuitTerminationsListExecute(r ApiCircuitsCircuitTerminationsListRequest) (*PaginatedCircuitTerminationList, *http.Response, error)
+
+	/*
+	CircuitsCircuitTerminationsPartialUpdate Method for CircuitsCircuitTerminationsPartialUpdate
+
+	Patch a circuit termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit termination.
+	@return ApiCircuitsCircuitTerminationsPartialUpdateRequest
+	*/
+	CircuitsCircuitTerminationsPartialUpdate(ctx context.Context, id int32) ApiCircuitsCircuitTerminationsPartialUpdateRequest
+
+	// CircuitsCircuitTerminationsPartialUpdateExecute executes the request
+	//  @return CircuitTermination
+	CircuitsCircuitTerminationsPartialUpdateExecute(r ApiCircuitsCircuitTerminationsPartialUpdateRequest) (*CircuitTermination, *http.Response, error)
+
+	/*
+	CircuitsCircuitTerminationsPathsRetrieve Method for CircuitsCircuitTerminationsPathsRetrieve
+
+	Return all CablePaths which traverse a given pass-through port.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit termination.
+	@return ApiCircuitsCircuitTerminationsPathsRetrieveRequest
+	*/
+	CircuitsCircuitTerminationsPathsRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitTerminationsPathsRetrieveRequest
+
+	// CircuitsCircuitTerminationsPathsRetrieveExecute executes the request
+	//  @return CircuitTermination
+	CircuitsCircuitTerminationsPathsRetrieveExecute(r ApiCircuitsCircuitTerminationsPathsRetrieveRequest) (*CircuitTermination, *http.Response, error)
+
+	/*
+	CircuitsCircuitTerminationsRetrieve Method for CircuitsCircuitTerminationsRetrieve
+
+	Get a circuit termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit termination.
+	@return ApiCircuitsCircuitTerminationsRetrieveRequest
+	*/
+	CircuitsCircuitTerminationsRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitTerminationsRetrieveRequest
+
+	// CircuitsCircuitTerminationsRetrieveExecute executes the request
+	//  @return CircuitTermination
+	CircuitsCircuitTerminationsRetrieveExecute(r ApiCircuitsCircuitTerminationsRetrieveRequest) (*CircuitTermination, *http.Response, error)
+
+	/*
+	CircuitsCircuitTerminationsUpdate Method for CircuitsCircuitTerminationsUpdate
+
+	Put a circuit termination object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit termination.
+	@return ApiCircuitsCircuitTerminationsUpdateRequest
+	*/
+	CircuitsCircuitTerminationsUpdate(ctx context.Context, id int32) ApiCircuitsCircuitTerminationsUpdateRequest
+
+	// CircuitsCircuitTerminationsUpdateExecute executes the request
+	//  @return CircuitTermination
+	CircuitsCircuitTerminationsUpdateExecute(r ApiCircuitsCircuitTerminationsUpdateRequest) (*CircuitTermination, *http.Response, error)
+
+	/*
+	CircuitsCircuitTypesBulkDestroy Method for CircuitsCircuitTypesBulkDestroy
+
+	Delete a list of circuit type objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTypesBulkDestroyRequest
+	*/
+	CircuitsCircuitTypesBulkDestroy(ctx context.Context) ApiCircuitsCircuitTypesBulkDestroyRequest
+
+	// CircuitsCircuitTypesBulkDestroyExecute executes the request
+	CircuitsCircuitTypesBulkDestroyExecute(r ApiCircuitsCircuitTypesBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsCircuitTypesBulkPartialUpdate Method for CircuitsCircuitTypesBulkPartialUpdate
+
+	Patch a list of circuit type objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTypesBulkPartialUpdateRequest
+	*/
+	CircuitsCircuitTypesBulkPartialUpdate(ctx context.Context) ApiCircuitsCircuitTypesBulkPartialUpdateRequest
+
+	// CircuitsCircuitTypesBulkPartialUpdateExecute executes the request
+	//  @return []CircuitType
+	CircuitsCircuitTypesBulkPartialUpdateExecute(r ApiCircuitsCircuitTypesBulkPartialUpdateRequest) ([]CircuitType, *http.Response, error)
+
+	/*
+	CircuitsCircuitTypesBulkUpdate Method for CircuitsCircuitTypesBulkUpdate
+
+	Put a list of circuit type objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTypesBulkUpdateRequest
+	*/
+	CircuitsCircuitTypesBulkUpdate(ctx context.Context) ApiCircuitsCircuitTypesBulkUpdateRequest
+
+	// CircuitsCircuitTypesBulkUpdateExecute executes the request
+	//  @return []CircuitType
+	CircuitsCircuitTypesBulkUpdateExecute(r ApiCircuitsCircuitTypesBulkUpdateRequest) ([]CircuitType, *http.Response, error)
+
+	/*
+	CircuitsCircuitTypesCreate Method for CircuitsCircuitTypesCreate
+
+	Post a list of circuit type objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTypesCreateRequest
+	*/
+	CircuitsCircuitTypesCreate(ctx context.Context) ApiCircuitsCircuitTypesCreateRequest
+
+	// CircuitsCircuitTypesCreateExecute executes the request
+	//  @return CircuitType
+	CircuitsCircuitTypesCreateExecute(r ApiCircuitsCircuitTypesCreateRequest) (*CircuitType, *http.Response, error)
+
+	/*
+	CircuitsCircuitTypesDestroy Method for CircuitsCircuitTypesDestroy
+
+	Delete a circuit type object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit type.
+	@return ApiCircuitsCircuitTypesDestroyRequest
+	*/
+	CircuitsCircuitTypesDestroy(ctx context.Context, id int32) ApiCircuitsCircuitTypesDestroyRequest
+
+	// CircuitsCircuitTypesDestroyExecute executes the request
+	CircuitsCircuitTypesDestroyExecute(r ApiCircuitsCircuitTypesDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsCircuitTypesList Method for CircuitsCircuitTypesList
+
+	Get a list of circuit type objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitTypesListRequest
+	*/
+	CircuitsCircuitTypesList(ctx context.Context) ApiCircuitsCircuitTypesListRequest
+
+	// CircuitsCircuitTypesListExecute executes the request
+	//  @return PaginatedCircuitTypeList
+	CircuitsCircuitTypesListExecute(r ApiCircuitsCircuitTypesListRequest) (*PaginatedCircuitTypeList, *http.Response, error)
+
+	/*
+	CircuitsCircuitTypesPartialUpdate Method for CircuitsCircuitTypesPartialUpdate
+
+	Patch a circuit type object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit type.
+	@return ApiCircuitsCircuitTypesPartialUpdateRequest
+	*/
+	CircuitsCircuitTypesPartialUpdate(ctx context.Context, id int32) ApiCircuitsCircuitTypesPartialUpdateRequest
+
+	// CircuitsCircuitTypesPartialUpdateExecute executes the request
+	//  @return CircuitType
+	CircuitsCircuitTypesPartialUpdateExecute(r ApiCircuitsCircuitTypesPartialUpdateRequest) (*CircuitType, *http.Response, error)
+
+	/*
+	CircuitsCircuitTypesRetrieve Method for CircuitsCircuitTypesRetrieve
+
+	Get a circuit type object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit type.
+	@return ApiCircuitsCircuitTypesRetrieveRequest
+	*/
+	CircuitsCircuitTypesRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitTypesRetrieveRequest
+
+	// CircuitsCircuitTypesRetrieveExecute executes the request
+	//  @return CircuitType
+	CircuitsCircuitTypesRetrieveExecute(r ApiCircuitsCircuitTypesRetrieveRequest) (*CircuitType, *http.Response, error)
+
+	/*
+	CircuitsCircuitTypesUpdate Method for CircuitsCircuitTypesUpdate
+
+	Put a circuit type object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit type.
+	@return ApiCircuitsCircuitTypesUpdateRequest
+	*/
+	CircuitsCircuitTypesUpdate(ctx context.Context, id int32) ApiCircuitsCircuitTypesUpdateRequest
+
+	// CircuitsCircuitTypesUpdateExecute executes the request
+	//  @return CircuitType
+	CircuitsCircuitTypesUpdateExecute(r ApiCircuitsCircuitTypesUpdateRequest) (*CircuitType, *http.Response, error)
+
+	/*
+	CircuitsCircuitsBulkDestroy Method for CircuitsCircuitsBulkDestroy
+
+	Delete a list of circuit objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitsBulkDestroyRequest
+	*/
+	CircuitsCircuitsBulkDestroy(ctx context.Context) ApiCircuitsCircuitsBulkDestroyRequest
+
+	// CircuitsCircuitsBulkDestroyExecute executes the request
+	CircuitsCircuitsBulkDestroyExecute(r ApiCircuitsCircuitsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsCircuitsBulkPartialUpdate Method for CircuitsCircuitsBulkPartialUpdate
+
+	Patch a list of circuit objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitsBulkPartialUpdateRequest
+	*/
+	CircuitsCircuitsBulkPartialUpdate(ctx context.Context) ApiCircuitsCircuitsBulkPartialUpdateRequest
+
+	// CircuitsCircuitsBulkPartialUpdateExecute executes the request
+	//  @return []Circuit
+	CircuitsCircuitsBulkPartialUpdateExecute(r ApiCircuitsCircuitsBulkPartialUpdateRequest) ([]Circuit, *http.Response, error)
+
+	/*
+	CircuitsCircuitsBulkUpdate Method for CircuitsCircuitsBulkUpdate
+
+	Put a list of circuit objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitsBulkUpdateRequest
+	*/
+	CircuitsCircuitsBulkUpdate(ctx context.Context) ApiCircuitsCircuitsBulkUpdateRequest
+
+	// CircuitsCircuitsBulkUpdateExecute executes the request
+	//  @return []Circuit
+	CircuitsCircuitsBulkUpdateExecute(r ApiCircuitsCircuitsBulkUpdateRequest) ([]Circuit, *http.Response, error)
+
+	/*
+	CircuitsCircuitsCreate Method for CircuitsCircuitsCreate
+
+	Post a list of circuit objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitsCreateRequest
+	*/
+	CircuitsCircuitsCreate(ctx context.Context) ApiCircuitsCircuitsCreateRequest
+
+	// CircuitsCircuitsCreateExecute executes the request
+	//  @return Circuit
+	CircuitsCircuitsCreateExecute(r ApiCircuitsCircuitsCreateRequest) (*Circuit, *http.Response, error)
+
+	/*
+	CircuitsCircuitsDestroy Method for CircuitsCircuitsDestroy
+
+	Delete a circuit object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit.
+	@return ApiCircuitsCircuitsDestroyRequest
+	*/
+	CircuitsCircuitsDestroy(ctx context.Context, id int32) ApiCircuitsCircuitsDestroyRequest
+
+	// CircuitsCircuitsDestroyExecute executes the request
+	CircuitsCircuitsDestroyExecute(r ApiCircuitsCircuitsDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsCircuitsList Method for CircuitsCircuitsList
+
+	Get a list of circuit objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsCircuitsListRequest
+	*/
+	CircuitsCircuitsList(ctx context.Context) ApiCircuitsCircuitsListRequest
+
+	// CircuitsCircuitsListExecute executes the request
+	//  @return PaginatedCircuitList
+	CircuitsCircuitsListExecute(r ApiCircuitsCircuitsListRequest) (*PaginatedCircuitList, *http.Response, error)
+
+	/*
+	CircuitsCircuitsPartialUpdate Method for CircuitsCircuitsPartialUpdate
+
+	Patch a circuit object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit.
+	@return ApiCircuitsCircuitsPartialUpdateRequest
+	*/
+	CircuitsCircuitsPartialUpdate(ctx context.Context, id int32) ApiCircuitsCircuitsPartialUpdateRequest
+
+	// CircuitsCircuitsPartialUpdateExecute executes the request
+	//  @return Circuit
+	CircuitsCircuitsPartialUpdateExecute(r ApiCircuitsCircuitsPartialUpdateRequest) (*Circuit, *http.Response, error)
+
+	/*
+	CircuitsCircuitsRetrieve Method for CircuitsCircuitsRetrieve
+
+	Get a circuit object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit.
+	@return ApiCircuitsCircuitsRetrieveRequest
+	*/
+	CircuitsCircuitsRetrieve(ctx context.Context, id int32) ApiCircuitsCircuitsRetrieveRequest
+
+	// CircuitsCircuitsRetrieveExecute executes the request
+	//  @return Circuit
+	CircuitsCircuitsRetrieveExecute(r ApiCircuitsCircuitsRetrieveRequest) (*Circuit, *http.Response, error)
+
+	/*
+	CircuitsCircuitsUpdate Method for CircuitsCircuitsUpdate
+
+	Put a circuit object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this circuit.
+	@return ApiCircuitsCircuitsUpdateRequest
+	*/
+	CircuitsCircuitsUpdate(ctx context.Context, id int32) ApiCircuitsCircuitsUpdateRequest
+
+	// CircuitsCircuitsUpdateExecute executes the request
+	//  @return Circuit
+	CircuitsCircuitsUpdateExecute(r ApiCircuitsCircuitsUpdateRequest) (*Circuit, *http.Response, error)
+
+	/*
+	CircuitsProviderAccountsBulkDestroy Method for CircuitsProviderAccountsBulkDestroy
+
+	Delete a list of provider account objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderAccountsBulkDestroyRequest
+	*/
+	CircuitsProviderAccountsBulkDestroy(ctx context.Context) ApiCircuitsProviderAccountsBulkDestroyRequest
+
+	// CircuitsProviderAccountsBulkDestroyExecute executes the request
+	CircuitsProviderAccountsBulkDestroyExecute(r ApiCircuitsProviderAccountsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsProviderAccountsBulkPartialUpdate Method for CircuitsProviderAccountsBulkPartialUpdate
+
+	Patch a list of provider account objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderAccountsBulkPartialUpdateRequest
+	*/
+	CircuitsProviderAccountsBulkPartialUpdate(ctx context.Context) ApiCircuitsProviderAccountsBulkPartialUpdateRequest
+
+	// CircuitsProviderAccountsBulkPartialUpdateExecute executes the request
+	//  @return []ProviderAccount
+	CircuitsProviderAccountsBulkPartialUpdateExecute(r ApiCircuitsProviderAccountsBulkPartialUpdateRequest) ([]ProviderAccount, *http.Response, error)
+
+	/*
+	CircuitsProviderAccountsBulkUpdate Method for CircuitsProviderAccountsBulkUpdate
+
+	Put a list of provider account objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderAccountsBulkUpdateRequest
+	*/
+	CircuitsProviderAccountsBulkUpdate(ctx context.Context) ApiCircuitsProviderAccountsBulkUpdateRequest
+
+	// CircuitsProviderAccountsBulkUpdateExecute executes the request
+	//  @return []ProviderAccount
+	CircuitsProviderAccountsBulkUpdateExecute(r ApiCircuitsProviderAccountsBulkUpdateRequest) ([]ProviderAccount, *http.Response, error)
+
+	/*
+	CircuitsProviderAccountsCreate Method for CircuitsProviderAccountsCreate
+
+	Post a list of provider account objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderAccountsCreateRequest
+	*/
+	CircuitsProviderAccountsCreate(ctx context.Context) ApiCircuitsProviderAccountsCreateRequest
+
+	// CircuitsProviderAccountsCreateExecute executes the request
+	//  @return ProviderAccount
+	CircuitsProviderAccountsCreateExecute(r ApiCircuitsProviderAccountsCreateRequest) (*ProviderAccount, *http.Response, error)
+
+	/*
+	CircuitsProviderAccountsDestroy Method for CircuitsProviderAccountsDestroy
+
+	Delete a provider account object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider account.
+	@return ApiCircuitsProviderAccountsDestroyRequest
+	*/
+	CircuitsProviderAccountsDestroy(ctx context.Context, id int32) ApiCircuitsProviderAccountsDestroyRequest
+
+	// CircuitsProviderAccountsDestroyExecute executes the request
+	CircuitsProviderAccountsDestroyExecute(r ApiCircuitsProviderAccountsDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsProviderAccountsList Method for CircuitsProviderAccountsList
+
+	Get a list of provider account objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderAccountsListRequest
+	*/
+	CircuitsProviderAccountsList(ctx context.Context) ApiCircuitsProviderAccountsListRequest
+
+	// CircuitsProviderAccountsListExecute executes the request
+	//  @return PaginatedProviderAccountList
+	CircuitsProviderAccountsListExecute(r ApiCircuitsProviderAccountsListRequest) (*PaginatedProviderAccountList, *http.Response, error)
+
+	/*
+	CircuitsProviderAccountsPartialUpdate Method for CircuitsProviderAccountsPartialUpdate
+
+	Patch a provider account object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider account.
+	@return ApiCircuitsProviderAccountsPartialUpdateRequest
+	*/
+	CircuitsProviderAccountsPartialUpdate(ctx context.Context, id int32) ApiCircuitsProviderAccountsPartialUpdateRequest
+
+	// CircuitsProviderAccountsPartialUpdateExecute executes the request
+	//  @return ProviderAccount
+	CircuitsProviderAccountsPartialUpdateExecute(r ApiCircuitsProviderAccountsPartialUpdateRequest) (*ProviderAccount, *http.Response, error)
+
+	/*
+	CircuitsProviderAccountsRetrieve Method for CircuitsProviderAccountsRetrieve
+
+	Get a provider account object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider account.
+	@return ApiCircuitsProviderAccountsRetrieveRequest
+	*/
+	CircuitsProviderAccountsRetrieve(ctx context.Context, id int32) ApiCircuitsProviderAccountsRetrieveRequest
+
+	// CircuitsProviderAccountsRetrieveExecute executes the request
+	//  @return ProviderAccount
+	CircuitsProviderAccountsRetrieveExecute(r ApiCircuitsProviderAccountsRetrieveRequest) (*ProviderAccount, *http.Response, error)
+
+	/*
+	CircuitsProviderAccountsUpdate Method for CircuitsProviderAccountsUpdate
+
+	Put a provider account object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider account.
+	@return ApiCircuitsProviderAccountsUpdateRequest
+	*/
+	CircuitsProviderAccountsUpdate(ctx context.Context, id int32) ApiCircuitsProviderAccountsUpdateRequest
+
+	// CircuitsProviderAccountsUpdateExecute executes the request
+	//  @return ProviderAccount
+	CircuitsProviderAccountsUpdateExecute(r ApiCircuitsProviderAccountsUpdateRequest) (*ProviderAccount, *http.Response, error)
+
+	/*
+	CircuitsProviderNetworksBulkDestroy Method for CircuitsProviderNetworksBulkDestroy
+
+	Delete a list of provider network objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderNetworksBulkDestroyRequest
+	*/
+	CircuitsProviderNetworksBulkDestroy(ctx context.Context) ApiCircuitsProviderNetworksBulkDestroyRequest
+
+	// CircuitsProviderNetworksBulkDestroyExecute executes the request
+	CircuitsProviderNetworksBulkDestroyExecute(r ApiCircuitsProviderNetworksBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsProviderNetworksBulkPartialUpdate Method for CircuitsProviderNetworksBulkPartialUpdate
+
+	Patch a list of provider network objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderNetworksBulkPartialUpdateRequest
+	*/
+	CircuitsProviderNetworksBulkPartialUpdate(ctx context.Context) ApiCircuitsProviderNetworksBulkPartialUpdateRequest
+
+	// CircuitsProviderNetworksBulkPartialUpdateExecute executes the request
+	//  @return []ProviderNetwork
+	CircuitsProviderNetworksBulkPartialUpdateExecute(r ApiCircuitsProviderNetworksBulkPartialUpdateRequest) ([]ProviderNetwork, *http.Response, error)
+
+	/*
+	CircuitsProviderNetworksBulkUpdate Method for CircuitsProviderNetworksBulkUpdate
+
+	Put a list of provider network objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderNetworksBulkUpdateRequest
+	*/
+	CircuitsProviderNetworksBulkUpdate(ctx context.Context) ApiCircuitsProviderNetworksBulkUpdateRequest
+
+	// CircuitsProviderNetworksBulkUpdateExecute executes the request
+	//  @return []ProviderNetwork
+	CircuitsProviderNetworksBulkUpdateExecute(r ApiCircuitsProviderNetworksBulkUpdateRequest) ([]ProviderNetwork, *http.Response, error)
+
+	/*
+	CircuitsProviderNetworksCreate Method for CircuitsProviderNetworksCreate
+
+	Post a list of provider network objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderNetworksCreateRequest
+	*/
+	CircuitsProviderNetworksCreate(ctx context.Context) ApiCircuitsProviderNetworksCreateRequest
+
+	// CircuitsProviderNetworksCreateExecute executes the request
+	//  @return ProviderNetwork
+	CircuitsProviderNetworksCreateExecute(r ApiCircuitsProviderNetworksCreateRequest) (*ProviderNetwork, *http.Response, error)
+
+	/*
+	CircuitsProviderNetworksDestroy Method for CircuitsProviderNetworksDestroy
+
+	Delete a provider network object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider network.
+	@return ApiCircuitsProviderNetworksDestroyRequest
+	*/
+	CircuitsProviderNetworksDestroy(ctx context.Context, id int32) ApiCircuitsProviderNetworksDestroyRequest
+
+	// CircuitsProviderNetworksDestroyExecute executes the request
+	CircuitsProviderNetworksDestroyExecute(r ApiCircuitsProviderNetworksDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsProviderNetworksList Method for CircuitsProviderNetworksList
+
+	Get a list of provider network objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProviderNetworksListRequest
+	*/
+	CircuitsProviderNetworksList(ctx context.Context) ApiCircuitsProviderNetworksListRequest
+
+	// CircuitsProviderNetworksListExecute executes the request
+	//  @return PaginatedProviderNetworkList
+	CircuitsProviderNetworksListExecute(r ApiCircuitsProviderNetworksListRequest) (*PaginatedProviderNetworkList, *http.Response, error)
+
+	/*
+	CircuitsProviderNetworksPartialUpdate Method for CircuitsProviderNetworksPartialUpdate
+
+	Patch a provider network object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider network.
+	@return ApiCircuitsProviderNetworksPartialUpdateRequest
+	*/
+	CircuitsProviderNetworksPartialUpdate(ctx context.Context, id int32) ApiCircuitsProviderNetworksPartialUpdateRequest
+
+	// CircuitsProviderNetworksPartialUpdateExecute executes the request
+	//  @return ProviderNetwork
+	CircuitsProviderNetworksPartialUpdateExecute(r ApiCircuitsProviderNetworksPartialUpdateRequest) (*ProviderNetwork, *http.Response, error)
+
+	/*
+	CircuitsProviderNetworksRetrieve Method for CircuitsProviderNetworksRetrieve
+
+	Get a provider network object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider network.
+	@return ApiCircuitsProviderNetworksRetrieveRequest
+	*/
+	CircuitsProviderNetworksRetrieve(ctx context.Context, id int32) ApiCircuitsProviderNetworksRetrieveRequest
+
+	// CircuitsProviderNetworksRetrieveExecute executes the request
+	//  @return ProviderNetwork
+	CircuitsProviderNetworksRetrieveExecute(r ApiCircuitsProviderNetworksRetrieveRequest) (*ProviderNetwork, *http.Response, error)
+
+	/*
+	CircuitsProviderNetworksUpdate Method for CircuitsProviderNetworksUpdate
+
+	Put a provider network object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider network.
+	@return ApiCircuitsProviderNetworksUpdateRequest
+	*/
+	CircuitsProviderNetworksUpdate(ctx context.Context, id int32) ApiCircuitsProviderNetworksUpdateRequest
+
+	// CircuitsProviderNetworksUpdateExecute executes the request
+	//  @return ProviderNetwork
+	CircuitsProviderNetworksUpdateExecute(r ApiCircuitsProviderNetworksUpdateRequest) (*ProviderNetwork, *http.Response, error)
+
+	/*
+	CircuitsProvidersBulkDestroy Method for CircuitsProvidersBulkDestroy
+
+	Delete a list of provider objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProvidersBulkDestroyRequest
+	*/
+	CircuitsProvidersBulkDestroy(ctx context.Context) ApiCircuitsProvidersBulkDestroyRequest
+
+	// CircuitsProvidersBulkDestroyExecute executes the request
+	CircuitsProvidersBulkDestroyExecute(r ApiCircuitsProvidersBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsProvidersBulkPartialUpdate Method for CircuitsProvidersBulkPartialUpdate
+
+	Patch a list of provider objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProvidersBulkPartialUpdateRequest
+	*/
+	CircuitsProvidersBulkPartialUpdate(ctx context.Context) ApiCircuitsProvidersBulkPartialUpdateRequest
+
+	// CircuitsProvidersBulkPartialUpdateExecute executes the request
+	//  @return []Provider
+	CircuitsProvidersBulkPartialUpdateExecute(r ApiCircuitsProvidersBulkPartialUpdateRequest) ([]Provider, *http.Response, error)
+
+	/*
+	CircuitsProvidersBulkUpdate Method for CircuitsProvidersBulkUpdate
+
+	Put a list of provider objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProvidersBulkUpdateRequest
+	*/
+	CircuitsProvidersBulkUpdate(ctx context.Context) ApiCircuitsProvidersBulkUpdateRequest
+
+	// CircuitsProvidersBulkUpdateExecute executes the request
+	//  @return []Provider
+	CircuitsProvidersBulkUpdateExecute(r ApiCircuitsProvidersBulkUpdateRequest) ([]Provider, *http.Response, error)
+
+	/*
+	CircuitsProvidersCreate Method for CircuitsProvidersCreate
+
+	Post a list of provider objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProvidersCreateRequest
+	*/
+	CircuitsProvidersCreate(ctx context.Context) ApiCircuitsProvidersCreateRequest
+
+	// CircuitsProvidersCreateExecute executes the request
+	//  @return Provider
+	CircuitsProvidersCreateExecute(r ApiCircuitsProvidersCreateRequest) (*Provider, *http.Response, error)
+
+	/*
+	CircuitsProvidersDestroy Method for CircuitsProvidersDestroy
+
+	Delete a provider object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider.
+	@return ApiCircuitsProvidersDestroyRequest
+	*/
+	CircuitsProvidersDestroy(ctx context.Context, id int32) ApiCircuitsProvidersDestroyRequest
+
+	// CircuitsProvidersDestroyExecute executes the request
+	CircuitsProvidersDestroyExecute(r ApiCircuitsProvidersDestroyRequest) (*http.Response, error)
+
+	/*
+	CircuitsProvidersList Method for CircuitsProvidersList
+
+	Get a list of provider objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCircuitsProvidersListRequest
+	*/
+	CircuitsProvidersList(ctx context.Context) ApiCircuitsProvidersListRequest
+
+	// CircuitsProvidersListExecute executes the request
+	//  @return PaginatedProviderList
+	CircuitsProvidersListExecute(r ApiCircuitsProvidersListRequest) (*PaginatedProviderList, *http.Response, error)
+
+	/*
+	CircuitsProvidersPartialUpdate Method for CircuitsProvidersPartialUpdate
+
+	Patch a provider object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider.
+	@return ApiCircuitsProvidersPartialUpdateRequest
+	*/
+	CircuitsProvidersPartialUpdate(ctx context.Context, id int32) ApiCircuitsProvidersPartialUpdateRequest
+
+	// CircuitsProvidersPartialUpdateExecute executes the request
+	//  @return Provider
+	CircuitsProvidersPartialUpdateExecute(r ApiCircuitsProvidersPartialUpdateRequest) (*Provider, *http.Response, error)
+
+	/*
+	CircuitsProvidersRetrieve Method for CircuitsProvidersRetrieve
+
+	Get a provider object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider.
+	@return ApiCircuitsProvidersRetrieveRequest
+	*/
+	CircuitsProvidersRetrieve(ctx context.Context, id int32) ApiCircuitsProvidersRetrieveRequest
+
+	// CircuitsProvidersRetrieveExecute executes the request
+	//  @return Provider
+	CircuitsProvidersRetrieveExecute(r ApiCircuitsProvidersRetrieveRequest) (*Provider, *http.Response, error)
+
+	/*
+	CircuitsProvidersUpdate Method for CircuitsProvidersUpdate
+
+	Put a provider object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this provider.
+	@return ApiCircuitsProvidersUpdateRequest
+	*/
+	CircuitsProvidersUpdate(ctx context.Context, id int32) ApiCircuitsProvidersUpdateRequest
+
+	// CircuitsProvidersUpdateExecute executes the request
+	//  @return Provider
+	CircuitsProvidersUpdateExecute(r ApiCircuitsProvidersUpdateRequest) (*Provider, *http.Response, error)
+}
+
 // CircuitsAPIService CircuitsAPI service
 type CircuitsAPIService service
 
 type ApiCircuitsCircuitGroupAssignmentsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitGroupAssignmentRequest *[]CircuitGroupAssignmentRequest
 }
 
@@ -140,7 +1182,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkDestroyExecute(r
 
 type ApiCircuitsCircuitGroupAssignmentsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitGroupAssignmentRequest *[]CircuitGroupAssignmentRequest
 }
 
@@ -264,7 +1306,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkPartialUpdateExe
 
 type ApiCircuitsCircuitGroupAssignmentsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitGroupAssignmentRequest *[]CircuitGroupAssignmentRequest
 }
 
@@ -388,7 +1430,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsBulkUpdateExecute(r 
 
 type ApiCircuitsCircuitGroupAssignmentsCreateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	writableCircuitGroupAssignmentRequest *WritableCircuitGroupAssignmentRequest
 }
 
@@ -512,7 +1554,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsCreateExecute(r ApiC
 
 type ApiCircuitsCircuitGroupAssignmentsDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -618,7 +1660,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsDestroyExecute(r Api
 
 type ApiCircuitsCircuitGroupAssignmentsListRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuit *[]string
 	circuitN *[]string
 	circuitId *[]int32
@@ -1407,7 +2449,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsListExecute(r ApiCir
 
 type ApiCircuitsCircuitGroupAssignmentsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	patchedWritableCircuitGroupAssignmentRequest *PatchedWritableCircuitGroupAssignmentRequest
 }
@@ -1532,7 +2574,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsPartialUpdateExecute
 
 type ApiCircuitsCircuitGroupAssignmentsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -1649,7 +2691,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsRetrieveExecute(r Ap
 
 type ApiCircuitsCircuitGroupAssignmentsUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	writableCircuitGroupAssignmentRequest *WritableCircuitGroupAssignmentRequest
 }
@@ -1777,7 +2819,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupAssignmentsUpdateExecute(r ApiC
 
 type ApiCircuitsCircuitGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitGroupRequest *[]CircuitGroupRequest
 }
 
@@ -1890,7 +2932,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkDestroyExecute(r ApiCircui
 
 type ApiCircuitsCircuitGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitGroupRequest *[]CircuitGroupRequest
 }
 
@@ -2014,7 +3056,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkPartialUpdateExecute(r Api
 
 type ApiCircuitsCircuitGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitGroupRequest *[]CircuitGroupRequest
 }
 
@@ -2138,7 +3180,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsBulkUpdateExecute(r ApiCircuit
 
 type ApiCircuitsCircuitGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitGroupRequest *CircuitGroupRequest
 }
 
@@ -2262,7 +3304,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsCreateExecute(r ApiCircuitsCir
 
 type ApiCircuitsCircuitGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -2368,7 +3410,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsDestroyExecute(r ApiCircuitsCi
 
 type ApiCircuitsCircuitGroupsListRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -3608,7 +4650,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsListExecute(r ApiCircuitsCircu
 
 type ApiCircuitsCircuitGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	patchedCircuitGroupRequest *PatchedCircuitGroupRequest
 }
@@ -3733,7 +4775,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsPartialUpdateExecute(r ApiCirc
 
 type ApiCircuitsCircuitGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -3850,7 +4892,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsRetrieveExecute(r ApiCircuitsC
 
 type ApiCircuitsCircuitGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	circuitGroupRequest *CircuitGroupRequest
 }
@@ -3978,7 +5020,7 @@ func (a *CircuitsAPIService) CircuitsCircuitGroupsUpdateExecute(r ApiCircuitsCir
 
 type ApiCircuitsCircuitTerminationsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitTerminationRequest *[]CircuitTerminationRequest
 }
 
@@ -4091,7 +5133,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkDestroyExecute(r Api
 
 type ApiCircuitsCircuitTerminationsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitTerminationRequest *[]CircuitTerminationRequest
 }
 
@@ -4215,7 +5257,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkPartialUpdateExecute
 
 type ApiCircuitsCircuitTerminationsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitTerminationRequest *[]CircuitTerminationRequest
 }
 
@@ -4339,7 +5381,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsBulkUpdateExecute(r ApiC
 
 type ApiCircuitsCircuitTerminationsCreateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitTerminationRequest *CircuitTerminationRequest
 }
 
@@ -4463,7 +5505,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsCreateExecute(r ApiCircu
 
 type ApiCircuitsCircuitTerminationsDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -4569,7 +5611,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsDestroyExecute(r ApiCirc
 
 type ApiCircuitsCircuitTerminationsListRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	cableEnd *CircuitsCircuitTerminationsListCableEndParameter
 	cableId *[]*int32
 	cableIdN *[]*int32
@@ -6190,7 +7232,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsListExecute(r ApiCircuit
 
 type ApiCircuitsCircuitTerminationsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	patchedCircuitTerminationRequest *PatchedCircuitTerminationRequest
 }
@@ -6315,7 +7357,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsPartialUpdateExecute(r A
 
 type ApiCircuitsCircuitTerminationsPathsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -6432,7 +7474,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsPathsRetrieveExecute(r A
 
 type ApiCircuitsCircuitTerminationsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -6549,7 +7591,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsRetrieveExecute(r ApiCir
 
 type ApiCircuitsCircuitTerminationsUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	circuitTerminationRequest *CircuitTerminationRequest
 }
@@ -6677,7 +7719,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsUpdateExecute(r ApiCircu
 
 type ApiCircuitsCircuitTypesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitTypeRequest *[]CircuitTypeRequest
 }
 
@@ -6790,7 +7832,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesBulkDestroyExecute(r ApiCircuit
 
 type ApiCircuitsCircuitTypesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitTypeRequest *[]CircuitTypeRequest
 }
 
@@ -6914,7 +7956,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesBulkPartialUpdateExecute(r ApiC
 
 type ApiCircuitsCircuitTypesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitTypeRequest *[]CircuitTypeRequest
 }
 
@@ -7038,7 +8080,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesBulkUpdateExecute(r ApiCircuits
 
 type ApiCircuitsCircuitTypesCreateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitTypeRequest *CircuitTypeRequest
 }
 
@@ -7162,7 +8204,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesCreateExecute(r ApiCircuitsCirc
 
 type ApiCircuitsCircuitTypesDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -7268,7 +8310,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesDestroyExecute(r ApiCircuitsCir
 
 type ApiCircuitsCircuitTypesListRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	color *[]string
 	colorEmpty *bool
 	colorIc *[]string
@@ -8547,7 +9589,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesListExecute(r ApiCircuitsCircui
 
 type ApiCircuitsCircuitTypesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	patchedCircuitTypeRequest *PatchedCircuitTypeRequest
 }
@@ -8672,7 +9714,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesPartialUpdateExecute(r ApiCircu
 
 type ApiCircuitsCircuitTypesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -8789,7 +9831,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesRetrieveExecute(r ApiCircuitsCi
 
 type ApiCircuitsCircuitTypesUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	circuitTypeRequest *CircuitTypeRequest
 }
@@ -8917,7 +9959,7 @@ func (a *CircuitsAPIService) CircuitsCircuitTypesUpdateExecute(r ApiCircuitsCirc
 
 type ApiCircuitsCircuitsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitRequest *[]CircuitRequest
 }
 
@@ -9030,7 +10072,7 @@ func (a *CircuitsAPIService) CircuitsCircuitsBulkDestroyExecute(r ApiCircuitsCir
 
 type ApiCircuitsCircuitsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitRequest *[]CircuitRequest
 }
 
@@ -9154,7 +10196,7 @@ func (a *CircuitsAPIService) CircuitsCircuitsBulkPartialUpdateExecute(r ApiCircu
 
 type ApiCircuitsCircuitsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	circuitRequest *[]CircuitRequest
 }
 
@@ -9278,7 +10320,7 @@ func (a *CircuitsAPIService) CircuitsCircuitsBulkUpdateExecute(r ApiCircuitsCirc
 
 type ApiCircuitsCircuitsCreateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	writableCircuitRequest *WritableCircuitRequest
 }
 
@@ -9402,7 +10444,7 @@ func (a *CircuitsAPIService) CircuitsCircuitsCreateExecute(r ApiCircuitsCircuits
 
 type ApiCircuitsCircuitsDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -9508,7 +10550,7 @@ func (a *CircuitsAPIService) CircuitsCircuitsDestroyExecute(r ApiCircuitsCircuit
 
 type ApiCircuitsCircuitsListRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	cid *[]string
 	cidEmpty *bool
 	cidIc *[]string
@@ -11728,7 +12770,7 @@ func (a *CircuitsAPIService) CircuitsCircuitsListExecute(r ApiCircuitsCircuitsLi
 
 type ApiCircuitsCircuitsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	patchedWritableCircuitRequest *PatchedWritableCircuitRequest
 }
@@ -11853,7 +12895,7 @@ func (a *CircuitsAPIService) CircuitsCircuitsPartialUpdateExecute(r ApiCircuitsC
 
 type ApiCircuitsCircuitsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -11970,7 +13012,7 @@ func (a *CircuitsAPIService) CircuitsCircuitsRetrieveExecute(r ApiCircuitsCircui
 
 type ApiCircuitsCircuitsUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	writableCircuitRequest *WritableCircuitRequest
 }
@@ -12098,7 +13140,7 @@ func (a *CircuitsAPIService) CircuitsCircuitsUpdateExecute(r ApiCircuitsCircuits
 
 type ApiCircuitsProviderAccountsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerAccountRequest *[]ProviderAccountRequest
 }
 
@@ -12211,7 +13253,7 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsBulkDestroyExecute(r ApiCir
 
 type ApiCircuitsProviderAccountsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerAccountRequest *[]ProviderAccountRequest
 }
 
@@ -12335,7 +13377,7 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsBulkPartialUpdateExecute(r 
 
 type ApiCircuitsProviderAccountsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerAccountRequest *[]ProviderAccountRequest
 }
 
@@ -12459,7 +13501,7 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsBulkUpdateExecute(r ApiCirc
 
 type ApiCircuitsProviderAccountsCreateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerAccountRequest *ProviderAccountRequest
 }
 
@@ -12583,7 +13625,7 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsCreateExecute(r ApiCircuits
 
 type ApiCircuitsProviderAccountsDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -12689,7 +13731,7 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsDestroyExecute(r ApiCircuit
 
 type ApiCircuitsProviderAccountsListRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	account *[]string
 	accountEmpty *bool
 	accountIc *[]string
@@ -13861,7 +14903,7 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsListExecute(r ApiCircuitsPr
 
 type ApiCircuitsProviderAccountsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	patchedProviderAccountRequest *PatchedProviderAccountRequest
 }
@@ -13986,7 +15028,7 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsPartialUpdateExecute(r ApiC
 
 type ApiCircuitsProviderAccountsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -14103,7 +15145,7 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsRetrieveExecute(r ApiCircui
 
 type ApiCircuitsProviderAccountsUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	providerAccountRequest *ProviderAccountRequest
 }
@@ -14231,7 +15273,7 @@ func (a *CircuitsAPIService) CircuitsProviderAccountsUpdateExecute(r ApiCircuits
 
 type ApiCircuitsProviderNetworksBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerNetworkRequest *[]ProviderNetworkRequest
 }
 
@@ -14344,7 +15386,7 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksBulkDestroyExecute(r ApiCir
 
 type ApiCircuitsProviderNetworksBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerNetworkRequest *[]ProviderNetworkRequest
 }
 
@@ -14468,7 +15510,7 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksBulkPartialUpdateExecute(r 
 
 type ApiCircuitsProviderNetworksBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerNetworkRequest *[]ProviderNetworkRequest
 }
 
@@ -14592,7 +15634,7 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksBulkUpdateExecute(r ApiCirc
 
 type ApiCircuitsProviderNetworksCreateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerNetworkRequest *ProviderNetworkRequest
 }
 
@@ -14716,7 +15758,7 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksCreateExecute(r ApiCircuits
 
 type ApiCircuitsProviderNetworksDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -14822,7 +15864,7 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksDestroyExecute(r ApiCircuit
 
 type ApiCircuitsProviderNetworksListRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -15994,7 +17036,7 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksListExecute(r ApiCircuitsPr
 
 type ApiCircuitsProviderNetworksPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	patchedProviderNetworkRequest *PatchedProviderNetworkRequest
 }
@@ -16119,7 +17161,7 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksPartialUpdateExecute(r ApiC
 
 type ApiCircuitsProviderNetworksRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -16236,7 +17278,7 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksRetrieveExecute(r ApiCircui
 
 type ApiCircuitsProviderNetworksUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	providerNetworkRequest *ProviderNetworkRequest
 }
@@ -16364,7 +17406,7 @@ func (a *CircuitsAPIService) CircuitsProviderNetworksUpdateExecute(r ApiCircuits
 
 type ApiCircuitsProvidersBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerRequest *[]ProviderRequest
 }
 
@@ -16477,7 +17519,7 @@ func (a *CircuitsAPIService) CircuitsProvidersBulkDestroyExecute(r ApiCircuitsPr
 
 type ApiCircuitsProvidersBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerRequest *[]ProviderRequest
 }
 
@@ -16601,7 +17643,7 @@ func (a *CircuitsAPIService) CircuitsProvidersBulkPartialUpdateExecute(r ApiCirc
 
 type ApiCircuitsProvidersBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerRequest *[]ProviderRequest
 }
 
@@ -16725,7 +17767,7 @@ func (a *CircuitsAPIService) CircuitsProvidersBulkUpdateExecute(r ApiCircuitsPro
 
 type ApiCircuitsProvidersCreateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	providerRequest *ProviderRequest
 }
 
@@ -16849,7 +17891,7 @@ func (a *CircuitsAPIService) CircuitsProvidersCreateExecute(r ApiCircuitsProvide
 
 type ApiCircuitsProvidersDestroyRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -16955,7 +17997,7 @@ func (a *CircuitsAPIService) CircuitsProvidersDestroyExecute(r ApiCircuitsProvid
 
 type ApiCircuitsProvidersListRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	asn *[]int64
 	asnN *[]int64
 	asnId *[]int32
@@ -18441,7 +19483,7 @@ func (a *CircuitsAPIService) CircuitsProvidersListExecute(r ApiCircuitsProviders
 
 type ApiCircuitsProvidersPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	patchedProviderRequest *PatchedProviderRequest
 }
@@ -18566,7 +19608,7 @@ func (a *CircuitsAPIService) CircuitsProvidersPartialUpdateExecute(r ApiCircuits
 
 type ApiCircuitsProvidersRetrieveRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 }
 
@@ -18683,7 +19725,7 @@ func (a *CircuitsAPIService) CircuitsProvidersRetrieveExecute(r ApiCircuitsProvi
 
 type ApiCircuitsProvidersUpdateRequest struct {
 	ctx context.Context
-	ApiService *CircuitsAPIService
+	ApiService CircuitsAPI
 	id int32
 	providerRequest *ProviderRequest
 }
