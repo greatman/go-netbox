@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **TerminationZ** | [**NullableCircuitCircuitTermination**](CircuitCircuitTermination.md) |  | [readonly] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **Assignments** | Pointer to [**[]BriefCircuitGroupAssignmentSerializer**](BriefCircuitGroupAssignmentSerializer.md) |  | [optional] 
@@ -523,20 +523,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *Circuit) GetCustomFields() map[string]interface{}`
+`func (o *Circuit) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *Circuit) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *Circuit) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *Circuit) SetCustomFields(v map[string]interface{})`
+`func (o *Circuit) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

@@ -30,10 +30,10 @@ type CircuitGroup struct {
 	Description *string `json:"description,omitempty"`
 	Tenant NullableBriefTenant `json:"tenant,omitempty"`
 	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	CustomFields *map[string]string `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	CircuitCount int64 `json:"circuit_count"`
+	CircuitCount *int64 `json:"circuit_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,7 +43,7 @@ type _CircuitGroup CircuitGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCircuitGroup(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int64) *CircuitGroup {
+func NewCircuitGroup(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime) *CircuitGroup {
 	this := CircuitGroup{}
 	this.Id = id
 	this.Url = url
@@ -53,7 +53,6 @@ func NewCircuitGroup(id int32, url string, displayUrl string, display string, na
 	this.Slug = slug
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.CircuitCount = circuitCount
 	return &this
 }
 
@@ -316,19 +315,19 @@ func (o *CircuitGroup) SetTags(v []NestedTag) {
 }
 
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise.
-func (o *CircuitGroup) GetCustomFields() map[string]interface{} {
+func (o *CircuitGroup) GetCustomFields() map[string]string {
 	if o == nil || IsNil(o.CustomFields) {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
-	return o.CustomFields
+	return *o.CustomFields
 }
 
 // GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CircuitGroup) GetCustomFieldsOk() (map[string]interface{}, bool) {
+func (o *CircuitGroup) GetCustomFieldsOk() (*map[string]string, bool) {
 	if o == nil || IsNil(o.CustomFields) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.CustomFields, true
 }
@@ -342,9 +341,9 @@ func (o *CircuitGroup) HasCustomFields() bool {
 	return false
 }
 
-// SetCustomFields gets a reference to the given map[string]interface{} and assigns it to the CustomFields field.
-func (o *CircuitGroup) SetCustomFields(v map[string]interface{}) {
-	o.CustomFields = v
+// SetCustomFields gets a reference to the given map[string]string and assigns it to the CustomFields field.
+func (o *CircuitGroup) SetCustomFields(v map[string]string) {
+	o.CustomFields = &v
 }
 
 // GetCreated returns the Created field value
@@ -399,28 +398,36 @@ func (o *CircuitGroup) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetCircuitCount returns the CircuitCount field value
+// GetCircuitCount returns the CircuitCount field value if set, zero value otherwise.
 func (o *CircuitGroup) GetCircuitCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.CircuitCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.CircuitCount
+	return *o.CircuitCount
 }
 
-// GetCircuitCountOk returns a tuple with the CircuitCount field value
+// GetCircuitCountOk returns a tuple with the CircuitCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CircuitGroup) GetCircuitCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CircuitCount) {
 		return nil, false
 	}
-	return &o.CircuitCount, true
+	return o.CircuitCount, true
 }
 
-// SetCircuitCount sets field value
+// HasCircuitCount returns a boolean if a field has been set.
+func (o *CircuitGroup) HasCircuitCount() bool {
+	if o != nil && !IsNil(o.CircuitCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitCount gets a reference to the given int64 and assigns it to the CircuitCount field.
 func (o *CircuitGroup) SetCircuitCount(v int64) {
-	o.CircuitCount = v
+	o.CircuitCount = &v
 }
 
 func (o CircuitGroup) MarshalJSON() ([]byte, error) {
@@ -453,7 +460,9 @@ func (o CircuitGroup) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["circuit_count"] = o.CircuitCount
+	if !IsNil(o.CircuitCount) {
+		toSerialize["circuit_count"] = o.CircuitCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -475,7 +484,6 @@ func (o *CircuitGroup) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"circuit_count",
 	}
 
 	allProperties := make(map[string]interface{})

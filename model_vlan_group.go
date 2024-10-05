@@ -32,10 +32,10 @@ type VLANGroup struct {
 	Scope interface{} `json:"scope"`
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	CustomFields *map[string]string `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	VlanCount int64 `json:"vlan_count"`
+	VlanCount *int64 `json:"vlan_count,omitempty"`
 	Utilization string `json:"utilization"`
 	AdditionalProperties map[string]interface{}
 }
@@ -46,7 +46,7 @@ type _VLANGroup VLANGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVLANGroup(id int32, url string, displayUrl string, display string, name string, slug string, scope interface{}, created NullableTime, lastUpdated NullableTime, vlanCount int64, utilization string) *VLANGroup {
+func NewVLANGroup(id int32, url string, displayUrl string, display string, name string, slug string, scope interface{}, created NullableTime, lastUpdated NullableTime, utilization string) *VLANGroup {
 	this := VLANGroup{}
 	this.Id = id
 	this.Url = url
@@ -57,7 +57,6 @@ func NewVLANGroup(id int32, url string, displayUrl string, display string, name 
 	this.Scope = scope
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.VlanCount = vlanCount
 	this.Utilization = utilization
 	return &this
 }
@@ -389,19 +388,19 @@ func (o *VLANGroup) SetTags(v []NestedTag) {
 }
 
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise.
-func (o *VLANGroup) GetCustomFields() map[string]interface{} {
+func (o *VLANGroup) GetCustomFields() map[string]string {
 	if o == nil || IsNil(o.CustomFields) {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
-	return o.CustomFields
+	return *o.CustomFields
 }
 
 // GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VLANGroup) GetCustomFieldsOk() (map[string]interface{}, bool) {
+func (o *VLANGroup) GetCustomFieldsOk() (*map[string]string, bool) {
 	if o == nil || IsNil(o.CustomFields) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.CustomFields, true
 }
@@ -415,9 +414,9 @@ func (o *VLANGroup) HasCustomFields() bool {
 	return false
 }
 
-// SetCustomFields gets a reference to the given map[string]interface{} and assigns it to the CustomFields field.
-func (o *VLANGroup) SetCustomFields(v map[string]interface{}) {
-	o.CustomFields = v
+// SetCustomFields gets a reference to the given map[string]string and assigns it to the CustomFields field.
+func (o *VLANGroup) SetCustomFields(v map[string]string) {
+	o.CustomFields = &v
 }
 
 // GetCreated returns the Created field value
@@ -472,28 +471,36 @@ func (o *VLANGroup) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetVlanCount returns the VlanCount field value
+// GetVlanCount returns the VlanCount field value if set, zero value otherwise.
 func (o *VLANGroup) GetVlanCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.VlanCount
+	return *o.VlanCount
 }
 
-// GetVlanCountOk returns a tuple with the VlanCount field value
+// GetVlanCountOk returns a tuple with the VlanCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VLANGroup) GetVlanCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		return nil, false
 	}
-	return &o.VlanCount, true
+	return o.VlanCount, true
 }
 
-// SetVlanCount sets field value
+// HasVlanCount returns a boolean if a field has been set.
+func (o *VLANGroup) HasVlanCount() bool {
+	if o != nil && !IsNil(o.VlanCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlanCount gets a reference to the given int64 and assigns it to the VlanCount field.
 func (o *VLANGroup) SetVlanCount(v int64) {
-	o.VlanCount = v
+	o.VlanCount = &v
 }
 
 // GetUtilization returns the Utilization field value
@@ -556,7 +563,9 @@ func (o VLANGroup) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["vlan_count"] = o.VlanCount
+	if !IsNil(o.VlanCount) {
+		toSerialize["vlan_count"] = o.VlanCount
+	}
 	toSerialize["utilization"] = o.Utilization
 
 	for key, value := range o.AdditionalProperties {
@@ -580,7 +589,6 @@ func (o *VLANGroup) UnmarshalJSON(data []byte) (err error) {
 		"scope",
 		"created",
 		"last_updated",
-		"vlan_count",
 		"utilization",
 	}
 

@@ -29,7 +29,7 @@ type WritableDataSourceRequest struct {
 	// Patterns (one per line) matching files to ignore when syncing
 	IgnoreRules *string `json:"ignore_rules,omitempty"`
 	Comments *string `json:"comments,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	CustomFields *map[string]string `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -289,19 +289,19 @@ func (o *WritableDataSourceRequest) SetComments(v string) {
 }
 
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise.
-func (o *WritableDataSourceRequest) GetCustomFields() map[string]interface{} {
+func (o *WritableDataSourceRequest) GetCustomFields() map[string]string {
 	if o == nil || IsNil(o.CustomFields) {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
-	return o.CustomFields
+	return *o.CustomFields
 }
 
 // GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableDataSourceRequest) GetCustomFieldsOk() (map[string]interface{}, bool) {
+func (o *WritableDataSourceRequest) GetCustomFieldsOk() (*map[string]string, bool) {
 	if o == nil || IsNil(o.CustomFields) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.CustomFields, true
 }
@@ -315,9 +315,9 @@ func (o *WritableDataSourceRequest) HasCustomFields() bool {
 	return false
 }
 
-// SetCustomFields gets a reference to the given map[string]interface{} and assigns it to the CustomFields field.
-func (o *WritableDataSourceRequest) SetCustomFields(v map[string]interface{}) {
-	o.CustomFields = v
+// SetCustomFields gets a reference to the given map[string]string and assigns it to the CustomFields field.
+func (o *WritableDataSourceRequest) SetCustomFields(v map[string]string) {
+	o.CustomFields = &v
 }
 
 func (o WritableDataSourceRequest) MarshalJSON() ([]byte, error) {

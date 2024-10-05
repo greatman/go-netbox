@@ -14,17 +14,17 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**CircuitCount** | **int64** |  | [readonly] 
-**DeviceCount** | **int64** |  | [readonly] 
+**CircuitCount** | Pointer to **int64** |  | [optional] [readonly] 
+**DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
 **IpaddressCount** | **int64** |  | [readonly] 
-**PrefixCount** | **int64** |  | [readonly] 
-**RackCount** | **int64** |  | [readonly] 
+**PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
+**RackCount** | Pointer to **int64** |  | [optional] [readonly] 
 **SiteCount** | **int64** |  | [readonly] 
-**VirtualmachineCount** | **int64** |  | [readonly] 
-**VlanCount** | **int64** |  | [readonly] 
+**VirtualmachineCount** | Pointer to **int64** |  | [optional] [readonly] 
+**VlanCount** | Pointer to **int64** |  | [optional] [readonly] 
 **VrfCount** | **int64** |  | [readonly] 
 **ClusterCount** | **int64** |  | [readonly] 
 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewTenant
 
-`func NewTenant(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int64, deviceCount int64, ipaddressCount int64, prefixCount int64, rackCount int64, siteCount int64, virtualmachineCount int64, vlanCount int64, vrfCount int64, clusterCount int64, ) *Tenant`
+`func NewTenant(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, ipaddressCount int64, siteCount int64, vrfCount int64, clusterCount int64, ) *Tenant`
 
 NewTenant instantiates a new Tenant object
 This constructor will assign default values to properties that have it defined,
@@ -279,20 +279,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *Tenant) GetCustomFields() map[string]interface{}`
+`func (o *Tenant) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *Tenant) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *Tenant) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *Tenant) SetCustomFields(v map[string]interface{})`
+`func (o *Tenant) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 
@@ -381,6 +381,11 @@ and a boolean to check if the value has been set.
 
 SetCircuitCount sets CircuitCount field to given value.
 
+### HasCircuitCount
+
+`func (o *Tenant) HasCircuitCount() bool`
+
+HasCircuitCount returns a boolean if a field has been set.
 
 ### GetDeviceCount
 
@@ -401,6 +406,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
+
+`func (o *Tenant) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
 
 ### GetIpaddressCount
 
@@ -441,6 +451,11 @@ and a boolean to check if the value has been set.
 
 SetPrefixCount sets PrefixCount field to given value.
 
+### HasPrefixCount
+
+`func (o *Tenant) HasPrefixCount() bool`
+
+HasPrefixCount returns a boolean if a field has been set.
 
 ### GetRackCount
 
@@ -461,6 +476,11 @@ and a boolean to check if the value has been set.
 
 SetRackCount sets RackCount field to given value.
 
+### HasRackCount
+
+`func (o *Tenant) HasRackCount() bool`
+
+HasRackCount returns a boolean if a field has been set.
 
 ### GetSiteCount
 
@@ -501,6 +521,11 @@ and a boolean to check if the value has been set.
 
 SetVirtualmachineCount sets VirtualmachineCount field to given value.
 
+### HasVirtualmachineCount
+
+`func (o *Tenant) HasVirtualmachineCount() bool`
+
+HasVirtualmachineCount returns a boolean if a field has been set.
 
 ### GetVlanCount
 
@@ -521,6 +546,11 @@ and a boolean to check if the value has been set.
 
 SetVlanCount sets VlanCount field to given value.
 
+### HasVlanCount
+
+`func (o *Tenant) HasVlanCount() bool`
+
+HasVlanCount returns a boolean if a field has been set.
 
 ### GetVrfCount
 

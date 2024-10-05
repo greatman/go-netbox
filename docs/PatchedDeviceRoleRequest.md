@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **ConfigTemplate** | Pointer to [**NullableBriefConfigTemplateRequest**](BriefConfigTemplateRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 
 ## Methods
 
@@ -219,20 +219,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *PatchedDeviceRoleRequest) GetCustomFields() map[string]interface{}`
+`func (o *PatchedDeviceRoleRequest) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *PatchedDeviceRoleRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *PatchedDeviceRoleRequest) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *PatchedDeviceRoleRequest) SetCustomFields(v map[string]interface{})`
+`func (o *PatchedDeviceRoleRequest) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

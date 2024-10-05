@@ -17,17 +17,17 @@ Name | Type | Description | Notes
 **ImportTargets** | Pointer to [**[]RouteTarget**](RouteTarget.md) |  | [optional] 
 **ExportTargets** | Pointer to [**[]RouteTarget**](RouteTarget.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **IpaddressCount** | **int64** |  | [readonly] 
-**PrefixCount** | **int64** |  | [readonly] 
+**PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewVRF
 
-`func NewVRF(id int32, url string, displayUrl string, display string, name string, created NullableTime, lastUpdated NullableTime, ipaddressCount int64, prefixCount int64, ) *VRF`
+`func NewVRF(id int32, url string, displayUrl string, display string, name string, created NullableTime, lastUpdated NullableTime, ipaddressCount int64, ) *VRF`
 
 NewVRF instantiates a new VRF object
 This constructor will assign default values to properties that have it defined,
@@ -364,20 +364,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *VRF) GetCustomFields() map[string]interface{}`
+`func (o *VRF) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *VRF) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *VRF) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *VRF) SetCustomFields(v map[string]interface{})`
+`func (o *VRF) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 
@@ -486,6 +486,11 @@ and a boolean to check if the value has been set.
 
 SetPrefixCount sets PrefixCount field to given value.
 
+### HasPrefixCount
+
+`func (o *VRF) HasPrefixCount() bool`
+
+HasPrefixCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

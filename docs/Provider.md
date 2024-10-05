@@ -15,16 +15,16 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Asns** | Pointer to [**[]ASN**](ASN.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**CircuitCount** | **int64** |  | [readonly] 
+**CircuitCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewProvider
 
-`func NewProvider(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int64, ) *Provider`
+`func NewProvider(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, ) *Provider`
 
 NewProvider instantiates a new Provider object
 This constructor will assign default values to properties that have it defined,
@@ -286,20 +286,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *Provider) GetCustomFields() map[string]interface{}`
+`func (o *Provider) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *Provider) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *Provider) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *Provider) SetCustomFields(v map[string]interface{})`
+`func (o *Provider) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 
@@ -388,6 +388,11 @@ and a boolean to check if the value has been set.
 
 SetCircuitCount sets CircuitCount field to given value.
 
+### HasCircuitCount
+
+`func (o *Provider) HasCircuitCount() bool`
+
+HasCircuitCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

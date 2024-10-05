@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Position** | Pointer to **string** | Identifier to reference when renaming installed components | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -331,20 +331,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *ModuleBay) GetCustomFields() map[string]interface{}`
+`func (o *ModuleBay) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *ModuleBay) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *ModuleBay) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *ModuleBay) SetCustomFields(v map[string]interface{})`
+`func (o *ModuleBay) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

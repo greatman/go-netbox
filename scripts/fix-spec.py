@@ -18,6 +18,25 @@ if 'components' in data and 'schemas' in data['components']:
                     prop['enum'].remove(None)
                 if 'properties' in prop and 'value' in prop['properties'] and 'enum' in prop['properties']['value'] and None in prop['properties']['value']['enum']:
                     prop['properties']['value']['enum'].remove(None)
+                if 'custom_fields' in name:
+                    prop['additionalProperties']['type'] = "string"
+
+
+
+            not_required_types = [
+                'vlan_count',
+                'prefix_count',
+                'circuit_count',
+                'device_count',
+                'rack_count',
+                'virtualmachine_count',
+                'vlan_count'
+            ]
+            if 'required' in schema:
+                for nrtype in not_required_types:
+                    if nrtype in schema['required']:
+                        schema['required'].remove(nrtype)
+
 
             # Fix nullable types
             nullable_types = [
@@ -29,6 +48,7 @@ if 'components' in data and 'schemas' in data['components']:
                 if ntype in schema['properties']:
                     schema['properties'][ntype]['nullable'] = True
 
+
             # Fix non-nullable types
             # See: https://github.com/OpenAPITools/openapi-generator/issues/18006
             non_nullable_types = [
@@ -39,7 +59,8 @@ if 'components' in data and 'schemas' in data['components']:
             for ntype in non_nullable_types:
                 if ntype in schema['properties']:
                     if schema['properties'][ntype]['format'] == 'binary':
-                        schema['properties'][ntype].pop('nullable')
+                        if 'nullable' in schema['properties'][ntype]:
+                            schema['properties'][ntype].pop('nullable')
 
 # Save the spec file
 with open(SPEC_PATH, 'w') as file:

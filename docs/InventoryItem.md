@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **ComponentId** | Pointer to **NullableInt64** |  | [optional] 
 **Component** | **interface{}** |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **Depth** | **int32** |  | [readonly] 
@@ -559,20 +559,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *InventoryItem) GetCustomFields() map[string]interface{}`
+`func (o *InventoryItem) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *InventoryItem) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *InventoryItem) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *InventoryItem) SetCustomFields(v map[string]interface{})`
+`func (o *InventoryItem) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

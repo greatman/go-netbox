@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Secret** | Pointer to **string** | When provided, the request will include a &lt;code&gt;X-Hook-Signature&lt;/code&gt; header containing a HMAC hex digest of the payload body using the secret as the key. The secret is not transmitted in the request. | [optional] 
 **SslVerification** | Pointer to **bool** | Enable SSL certificate verification. Disable with caution! | [optional] 
 **CaFilePath** | Pointer to **NullableString** | The specific CA certificate file to use for SSL verification. Leave blank to use the system defaults. | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 
 ## Methods
@@ -298,20 +298,20 @@ HasCaFilePath returns a boolean if a field has been set.
 UnsetCaFilePath ensures that no value is present for CaFilePath, not even an explicit nil
 ### GetCustomFields
 
-`func (o *PatchedWebhookRequest) GetCustomFields() map[string]interface{}`
+`func (o *PatchedWebhookRequest) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *PatchedWebhookRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *PatchedWebhookRequest) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *PatchedWebhookRequest) SetCustomFields(v map[string]interface{})`
+`func (o *PatchedWebhookRequest) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

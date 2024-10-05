@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **InstalledDevice** | Pointer to [**NullableBriefDevice**](BriefDevice.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -269,20 +269,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *DeviceBay) GetCustomFields() map[string]interface{}`
+`func (o *DeviceBay) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *DeviceBay) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *DeviceBay) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *DeviceBay) SetCustomFields(v map[string]interface{})`
+`func (o *DeviceBay) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

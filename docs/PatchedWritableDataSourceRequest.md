@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Parameters** | Pointer to **interface{}** |  | [optional] 
 **IgnoreRules** | Pointer to **string** | Patterns (one per line) matching files to ignore when syncing | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 
 ## Methods
 
@@ -245,20 +245,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *PatchedWritableDataSourceRequest) GetCustomFields() map[string]interface{}`
+`func (o *PatchedWritableDataSourceRequest) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *PatchedWritableDataSourceRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *PatchedWritableDataSourceRequest) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *PatchedWritableDataSourceRequest) SetCustomFields(v map[string]interface{})`
+`func (o *PatchedWritableDataSourceRequest) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

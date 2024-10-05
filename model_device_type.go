@@ -45,10 +45,10 @@ type DeviceType struct {
 	Description *string `json:"description,omitempty"`
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	CustomFields *map[string]string `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	DeviceCount int64 `json:"device_count"`
+	DeviceCount *int64 `json:"device_count,omitempty"`
 	ConsolePortTemplateCount int32 `json:"console_port_template_count"`
 	ConsoleServerPortTemplateCount int32 `json:"console_server_port_template_count"`
 	PowerPortTemplateCount int32 `json:"power_port_template_count"`
@@ -68,7 +68,7 @@ type _DeviceType DeviceType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeviceType(id int32, url string, displayUrl string, display string, manufacturer BriefManufacturer, model string, slug string, created NullableTime, lastUpdated NullableTime, deviceCount int64, consolePortTemplateCount int32, consoleServerPortTemplateCount int32, powerPortTemplateCount int32, powerOutletTemplateCount int32, interfaceTemplateCount int32, frontPortTemplateCount int32, rearPortTemplateCount int32, deviceBayTemplateCount int32, moduleBayTemplateCount int32, inventoryItemTemplateCount int32) *DeviceType {
+func NewDeviceType(id int32, url string, displayUrl string, display string, manufacturer BriefManufacturer, model string, slug string, created NullableTime, lastUpdated NullableTime, consolePortTemplateCount int32, consoleServerPortTemplateCount int32, powerPortTemplateCount int32, powerOutletTemplateCount int32, interfaceTemplateCount int32, frontPortTemplateCount int32, rearPortTemplateCount int32, deviceBayTemplateCount int32, moduleBayTemplateCount int32, inventoryItemTemplateCount int32) *DeviceType {
 	this := DeviceType{}
 	this.Id = id
 	this.Url = url
@@ -81,7 +81,6 @@ func NewDeviceType(id int32, url string, displayUrl string, display string, manu
 	this.UHeight = &uHeight
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.DeviceCount = deviceCount
 	this.ConsolePortTemplateCount = consolePortTemplateCount
 	this.ConsoleServerPortTemplateCount = consoleServerPortTemplateCount
 	this.PowerPortTemplateCount = powerPortTemplateCount
@@ -792,19 +791,19 @@ func (o *DeviceType) SetTags(v []NestedTag) {
 }
 
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise.
-func (o *DeviceType) GetCustomFields() map[string]interface{} {
+func (o *DeviceType) GetCustomFields() map[string]string {
 	if o == nil || IsNil(o.CustomFields) {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
-	return o.CustomFields
+	return *o.CustomFields
 }
 
 // GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceType) GetCustomFieldsOk() (map[string]interface{}, bool) {
+func (o *DeviceType) GetCustomFieldsOk() (*map[string]string, bool) {
 	if o == nil || IsNil(o.CustomFields) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.CustomFields, true
 }
@@ -818,9 +817,9 @@ func (o *DeviceType) HasCustomFields() bool {
 	return false
 }
 
-// SetCustomFields gets a reference to the given map[string]interface{} and assigns it to the CustomFields field.
-func (o *DeviceType) SetCustomFields(v map[string]interface{}) {
-	o.CustomFields = v
+// SetCustomFields gets a reference to the given map[string]string and assigns it to the CustomFields field.
+func (o *DeviceType) SetCustomFields(v map[string]string) {
+	o.CustomFields = &v
 }
 
 // GetCreated returns the Created field value
@@ -875,28 +874,36 @@ func (o *DeviceType) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetDeviceCount returns the DeviceCount field value
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
 func (o *DeviceType) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount
 }
 
-// GetDeviceCountOk returns a tuple with the DeviceCount field value
+// GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceType) GetDeviceCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount, true
 }
 
-// SetDeviceCount sets field value
+// HasDeviceCount returns a boolean if a field has been set.
+func (o *DeviceType) HasDeviceCount() bool {
+	if o != nil && !IsNil(o.DeviceCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceCount gets a reference to the given int64 and assigns it to the DeviceCount field.
 func (o *DeviceType) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount = &v
 }
 
 // GetConsolePortTemplateCount returns the ConsolePortTemplateCount field value
@@ -1203,7 +1210,9 @@ func (o DeviceType) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["device_count"] = o.DeviceCount
+	if !IsNil(o.DeviceCount) {
+		toSerialize["device_count"] = o.DeviceCount
+	}
 	toSerialize["console_port_template_count"] = o.ConsolePortTemplateCount
 	toSerialize["console_server_port_template_count"] = o.ConsoleServerPortTemplateCount
 	toSerialize["power_port_template_count"] = o.PowerPortTemplateCount
@@ -1236,7 +1245,6 @@ func (o *DeviceType) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"device_count",
 		"console_port_template_count",
 		"console_server_port_template_count",
 		"power_port_template_count",

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Parent** | Pointer to [**NullableNestedRegion**](NestedRegion.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **SiteCount** | **int32** |  | [readonly] [default to 0]
@@ -245,20 +245,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *Region) GetCustomFields() map[string]interface{}`
+`func (o *Region) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *Region) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *Region) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *Region) SetCustomFields(v map[string]interface{})`
+`func (o *Region) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

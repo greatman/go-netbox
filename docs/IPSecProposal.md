@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **SaLifetimeData** | Pointer to **NullableInt32** | Security association lifetime (in kilobytes) | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -326,20 +326,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *IPSecProposal) GetCustomFields() map[string]interface{}`
+`func (o *IPSecProposal) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *IPSecProposal) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *IPSecProposal) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *IPSecProposal) SetCustomFields(v map[string]interface{})`
+`func (o *IPSecProposal) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

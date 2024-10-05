@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 
 ## Methods
 
@@ -271,20 +271,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *ConsolePortRequest) GetCustomFields() map[string]interface{}`
+`func (o *ConsolePortRequest) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *ConsolePortRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *ConsolePortRequest) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *ConsolePortRequest) SetCustomFields(v map[string]interface{})`
+`func (o *ConsolePortRequest) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

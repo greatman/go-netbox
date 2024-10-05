@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **AssignedObjectType** | Pointer to **string** |  | [optional] 
 **AssignedObjectId** | Pointer to **int64** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *PatchedL2VPNTerminationRequest) GetCustomFields() map[string]interface{}`
+`func (o *PatchedL2VPNTerminationRequest) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *PatchedL2VPNTerminationRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *PatchedL2VPNTerminationRequest) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *PatchedL2VPNTerminationRequest) SetCustomFields(v map[string]interface{})`
+`func (o *PatchedL2VPNTerminationRequest) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

@@ -5,7 +5,7 @@ gitUserId: greatman
 gitRepoId: go-netbox/v4
 generateInterfaces: true
 packageName: netbox
-
+disallowAdditionalPropertiesIfNotPresent: false
 globalProperty:
   apiDocs: false
   modelDocs: false
@@ -13,6 +13,6 @@ globalProperty:
   modelTests: false
 
 additionalProperties:
-  disallowAdditionalPropertiesIfNotPresent: "false"
+  disallowAdditionalPropertiesIfNotPresent: false
   packageVersion: "3"
   enumClassPrefix: true

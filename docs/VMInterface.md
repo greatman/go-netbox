@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Vrf** | Pointer to [**NullableBriefVRF**](BriefVRF.md) |  | [optional] 
 **L2vpnTermination** | [**NullableBriefL2VPNTermination**](BriefL2VPNTermination.md) |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **CountIpaddresses** | **int32** |  | [readonly] 
@@ -534,20 +534,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *VMInterface) GetCustomFields() map[string]interface{}`
+`func (o *VMInterface) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *VMInterface) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *VMInterface) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *VMInterface) SetCustomFields(v map[string]interface{})`
+`func (o *VMInterface) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

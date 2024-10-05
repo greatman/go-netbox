@@ -32,7 +32,7 @@ type DeviceBay struct {
 	Description *string `json:"description,omitempty"`
 	InstalledDevice NullableBriefDevice `json:"installed_device,omitempty"`
 	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	CustomFields *map[string]string `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
@@ -348,19 +348,19 @@ func (o *DeviceBay) SetTags(v []NestedTag) {
 }
 
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise.
-func (o *DeviceBay) GetCustomFields() map[string]interface{} {
+func (o *DeviceBay) GetCustomFields() map[string]string {
 	if o == nil || IsNil(o.CustomFields) {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
-	return o.CustomFields
+	return *o.CustomFields
 }
 
 // GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceBay) GetCustomFieldsOk() (map[string]interface{}, bool) {
+func (o *DeviceBay) GetCustomFieldsOk() (*map[string]string, bool) {
 	if o == nil || IsNil(o.CustomFields) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.CustomFields, true
 }
@@ -374,9 +374,9 @@ func (o *DeviceBay) HasCustomFields() bool {
 	return false
 }
 
-// SetCustomFields gets a reference to the given map[string]interface{} and assigns it to the CustomFields field.
-func (o *DeviceBay) SetCustomFields(v map[string]interface{}) {
-	o.CustomFields = v
+// SetCustomFields gets a reference to the given map[string]string and assigns it to the CustomFields field.
+func (o *DeviceBay) SetCustomFields(v map[string]string) {
+	o.CustomFields = &v
 }
 
 // GetCreated returns the Created field value

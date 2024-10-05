@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **IpsecPolicy** | Pointer to [**BriefIPSecPolicyRequest**](BriefIPSecPolicyRequest.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 
 ## Methods
 
@@ -209,20 +209,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *PatchedWritableIPSecProfileRequest) GetCustomFields() map[string]interface{}`
+`func (o *PatchedWritableIPSecProfileRequest) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *PatchedWritableIPSecProfileRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *PatchedWritableIPSecProfileRequest) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *PatchedWritableIPSecProfileRequest) SetCustomFields(v map[string]interface{})`
+`func (o *PatchedWritableIPSecProfileRequest) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

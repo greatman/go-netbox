@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **ActionObjectType** | **string** |  | 
 **ActionObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
+**CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 
 ## Methods
@@ -262,20 +262,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetCustomFields
 
-`func (o *WritableEventRuleRequest) GetCustomFields() map[string]interface{}`
+`func (o *WritableEventRuleRequest) GetCustomFields() map[string]string`
 
 GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
 
 ### GetCustomFieldsOk
 
-`func (o *WritableEventRuleRequest) GetCustomFieldsOk() (*map[string]interface{}, bool)`
+`func (o *WritableEventRuleRequest) GetCustomFieldsOk() (*map[string]string, bool)`
 
 GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomFields
 
-`func (o *WritableEventRuleRequest) SetCustomFields(v map[string]interface{})`
+`func (o *WritableEventRuleRequest) SetCustomFields(v map[string]string)`
 
 SetCustomFields sets CustomFields field to given value.
 

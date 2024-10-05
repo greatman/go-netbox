@@ -35,11 +35,11 @@ type Location struct {
 	Facility *string `json:"facility,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	CustomFields *map[string]string `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	RackCount int32 `json:"rack_count"`
-	DeviceCount int32 `json:"device_count"`
+	RackCount *int32 `json:"rack_count,omitempty"`
+	DeviceCount *int32 `json:"device_count,omitempty"`
 	Depth int32 `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
@@ -50,7 +50,7 @@ type _Location Location
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLocation(id int32, url string, displayUrl string, display string, name string, slug string, site BriefSite, created NullableTime, lastUpdated NullableTime, rackCount int32, deviceCount int32, depth int32) *Location {
+func NewLocation(id int32, url string, displayUrl string, display string, name string, slug string, site BriefSite, created NullableTime, lastUpdated NullableTime, depth int32) *Location {
 	this := Location{}
 	this.Id = id
 	this.Url = url
@@ -61,8 +61,6 @@ func NewLocation(id int32, url string, displayUrl string, display string, name s
 	this.Site = site
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.RackCount = rackCount
-	this.DeviceCount = deviceCount
 	this.Depth = depth
 	return &this
 }
@@ -456,19 +454,19 @@ func (o *Location) SetTags(v []NestedTag) {
 }
 
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise.
-func (o *Location) GetCustomFields() map[string]interface{} {
+func (o *Location) GetCustomFields() map[string]string {
 	if o == nil || IsNil(o.CustomFields) {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
-	return o.CustomFields
+	return *o.CustomFields
 }
 
 // GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Location) GetCustomFieldsOk() (map[string]interface{}, bool) {
+func (o *Location) GetCustomFieldsOk() (*map[string]string, bool) {
 	if o == nil || IsNil(o.CustomFields) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.CustomFields, true
 }
@@ -482,9 +480,9 @@ func (o *Location) HasCustomFields() bool {
 	return false
 }
 
-// SetCustomFields gets a reference to the given map[string]interface{} and assigns it to the CustomFields field.
-func (o *Location) SetCustomFields(v map[string]interface{}) {
-	o.CustomFields = v
+// SetCustomFields gets a reference to the given map[string]string and assigns it to the CustomFields field.
+func (o *Location) SetCustomFields(v map[string]string) {
+	o.CustomFields = &v
 }
 
 // GetCreated returns the Created field value
@@ -539,52 +537,68 @@ func (o *Location) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetRackCount returns the RackCount field value
+// GetRackCount returns the RackCount field value if set, zero value otherwise.
 func (o *Location) GetRackCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.RackCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.RackCount
+	return *o.RackCount
 }
 
-// GetRackCountOk returns a tuple with the RackCount field value
+// GetRackCountOk returns a tuple with the RackCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Location) GetRackCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.RackCount) {
 		return nil, false
 	}
-	return &o.RackCount, true
+	return o.RackCount, true
 }
 
-// SetRackCount sets field value
+// HasRackCount returns a boolean if a field has been set.
+func (o *Location) HasRackCount() bool {
+	if o != nil && !IsNil(o.RackCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetRackCount gets a reference to the given int32 and assigns it to the RackCount field.
 func (o *Location) SetRackCount(v int32) {
-	o.RackCount = v
+	o.RackCount = &v
 }
 
-// GetDeviceCount returns the DeviceCount field value
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
 func (o *Location) GetDeviceCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount
 }
 
-// GetDeviceCountOk returns a tuple with the DeviceCount field value
+// GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Location) GetDeviceCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount, true
 }
 
-// SetDeviceCount sets field value
+// HasDeviceCount returns a boolean if a field has been set.
+func (o *Location) HasDeviceCount() bool {
+	if o != nil && !IsNil(o.DeviceCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceCount gets a reference to the given int32 and assigns it to the DeviceCount field.
 func (o *Location) SetDeviceCount(v int32) {
-	o.DeviceCount = v
+	o.DeviceCount = &v
 }
 
 // GetDepth returns the Depth field value
@@ -651,8 +665,12 @@ func (o Location) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["rack_count"] = o.RackCount
-	toSerialize["device_count"] = o.DeviceCount
+	if !IsNil(o.RackCount) {
+		toSerialize["rack_count"] = o.RackCount
+	}
+	if !IsNil(o.DeviceCount) {
+		toSerialize["device_count"] = o.DeviceCount
+	}
 	toSerialize["_depth"] = o.Depth
 
 	for key, value := range o.AdditionalProperties {
@@ -676,8 +694,6 @@ func (o *Location) UnmarshalJSON(data []byte) (err error) {
 		"site",
 		"created",
 		"last_updated",
-		"rack_count",
-		"device_count",
 		"_depth",
 	}
 

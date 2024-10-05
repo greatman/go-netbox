@@ -37,7 +37,7 @@ type WebhookRequest struct {
 	SslVerification *bool `json:"ssl_verification,omitempty"`
 	// The specific CA certificate file to use for SSL verification. Leave blank to use the system defaults.
 	CaFilePath NullableString `json:"ca_file_path,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	CustomFields *map[string]string `json:"custom_fields,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -378,19 +378,19 @@ func (o *WebhookRequest) UnsetCaFilePath() {
 }
 
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise.
-func (o *WebhookRequest) GetCustomFields() map[string]interface{} {
+func (o *WebhookRequest) GetCustomFields() map[string]string {
 	if o == nil || IsNil(o.CustomFields) {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
-	return o.CustomFields
+	return *o.CustomFields
 }
 
 // GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WebhookRequest) GetCustomFieldsOk() (map[string]interface{}, bool) {
+func (o *WebhookRequest) GetCustomFieldsOk() (*map[string]string, bool) {
 	if o == nil || IsNil(o.CustomFields) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.CustomFields, true
 }
@@ -404,9 +404,9 @@ func (o *WebhookRequest) HasCustomFields() bool {
 	return false
 }
 
-// SetCustomFields gets a reference to the given map[string]interface{} and assigns it to the CustomFields field.
-func (o *WebhookRequest) SetCustomFields(v map[string]interface{}) {
-	o.CustomFields = v
+// SetCustomFields gets a reference to the given map[string]string and assigns it to the CustomFields field.
+func (o *WebhookRequest) SetCustomFields(v map[string]string) {
+	o.CustomFields = &v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.

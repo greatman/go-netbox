@@ -30,10 +30,10 @@ type RackRole struct {
 	Color *string `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTag `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
+	CustomFields *map[string]string `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	RackCount int64 `json:"rack_count"`
+	RackCount *int64 `json:"rack_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,7 +43,7 @@ type _RackRole RackRole
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRackRole(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, rackCount int64) *RackRole {
+func NewRackRole(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime) *RackRole {
 	this := RackRole{}
 	this.Id = id
 	this.Url = url
@@ -53,7 +53,6 @@ func NewRackRole(id int32, url string, displayUrl string, display string, name s
 	this.Slug = slug
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.RackCount = rackCount
 	return &this
 }
 
@@ -306,19 +305,19 @@ func (o *RackRole) SetTags(v []NestedTag) {
 }
 
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise.
-func (o *RackRole) GetCustomFields() map[string]interface{} {
+func (o *RackRole) GetCustomFields() map[string]string {
 	if o == nil || IsNil(o.CustomFields) {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
-	return o.CustomFields
+	return *o.CustomFields
 }
 
 // GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RackRole) GetCustomFieldsOk() (map[string]interface{}, bool) {
+func (o *RackRole) GetCustomFieldsOk() (*map[string]string, bool) {
 	if o == nil || IsNil(o.CustomFields) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.CustomFields, true
 }
@@ -332,9 +331,9 @@ func (o *RackRole) HasCustomFields() bool {
 	return false
 }
 
-// SetCustomFields gets a reference to the given map[string]interface{} and assigns it to the CustomFields field.
-func (o *RackRole) SetCustomFields(v map[string]interface{}) {
-	o.CustomFields = v
+// SetCustomFields gets a reference to the given map[string]string and assigns it to the CustomFields field.
+func (o *RackRole) SetCustomFields(v map[string]string) {
+	o.CustomFields = &v
 }
 
 // GetCreated returns the Created field value
@@ -389,28 +388,36 @@ func (o *RackRole) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetRackCount returns the RackCount field value
+// GetRackCount returns the RackCount field value if set, zero value otherwise.
 func (o *RackRole) GetRackCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.RackCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.RackCount
+	return *o.RackCount
 }
 
-// GetRackCountOk returns a tuple with the RackCount field value
+// GetRackCountOk returns a tuple with the RackCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RackRole) GetRackCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.RackCount) {
 		return nil, false
 	}
-	return &o.RackCount, true
+	return o.RackCount, true
 }
 
-// SetRackCount sets field value
+// HasRackCount returns a boolean if a field has been set.
+func (o *RackRole) HasRackCount() bool {
+	if o != nil && !IsNil(o.RackCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetRackCount gets a reference to the given int64 and assigns it to the RackCount field.
 func (o *RackRole) SetRackCount(v int64) {
-	o.RackCount = v
+	o.RackCount = &v
 }
 
 func (o RackRole) MarshalJSON() ([]byte, error) {
@@ -443,7 +450,9 @@ func (o RackRole) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["rack_count"] = o.RackCount
+	if !IsNil(o.RackCount) {
+		toSerialize["rack_count"] = o.RackCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -465,7 +474,6 @@ func (o *RackRole) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"rack_count",
 	}
 
 	allProperties := make(map[string]interface{})
