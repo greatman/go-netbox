@@ -22,12 +22,2310 @@ import (
 )
 
 
+type ExtrasAPI interface {
+
+	/*
+	ExtrasBookmarksBulkDestroy Method for ExtrasBookmarksBulkDestroy
+
+	Delete a list of bookmark objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasBookmarksBulkDestroyRequest
+	*/
+	ExtrasBookmarksBulkDestroy(ctx context.Context) ApiExtrasBookmarksBulkDestroyRequest
+
+	// ExtrasBookmarksBulkDestroyExecute executes the request
+	ExtrasBookmarksBulkDestroyExecute(r ApiExtrasBookmarksBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasBookmarksBulkPartialUpdate Method for ExtrasBookmarksBulkPartialUpdate
+
+	Patch a list of bookmark objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasBookmarksBulkPartialUpdateRequest
+	*/
+	ExtrasBookmarksBulkPartialUpdate(ctx context.Context) ApiExtrasBookmarksBulkPartialUpdateRequest
+
+	// ExtrasBookmarksBulkPartialUpdateExecute executes the request
+	//  @return []Bookmark
+	ExtrasBookmarksBulkPartialUpdateExecute(r ApiExtrasBookmarksBulkPartialUpdateRequest) ([]Bookmark, *http.Response, error)
+
+	/*
+	ExtrasBookmarksBulkUpdate Method for ExtrasBookmarksBulkUpdate
+
+	Put a list of bookmark objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasBookmarksBulkUpdateRequest
+	*/
+	ExtrasBookmarksBulkUpdate(ctx context.Context) ApiExtrasBookmarksBulkUpdateRequest
+
+	// ExtrasBookmarksBulkUpdateExecute executes the request
+	//  @return []Bookmark
+	ExtrasBookmarksBulkUpdateExecute(r ApiExtrasBookmarksBulkUpdateRequest) ([]Bookmark, *http.Response, error)
+
+	/*
+	ExtrasBookmarksCreate Method for ExtrasBookmarksCreate
+
+	Post a list of bookmark objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasBookmarksCreateRequest
+	*/
+	ExtrasBookmarksCreate(ctx context.Context) ApiExtrasBookmarksCreateRequest
+
+	// ExtrasBookmarksCreateExecute executes the request
+	//  @return Bookmark
+	ExtrasBookmarksCreateExecute(r ApiExtrasBookmarksCreateRequest) (*Bookmark, *http.Response, error)
+
+	/*
+	ExtrasBookmarksDestroy Method for ExtrasBookmarksDestroy
+
+	Delete a bookmark object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this bookmark.
+	@return ApiExtrasBookmarksDestroyRequest
+	*/
+	ExtrasBookmarksDestroy(ctx context.Context, id int64) ApiExtrasBookmarksDestroyRequest
+
+	// ExtrasBookmarksDestroyExecute executes the request
+	ExtrasBookmarksDestroyExecute(r ApiExtrasBookmarksDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasBookmarksList Method for ExtrasBookmarksList
+
+	Get a list of bookmark objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasBookmarksListRequest
+	*/
+	ExtrasBookmarksList(ctx context.Context) ApiExtrasBookmarksListRequest
+
+	// ExtrasBookmarksListExecute executes the request
+	//  @return PaginatedBookmarkList
+	ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRequest) (*PaginatedBookmarkList, *http.Response, error)
+
+	/*
+	ExtrasBookmarksPartialUpdate Method for ExtrasBookmarksPartialUpdate
+
+	Patch a bookmark object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this bookmark.
+	@return ApiExtrasBookmarksPartialUpdateRequest
+	*/
+	ExtrasBookmarksPartialUpdate(ctx context.Context, id int64) ApiExtrasBookmarksPartialUpdateRequest
+
+	// ExtrasBookmarksPartialUpdateExecute executes the request
+	//  @return Bookmark
+	ExtrasBookmarksPartialUpdateExecute(r ApiExtrasBookmarksPartialUpdateRequest) (*Bookmark, *http.Response, error)
+
+	/*
+	ExtrasBookmarksRetrieve Method for ExtrasBookmarksRetrieve
+
+	Get a bookmark object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this bookmark.
+	@return ApiExtrasBookmarksRetrieveRequest
+	*/
+	ExtrasBookmarksRetrieve(ctx context.Context, id int64) ApiExtrasBookmarksRetrieveRequest
+
+	// ExtrasBookmarksRetrieveExecute executes the request
+	//  @return Bookmark
+	ExtrasBookmarksRetrieveExecute(r ApiExtrasBookmarksRetrieveRequest) (*Bookmark, *http.Response, error)
+
+	/*
+	ExtrasBookmarksUpdate Method for ExtrasBookmarksUpdate
+
+	Put a bookmark object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this bookmark.
+	@return ApiExtrasBookmarksUpdateRequest
+	*/
+	ExtrasBookmarksUpdate(ctx context.Context, id int64) ApiExtrasBookmarksUpdateRequest
+
+	// ExtrasBookmarksUpdateExecute executes the request
+	//  @return Bookmark
+	ExtrasBookmarksUpdateExecute(r ApiExtrasBookmarksUpdateRequest) (*Bookmark, *http.Response, error)
+
+	/*
+	ExtrasConfigContextsBulkDestroy Method for ExtrasConfigContextsBulkDestroy
+
+	Delete a list of config context objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigContextsBulkDestroyRequest
+	*/
+	ExtrasConfigContextsBulkDestroy(ctx context.Context) ApiExtrasConfigContextsBulkDestroyRequest
+
+	// ExtrasConfigContextsBulkDestroyExecute executes the request
+	ExtrasConfigContextsBulkDestroyExecute(r ApiExtrasConfigContextsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasConfigContextsBulkPartialUpdate Method for ExtrasConfigContextsBulkPartialUpdate
+
+	Patch a list of config context objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigContextsBulkPartialUpdateRequest
+	*/
+	ExtrasConfigContextsBulkPartialUpdate(ctx context.Context) ApiExtrasConfigContextsBulkPartialUpdateRequest
+
+	// ExtrasConfigContextsBulkPartialUpdateExecute executes the request
+	//  @return []ConfigContext
+	ExtrasConfigContextsBulkPartialUpdateExecute(r ApiExtrasConfigContextsBulkPartialUpdateRequest) ([]ConfigContext, *http.Response, error)
+
+	/*
+	ExtrasConfigContextsBulkUpdate Method for ExtrasConfigContextsBulkUpdate
+
+	Put a list of config context objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigContextsBulkUpdateRequest
+	*/
+	ExtrasConfigContextsBulkUpdate(ctx context.Context) ApiExtrasConfigContextsBulkUpdateRequest
+
+	// ExtrasConfigContextsBulkUpdateExecute executes the request
+	//  @return []ConfigContext
+	ExtrasConfigContextsBulkUpdateExecute(r ApiExtrasConfigContextsBulkUpdateRequest) ([]ConfigContext, *http.Response, error)
+
+	/*
+	ExtrasConfigContextsCreate Method for ExtrasConfigContextsCreate
+
+	Post a list of config context objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigContextsCreateRequest
+	*/
+	ExtrasConfigContextsCreate(ctx context.Context) ApiExtrasConfigContextsCreateRequest
+
+	// ExtrasConfigContextsCreateExecute executes the request
+	//  @return ConfigContext
+	ExtrasConfigContextsCreateExecute(r ApiExtrasConfigContextsCreateRequest) (*ConfigContext, *http.Response, error)
+
+	/*
+	ExtrasConfigContextsDestroy Method for ExtrasConfigContextsDestroy
+
+	Delete a config context object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config context.
+	@return ApiExtrasConfigContextsDestroyRequest
+	*/
+	ExtrasConfigContextsDestroy(ctx context.Context, id int64) ApiExtrasConfigContextsDestroyRequest
+
+	// ExtrasConfigContextsDestroyExecute executes the request
+	ExtrasConfigContextsDestroyExecute(r ApiExtrasConfigContextsDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasConfigContextsList Method for ExtrasConfigContextsList
+
+	Get a list of config context objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigContextsListRequest
+	*/
+	ExtrasConfigContextsList(ctx context.Context) ApiExtrasConfigContextsListRequest
+
+	// ExtrasConfigContextsListExecute executes the request
+	//  @return PaginatedConfigContextList
+	ExtrasConfigContextsListExecute(r ApiExtrasConfigContextsListRequest) (*PaginatedConfigContextList, *http.Response, error)
+
+	/*
+	ExtrasConfigContextsPartialUpdate Method for ExtrasConfigContextsPartialUpdate
+
+	Patch a config context object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config context.
+	@return ApiExtrasConfigContextsPartialUpdateRequest
+	*/
+	ExtrasConfigContextsPartialUpdate(ctx context.Context, id int64) ApiExtrasConfigContextsPartialUpdateRequest
+
+	// ExtrasConfigContextsPartialUpdateExecute executes the request
+	//  @return ConfigContext
+	ExtrasConfigContextsPartialUpdateExecute(r ApiExtrasConfigContextsPartialUpdateRequest) (*ConfigContext, *http.Response, error)
+
+	/*
+	ExtrasConfigContextsRetrieve Method for ExtrasConfigContextsRetrieve
+
+	Get a config context object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config context.
+	@return ApiExtrasConfigContextsRetrieveRequest
+	*/
+	ExtrasConfigContextsRetrieve(ctx context.Context, id int64) ApiExtrasConfigContextsRetrieveRequest
+
+	// ExtrasConfigContextsRetrieveExecute executes the request
+	//  @return ConfigContext
+	ExtrasConfigContextsRetrieveExecute(r ApiExtrasConfigContextsRetrieveRequest) (*ConfigContext, *http.Response, error)
+
+	/*
+	ExtrasConfigContextsSyncCreate Method for ExtrasConfigContextsSyncCreate
+
+	Provide a /sync API endpoint to synchronize an object's data from its associated DataFile (if any).
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config context.
+	@return ApiExtrasConfigContextsSyncCreateRequest
+	*/
+	ExtrasConfigContextsSyncCreate(ctx context.Context, id int64) ApiExtrasConfigContextsSyncCreateRequest
+
+	// ExtrasConfigContextsSyncCreateExecute executes the request
+	//  @return ConfigContext
+	ExtrasConfigContextsSyncCreateExecute(r ApiExtrasConfigContextsSyncCreateRequest) (*ConfigContext, *http.Response, error)
+
+	/*
+	ExtrasConfigContextsUpdate Method for ExtrasConfigContextsUpdate
+
+	Put a config context object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config context.
+	@return ApiExtrasConfigContextsUpdateRequest
+	*/
+	ExtrasConfigContextsUpdate(ctx context.Context, id int64) ApiExtrasConfigContextsUpdateRequest
+
+	// ExtrasConfigContextsUpdateExecute executes the request
+	//  @return ConfigContext
+	ExtrasConfigContextsUpdateExecute(r ApiExtrasConfigContextsUpdateRequest) (*ConfigContext, *http.Response, error)
+
+	/*
+	ExtrasConfigTemplatesBulkDestroy Method for ExtrasConfigTemplatesBulkDestroy
+
+	Delete a list of config template objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigTemplatesBulkDestroyRequest
+	*/
+	ExtrasConfigTemplatesBulkDestroy(ctx context.Context) ApiExtrasConfigTemplatesBulkDestroyRequest
+
+	// ExtrasConfigTemplatesBulkDestroyExecute executes the request
+	ExtrasConfigTemplatesBulkDestroyExecute(r ApiExtrasConfigTemplatesBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasConfigTemplatesBulkPartialUpdate Method for ExtrasConfigTemplatesBulkPartialUpdate
+
+	Patch a list of config template objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigTemplatesBulkPartialUpdateRequest
+	*/
+	ExtrasConfigTemplatesBulkPartialUpdate(ctx context.Context) ApiExtrasConfigTemplatesBulkPartialUpdateRequest
+
+	// ExtrasConfigTemplatesBulkPartialUpdateExecute executes the request
+	//  @return []ConfigTemplate
+	ExtrasConfigTemplatesBulkPartialUpdateExecute(r ApiExtrasConfigTemplatesBulkPartialUpdateRequest) ([]ConfigTemplate, *http.Response, error)
+
+	/*
+	ExtrasConfigTemplatesBulkUpdate Method for ExtrasConfigTemplatesBulkUpdate
+
+	Put a list of config template objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigTemplatesBulkUpdateRequest
+	*/
+	ExtrasConfigTemplatesBulkUpdate(ctx context.Context) ApiExtrasConfigTemplatesBulkUpdateRequest
+
+	// ExtrasConfigTemplatesBulkUpdateExecute executes the request
+	//  @return []ConfigTemplate
+	ExtrasConfigTemplatesBulkUpdateExecute(r ApiExtrasConfigTemplatesBulkUpdateRequest) ([]ConfigTemplate, *http.Response, error)
+
+	/*
+	ExtrasConfigTemplatesCreate Method for ExtrasConfigTemplatesCreate
+
+	Post a list of config template objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigTemplatesCreateRequest
+	*/
+	ExtrasConfigTemplatesCreate(ctx context.Context) ApiExtrasConfigTemplatesCreateRequest
+
+	// ExtrasConfigTemplatesCreateExecute executes the request
+	//  @return ConfigTemplate
+	ExtrasConfigTemplatesCreateExecute(r ApiExtrasConfigTemplatesCreateRequest) (*ConfigTemplate, *http.Response, error)
+
+	/*
+	ExtrasConfigTemplatesDestroy Method for ExtrasConfigTemplatesDestroy
+
+	Delete a config template object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesDestroyRequest
+	*/
+	ExtrasConfigTemplatesDestroy(ctx context.Context, id int64) ApiExtrasConfigTemplatesDestroyRequest
+
+	// ExtrasConfigTemplatesDestroyExecute executes the request
+	ExtrasConfigTemplatesDestroyExecute(r ApiExtrasConfigTemplatesDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasConfigTemplatesList Method for ExtrasConfigTemplatesList
+
+	Get a list of config template objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasConfigTemplatesListRequest
+	*/
+	ExtrasConfigTemplatesList(ctx context.Context) ApiExtrasConfigTemplatesListRequest
+
+	// ExtrasConfigTemplatesListExecute executes the request
+	//  @return PaginatedConfigTemplateList
+	ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTemplatesListRequest) (*PaginatedConfigTemplateList, *http.Response, error)
+
+	/*
+	ExtrasConfigTemplatesPartialUpdate Method for ExtrasConfigTemplatesPartialUpdate
+
+	Patch a config template object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesPartialUpdateRequest
+	*/
+	ExtrasConfigTemplatesPartialUpdate(ctx context.Context, id int64) ApiExtrasConfigTemplatesPartialUpdateRequest
+
+	// ExtrasConfigTemplatesPartialUpdateExecute executes the request
+	//  @return ConfigTemplate
+	ExtrasConfigTemplatesPartialUpdateExecute(r ApiExtrasConfigTemplatesPartialUpdateRequest) (*ConfigTemplate, *http.Response, error)
+
+	/*
+	ExtrasConfigTemplatesRenderCreate Method for ExtrasConfigTemplatesRenderCreate
+
+	Render a ConfigTemplate using the context data provided (if any). If the client requests "text/plain" data,
+return the raw rendered content, rather than serialized JSON.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesRenderCreateRequest
+	*/
+	ExtrasConfigTemplatesRenderCreate(ctx context.Context, id int64) ApiExtrasConfigTemplatesRenderCreateRequest
+
+	// ExtrasConfigTemplatesRenderCreateExecute executes the request
+	//  @return ConfigTemplate
+	ExtrasConfigTemplatesRenderCreateExecute(r ApiExtrasConfigTemplatesRenderCreateRequest) (*ConfigTemplate, *http.Response, error)
+
+	/*
+	ExtrasConfigTemplatesRetrieve Method for ExtrasConfigTemplatesRetrieve
+
+	Get a config template object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesRetrieveRequest
+	*/
+	ExtrasConfigTemplatesRetrieve(ctx context.Context, id int64) ApiExtrasConfigTemplatesRetrieveRequest
+
+	// ExtrasConfigTemplatesRetrieveExecute executes the request
+	//  @return ConfigTemplate
+	ExtrasConfigTemplatesRetrieveExecute(r ApiExtrasConfigTemplatesRetrieveRequest) (*ConfigTemplate, *http.Response, error)
+
+	/*
+	ExtrasConfigTemplatesSyncCreate Method for ExtrasConfigTemplatesSyncCreate
+
+	Provide a /sync API endpoint to synchronize an object's data from its associated DataFile (if any).
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesSyncCreateRequest
+	*/
+	ExtrasConfigTemplatesSyncCreate(ctx context.Context, id int64) ApiExtrasConfigTemplatesSyncCreateRequest
+
+	// ExtrasConfigTemplatesSyncCreateExecute executes the request
+	//  @return ConfigTemplate
+	ExtrasConfigTemplatesSyncCreateExecute(r ApiExtrasConfigTemplatesSyncCreateRequest) (*ConfigTemplate, *http.Response, error)
+
+	/*
+	ExtrasConfigTemplatesUpdate Method for ExtrasConfigTemplatesUpdate
+
+	Put a config template object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this config template.
+	@return ApiExtrasConfigTemplatesUpdateRequest
+	*/
+	ExtrasConfigTemplatesUpdate(ctx context.Context, id int64) ApiExtrasConfigTemplatesUpdateRequest
+
+	// ExtrasConfigTemplatesUpdateExecute executes the request
+	//  @return ConfigTemplate
+	ExtrasConfigTemplatesUpdateExecute(r ApiExtrasConfigTemplatesUpdateRequest) (*ConfigTemplate, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldChoiceSetsBulkDestroy Method for ExtrasCustomFieldChoiceSetsBulkDestroy
+
+	Delete a list of custom field choice set objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest
+	*/
+	ExtrasCustomFieldChoiceSetsBulkDestroy(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest
+
+	// ExtrasCustomFieldChoiceSetsBulkDestroyExecute executes the request
+	ExtrasCustomFieldChoiceSetsBulkDestroyExecute(r ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasCustomFieldChoiceSetsBulkPartialUpdate Method for ExtrasCustomFieldChoiceSetsBulkPartialUpdate
+
+	Patch a list of custom field choice set objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest
+	*/
+	ExtrasCustomFieldChoiceSetsBulkPartialUpdate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest
+
+	// ExtrasCustomFieldChoiceSetsBulkPartialUpdateExecute executes the request
+	//  @return []CustomFieldChoiceSet
+	ExtrasCustomFieldChoiceSetsBulkPartialUpdateExecute(r ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest) ([]CustomFieldChoiceSet, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldChoiceSetsBulkUpdate Method for ExtrasCustomFieldChoiceSetsBulkUpdate
+
+	Put a list of custom field choice set objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest
+	*/
+	ExtrasCustomFieldChoiceSetsBulkUpdate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest
+
+	// ExtrasCustomFieldChoiceSetsBulkUpdateExecute executes the request
+	//  @return []CustomFieldChoiceSet
+	ExtrasCustomFieldChoiceSetsBulkUpdateExecute(r ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest) ([]CustomFieldChoiceSet, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldChoiceSetsChoicesRetrieve Method for ExtrasCustomFieldChoiceSetsChoicesRetrieve
+
+	Provides an endpoint to iterate through each choice in a set.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field choice set.
+	@return ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest
+	*/
+	ExtrasCustomFieldChoiceSetsChoicesRetrieve(ctx context.Context, id int64) ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest
+
+	// ExtrasCustomFieldChoiceSetsChoicesRetrieveExecute executes the request
+	//  @return CustomFieldChoiceSet
+	ExtrasCustomFieldChoiceSetsChoicesRetrieveExecute(r ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest) (*CustomFieldChoiceSet, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldChoiceSetsCreate Method for ExtrasCustomFieldChoiceSetsCreate
+
+	Post a list of custom field choice set objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldChoiceSetsCreateRequest
+	*/
+	ExtrasCustomFieldChoiceSetsCreate(ctx context.Context) ApiExtrasCustomFieldChoiceSetsCreateRequest
+
+	// ExtrasCustomFieldChoiceSetsCreateExecute executes the request
+	//  @return CustomFieldChoiceSet
+	ExtrasCustomFieldChoiceSetsCreateExecute(r ApiExtrasCustomFieldChoiceSetsCreateRequest) (*CustomFieldChoiceSet, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldChoiceSetsDestroy Method for ExtrasCustomFieldChoiceSetsDestroy
+
+	Delete a custom field choice set object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field choice set.
+	@return ApiExtrasCustomFieldChoiceSetsDestroyRequest
+	*/
+	ExtrasCustomFieldChoiceSetsDestroy(ctx context.Context, id int64) ApiExtrasCustomFieldChoiceSetsDestroyRequest
+
+	// ExtrasCustomFieldChoiceSetsDestroyExecute executes the request
+	ExtrasCustomFieldChoiceSetsDestroyExecute(r ApiExtrasCustomFieldChoiceSetsDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasCustomFieldChoiceSetsList Method for ExtrasCustomFieldChoiceSetsList
+
+	Get a list of custom field choice set objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldChoiceSetsListRequest
+	*/
+	ExtrasCustomFieldChoiceSetsList(ctx context.Context) ApiExtrasCustomFieldChoiceSetsListRequest
+
+	// ExtrasCustomFieldChoiceSetsListExecute executes the request
+	//  @return PaginatedCustomFieldChoiceSetList
+	ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCustomFieldChoiceSetsListRequest) (*PaginatedCustomFieldChoiceSetList, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldChoiceSetsPartialUpdate Method for ExtrasCustomFieldChoiceSetsPartialUpdate
+
+	Patch a custom field choice set object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field choice set.
+	@return ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest
+	*/
+	ExtrasCustomFieldChoiceSetsPartialUpdate(ctx context.Context, id int64) ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest
+
+	// ExtrasCustomFieldChoiceSetsPartialUpdateExecute executes the request
+	//  @return CustomFieldChoiceSet
+	ExtrasCustomFieldChoiceSetsPartialUpdateExecute(r ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest) (*CustomFieldChoiceSet, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldChoiceSetsRetrieve Method for ExtrasCustomFieldChoiceSetsRetrieve
+
+	Get a custom field choice set object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field choice set.
+	@return ApiExtrasCustomFieldChoiceSetsRetrieveRequest
+	*/
+	ExtrasCustomFieldChoiceSetsRetrieve(ctx context.Context, id int64) ApiExtrasCustomFieldChoiceSetsRetrieveRequest
+
+	// ExtrasCustomFieldChoiceSetsRetrieveExecute executes the request
+	//  @return CustomFieldChoiceSet
+	ExtrasCustomFieldChoiceSetsRetrieveExecute(r ApiExtrasCustomFieldChoiceSetsRetrieveRequest) (*CustomFieldChoiceSet, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldChoiceSetsUpdate Method for ExtrasCustomFieldChoiceSetsUpdate
+
+	Put a custom field choice set object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field choice set.
+	@return ApiExtrasCustomFieldChoiceSetsUpdateRequest
+	*/
+	ExtrasCustomFieldChoiceSetsUpdate(ctx context.Context, id int64) ApiExtrasCustomFieldChoiceSetsUpdateRequest
+
+	// ExtrasCustomFieldChoiceSetsUpdateExecute executes the request
+	//  @return CustomFieldChoiceSet
+	ExtrasCustomFieldChoiceSetsUpdateExecute(r ApiExtrasCustomFieldChoiceSetsUpdateRequest) (*CustomFieldChoiceSet, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldsBulkDestroy Method for ExtrasCustomFieldsBulkDestroy
+
+	Delete a list of custom field objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldsBulkDestroyRequest
+	*/
+	ExtrasCustomFieldsBulkDestroy(ctx context.Context) ApiExtrasCustomFieldsBulkDestroyRequest
+
+	// ExtrasCustomFieldsBulkDestroyExecute executes the request
+	ExtrasCustomFieldsBulkDestroyExecute(r ApiExtrasCustomFieldsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasCustomFieldsBulkPartialUpdate Method for ExtrasCustomFieldsBulkPartialUpdate
+
+	Patch a list of custom field objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldsBulkPartialUpdateRequest
+	*/
+	ExtrasCustomFieldsBulkPartialUpdate(ctx context.Context) ApiExtrasCustomFieldsBulkPartialUpdateRequest
+
+	// ExtrasCustomFieldsBulkPartialUpdateExecute executes the request
+	//  @return []CustomField
+	ExtrasCustomFieldsBulkPartialUpdateExecute(r ApiExtrasCustomFieldsBulkPartialUpdateRequest) ([]CustomField, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldsBulkUpdate Method for ExtrasCustomFieldsBulkUpdate
+
+	Put a list of custom field objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldsBulkUpdateRequest
+	*/
+	ExtrasCustomFieldsBulkUpdate(ctx context.Context) ApiExtrasCustomFieldsBulkUpdateRequest
+
+	// ExtrasCustomFieldsBulkUpdateExecute executes the request
+	//  @return []CustomField
+	ExtrasCustomFieldsBulkUpdateExecute(r ApiExtrasCustomFieldsBulkUpdateRequest) ([]CustomField, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldsCreate Method for ExtrasCustomFieldsCreate
+
+	Post a list of custom field objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldsCreateRequest
+	*/
+	ExtrasCustomFieldsCreate(ctx context.Context) ApiExtrasCustomFieldsCreateRequest
+
+	// ExtrasCustomFieldsCreateExecute executes the request
+	//  @return CustomField
+	ExtrasCustomFieldsCreateExecute(r ApiExtrasCustomFieldsCreateRequest) (*CustomField, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldsDestroy Method for ExtrasCustomFieldsDestroy
+
+	Delete a custom field object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field.
+	@return ApiExtrasCustomFieldsDestroyRequest
+	*/
+	ExtrasCustomFieldsDestroy(ctx context.Context, id int64) ApiExtrasCustomFieldsDestroyRequest
+
+	// ExtrasCustomFieldsDestroyExecute executes the request
+	ExtrasCustomFieldsDestroyExecute(r ApiExtrasCustomFieldsDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasCustomFieldsList Method for ExtrasCustomFieldsList
+
+	Get a list of custom field objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomFieldsListRequest
+	*/
+	ExtrasCustomFieldsList(ctx context.Context) ApiExtrasCustomFieldsListRequest
+
+	// ExtrasCustomFieldsListExecute executes the request
+	//  @return PaginatedCustomFieldList
+	ExtrasCustomFieldsListExecute(r ApiExtrasCustomFieldsListRequest) (*PaginatedCustomFieldList, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldsPartialUpdate Method for ExtrasCustomFieldsPartialUpdate
+
+	Patch a custom field object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field.
+	@return ApiExtrasCustomFieldsPartialUpdateRequest
+	*/
+	ExtrasCustomFieldsPartialUpdate(ctx context.Context, id int64) ApiExtrasCustomFieldsPartialUpdateRequest
+
+	// ExtrasCustomFieldsPartialUpdateExecute executes the request
+	//  @return CustomField
+	ExtrasCustomFieldsPartialUpdateExecute(r ApiExtrasCustomFieldsPartialUpdateRequest) (*CustomField, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldsRetrieve Method for ExtrasCustomFieldsRetrieve
+
+	Get a custom field object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field.
+	@return ApiExtrasCustomFieldsRetrieveRequest
+	*/
+	ExtrasCustomFieldsRetrieve(ctx context.Context, id int64) ApiExtrasCustomFieldsRetrieveRequest
+
+	// ExtrasCustomFieldsRetrieveExecute executes the request
+	//  @return CustomField
+	ExtrasCustomFieldsRetrieveExecute(r ApiExtrasCustomFieldsRetrieveRequest) (*CustomField, *http.Response, error)
+
+	/*
+	ExtrasCustomFieldsUpdate Method for ExtrasCustomFieldsUpdate
+
+	Put a custom field object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom field.
+	@return ApiExtrasCustomFieldsUpdateRequest
+	*/
+	ExtrasCustomFieldsUpdate(ctx context.Context, id int64) ApiExtrasCustomFieldsUpdateRequest
+
+	// ExtrasCustomFieldsUpdateExecute executes the request
+	//  @return CustomField
+	ExtrasCustomFieldsUpdateExecute(r ApiExtrasCustomFieldsUpdateRequest) (*CustomField, *http.Response, error)
+
+	/*
+	ExtrasCustomLinksBulkDestroy Method for ExtrasCustomLinksBulkDestroy
+
+	Delete a list of custom link objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomLinksBulkDestroyRequest
+	*/
+	ExtrasCustomLinksBulkDestroy(ctx context.Context) ApiExtrasCustomLinksBulkDestroyRequest
+
+	// ExtrasCustomLinksBulkDestroyExecute executes the request
+	ExtrasCustomLinksBulkDestroyExecute(r ApiExtrasCustomLinksBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasCustomLinksBulkPartialUpdate Method for ExtrasCustomLinksBulkPartialUpdate
+
+	Patch a list of custom link objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomLinksBulkPartialUpdateRequest
+	*/
+	ExtrasCustomLinksBulkPartialUpdate(ctx context.Context) ApiExtrasCustomLinksBulkPartialUpdateRequest
+
+	// ExtrasCustomLinksBulkPartialUpdateExecute executes the request
+	//  @return []CustomLink
+	ExtrasCustomLinksBulkPartialUpdateExecute(r ApiExtrasCustomLinksBulkPartialUpdateRequest) ([]CustomLink, *http.Response, error)
+
+	/*
+	ExtrasCustomLinksBulkUpdate Method for ExtrasCustomLinksBulkUpdate
+
+	Put a list of custom link objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomLinksBulkUpdateRequest
+	*/
+	ExtrasCustomLinksBulkUpdate(ctx context.Context) ApiExtrasCustomLinksBulkUpdateRequest
+
+	// ExtrasCustomLinksBulkUpdateExecute executes the request
+	//  @return []CustomLink
+	ExtrasCustomLinksBulkUpdateExecute(r ApiExtrasCustomLinksBulkUpdateRequest) ([]CustomLink, *http.Response, error)
+
+	/*
+	ExtrasCustomLinksCreate Method for ExtrasCustomLinksCreate
+
+	Post a list of custom link objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomLinksCreateRequest
+	*/
+	ExtrasCustomLinksCreate(ctx context.Context) ApiExtrasCustomLinksCreateRequest
+
+	// ExtrasCustomLinksCreateExecute executes the request
+	//  @return CustomLink
+	ExtrasCustomLinksCreateExecute(r ApiExtrasCustomLinksCreateRequest) (*CustomLink, *http.Response, error)
+
+	/*
+	ExtrasCustomLinksDestroy Method for ExtrasCustomLinksDestroy
+
+	Delete a custom link object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom link.
+	@return ApiExtrasCustomLinksDestroyRequest
+	*/
+	ExtrasCustomLinksDestroy(ctx context.Context, id int64) ApiExtrasCustomLinksDestroyRequest
+
+	// ExtrasCustomLinksDestroyExecute executes the request
+	ExtrasCustomLinksDestroyExecute(r ApiExtrasCustomLinksDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasCustomLinksList Method for ExtrasCustomLinksList
+
+	Get a list of custom link objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasCustomLinksListRequest
+	*/
+	ExtrasCustomLinksList(ctx context.Context) ApiExtrasCustomLinksListRequest
+
+	// ExtrasCustomLinksListExecute executes the request
+	//  @return PaginatedCustomLinkList
+	ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksListRequest) (*PaginatedCustomLinkList, *http.Response, error)
+
+	/*
+	ExtrasCustomLinksPartialUpdate Method for ExtrasCustomLinksPartialUpdate
+
+	Patch a custom link object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom link.
+	@return ApiExtrasCustomLinksPartialUpdateRequest
+	*/
+	ExtrasCustomLinksPartialUpdate(ctx context.Context, id int64) ApiExtrasCustomLinksPartialUpdateRequest
+
+	// ExtrasCustomLinksPartialUpdateExecute executes the request
+	//  @return CustomLink
+	ExtrasCustomLinksPartialUpdateExecute(r ApiExtrasCustomLinksPartialUpdateRequest) (*CustomLink, *http.Response, error)
+
+	/*
+	ExtrasCustomLinksRetrieve Method for ExtrasCustomLinksRetrieve
+
+	Get a custom link object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom link.
+	@return ApiExtrasCustomLinksRetrieveRequest
+	*/
+	ExtrasCustomLinksRetrieve(ctx context.Context, id int64) ApiExtrasCustomLinksRetrieveRequest
+
+	// ExtrasCustomLinksRetrieveExecute executes the request
+	//  @return CustomLink
+	ExtrasCustomLinksRetrieveExecute(r ApiExtrasCustomLinksRetrieveRequest) (*CustomLink, *http.Response, error)
+
+	/*
+	ExtrasCustomLinksUpdate Method for ExtrasCustomLinksUpdate
+
+	Put a custom link object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this custom link.
+	@return ApiExtrasCustomLinksUpdateRequest
+	*/
+	ExtrasCustomLinksUpdate(ctx context.Context, id int64) ApiExtrasCustomLinksUpdateRequest
+
+	// ExtrasCustomLinksUpdateExecute executes the request
+	//  @return CustomLink
+	ExtrasCustomLinksUpdateExecute(r ApiExtrasCustomLinksUpdateRequest) (*CustomLink, *http.Response, error)
+
+	/*
+	ExtrasDashboardDestroy Method for ExtrasDashboardDestroy
+
+	Delete a list of dashboard objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasDashboardDestroyRequest
+	*/
+	ExtrasDashboardDestroy(ctx context.Context) ApiExtrasDashboardDestroyRequest
+
+	// ExtrasDashboardDestroyExecute executes the request
+	ExtrasDashboardDestroyExecute(r ApiExtrasDashboardDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasDashboardPartialUpdate Method for ExtrasDashboardPartialUpdate
+
+	Patch a list of dashboard objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasDashboardPartialUpdateRequest
+	*/
+	ExtrasDashboardPartialUpdate(ctx context.Context) ApiExtrasDashboardPartialUpdateRequest
+
+	// ExtrasDashboardPartialUpdateExecute executes the request
+	//  @return Dashboard
+	ExtrasDashboardPartialUpdateExecute(r ApiExtrasDashboardPartialUpdateRequest) (*Dashboard, *http.Response, error)
+
+	/*
+	ExtrasDashboardRetrieve Method for ExtrasDashboardRetrieve
+
+	Get a list of dashboard objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasDashboardRetrieveRequest
+	*/
+	ExtrasDashboardRetrieve(ctx context.Context) ApiExtrasDashboardRetrieveRequest
+
+	// ExtrasDashboardRetrieveExecute executes the request
+	//  @return Dashboard
+	ExtrasDashboardRetrieveExecute(r ApiExtrasDashboardRetrieveRequest) (*Dashboard, *http.Response, error)
+
+	/*
+	ExtrasDashboardUpdate Method for ExtrasDashboardUpdate
+
+	Put a list of dashboard objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasDashboardUpdateRequest
+	*/
+	ExtrasDashboardUpdate(ctx context.Context) ApiExtrasDashboardUpdateRequest
+
+	// ExtrasDashboardUpdateExecute executes the request
+	//  @return Dashboard
+	ExtrasDashboardUpdateExecute(r ApiExtrasDashboardUpdateRequest) (*Dashboard, *http.Response, error)
+
+	/*
+	ExtrasEventRulesBulkDestroy Method for ExtrasEventRulesBulkDestroy
+
+	Delete a list of event rule objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesBulkDestroyRequest
+	*/
+	ExtrasEventRulesBulkDestroy(ctx context.Context) ApiExtrasEventRulesBulkDestroyRequest
+
+	// ExtrasEventRulesBulkDestroyExecute executes the request
+	ExtrasEventRulesBulkDestroyExecute(r ApiExtrasEventRulesBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasEventRulesBulkPartialUpdate Method for ExtrasEventRulesBulkPartialUpdate
+
+	Patch a list of event rule objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesBulkPartialUpdateRequest
+	*/
+	ExtrasEventRulesBulkPartialUpdate(ctx context.Context) ApiExtrasEventRulesBulkPartialUpdateRequest
+
+	// ExtrasEventRulesBulkPartialUpdateExecute executes the request
+	//  @return []EventRule
+	ExtrasEventRulesBulkPartialUpdateExecute(r ApiExtrasEventRulesBulkPartialUpdateRequest) ([]EventRule, *http.Response, error)
+
+	/*
+	ExtrasEventRulesBulkUpdate Method for ExtrasEventRulesBulkUpdate
+
+	Put a list of event rule objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesBulkUpdateRequest
+	*/
+	ExtrasEventRulesBulkUpdate(ctx context.Context) ApiExtrasEventRulesBulkUpdateRequest
+
+	// ExtrasEventRulesBulkUpdateExecute executes the request
+	//  @return []EventRule
+	ExtrasEventRulesBulkUpdateExecute(r ApiExtrasEventRulesBulkUpdateRequest) ([]EventRule, *http.Response, error)
+
+	/*
+	ExtrasEventRulesCreate Method for ExtrasEventRulesCreate
+
+	Post a list of event rule objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesCreateRequest
+	*/
+	ExtrasEventRulesCreate(ctx context.Context) ApiExtrasEventRulesCreateRequest
+
+	// ExtrasEventRulesCreateExecute executes the request
+	//  @return EventRule
+	ExtrasEventRulesCreateExecute(r ApiExtrasEventRulesCreateRequest) (*EventRule, *http.Response, error)
+
+	/*
+	ExtrasEventRulesDestroy Method for ExtrasEventRulesDestroy
+
+	Delete a event rule object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesDestroyRequest
+	*/
+	ExtrasEventRulesDestroy(ctx context.Context, id int64) ApiExtrasEventRulesDestroyRequest
+
+	// ExtrasEventRulesDestroyExecute executes the request
+	ExtrasEventRulesDestroyExecute(r ApiExtrasEventRulesDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasEventRulesList Method for ExtrasEventRulesList
+
+	Get a list of event rule objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesListRequest
+	*/
+	ExtrasEventRulesList(ctx context.Context) ApiExtrasEventRulesListRequest
+
+	// ExtrasEventRulesListExecute executes the request
+	//  @return PaginatedEventRuleList
+	ExtrasEventRulesListExecute(r ApiExtrasEventRulesListRequest) (*PaginatedEventRuleList, *http.Response, error)
+
+	/*
+	ExtrasEventRulesPartialUpdate Method for ExtrasEventRulesPartialUpdate
+
+	Patch a event rule object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesPartialUpdateRequest
+	*/
+	ExtrasEventRulesPartialUpdate(ctx context.Context, id int64) ApiExtrasEventRulesPartialUpdateRequest
+
+	// ExtrasEventRulesPartialUpdateExecute executes the request
+	//  @return EventRule
+	ExtrasEventRulesPartialUpdateExecute(r ApiExtrasEventRulesPartialUpdateRequest) (*EventRule, *http.Response, error)
+
+	/*
+	ExtrasEventRulesRetrieve Method for ExtrasEventRulesRetrieve
+
+	Get a event rule object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesRetrieveRequest
+	*/
+	ExtrasEventRulesRetrieve(ctx context.Context, id int64) ApiExtrasEventRulesRetrieveRequest
+
+	// ExtrasEventRulesRetrieveExecute executes the request
+	//  @return EventRule
+	ExtrasEventRulesRetrieveExecute(r ApiExtrasEventRulesRetrieveRequest) (*EventRule, *http.Response, error)
+
+	/*
+	ExtrasEventRulesUpdate Method for ExtrasEventRulesUpdate
+
+	Put a event rule object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesUpdateRequest
+	*/
+	ExtrasEventRulesUpdate(ctx context.Context, id int64) ApiExtrasEventRulesUpdateRequest
+
+	// ExtrasEventRulesUpdateExecute executes the request
+	//  @return EventRule
+	ExtrasEventRulesUpdateExecute(r ApiExtrasEventRulesUpdateRequest) (*EventRule, *http.Response, error)
+
+	/*
+	ExtrasExportTemplatesBulkDestroy Method for ExtrasExportTemplatesBulkDestroy
+
+	Delete a list of export template objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasExportTemplatesBulkDestroyRequest
+	*/
+	ExtrasExportTemplatesBulkDestroy(ctx context.Context) ApiExtrasExportTemplatesBulkDestroyRequest
+
+	// ExtrasExportTemplatesBulkDestroyExecute executes the request
+	ExtrasExportTemplatesBulkDestroyExecute(r ApiExtrasExportTemplatesBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasExportTemplatesBulkPartialUpdate Method for ExtrasExportTemplatesBulkPartialUpdate
+
+	Patch a list of export template objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasExportTemplatesBulkPartialUpdateRequest
+	*/
+	ExtrasExportTemplatesBulkPartialUpdate(ctx context.Context) ApiExtrasExportTemplatesBulkPartialUpdateRequest
+
+	// ExtrasExportTemplatesBulkPartialUpdateExecute executes the request
+	//  @return []ExportTemplate
+	ExtrasExportTemplatesBulkPartialUpdateExecute(r ApiExtrasExportTemplatesBulkPartialUpdateRequest) ([]ExportTemplate, *http.Response, error)
+
+	/*
+	ExtrasExportTemplatesBulkUpdate Method for ExtrasExportTemplatesBulkUpdate
+
+	Put a list of export template objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasExportTemplatesBulkUpdateRequest
+	*/
+	ExtrasExportTemplatesBulkUpdate(ctx context.Context) ApiExtrasExportTemplatesBulkUpdateRequest
+
+	// ExtrasExportTemplatesBulkUpdateExecute executes the request
+	//  @return []ExportTemplate
+	ExtrasExportTemplatesBulkUpdateExecute(r ApiExtrasExportTemplatesBulkUpdateRequest) ([]ExportTemplate, *http.Response, error)
+
+	/*
+	ExtrasExportTemplatesCreate Method for ExtrasExportTemplatesCreate
+
+	Post a list of export template objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasExportTemplatesCreateRequest
+	*/
+	ExtrasExportTemplatesCreate(ctx context.Context) ApiExtrasExportTemplatesCreateRequest
+
+	// ExtrasExportTemplatesCreateExecute executes the request
+	//  @return ExportTemplate
+	ExtrasExportTemplatesCreateExecute(r ApiExtrasExportTemplatesCreateRequest) (*ExportTemplate, *http.Response, error)
+
+	/*
+	ExtrasExportTemplatesDestroy Method for ExtrasExportTemplatesDestroy
+
+	Delete a export template object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this export template.
+	@return ApiExtrasExportTemplatesDestroyRequest
+	*/
+	ExtrasExportTemplatesDestroy(ctx context.Context, id int64) ApiExtrasExportTemplatesDestroyRequest
+
+	// ExtrasExportTemplatesDestroyExecute executes the request
+	ExtrasExportTemplatesDestroyExecute(r ApiExtrasExportTemplatesDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasExportTemplatesList Method for ExtrasExportTemplatesList
+
+	Get a list of export template objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasExportTemplatesListRequest
+	*/
+	ExtrasExportTemplatesList(ctx context.Context) ApiExtrasExportTemplatesListRequest
+
+	// ExtrasExportTemplatesListExecute executes the request
+	//  @return PaginatedExportTemplateList
+	ExtrasExportTemplatesListExecute(r ApiExtrasExportTemplatesListRequest) (*PaginatedExportTemplateList, *http.Response, error)
+
+	/*
+	ExtrasExportTemplatesPartialUpdate Method for ExtrasExportTemplatesPartialUpdate
+
+	Patch a export template object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this export template.
+	@return ApiExtrasExportTemplatesPartialUpdateRequest
+	*/
+	ExtrasExportTemplatesPartialUpdate(ctx context.Context, id int64) ApiExtrasExportTemplatesPartialUpdateRequest
+
+	// ExtrasExportTemplatesPartialUpdateExecute executes the request
+	//  @return ExportTemplate
+	ExtrasExportTemplatesPartialUpdateExecute(r ApiExtrasExportTemplatesPartialUpdateRequest) (*ExportTemplate, *http.Response, error)
+
+	/*
+	ExtrasExportTemplatesRetrieve Method for ExtrasExportTemplatesRetrieve
+
+	Get a export template object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this export template.
+	@return ApiExtrasExportTemplatesRetrieveRequest
+	*/
+	ExtrasExportTemplatesRetrieve(ctx context.Context, id int64) ApiExtrasExportTemplatesRetrieveRequest
+
+	// ExtrasExportTemplatesRetrieveExecute executes the request
+	//  @return ExportTemplate
+	ExtrasExportTemplatesRetrieveExecute(r ApiExtrasExportTemplatesRetrieveRequest) (*ExportTemplate, *http.Response, error)
+
+	/*
+	ExtrasExportTemplatesSyncCreate Method for ExtrasExportTemplatesSyncCreate
+
+	Provide a /sync API endpoint to synchronize an object's data from its associated DataFile (if any).
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this export template.
+	@return ApiExtrasExportTemplatesSyncCreateRequest
+	*/
+	ExtrasExportTemplatesSyncCreate(ctx context.Context, id int64) ApiExtrasExportTemplatesSyncCreateRequest
+
+	// ExtrasExportTemplatesSyncCreateExecute executes the request
+	//  @return ExportTemplate
+	ExtrasExportTemplatesSyncCreateExecute(r ApiExtrasExportTemplatesSyncCreateRequest) (*ExportTemplate, *http.Response, error)
+
+	/*
+	ExtrasExportTemplatesUpdate Method for ExtrasExportTemplatesUpdate
+
+	Put a export template object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this export template.
+	@return ApiExtrasExportTemplatesUpdateRequest
+	*/
+	ExtrasExportTemplatesUpdate(ctx context.Context, id int64) ApiExtrasExportTemplatesUpdateRequest
+
+	// ExtrasExportTemplatesUpdateExecute executes the request
+	//  @return ExportTemplate
+	ExtrasExportTemplatesUpdateExecute(r ApiExtrasExportTemplatesUpdateRequest) (*ExportTemplate, *http.Response, error)
+
+	/*
+	ExtrasImageAttachmentsBulkDestroy Method for ExtrasImageAttachmentsBulkDestroy
+
+	Delete a list of image attachment objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasImageAttachmentsBulkDestroyRequest
+	*/
+	ExtrasImageAttachmentsBulkDestroy(ctx context.Context) ApiExtrasImageAttachmentsBulkDestroyRequest
+
+	// ExtrasImageAttachmentsBulkDestroyExecute executes the request
+	ExtrasImageAttachmentsBulkDestroyExecute(r ApiExtrasImageAttachmentsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasImageAttachmentsBulkPartialUpdate Method for ExtrasImageAttachmentsBulkPartialUpdate
+
+	Patch a list of image attachment objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasImageAttachmentsBulkPartialUpdateRequest
+	*/
+	ExtrasImageAttachmentsBulkPartialUpdate(ctx context.Context) ApiExtrasImageAttachmentsBulkPartialUpdateRequest
+
+	// ExtrasImageAttachmentsBulkPartialUpdateExecute executes the request
+	//  @return []ImageAttachment
+	ExtrasImageAttachmentsBulkPartialUpdateExecute(r ApiExtrasImageAttachmentsBulkPartialUpdateRequest) ([]ImageAttachment, *http.Response, error)
+
+	/*
+	ExtrasImageAttachmentsBulkUpdate Method for ExtrasImageAttachmentsBulkUpdate
+
+	Put a list of image attachment objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasImageAttachmentsBulkUpdateRequest
+	*/
+	ExtrasImageAttachmentsBulkUpdate(ctx context.Context) ApiExtrasImageAttachmentsBulkUpdateRequest
+
+	// ExtrasImageAttachmentsBulkUpdateExecute executes the request
+	//  @return []ImageAttachment
+	ExtrasImageAttachmentsBulkUpdateExecute(r ApiExtrasImageAttachmentsBulkUpdateRequest) ([]ImageAttachment, *http.Response, error)
+
+	/*
+	ExtrasImageAttachmentsCreate Method for ExtrasImageAttachmentsCreate
+
+	Post a list of image attachment objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasImageAttachmentsCreateRequest
+	*/
+	ExtrasImageAttachmentsCreate(ctx context.Context) ApiExtrasImageAttachmentsCreateRequest
+
+	// ExtrasImageAttachmentsCreateExecute executes the request
+	//  @return ImageAttachment
+	ExtrasImageAttachmentsCreateExecute(r ApiExtrasImageAttachmentsCreateRequest) (*ImageAttachment, *http.Response, error)
+
+	/*
+	ExtrasImageAttachmentsDestroy Method for ExtrasImageAttachmentsDestroy
+
+	Delete a image attachment object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this image attachment.
+	@return ApiExtrasImageAttachmentsDestroyRequest
+	*/
+	ExtrasImageAttachmentsDestroy(ctx context.Context, id int64) ApiExtrasImageAttachmentsDestroyRequest
+
+	// ExtrasImageAttachmentsDestroyExecute executes the request
+	ExtrasImageAttachmentsDestroyExecute(r ApiExtrasImageAttachmentsDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasImageAttachmentsList Method for ExtrasImageAttachmentsList
+
+	Get a list of image attachment objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasImageAttachmentsListRequest
+	*/
+	ExtrasImageAttachmentsList(ctx context.Context) ApiExtrasImageAttachmentsListRequest
+
+	// ExtrasImageAttachmentsListExecute executes the request
+	//  @return PaginatedImageAttachmentList
+	ExtrasImageAttachmentsListExecute(r ApiExtrasImageAttachmentsListRequest) (*PaginatedImageAttachmentList, *http.Response, error)
+
+	/*
+	ExtrasImageAttachmentsPartialUpdate Method for ExtrasImageAttachmentsPartialUpdate
+
+	Patch a image attachment object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this image attachment.
+	@return ApiExtrasImageAttachmentsPartialUpdateRequest
+	*/
+	ExtrasImageAttachmentsPartialUpdate(ctx context.Context, id int64) ApiExtrasImageAttachmentsPartialUpdateRequest
+
+	// ExtrasImageAttachmentsPartialUpdateExecute executes the request
+	//  @return ImageAttachment
+	ExtrasImageAttachmentsPartialUpdateExecute(r ApiExtrasImageAttachmentsPartialUpdateRequest) (*ImageAttachment, *http.Response, error)
+
+	/*
+	ExtrasImageAttachmentsRetrieve Method for ExtrasImageAttachmentsRetrieve
+
+	Get a image attachment object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this image attachment.
+	@return ApiExtrasImageAttachmentsRetrieveRequest
+	*/
+	ExtrasImageAttachmentsRetrieve(ctx context.Context, id int64) ApiExtrasImageAttachmentsRetrieveRequest
+
+	// ExtrasImageAttachmentsRetrieveExecute executes the request
+	//  @return ImageAttachment
+	ExtrasImageAttachmentsRetrieveExecute(r ApiExtrasImageAttachmentsRetrieveRequest) (*ImageAttachment, *http.Response, error)
+
+	/*
+	ExtrasImageAttachmentsUpdate Method for ExtrasImageAttachmentsUpdate
+
+	Put a image attachment object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this image attachment.
+	@return ApiExtrasImageAttachmentsUpdateRequest
+	*/
+	ExtrasImageAttachmentsUpdate(ctx context.Context, id int64) ApiExtrasImageAttachmentsUpdateRequest
+
+	// ExtrasImageAttachmentsUpdateExecute executes the request
+	//  @return ImageAttachment
+	ExtrasImageAttachmentsUpdateExecute(r ApiExtrasImageAttachmentsUpdateRequest) (*ImageAttachment, *http.Response, error)
+
+	/*
+	ExtrasJournalEntriesBulkDestroy Method for ExtrasJournalEntriesBulkDestroy
+
+	Delete a list of journal entry objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasJournalEntriesBulkDestroyRequest
+	*/
+	ExtrasJournalEntriesBulkDestroy(ctx context.Context) ApiExtrasJournalEntriesBulkDestroyRequest
+
+	// ExtrasJournalEntriesBulkDestroyExecute executes the request
+	ExtrasJournalEntriesBulkDestroyExecute(r ApiExtrasJournalEntriesBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasJournalEntriesBulkPartialUpdate Method for ExtrasJournalEntriesBulkPartialUpdate
+
+	Patch a list of journal entry objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasJournalEntriesBulkPartialUpdateRequest
+	*/
+	ExtrasJournalEntriesBulkPartialUpdate(ctx context.Context) ApiExtrasJournalEntriesBulkPartialUpdateRequest
+
+	// ExtrasJournalEntriesBulkPartialUpdateExecute executes the request
+	//  @return []JournalEntry
+	ExtrasJournalEntriesBulkPartialUpdateExecute(r ApiExtrasJournalEntriesBulkPartialUpdateRequest) ([]JournalEntry, *http.Response, error)
+
+	/*
+	ExtrasJournalEntriesBulkUpdate Method for ExtrasJournalEntriesBulkUpdate
+
+	Put a list of journal entry objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasJournalEntriesBulkUpdateRequest
+	*/
+	ExtrasJournalEntriesBulkUpdate(ctx context.Context) ApiExtrasJournalEntriesBulkUpdateRequest
+
+	// ExtrasJournalEntriesBulkUpdateExecute executes the request
+	//  @return []JournalEntry
+	ExtrasJournalEntriesBulkUpdateExecute(r ApiExtrasJournalEntriesBulkUpdateRequest) ([]JournalEntry, *http.Response, error)
+
+	/*
+	ExtrasJournalEntriesCreate Method for ExtrasJournalEntriesCreate
+
+	Post a list of journal entry objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasJournalEntriesCreateRequest
+	*/
+	ExtrasJournalEntriesCreate(ctx context.Context) ApiExtrasJournalEntriesCreateRequest
+
+	// ExtrasJournalEntriesCreateExecute executes the request
+	//  @return JournalEntry
+	ExtrasJournalEntriesCreateExecute(r ApiExtrasJournalEntriesCreateRequest) (*JournalEntry, *http.Response, error)
+
+	/*
+	ExtrasJournalEntriesDestroy Method for ExtrasJournalEntriesDestroy
+
+	Delete a journal entry object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this journal entry.
+	@return ApiExtrasJournalEntriesDestroyRequest
+	*/
+	ExtrasJournalEntriesDestroy(ctx context.Context, id int64) ApiExtrasJournalEntriesDestroyRequest
+
+	// ExtrasJournalEntriesDestroyExecute executes the request
+	ExtrasJournalEntriesDestroyExecute(r ApiExtrasJournalEntriesDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasJournalEntriesList Method for ExtrasJournalEntriesList
+
+	Get a list of journal entry objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasJournalEntriesListRequest
+	*/
+	ExtrasJournalEntriesList(ctx context.Context) ApiExtrasJournalEntriesListRequest
+
+	// ExtrasJournalEntriesListExecute executes the request
+	//  @return PaginatedJournalEntryList
+	ExtrasJournalEntriesListExecute(r ApiExtrasJournalEntriesListRequest) (*PaginatedJournalEntryList, *http.Response, error)
+
+	/*
+	ExtrasJournalEntriesPartialUpdate Method for ExtrasJournalEntriesPartialUpdate
+
+	Patch a journal entry object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this journal entry.
+	@return ApiExtrasJournalEntriesPartialUpdateRequest
+	*/
+	ExtrasJournalEntriesPartialUpdate(ctx context.Context, id int64) ApiExtrasJournalEntriesPartialUpdateRequest
+
+	// ExtrasJournalEntriesPartialUpdateExecute executes the request
+	//  @return JournalEntry
+	ExtrasJournalEntriesPartialUpdateExecute(r ApiExtrasJournalEntriesPartialUpdateRequest) (*JournalEntry, *http.Response, error)
+
+	/*
+	ExtrasJournalEntriesRetrieve Method for ExtrasJournalEntriesRetrieve
+
+	Get a journal entry object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this journal entry.
+	@return ApiExtrasJournalEntriesRetrieveRequest
+	*/
+	ExtrasJournalEntriesRetrieve(ctx context.Context, id int64) ApiExtrasJournalEntriesRetrieveRequest
+
+	// ExtrasJournalEntriesRetrieveExecute executes the request
+	//  @return JournalEntry
+	ExtrasJournalEntriesRetrieveExecute(r ApiExtrasJournalEntriesRetrieveRequest) (*JournalEntry, *http.Response, error)
+
+	/*
+	ExtrasJournalEntriesUpdate Method for ExtrasJournalEntriesUpdate
+
+	Put a journal entry object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this journal entry.
+	@return ApiExtrasJournalEntriesUpdateRequest
+	*/
+	ExtrasJournalEntriesUpdate(ctx context.Context, id int64) ApiExtrasJournalEntriesUpdateRequest
+
+	// ExtrasJournalEntriesUpdateExecute executes the request
+	//  @return JournalEntry
+	ExtrasJournalEntriesUpdateExecute(r ApiExtrasJournalEntriesUpdateRequest) (*JournalEntry, *http.Response, error)
+
+	/*
+	ExtrasNotificationGroupsBulkDestroy Method for ExtrasNotificationGroupsBulkDestroy
+
+	Delete a list of notification group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationGroupsBulkDestroyRequest
+	*/
+	ExtrasNotificationGroupsBulkDestroy(ctx context.Context) ApiExtrasNotificationGroupsBulkDestroyRequest
+
+	// ExtrasNotificationGroupsBulkDestroyExecute executes the request
+	ExtrasNotificationGroupsBulkDestroyExecute(r ApiExtrasNotificationGroupsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasNotificationGroupsBulkPartialUpdate Method for ExtrasNotificationGroupsBulkPartialUpdate
+
+	Patch a list of notification group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationGroupsBulkPartialUpdateRequest
+	*/
+	ExtrasNotificationGroupsBulkPartialUpdate(ctx context.Context) ApiExtrasNotificationGroupsBulkPartialUpdateRequest
+
+	// ExtrasNotificationGroupsBulkPartialUpdateExecute executes the request
+	//  @return []NotificationGroup
+	ExtrasNotificationGroupsBulkPartialUpdateExecute(r ApiExtrasNotificationGroupsBulkPartialUpdateRequest) ([]NotificationGroup, *http.Response, error)
+
+	/*
+	ExtrasNotificationGroupsBulkUpdate Method for ExtrasNotificationGroupsBulkUpdate
+
+	Put a list of notification group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationGroupsBulkUpdateRequest
+	*/
+	ExtrasNotificationGroupsBulkUpdate(ctx context.Context) ApiExtrasNotificationGroupsBulkUpdateRequest
+
+	// ExtrasNotificationGroupsBulkUpdateExecute executes the request
+	//  @return []NotificationGroup
+	ExtrasNotificationGroupsBulkUpdateExecute(r ApiExtrasNotificationGroupsBulkUpdateRequest) ([]NotificationGroup, *http.Response, error)
+
+	/*
+	ExtrasNotificationGroupsCreate Method for ExtrasNotificationGroupsCreate
+
+	Post a list of notification group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationGroupsCreateRequest
+	*/
+	ExtrasNotificationGroupsCreate(ctx context.Context) ApiExtrasNotificationGroupsCreateRequest
+
+	// ExtrasNotificationGroupsCreateExecute executes the request
+	//  @return NotificationGroup
+	ExtrasNotificationGroupsCreateExecute(r ApiExtrasNotificationGroupsCreateRequest) (*NotificationGroup, *http.Response, error)
+
+	/*
+	ExtrasNotificationGroupsDestroy Method for ExtrasNotificationGroupsDestroy
+
+	Delete a notification group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification group.
+	@return ApiExtrasNotificationGroupsDestroyRequest
+	*/
+	ExtrasNotificationGroupsDestroy(ctx context.Context, id int64) ApiExtrasNotificationGroupsDestroyRequest
+
+	// ExtrasNotificationGroupsDestroyExecute executes the request
+	ExtrasNotificationGroupsDestroyExecute(r ApiExtrasNotificationGroupsDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasNotificationGroupsList Method for ExtrasNotificationGroupsList
+
+	Get a list of notification group objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationGroupsListRequest
+	*/
+	ExtrasNotificationGroupsList(ctx context.Context) ApiExtrasNotificationGroupsListRequest
+
+	// ExtrasNotificationGroupsListExecute executes the request
+	//  @return PaginatedNotificationGroupList
+	ExtrasNotificationGroupsListExecute(r ApiExtrasNotificationGroupsListRequest) (*PaginatedNotificationGroupList, *http.Response, error)
+
+	/*
+	ExtrasNotificationGroupsPartialUpdate Method for ExtrasNotificationGroupsPartialUpdate
+
+	Patch a notification group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification group.
+	@return ApiExtrasNotificationGroupsPartialUpdateRequest
+	*/
+	ExtrasNotificationGroupsPartialUpdate(ctx context.Context, id int64) ApiExtrasNotificationGroupsPartialUpdateRequest
+
+	// ExtrasNotificationGroupsPartialUpdateExecute executes the request
+	//  @return NotificationGroup
+	ExtrasNotificationGroupsPartialUpdateExecute(r ApiExtrasNotificationGroupsPartialUpdateRequest) (*NotificationGroup, *http.Response, error)
+
+	/*
+	ExtrasNotificationGroupsRetrieve Method for ExtrasNotificationGroupsRetrieve
+
+	Get a notification group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification group.
+	@return ApiExtrasNotificationGroupsRetrieveRequest
+	*/
+	ExtrasNotificationGroupsRetrieve(ctx context.Context, id int64) ApiExtrasNotificationGroupsRetrieveRequest
+
+	// ExtrasNotificationGroupsRetrieveExecute executes the request
+	//  @return NotificationGroup
+	ExtrasNotificationGroupsRetrieveExecute(r ApiExtrasNotificationGroupsRetrieveRequest) (*NotificationGroup, *http.Response, error)
+
+	/*
+	ExtrasNotificationGroupsUpdate Method for ExtrasNotificationGroupsUpdate
+
+	Put a notification group object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification group.
+	@return ApiExtrasNotificationGroupsUpdateRequest
+	*/
+	ExtrasNotificationGroupsUpdate(ctx context.Context, id int64) ApiExtrasNotificationGroupsUpdateRequest
+
+	// ExtrasNotificationGroupsUpdateExecute executes the request
+	//  @return NotificationGroup
+	ExtrasNotificationGroupsUpdateExecute(r ApiExtrasNotificationGroupsUpdateRequest) (*NotificationGroup, *http.Response, error)
+
+	/*
+	ExtrasNotificationsBulkDestroy Method for ExtrasNotificationsBulkDestroy
+
+	Delete a list of notification objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationsBulkDestroyRequest
+	*/
+	ExtrasNotificationsBulkDestroy(ctx context.Context) ApiExtrasNotificationsBulkDestroyRequest
+
+	// ExtrasNotificationsBulkDestroyExecute executes the request
+	ExtrasNotificationsBulkDestroyExecute(r ApiExtrasNotificationsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasNotificationsBulkPartialUpdate Method for ExtrasNotificationsBulkPartialUpdate
+
+	Patch a list of notification objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationsBulkPartialUpdateRequest
+	*/
+	ExtrasNotificationsBulkPartialUpdate(ctx context.Context) ApiExtrasNotificationsBulkPartialUpdateRequest
+
+	// ExtrasNotificationsBulkPartialUpdateExecute executes the request
+	//  @return []Notification
+	ExtrasNotificationsBulkPartialUpdateExecute(r ApiExtrasNotificationsBulkPartialUpdateRequest) ([]Notification, *http.Response, error)
+
+	/*
+	ExtrasNotificationsBulkUpdate Method for ExtrasNotificationsBulkUpdate
+
+	Put a list of notification objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationsBulkUpdateRequest
+	*/
+	ExtrasNotificationsBulkUpdate(ctx context.Context) ApiExtrasNotificationsBulkUpdateRequest
+
+	// ExtrasNotificationsBulkUpdateExecute executes the request
+	//  @return []Notification
+	ExtrasNotificationsBulkUpdateExecute(r ApiExtrasNotificationsBulkUpdateRequest) ([]Notification, *http.Response, error)
+
+	/*
+	ExtrasNotificationsCreate Method for ExtrasNotificationsCreate
+
+	Post a list of notification objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationsCreateRequest
+	*/
+	ExtrasNotificationsCreate(ctx context.Context) ApiExtrasNotificationsCreateRequest
+
+	// ExtrasNotificationsCreateExecute executes the request
+	//  @return Notification
+	ExtrasNotificationsCreateExecute(r ApiExtrasNotificationsCreateRequest) (*Notification, *http.Response, error)
+
+	/*
+	ExtrasNotificationsDestroy Method for ExtrasNotificationsDestroy
+
+	Delete a notification object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification.
+	@return ApiExtrasNotificationsDestroyRequest
+	*/
+	ExtrasNotificationsDestroy(ctx context.Context, id int64) ApiExtrasNotificationsDestroyRequest
+
+	// ExtrasNotificationsDestroyExecute executes the request
+	ExtrasNotificationsDestroyExecute(r ApiExtrasNotificationsDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasNotificationsList Method for ExtrasNotificationsList
+
+	Get a list of notification objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasNotificationsListRequest
+	*/
+	ExtrasNotificationsList(ctx context.Context) ApiExtrasNotificationsListRequest
+
+	// ExtrasNotificationsListExecute executes the request
+	//  @return PaginatedNotificationList
+	ExtrasNotificationsListExecute(r ApiExtrasNotificationsListRequest) (*PaginatedNotificationList, *http.Response, error)
+
+	/*
+	ExtrasNotificationsPartialUpdate Method for ExtrasNotificationsPartialUpdate
+
+	Patch a notification object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification.
+	@return ApiExtrasNotificationsPartialUpdateRequest
+	*/
+	ExtrasNotificationsPartialUpdate(ctx context.Context, id int64) ApiExtrasNotificationsPartialUpdateRequest
+
+	// ExtrasNotificationsPartialUpdateExecute executes the request
+	//  @return Notification
+	ExtrasNotificationsPartialUpdateExecute(r ApiExtrasNotificationsPartialUpdateRequest) (*Notification, *http.Response, error)
+
+	/*
+	ExtrasNotificationsRetrieve Method for ExtrasNotificationsRetrieve
+
+	Get a notification object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification.
+	@return ApiExtrasNotificationsRetrieveRequest
+	*/
+	ExtrasNotificationsRetrieve(ctx context.Context, id int64) ApiExtrasNotificationsRetrieveRequest
+
+	// ExtrasNotificationsRetrieveExecute executes the request
+	//  @return Notification
+	ExtrasNotificationsRetrieveExecute(r ApiExtrasNotificationsRetrieveRequest) (*Notification, *http.Response, error)
+
+	/*
+	ExtrasNotificationsUpdate Method for ExtrasNotificationsUpdate
+
+	Put a notification object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this notification.
+	@return ApiExtrasNotificationsUpdateRequest
+	*/
+	ExtrasNotificationsUpdate(ctx context.Context, id int64) ApiExtrasNotificationsUpdateRequest
+
+	// ExtrasNotificationsUpdateExecute executes the request
+	//  @return Notification
+	ExtrasNotificationsUpdateExecute(r ApiExtrasNotificationsUpdateRequest) (*Notification, *http.Response, error)
+
+	/*
+	ExtrasObjectTypesList Method for ExtrasObjectTypesList
+
+	Read-only list of ObjectTypes.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasObjectTypesListRequest
+	*/
+	ExtrasObjectTypesList(ctx context.Context) ApiExtrasObjectTypesListRequest
+
+	// ExtrasObjectTypesListExecute executes the request
+	//  @return PaginatedObjectTypeList
+	ExtrasObjectTypesListExecute(r ApiExtrasObjectTypesListRequest) (*PaginatedObjectTypeList, *http.Response, error)
+
+	/*
+	ExtrasObjectTypesRetrieve Method for ExtrasObjectTypesRetrieve
+
+	Read-only list of ObjectTypes.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this object type.
+	@return ApiExtrasObjectTypesRetrieveRequest
+	*/
+	ExtrasObjectTypesRetrieve(ctx context.Context, id int64) ApiExtrasObjectTypesRetrieveRequest
+
+	// ExtrasObjectTypesRetrieveExecute executes the request
+	//  @return ObjectType
+	ExtrasObjectTypesRetrieveExecute(r ApiExtrasObjectTypesRetrieveRequest) (*ObjectType, *http.Response, error)
+
+	/*
+	ExtrasSavedFiltersBulkDestroy Method for ExtrasSavedFiltersBulkDestroy
+
+	Delete a list of saved filter objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSavedFiltersBulkDestroyRequest
+	*/
+	ExtrasSavedFiltersBulkDestroy(ctx context.Context) ApiExtrasSavedFiltersBulkDestroyRequest
+
+	// ExtrasSavedFiltersBulkDestroyExecute executes the request
+	ExtrasSavedFiltersBulkDestroyExecute(r ApiExtrasSavedFiltersBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasSavedFiltersBulkPartialUpdate Method for ExtrasSavedFiltersBulkPartialUpdate
+
+	Patch a list of saved filter objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSavedFiltersBulkPartialUpdateRequest
+	*/
+	ExtrasSavedFiltersBulkPartialUpdate(ctx context.Context) ApiExtrasSavedFiltersBulkPartialUpdateRequest
+
+	// ExtrasSavedFiltersBulkPartialUpdateExecute executes the request
+	//  @return []SavedFilter
+	ExtrasSavedFiltersBulkPartialUpdateExecute(r ApiExtrasSavedFiltersBulkPartialUpdateRequest) ([]SavedFilter, *http.Response, error)
+
+	/*
+	ExtrasSavedFiltersBulkUpdate Method for ExtrasSavedFiltersBulkUpdate
+
+	Put a list of saved filter objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSavedFiltersBulkUpdateRequest
+	*/
+	ExtrasSavedFiltersBulkUpdate(ctx context.Context) ApiExtrasSavedFiltersBulkUpdateRequest
+
+	// ExtrasSavedFiltersBulkUpdateExecute executes the request
+	//  @return []SavedFilter
+	ExtrasSavedFiltersBulkUpdateExecute(r ApiExtrasSavedFiltersBulkUpdateRequest) ([]SavedFilter, *http.Response, error)
+
+	/*
+	ExtrasSavedFiltersCreate Method for ExtrasSavedFiltersCreate
+
+	Post a list of saved filter objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSavedFiltersCreateRequest
+	*/
+	ExtrasSavedFiltersCreate(ctx context.Context) ApiExtrasSavedFiltersCreateRequest
+
+	// ExtrasSavedFiltersCreateExecute executes the request
+	//  @return SavedFilter
+	ExtrasSavedFiltersCreateExecute(r ApiExtrasSavedFiltersCreateRequest) (*SavedFilter, *http.Response, error)
+
+	/*
+	ExtrasSavedFiltersDestroy Method for ExtrasSavedFiltersDestroy
+
+	Delete a saved filter object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this saved filter.
+	@return ApiExtrasSavedFiltersDestroyRequest
+	*/
+	ExtrasSavedFiltersDestroy(ctx context.Context, id int64) ApiExtrasSavedFiltersDestroyRequest
+
+	// ExtrasSavedFiltersDestroyExecute executes the request
+	ExtrasSavedFiltersDestroyExecute(r ApiExtrasSavedFiltersDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasSavedFiltersList Method for ExtrasSavedFiltersList
+
+	Get a list of saved filter objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSavedFiltersListRequest
+	*/
+	ExtrasSavedFiltersList(ctx context.Context) ApiExtrasSavedFiltersListRequest
+
+	// ExtrasSavedFiltersListExecute executes the request
+	//  @return PaginatedSavedFilterList
+	ExtrasSavedFiltersListExecute(r ApiExtrasSavedFiltersListRequest) (*PaginatedSavedFilterList, *http.Response, error)
+
+	/*
+	ExtrasSavedFiltersPartialUpdate Method for ExtrasSavedFiltersPartialUpdate
+
+	Patch a saved filter object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this saved filter.
+	@return ApiExtrasSavedFiltersPartialUpdateRequest
+	*/
+	ExtrasSavedFiltersPartialUpdate(ctx context.Context, id int64) ApiExtrasSavedFiltersPartialUpdateRequest
+
+	// ExtrasSavedFiltersPartialUpdateExecute executes the request
+	//  @return SavedFilter
+	ExtrasSavedFiltersPartialUpdateExecute(r ApiExtrasSavedFiltersPartialUpdateRequest) (*SavedFilter, *http.Response, error)
+
+	/*
+	ExtrasSavedFiltersRetrieve Method for ExtrasSavedFiltersRetrieve
+
+	Get a saved filter object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this saved filter.
+	@return ApiExtrasSavedFiltersRetrieveRequest
+	*/
+	ExtrasSavedFiltersRetrieve(ctx context.Context, id int64) ApiExtrasSavedFiltersRetrieveRequest
+
+	// ExtrasSavedFiltersRetrieveExecute executes the request
+	//  @return SavedFilter
+	ExtrasSavedFiltersRetrieveExecute(r ApiExtrasSavedFiltersRetrieveRequest) (*SavedFilter, *http.Response, error)
+
+	/*
+	ExtrasSavedFiltersUpdate Method for ExtrasSavedFiltersUpdate
+
+	Put a saved filter object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this saved filter.
+	@return ApiExtrasSavedFiltersUpdateRequest
+	*/
+	ExtrasSavedFiltersUpdate(ctx context.Context, id int64) ApiExtrasSavedFiltersUpdateRequest
+
+	// ExtrasSavedFiltersUpdateExecute executes the request
+	//  @return SavedFilter
+	ExtrasSavedFiltersUpdateExecute(r ApiExtrasSavedFiltersUpdateRequest) (*SavedFilter, *http.Response, error)
+
+	/*
+	ExtrasScriptsCreate Method for ExtrasScriptsCreate
+
+	Post a list of script objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasScriptsCreateRequest
+	*/
+	ExtrasScriptsCreate(ctx context.Context) ApiExtrasScriptsCreateRequest
+
+	// ExtrasScriptsCreateExecute executes the request
+	//  @return Script
+	ExtrasScriptsCreateExecute(r ApiExtrasScriptsCreateRequest) (*Script, *http.Response, error)
+
+	/*
+	ExtrasScriptsDestroy Method for ExtrasScriptsDestroy
+
+	Delete a script object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiExtrasScriptsDestroyRequest
+	*/
+	ExtrasScriptsDestroy(ctx context.Context, id string) ApiExtrasScriptsDestroyRequest
+
+	// ExtrasScriptsDestroyExecute executes the request
+	ExtrasScriptsDestroyExecute(r ApiExtrasScriptsDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasScriptsList Method for ExtrasScriptsList
+
+	Get a list of script objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasScriptsListRequest
+	*/
+	ExtrasScriptsList(ctx context.Context) ApiExtrasScriptsListRequest
+
+	// ExtrasScriptsListExecute executes the request
+	//  @return PaginatedScriptList
+	ExtrasScriptsListExecute(r ApiExtrasScriptsListRequest) (*PaginatedScriptList, *http.Response, error)
+
+	/*
+	ExtrasScriptsPartialUpdate Method for ExtrasScriptsPartialUpdate
+
+	Patch a script object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiExtrasScriptsPartialUpdateRequest
+	*/
+	ExtrasScriptsPartialUpdate(ctx context.Context, id string) ApiExtrasScriptsPartialUpdateRequest
+
+	// ExtrasScriptsPartialUpdateExecute executes the request
+	//  @return Script
+	ExtrasScriptsPartialUpdateExecute(r ApiExtrasScriptsPartialUpdateRequest) (*Script, *http.Response, error)
+
+	/*
+	ExtrasScriptsRetrieve Method for ExtrasScriptsRetrieve
+
+	Get a script object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiExtrasScriptsRetrieveRequest
+	*/
+	ExtrasScriptsRetrieve(ctx context.Context, id string) ApiExtrasScriptsRetrieveRequest
+
+	// ExtrasScriptsRetrieveExecute executes the request
+	//  @return Script
+	ExtrasScriptsRetrieveExecute(r ApiExtrasScriptsRetrieveRequest) (*Script, *http.Response, error)
+
+	/*
+	ExtrasScriptsUpdate Method for ExtrasScriptsUpdate
+
+	Put a script object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiExtrasScriptsUpdateRequest
+	*/
+	ExtrasScriptsUpdate(ctx context.Context, id string) ApiExtrasScriptsUpdateRequest
+
+	// ExtrasScriptsUpdateExecute executes the request
+	//  @return Script
+	ExtrasScriptsUpdateExecute(r ApiExtrasScriptsUpdateRequest) (*Script, *http.Response, error)
+
+	/*
+	ExtrasSubscriptionsBulkDestroy Method for ExtrasSubscriptionsBulkDestroy
+
+	Delete a list of subscription objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSubscriptionsBulkDestroyRequest
+	*/
+	ExtrasSubscriptionsBulkDestroy(ctx context.Context) ApiExtrasSubscriptionsBulkDestroyRequest
+
+	// ExtrasSubscriptionsBulkDestroyExecute executes the request
+	ExtrasSubscriptionsBulkDestroyExecute(r ApiExtrasSubscriptionsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasSubscriptionsBulkPartialUpdate Method for ExtrasSubscriptionsBulkPartialUpdate
+
+	Patch a list of subscription objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSubscriptionsBulkPartialUpdateRequest
+	*/
+	ExtrasSubscriptionsBulkPartialUpdate(ctx context.Context) ApiExtrasSubscriptionsBulkPartialUpdateRequest
+
+	// ExtrasSubscriptionsBulkPartialUpdateExecute executes the request
+	//  @return []Subscription
+	ExtrasSubscriptionsBulkPartialUpdateExecute(r ApiExtrasSubscriptionsBulkPartialUpdateRequest) ([]Subscription, *http.Response, error)
+
+	/*
+	ExtrasSubscriptionsBulkUpdate Method for ExtrasSubscriptionsBulkUpdate
+
+	Put a list of subscription objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSubscriptionsBulkUpdateRequest
+	*/
+	ExtrasSubscriptionsBulkUpdate(ctx context.Context) ApiExtrasSubscriptionsBulkUpdateRequest
+
+	// ExtrasSubscriptionsBulkUpdateExecute executes the request
+	//  @return []Subscription
+	ExtrasSubscriptionsBulkUpdateExecute(r ApiExtrasSubscriptionsBulkUpdateRequest) ([]Subscription, *http.Response, error)
+
+	/*
+	ExtrasSubscriptionsCreate Method for ExtrasSubscriptionsCreate
+
+	Post a list of subscription objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSubscriptionsCreateRequest
+	*/
+	ExtrasSubscriptionsCreate(ctx context.Context) ApiExtrasSubscriptionsCreateRequest
+
+	// ExtrasSubscriptionsCreateExecute executes the request
+	//  @return Subscription
+	ExtrasSubscriptionsCreateExecute(r ApiExtrasSubscriptionsCreateRequest) (*Subscription, *http.Response, error)
+
+	/*
+	ExtrasSubscriptionsDestroy Method for ExtrasSubscriptionsDestroy
+
+	Delete a subscription object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this subscription.
+	@return ApiExtrasSubscriptionsDestroyRequest
+	*/
+	ExtrasSubscriptionsDestroy(ctx context.Context, id int64) ApiExtrasSubscriptionsDestroyRequest
+
+	// ExtrasSubscriptionsDestroyExecute executes the request
+	ExtrasSubscriptionsDestroyExecute(r ApiExtrasSubscriptionsDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasSubscriptionsList Method for ExtrasSubscriptionsList
+
+	Get a list of subscription objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasSubscriptionsListRequest
+	*/
+	ExtrasSubscriptionsList(ctx context.Context) ApiExtrasSubscriptionsListRequest
+
+	// ExtrasSubscriptionsListExecute executes the request
+	//  @return PaginatedSubscriptionList
+	ExtrasSubscriptionsListExecute(r ApiExtrasSubscriptionsListRequest) (*PaginatedSubscriptionList, *http.Response, error)
+
+	/*
+	ExtrasSubscriptionsPartialUpdate Method for ExtrasSubscriptionsPartialUpdate
+
+	Patch a subscription object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this subscription.
+	@return ApiExtrasSubscriptionsPartialUpdateRequest
+	*/
+	ExtrasSubscriptionsPartialUpdate(ctx context.Context, id int64) ApiExtrasSubscriptionsPartialUpdateRequest
+
+	// ExtrasSubscriptionsPartialUpdateExecute executes the request
+	//  @return Subscription
+	ExtrasSubscriptionsPartialUpdateExecute(r ApiExtrasSubscriptionsPartialUpdateRequest) (*Subscription, *http.Response, error)
+
+	/*
+	ExtrasSubscriptionsRetrieve Method for ExtrasSubscriptionsRetrieve
+
+	Get a subscription object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this subscription.
+	@return ApiExtrasSubscriptionsRetrieveRequest
+	*/
+	ExtrasSubscriptionsRetrieve(ctx context.Context, id int64) ApiExtrasSubscriptionsRetrieveRequest
+
+	// ExtrasSubscriptionsRetrieveExecute executes the request
+	//  @return Subscription
+	ExtrasSubscriptionsRetrieveExecute(r ApiExtrasSubscriptionsRetrieveRequest) (*Subscription, *http.Response, error)
+
+	/*
+	ExtrasSubscriptionsUpdate Method for ExtrasSubscriptionsUpdate
+
+	Put a subscription object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this subscription.
+	@return ApiExtrasSubscriptionsUpdateRequest
+	*/
+	ExtrasSubscriptionsUpdate(ctx context.Context, id int64) ApiExtrasSubscriptionsUpdateRequest
+
+	// ExtrasSubscriptionsUpdateExecute executes the request
+	//  @return Subscription
+	ExtrasSubscriptionsUpdateExecute(r ApiExtrasSubscriptionsUpdateRequest) (*Subscription, *http.Response, error)
+
+	/*
+	ExtrasTagsBulkDestroy Method for ExtrasTagsBulkDestroy
+
+	Delete a list of tag objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasTagsBulkDestroyRequest
+	*/
+	ExtrasTagsBulkDestroy(ctx context.Context) ApiExtrasTagsBulkDestroyRequest
+
+	// ExtrasTagsBulkDestroyExecute executes the request
+	ExtrasTagsBulkDestroyExecute(r ApiExtrasTagsBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasTagsBulkPartialUpdate Method for ExtrasTagsBulkPartialUpdate
+
+	Patch a list of tag objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasTagsBulkPartialUpdateRequest
+	*/
+	ExtrasTagsBulkPartialUpdate(ctx context.Context) ApiExtrasTagsBulkPartialUpdateRequest
+
+	// ExtrasTagsBulkPartialUpdateExecute executes the request
+	//  @return []Tag
+	ExtrasTagsBulkPartialUpdateExecute(r ApiExtrasTagsBulkPartialUpdateRequest) ([]Tag, *http.Response, error)
+
+	/*
+	ExtrasTagsBulkUpdate Method for ExtrasTagsBulkUpdate
+
+	Put a list of tag objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasTagsBulkUpdateRequest
+	*/
+	ExtrasTagsBulkUpdate(ctx context.Context) ApiExtrasTagsBulkUpdateRequest
+
+	// ExtrasTagsBulkUpdateExecute executes the request
+	//  @return []Tag
+	ExtrasTagsBulkUpdateExecute(r ApiExtrasTagsBulkUpdateRequest) ([]Tag, *http.Response, error)
+
+	/*
+	ExtrasTagsCreate Method for ExtrasTagsCreate
+
+	Post a list of tag objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasTagsCreateRequest
+	*/
+	ExtrasTagsCreate(ctx context.Context) ApiExtrasTagsCreateRequest
+
+	// ExtrasTagsCreateExecute executes the request
+	//  @return Tag
+	ExtrasTagsCreateExecute(r ApiExtrasTagsCreateRequest) (*Tag, *http.Response, error)
+
+	/*
+	ExtrasTagsDestroy Method for ExtrasTagsDestroy
+
+	Delete a tag object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tag.
+	@return ApiExtrasTagsDestroyRequest
+	*/
+	ExtrasTagsDestroy(ctx context.Context, id int64) ApiExtrasTagsDestroyRequest
+
+	// ExtrasTagsDestroyExecute executes the request
+	ExtrasTagsDestroyExecute(r ApiExtrasTagsDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasTagsList Method for ExtrasTagsList
+
+	Get a list of tag objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasTagsListRequest
+	*/
+	ExtrasTagsList(ctx context.Context) ApiExtrasTagsListRequest
+
+	// ExtrasTagsListExecute executes the request
+	//  @return PaginatedTagList
+	ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*PaginatedTagList, *http.Response, error)
+
+	/*
+	ExtrasTagsPartialUpdate Method for ExtrasTagsPartialUpdate
+
+	Patch a tag object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tag.
+	@return ApiExtrasTagsPartialUpdateRequest
+	*/
+	ExtrasTagsPartialUpdate(ctx context.Context, id int64) ApiExtrasTagsPartialUpdateRequest
+
+	// ExtrasTagsPartialUpdateExecute executes the request
+	//  @return Tag
+	ExtrasTagsPartialUpdateExecute(r ApiExtrasTagsPartialUpdateRequest) (*Tag, *http.Response, error)
+
+	/*
+	ExtrasTagsRetrieve Method for ExtrasTagsRetrieve
+
+	Get a tag object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tag.
+	@return ApiExtrasTagsRetrieveRequest
+	*/
+	ExtrasTagsRetrieve(ctx context.Context, id int64) ApiExtrasTagsRetrieveRequest
+
+	// ExtrasTagsRetrieveExecute executes the request
+	//  @return Tag
+	ExtrasTagsRetrieveExecute(r ApiExtrasTagsRetrieveRequest) (*Tag, *http.Response, error)
+
+	/*
+	ExtrasTagsUpdate Method for ExtrasTagsUpdate
+
+	Put a tag object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tag.
+	@return ApiExtrasTagsUpdateRequest
+	*/
+	ExtrasTagsUpdate(ctx context.Context, id int64) ApiExtrasTagsUpdateRequest
+
+	// ExtrasTagsUpdateExecute executes the request
+	//  @return Tag
+	ExtrasTagsUpdateExecute(r ApiExtrasTagsUpdateRequest) (*Tag, *http.Response, error)
+
+	/*
+	ExtrasWebhooksBulkDestroy Method for ExtrasWebhooksBulkDestroy
+
+	Delete a list of webhook objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksBulkDestroyRequest
+	*/
+	ExtrasWebhooksBulkDestroy(ctx context.Context) ApiExtrasWebhooksBulkDestroyRequest
+
+	// ExtrasWebhooksBulkDestroyExecute executes the request
+	ExtrasWebhooksBulkDestroyExecute(r ApiExtrasWebhooksBulkDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasWebhooksBulkPartialUpdate Method for ExtrasWebhooksBulkPartialUpdate
+
+	Patch a list of webhook objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksBulkPartialUpdateRequest
+	*/
+	ExtrasWebhooksBulkPartialUpdate(ctx context.Context) ApiExtrasWebhooksBulkPartialUpdateRequest
+
+	// ExtrasWebhooksBulkPartialUpdateExecute executes the request
+	//  @return []Webhook
+	ExtrasWebhooksBulkPartialUpdateExecute(r ApiExtrasWebhooksBulkPartialUpdateRequest) ([]Webhook, *http.Response, error)
+
+	/*
+	ExtrasWebhooksBulkUpdate Method for ExtrasWebhooksBulkUpdate
+
+	Put a list of webhook objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksBulkUpdateRequest
+	*/
+	ExtrasWebhooksBulkUpdate(ctx context.Context) ApiExtrasWebhooksBulkUpdateRequest
+
+	// ExtrasWebhooksBulkUpdateExecute executes the request
+	//  @return []Webhook
+	ExtrasWebhooksBulkUpdateExecute(r ApiExtrasWebhooksBulkUpdateRequest) ([]Webhook, *http.Response, error)
+
+	/*
+	ExtrasWebhooksCreate Method for ExtrasWebhooksCreate
+
+	Post a list of webhook objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksCreateRequest
+	*/
+	ExtrasWebhooksCreate(ctx context.Context) ApiExtrasWebhooksCreateRequest
+
+	// ExtrasWebhooksCreateExecute executes the request
+	//  @return Webhook
+	ExtrasWebhooksCreateExecute(r ApiExtrasWebhooksCreateRequest) (*Webhook, *http.Response, error)
+
+	/*
+	ExtrasWebhooksDestroy Method for ExtrasWebhooksDestroy
+
+	Delete a webhook object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksDestroyRequest
+	*/
+	ExtrasWebhooksDestroy(ctx context.Context, id int64) ApiExtrasWebhooksDestroyRequest
+
+	// ExtrasWebhooksDestroyExecute executes the request
+	ExtrasWebhooksDestroyExecute(r ApiExtrasWebhooksDestroyRequest) (*http.Response, error)
+
+	/*
+	ExtrasWebhooksList Method for ExtrasWebhooksList
+
+	Get a list of webhook objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksListRequest
+	*/
+	ExtrasWebhooksList(ctx context.Context) ApiExtrasWebhooksListRequest
+
+	// ExtrasWebhooksListExecute executes the request
+	//  @return PaginatedWebhookList
+	ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequest) (*PaginatedWebhookList, *http.Response, error)
+
+	/*
+	ExtrasWebhooksPartialUpdate Method for ExtrasWebhooksPartialUpdate
+
+	Patch a webhook object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksPartialUpdateRequest
+	*/
+	ExtrasWebhooksPartialUpdate(ctx context.Context, id int64) ApiExtrasWebhooksPartialUpdateRequest
+
+	// ExtrasWebhooksPartialUpdateExecute executes the request
+	//  @return Webhook
+	ExtrasWebhooksPartialUpdateExecute(r ApiExtrasWebhooksPartialUpdateRequest) (*Webhook, *http.Response, error)
+
+	/*
+	ExtrasWebhooksRetrieve Method for ExtrasWebhooksRetrieve
+
+	Get a webhook object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksRetrieveRequest
+	*/
+	ExtrasWebhooksRetrieve(ctx context.Context, id int64) ApiExtrasWebhooksRetrieveRequest
+
+	// ExtrasWebhooksRetrieveExecute executes the request
+	//  @return Webhook
+	ExtrasWebhooksRetrieveExecute(r ApiExtrasWebhooksRetrieveRequest) (*Webhook, *http.Response, error)
+
+	/*
+	ExtrasWebhooksUpdate Method for ExtrasWebhooksUpdate
+
+	Put a webhook object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksUpdateRequest
+	*/
+	ExtrasWebhooksUpdate(ctx context.Context, id int64) ApiExtrasWebhooksUpdateRequest
+
+	// ExtrasWebhooksUpdateExecute executes the request
+	//  @return Webhook
+	ExtrasWebhooksUpdateExecute(r ApiExtrasWebhooksUpdateRequest) (*Webhook, *http.Response, error)
+}
+
 // ExtrasAPIService ExtrasAPI service
 type ExtrasAPIService service
 
 type ApiExtrasBookmarksBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	bookmarkRequest *[]BookmarkRequest
 }
 
@@ -140,7 +2438,7 @@ func (a *ExtrasAPIService) ExtrasBookmarksBulkDestroyExecute(r ApiExtrasBookmark
 
 type ApiExtrasBookmarksBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	bookmarkRequest *[]BookmarkRequest
 }
 
@@ -264,7 +2562,7 @@ func (a *ExtrasAPIService) ExtrasBookmarksBulkPartialUpdateExecute(r ApiExtrasBo
 
 type ApiExtrasBookmarksBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	bookmarkRequest *[]BookmarkRequest
 }
 
@@ -388,7 +2686,7 @@ func (a *ExtrasAPIService) ExtrasBookmarksBulkUpdateExecute(r ApiExtrasBookmarks
 
 type ApiExtrasBookmarksCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	bookmarkRequest *BookmarkRequest
 }
 
@@ -512,7 +2810,7 @@ func (a *ExtrasAPIService) ExtrasBookmarksCreateExecute(r ApiExtrasBookmarksCrea
 
 type ApiExtrasBookmarksDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -618,7 +2916,7 @@ func (a *ExtrasAPIService) ExtrasBookmarksDestroyExecute(r ApiExtrasBookmarksDes
 
 type ApiExtrasBookmarksListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	created *time.Time
 	id *[]int64
 	idEmpty *bool
@@ -1201,7 +3499,7 @@ func (a *ExtrasAPIService) ExtrasBookmarksListExecute(r ApiExtrasBookmarksListRe
 
 type ApiExtrasBookmarksPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedBookmarkRequest *PatchedBookmarkRequest
 }
@@ -1326,7 +3624,7 @@ func (a *ExtrasAPIService) ExtrasBookmarksPartialUpdateExecute(r ApiExtrasBookma
 
 type ApiExtrasBookmarksRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -1443,7 +3741,7 @@ func (a *ExtrasAPIService) ExtrasBookmarksRetrieveExecute(r ApiExtrasBookmarksRe
 
 type ApiExtrasBookmarksUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	bookmarkRequest *BookmarkRequest
 }
@@ -1571,7 +3869,7 @@ func (a *ExtrasAPIService) ExtrasBookmarksUpdateExecute(r ApiExtrasBookmarksUpda
 
 type ApiExtrasConfigContextsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	configContextRequest *[]ConfigContextRequest
 }
 
@@ -1684,7 +3982,7 @@ func (a *ExtrasAPIService) ExtrasConfigContextsBulkDestroyExecute(r ApiExtrasCon
 
 type ApiExtrasConfigContextsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	configContextRequest *[]ConfigContextRequest
 }
 
@@ -1808,7 +4106,7 @@ func (a *ExtrasAPIService) ExtrasConfigContextsBulkPartialUpdateExecute(r ApiExt
 
 type ApiExtrasConfigContextsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	configContextRequest *[]ConfigContextRequest
 }
 
@@ -1932,7 +4230,7 @@ func (a *ExtrasAPIService) ExtrasConfigContextsBulkUpdateExecute(r ApiExtrasConf
 
 type ApiExtrasConfigContextsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	configContextRequest *ConfigContextRequest
 }
 
@@ -2056,7 +4354,7 @@ func (a *ExtrasAPIService) ExtrasConfigContextsCreateExecute(r ApiExtrasConfigCo
 
 type ApiExtrasConfigContextsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -2162,7 +4460,7 @@ func (a *ExtrasAPIService) ExtrasConfigContextsDestroyExecute(r ApiExtrasConfigC
 
 type ApiExtrasConfigContextsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	autoSyncEnabled *bool
 	clusterGroup *[]string
 	clusterGroupN *[]string
@@ -4225,7 +6523,7 @@ func (a *ExtrasAPIService) ExtrasConfigContextsListExecute(r ApiExtrasConfigCont
 
 type ApiExtrasConfigContextsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedConfigContextRequest *PatchedConfigContextRequest
 }
@@ -4350,7 +6648,7 @@ func (a *ExtrasAPIService) ExtrasConfigContextsPartialUpdateExecute(r ApiExtrasC
 
 type ApiExtrasConfigContextsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -4467,7 +6765,7 @@ func (a *ExtrasAPIService) ExtrasConfigContextsRetrieveExecute(r ApiExtrasConfig
 
 type ApiExtrasConfigContextsSyncCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	configContextRequest *ConfigContextRequest
 }
@@ -4595,7 +6893,7 @@ func (a *ExtrasAPIService) ExtrasConfigContextsSyncCreateExecute(r ApiExtrasConf
 
 type ApiExtrasConfigContextsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	configContextRequest *ConfigContextRequest
 }
@@ -4723,7 +7021,7 @@ func (a *ExtrasAPIService) ExtrasConfigContextsUpdateExecute(r ApiExtrasConfigCo
 
 type ApiExtrasConfigTemplatesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	configTemplateRequest *[]ConfigTemplateRequest
 }
 
@@ -4836,7 +7134,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkDestroyExecute(r ApiExtrasCo
 
 type ApiExtrasConfigTemplatesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	configTemplateRequest *[]ConfigTemplateRequest
 }
 
@@ -4960,7 +7258,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkPartialUpdateExecute(r ApiEx
 
 type ApiExtrasConfigTemplatesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	configTemplateRequest *[]ConfigTemplateRequest
 }
 
@@ -5084,7 +7382,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesBulkUpdateExecute(r ApiExtrasCon
 
 type ApiExtrasConfigTemplatesCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	configTemplateRequest *ConfigTemplateRequest
 }
 
@@ -5208,7 +7506,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesCreateExecute(r ApiExtrasConfigT
 
 type ApiExtrasConfigTemplatesDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -5314,7 +7612,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesDestroyExecute(r ApiExtrasConfig
 
 type ApiExtrasConfigTemplatesListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	autoSyncEnabled *bool
 	created *[]time.Time
 	createdEmpty *[]time.Time
@@ -6427,7 +8725,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesListExecute(r ApiExtrasConfigTem
 
 type ApiExtrasConfigTemplatesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedConfigTemplateRequest *PatchedConfigTemplateRequest
 }
@@ -6552,7 +8850,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesPartialUpdateExecute(r ApiExtras
 
 type ApiExtrasConfigTemplatesRenderCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	configTemplateRequest *ConfigTemplateRequest
 	format *DcimDevicesRenderConfigCreateFormatParameter
@@ -6690,7 +8988,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesRenderCreateExecute(r ApiExtrasC
 
 type ApiExtrasConfigTemplatesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -6807,7 +9105,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesRetrieveExecute(r ApiExtrasConfi
 
 type ApiExtrasConfigTemplatesSyncCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	configTemplateRequest *ConfigTemplateRequest
 }
@@ -6935,7 +9233,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesSyncCreateExecute(r ApiExtrasCon
 
 type ApiExtrasConfigTemplatesUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	configTemplateRequest *ConfigTemplateRequest
 }
@@ -7063,7 +9361,7 @@ func (a *ExtrasAPIService) ExtrasConfigTemplatesUpdateExecute(r ApiExtrasConfigT
 
 type ApiExtrasCustomFieldChoiceSetsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	customFieldChoiceSetRequest *[]CustomFieldChoiceSetRequest
 }
 
@@ -7176,7 +9474,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkDestroyExecute(r ApiEx
 
 type ApiExtrasCustomFieldChoiceSetsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	customFieldChoiceSetRequest *[]CustomFieldChoiceSetRequest
 }
 
@@ -7300,7 +9598,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkPartialUpdateExecute(r
 
 type ApiExtrasCustomFieldChoiceSetsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	customFieldChoiceSetRequest *[]CustomFieldChoiceSetRequest
 }
 
@@ -7424,7 +9722,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsBulkUpdateExecute(r ApiExt
 
 type ApiExtrasCustomFieldChoiceSetsChoicesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -7541,7 +9839,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsChoicesRetrieveExecute(r A
 
 type ApiExtrasCustomFieldChoiceSetsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	writableCustomFieldChoiceSetRequest *WritableCustomFieldChoiceSetRequest
 }
 
@@ -7665,7 +9963,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsCreateExecute(r ApiExtrasC
 
 type ApiExtrasCustomFieldChoiceSetsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -7771,7 +10069,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsDestroyExecute(r ApiExtras
 
 type ApiExtrasCustomFieldChoiceSetsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	baseChoices *ExtrasCustomFieldChoiceSetsListBaseChoicesParameter
 	choice *[]string
 	created *[]time.Time
@@ -8694,7 +10992,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsListExecute(r ApiExtrasCus
 
 type ApiExtrasCustomFieldChoiceSetsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedWritableCustomFieldChoiceSetRequest *PatchedWritableCustomFieldChoiceSetRequest
 }
@@ -8819,7 +11117,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsPartialUpdateExecute(r Api
 
 type ApiExtrasCustomFieldChoiceSetsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -8936,7 +11234,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsRetrieveExecute(r ApiExtra
 
 type ApiExtrasCustomFieldChoiceSetsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	writableCustomFieldChoiceSetRequest *WritableCustomFieldChoiceSetRequest
 }
@@ -9064,7 +11362,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsUpdateExecute(r ApiExtrasC
 
 type ApiExtrasCustomFieldsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	customFieldRequest *[]CustomFieldRequest
 }
 
@@ -9177,7 +11475,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsBulkDestroyExecute(r ApiExtrasCusto
 
 type ApiExtrasCustomFieldsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	customFieldRequest *[]CustomFieldRequest
 }
 
@@ -9301,7 +11599,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsBulkPartialUpdateExecute(r ApiExtra
 
 type ApiExtrasCustomFieldsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	customFieldRequest *[]CustomFieldRequest
 }
 
@@ -9425,7 +11723,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsBulkUpdateExecute(r ApiExtrasCustom
 
 type ApiExtrasCustomFieldsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	writableCustomFieldRequest *WritableCustomFieldRequest
 }
 
@@ -9549,7 +11847,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsCreateExecute(r ApiExtrasCustomFiel
 
 type ApiExtrasCustomFieldsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -9655,7 +11953,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsDestroyExecute(r ApiExtrasCustomFie
 
 type ApiExtrasCustomFieldsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	choiceSet *[]string
 	choiceSetN *[]string
 	choiceSetId *[]*int64
@@ -12013,7 +14311,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsListExecute(r ApiExtrasCustomFields
 
 type ApiExtrasCustomFieldsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedWritableCustomFieldRequest *PatchedWritableCustomFieldRequest
 }
@@ -12138,7 +14436,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsPartialUpdateExecute(r ApiExtrasCus
 
 type ApiExtrasCustomFieldsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -12255,7 +14553,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsRetrieveExecute(r ApiExtrasCustomFi
 
 type ApiExtrasCustomFieldsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	writableCustomFieldRequest *WritableCustomFieldRequest
 }
@@ -12383,7 +14681,7 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsUpdateExecute(r ApiExtrasCustomFiel
 
 type ApiExtrasCustomLinksBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	customLinkRequest *[]CustomLinkRequest
 }
 
@@ -12496,7 +14794,7 @@ func (a *ExtrasAPIService) ExtrasCustomLinksBulkDestroyExecute(r ApiExtrasCustom
 
 type ApiExtrasCustomLinksBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	customLinkRequest *[]CustomLinkRequest
 }
 
@@ -12620,7 +14918,7 @@ func (a *ExtrasAPIService) ExtrasCustomLinksBulkPartialUpdateExecute(r ApiExtras
 
 type ApiExtrasCustomLinksBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	customLinkRequest *[]CustomLinkRequest
 }
 
@@ -12744,7 +15042,7 @@ func (a *ExtrasAPIService) ExtrasCustomLinksBulkUpdateExecute(r ApiExtrasCustomL
 
 type ApiExtrasCustomLinksCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	customLinkRequest *CustomLinkRequest
 }
 
@@ -12868,7 +15166,7 @@ func (a *ExtrasAPIService) ExtrasCustomLinksCreateExecute(r ApiExtrasCustomLinks
 
 type ApiExtrasCustomLinksDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -12974,7 +15272,7 @@ func (a *ExtrasAPIService) ExtrasCustomLinksDestroyExecute(r ApiExtrasCustomLink
 
 type ApiExtrasCustomLinksListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	buttonClass *ExtrasCustomLinksListButtonClassParameter
 	created *[]time.Time
 	createdEmpty *[]time.Time
@@ -14304,7 +16602,7 @@ func (a *ExtrasAPIService) ExtrasCustomLinksListExecute(r ApiExtrasCustomLinksLi
 
 type ApiExtrasCustomLinksPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedCustomLinkRequest *PatchedCustomLinkRequest
 }
@@ -14429,7 +16727,7 @@ func (a *ExtrasAPIService) ExtrasCustomLinksPartialUpdateExecute(r ApiExtrasCust
 
 type ApiExtrasCustomLinksRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -14546,7 +16844,7 @@ func (a *ExtrasAPIService) ExtrasCustomLinksRetrieveExecute(r ApiExtrasCustomLin
 
 type ApiExtrasCustomLinksUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	customLinkRequest *CustomLinkRequest
 }
@@ -14674,7 +16972,7 @@ func (a *ExtrasAPIService) ExtrasCustomLinksUpdateExecute(r ApiExtrasCustomLinks
 
 type ApiExtrasDashboardDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 }
 
 func (r ApiExtrasDashboardDestroyRequest) Execute() (*http.Response, error) {
@@ -14776,7 +17074,7 @@ func (a *ExtrasAPIService) ExtrasDashboardDestroyExecute(r ApiExtrasDashboardDes
 
 type ApiExtrasDashboardPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	patchedDashboardRequest *PatchedDashboardRequest
 }
 
@@ -14897,7 +17195,7 @@ func (a *ExtrasAPIService) ExtrasDashboardPartialUpdateExecute(r ApiExtrasDashbo
 
 type ApiExtrasDashboardRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 }
 
 func (r ApiExtrasDashboardRetrieveRequest) Execute() (*Dashboard, *http.Response, error) {
@@ -15010,7 +17308,7 @@ func (a *ExtrasAPIService) ExtrasDashboardRetrieveExecute(r ApiExtrasDashboardRe
 
 type ApiExtrasDashboardUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	dashboardRequest *DashboardRequest
 }
 
@@ -15131,7 +17429,7 @@ func (a *ExtrasAPIService) ExtrasDashboardUpdateExecute(r ApiExtrasDashboardUpda
 
 type ApiExtrasEventRulesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	eventRuleRequest *[]EventRuleRequest
 }
 
@@ -15244,7 +17542,7 @@ func (a *ExtrasAPIService) ExtrasEventRulesBulkDestroyExecute(r ApiExtrasEventRu
 
 type ApiExtrasEventRulesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	eventRuleRequest *[]EventRuleRequest
 }
 
@@ -15368,7 +17666,7 @@ func (a *ExtrasAPIService) ExtrasEventRulesBulkPartialUpdateExecute(r ApiExtrasE
 
 type ApiExtrasEventRulesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	eventRuleRequest *[]EventRuleRequest
 }
 
@@ -15492,7 +17790,7 @@ func (a *ExtrasAPIService) ExtrasEventRulesBulkUpdateExecute(r ApiExtrasEventRul
 
 type ApiExtrasEventRulesCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	writableEventRuleRequest *WritableEventRuleRequest
 }
 
@@ -15616,7 +17914,7 @@ func (a *ExtrasAPIService) ExtrasEventRulesCreateExecute(r ApiExtrasEventRulesCr
 
 type ApiExtrasEventRulesDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -15722,7 +18020,7 @@ func (a *ExtrasAPIService) ExtrasEventRulesDestroyExecute(r ApiExtrasEventRulesD
 
 type ApiExtrasEventRulesListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	actionObjectId *[]int64
 	actionObjectIdEmpty *[]int64
 	actionObjectIdGt *[]int64
@@ -17118,7 +19416,7 @@ func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesList
 
 type ApiExtrasEventRulesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedWritableEventRuleRequest *PatchedWritableEventRuleRequest
 }
@@ -17243,7 +19541,7 @@ func (a *ExtrasAPIService) ExtrasEventRulesPartialUpdateExecute(r ApiExtrasEvent
 
 type ApiExtrasEventRulesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -17360,7 +19658,7 @@ func (a *ExtrasAPIService) ExtrasEventRulesRetrieveExecute(r ApiExtrasEventRules
 
 type ApiExtrasEventRulesUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	writableEventRuleRequest *WritableEventRuleRequest
 }
@@ -17488,7 +19786,7 @@ func (a *ExtrasAPIService) ExtrasEventRulesUpdateExecute(r ApiExtrasEventRulesUp
 
 type ApiExtrasExportTemplatesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	exportTemplateRequest *[]ExportTemplateRequest
 }
 
@@ -17601,7 +19899,7 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesBulkDestroyExecute(r ApiExtrasEx
 
 type ApiExtrasExportTemplatesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	exportTemplateRequest *[]ExportTemplateRequest
 }
 
@@ -17725,7 +20023,7 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesBulkPartialUpdateExecute(r ApiEx
 
 type ApiExtrasExportTemplatesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	exportTemplateRequest *[]ExportTemplateRequest
 }
 
@@ -17849,7 +20147,7 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesBulkUpdateExecute(r ApiExtrasExp
 
 type ApiExtrasExportTemplatesCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	exportTemplateRequest *ExportTemplateRequest
 }
 
@@ -17973,7 +20271,7 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesCreateExecute(r ApiExtrasExportT
 
 type ApiExtrasExportTemplatesDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -18079,7 +20377,7 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesDestroyExecute(r ApiExtrasExport
 
 type ApiExtrasExportTemplatesListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	asAttachment *bool
 	autoSyncEnabled *bool
 	created *[]time.Time
@@ -19649,7 +21947,7 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesListExecute(r ApiExtrasExportTem
 
 type ApiExtrasExportTemplatesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedExportTemplateRequest *PatchedExportTemplateRequest
 }
@@ -19774,7 +22072,7 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesPartialUpdateExecute(r ApiExtras
 
 type ApiExtrasExportTemplatesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -19891,7 +22189,7 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesRetrieveExecute(r ApiExtrasExpor
 
 type ApiExtrasExportTemplatesSyncCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	exportTemplateRequest *ExportTemplateRequest
 }
@@ -20019,7 +22317,7 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesSyncCreateExecute(r ApiExtrasExp
 
 type ApiExtrasExportTemplatesUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	exportTemplateRequest *ExportTemplateRequest
 }
@@ -20147,7 +22445,7 @@ func (a *ExtrasAPIService) ExtrasExportTemplatesUpdateExecute(r ApiExtrasExportT
 
 type ApiExtrasImageAttachmentsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	imageAttachmentRequest *[]ImageAttachmentRequest
 }
 
@@ -20260,7 +22558,7 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkDestroyExecute(r ApiExtrasI
 
 type ApiExtrasImageAttachmentsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	imageAttachmentRequest *[]ImageAttachmentRequest
 }
 
@@ -20384,7 +22682,7 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkPartialUpdateExecute(r ApiE
 
 type ApiExtrasImageAttachmentsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	imageAttachmentRequest *[]ImageAttachmentRequest
 }
 
@@ -20508,7 +22806,7 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsBulkUpdateExecute(r ApiExtrasIm
 
 type ApiExtrasImageAttachmentsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	imageAttachmentRequest *ImageAttachmentRequest
 }
 
@@ -20632,7 +22930,7 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsCreateExecute(r ApiExtrasImageA
 
 type ApiExtrasImageAttachmentsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -20738,7 +23036,7 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsDestroyExecute(r ApiExtrasImage
 
 type ApiExtrasImageAttachmentsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -21815,7 +24113,7 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsListExecute(r ApiExtrasImageAtt
 
 type ApiExtrasImageAttachmentsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedImageAttachmentRequest *PatchedImageAttachmentRequest
 }
@@ -21940,7 +24238,7 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsPartialUpdateExecute(r ApiExtra
 
 type ApiExtrasImageAttachmentsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -22057,7 +24355,7 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsRetrieveExecute(r ApiExtrasImag
 
 type ApiExtrasImageAttachmentsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	imageAttachmentRequest *ImageAttachmentRequest
 }
@@ -22185,7 +24483,7 @@ func (a *ExtrasAPIService) ExtrasImageAttachmentsUpdateExecute(r ApiExtrasImageA
 
 type ApiExtrasJournalEntriesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	journalEntryRequest *[]JournalEntryRequest
 }
 
@@ -22298,7 +24596,7 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesBulkDestroyExecute(r ApiExtrasJou
 
 type ApiExtrasJournalEntriesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	journalEntryRequest *[]JournalEntryRequest
 }
 
@@ -22422,7 +24720,7 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesBulkPartialUpdateExecute(r ApiExt
 
 type ApiExtrasJournalEntriesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	journalEntryRequest *[]JournalEntryRequest
 }
 
@@ -22546,7 +24844,7 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesBulkUpdateExecute(r ApiExtrasJour
 
 type ApiExtrasJournalEntriesCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	writableJournalEntryRequest *WritableJournalEntryRequest
 }
 
@@ -22670,7 +24968,7 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesCreateExecute(r ApiExtrasJournalE
 
 type ApiExtrasJournalEntriesDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -22776,7 +25074,7 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesDestroyExecute(r ApiExtrasJournal
 
 type ApiExtrasJournalEntriesListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	assignedObjectId *[]int64
 	assignedObjectIdEmpty *bool
 	assignedObjectIdGt *[]int64
@@ -23661,7 +25959,7 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesListExecute(r ApiExtrasJournalEnt
 
 type ApiExtrasJournalEntriesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedWritableJournalEntryRequest *PatchedWritableJournalEntryRequest
 }
@@ -23786,7 +26084,7 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesPartialUpdateExecute(r ApiExtrasJ
 
 type ApiExtrasJournalEntriesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -23903,7 +26201,7 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesRetrieveExecute(r ApiExtrasJourna
 
 type ApiExtrasJournalEntriesUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	writableJournalEntryRequest *WritableJournalEntryRequest
 }
@@ -24031,7 +26329,7 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesUpdateExecute(r ApiExtrasJournalE
 
 type ApiExtrasNotificationGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	notificationGroupRequest *[]NotificationGroupRequest
 }
 
@@ -24144,7 +26442,7 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkDestroyExecute(r ApiExtra
 
 type ApiExtrasNotificationGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	notificationGroupRequest *[]NotificationGroupRequest
 }
 
@@ -24268,7 +26566,7 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkPartialUpdateExecute(r Ap
 
 type ApiExtrasNotificationGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	notificationGroupRequest *[]NotificationGroupRequest
 }
 
@@ -24392,7 +26690,7 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsBulkUpdateExecute(r ApiExtras
 
 type ApiExtrasNotificationGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	notificationGroupRequest *NotificationGroupRequest
 }
 
@@ -24516,7 +26814,7 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsCreateExecute(r ApiExtrasNoti
 
 type ApiExtrasNotificationGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -24622,7 +26920,7 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsDestroyExecute(r ApiExtrasNot
 
 type ApiExtrasNotificationGroupsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	limit *int64
 	offset *int64
 	ordering *string
@@ -24765,7 +27063,7 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsListExecute(r ApiExtrasNotifi
 
 type ApiExtrasNotificationGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedNotificationGroupRequest *PatchedNotificationGroupRequest
 }
@@ -24890,7 +27188,7 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsPartialUpdateExecute(r ApiExt
 
 type ApiExtrasNotificationGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -25007,7 +27305,7 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsRetrieveExecute(r ApiExtrasNo
 
 type ApiExtrasNotificationGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	notificationGroupRequest *NotificationGroupRequest
 }
@@ -25135,7 +27433,7 @@ func (a *ExtrasAPIService) ExtrasNotificationGroupsUpdateExecute(r ApiExtrasNoti
 
 type ApiExtrasNotificationsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	notificationRequest *[]NotificationRequest
 }
 
@@ -25248,7 +27546,7 @@ func (a *ExtrasAPIService) ExtrasNotificationsBulkDestroyExecute(r ApiExtrasNoti
 
 type ApiExtrasNotificationsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	notificationRequest *[]NotificationRequest
 }
 
@@ -25372,7 +27670,7 @@ func (a *ExtrasAPIService) ExtrasNotificationsBulkPartialUpdateExecute(r ApiExtr
 
 type ApiExtrasNotificationsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	notificationRequest *[]NotificationRequest
 }
 
@@ -25496,7 +27794,7 @@ func (a *ExtrasAPIService) ExtrasNotificationsBulkUpdateExecute(r ApiExtrasNotif
 
 type ApiExtrasNotificationsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	notificationRequest *NotificationRequest
 }
 
@@ -25620,7 +27918,7 @@ func (a *ExtrasAPIService) ExtrasNotificationsCreateExecute(r ApiExtrasNotificat
 
 type ApiExtrasNotificationsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -25726,7 +28024,7 @@ func (a *ExtrasAPIService) ExtrasNotificationsDestroyExecute(r ApiExtrasNotifica
 
 type ApiExtrasNotificationsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	limit *int64
 	offset *int64
 	ordering *string
@@ -25869,7 +28167,7 @@ func (a *ExtrasAPIService) ExtrasNotificationsListExecute(r ApiExtrasNotificatio
 
 type ApiExtrasNotificationsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedNotificationRequest *PatchedNotificationRequest
 }
@@ -25994,7 +28292,7 @@ func (a *ExtrasAPIService) ExtrasNotificationsPartialUpdateExecute(r ApiExtrasNo
 
 type ApiExtrasNotificationsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -26111,7 +28409,7 @@ func (a *ExtrasAPIService) ExtrasNotificationsRetrieveExecute(r ApiExtrasNotific
 
 type ApiExtrasNotificationsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	notificationRequest *NotificationRequest
 }
@@ -26239,7 +28537,7 @@ func (a *ExtrasAPIService) ExtrasNotificationsUpdateExecute(r ApiExtrasNotificat
 
 type ApiExtrasObjectTypesListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	appLabel *string
 	id *int64
 	limit *int64
@@ -26419,7 +28717,7 @@ func (a *ExtrasAPIService) ExtrasObjectTypesListExecute(r ApiExtrasObjectTypesLi
 
 type ApiExtrasObjectTypesRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -26536,7 +28834,7 @@ func (a *ExtrasAPIService) ExtrasObjectTypesRetrieveExecute(r ApiExtrasObjectTyp
 
 type ApiExtrasSavedFiltersBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	savedFilterRequest *[]SavedFilterRequest
 }
 
@@ -26649,7 +28947,7 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersBulkDestroyExecute(r ApiExtrasSaved
 
 type ApiExtrasSavedFiltersBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	savedFilterRequest *[]SavedFilterRequest
 }
 
@@ -26773,7 +29071,7 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersBulkPartialUpdateExecute(r ApiExtra
 
 type ApiExtrasSavedFiltersBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	savedFilterRequest *[]SavedFilterRequest
 }
 
@@ -26897,7 +29195,7 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersBulkUpdateExecute(r ApiExtrasSavedF
 
 type ApiExtrasSavedFiltersCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	savedFilterRequest *SavedFilterRequest
 }
 
@@ -27021,7 +29319,7 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersCreateExecute(r ApiExtrasSavedFilte
 
 type ApiExtrasSavedFiltersDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -27127,7 +29425,7 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersDestroyExecute(r ApiExtrasSavedFilt
 
 type ApiExtrasSavedFiltersListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -28527,7 +30825,7 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersListExecute(r ApiExtrasSavedFilters
 
 type ApiExtrasSavedFiltersPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedSavedFilterRequest *PatchedSavedFilterRequest
 }
@@ -28652,7 +30950,7 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersPartialUpdateExecute(r ApiExtrasSav
 
 type ApiExtrasSavedFiltersRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -28769,7 +31067,7 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersRetrieveExecute(r ApiExtrasSavedFil
 
 type ApiExtrasSavedFiltersUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	savedFilterRequest *SavedFilterRequest
 }
@@ -28897,7 +31195,7 @@ func (a *ExtrasAPIService) ExtrasSavedFiltersUpdateExecute(r ApiExtrasSavedFilte
 
 type ApiExtrasScriptsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 }
 
 func (r ApiExtrasScriptsCreateRequest) Execute() (*Script, *http.Response, error) {
@@ -29010,7 +31308,7 @@ func (a *ExtrasAPIService) ExtrasScriptsCreateExecute(r ApiExtrasScriptsCreateRe
 
 type ApiExtrasScriptsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id string
 }
 
@@ -29116,7 +31414,7 @@ func (a *ExtrasAPIService) ExtrasScriptsDestroyExecute(r ApiExtrasScriptsDestroy
 
 type ApiExtrasScriptsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id *[]int64
 	idEmpty *bool
 	idGt *[]int64
@@ -29604,7 +31902,7 @@ func (a *ExtrasAPIService) ExtrasScriptsListExecute(r ApiExtrasScriptsListReques
 
 type ApiExtrasScriptsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id string
 	patchedScriptInputRequest *PatchedScriptInputRequest
 }
@@ -29729,7 +32027,7 @@ func (a *ExtrasAPIService) ExtrasScriptsPartialUpdateExecute(r ApiExtrasScriptsP
 
 type ApiExtrasScriptsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id string
 }
 
@@ -29846,7 +32144,7 @@ func (a *ExtrasAPIService) ExtrasScriptsRetrieveExecute(r ApiExtrasScriptsRetrie
 
 type ApiExtrasScriptsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id string
 	scriptInputRequest *ScriptInputRequest
 }
@@ -29974,7 +32272,7 @@ func (a *ExtrasAPIService) ExtrasScriptsUpdateExecute(r ApiExtrasScriptsUpdateRe
 
 type ApiExtrasSubscriptionsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	subscriptionRequest *[]SubscriptionRequest
 }
 
@@ -30087,7 +32385,7 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsBulkDestroyExecute(r ApiExtrasSubs
 
 type ApiExtrasSubscriptionsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	subscriptionRequest *[]SubscriptionRequest
 }
 
@@ -30211,7 +32509,7 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsBulkPartialUpdateExecute(r ApiExtr
 
 type ApiExtrasSubscriptionsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	subscriptionRequest *[]SubscriptionRequest
 }
 
@@ -30335,7 +32633,7 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsBulkUpdateExecute(r ApiExtrasSubsc
 
 type ApiExtrasSubscriptionsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	subscriptionRequest *SubscriptionRequest
 }
 
@@ -30459,7 +32757,7 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsCreateExecute(r ApiExtrasSubscript
 
 type ApiExtrasSubscriptionsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -30565,7 +32863,7 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsDestroyExecute(r ApiExtrasSubscrip
 
 type ApiExtrasSubscriptionsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	limit *int64
 	offset *int64
 	ordering *string
@@ -30708,7 +33006,7 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsListExecute(r ApiExtrasSubscriptio
 
 type ApiExtrasSubscriptionsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedSubscriptionRequest *PatchedSubscriptionRequest
 }
@@ -30833,7 +33131,7 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsPartialUpdateExecute(r ApiExtrasSu
 
 type ApiExtrasSubscriptionsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -30950,7 +33248,7 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsRetrieveExecute(r ApiExtrasSubscri
 
 type ApiExtrasSubscriptionsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	subscriptionRequest *SubscriptionRequest
 }
@@ -31078,7 +33376,7 @@ func (a *ExtrasAPIService) ExtrasSubscriptionsUpdateExecute(r ApiExtrasSubscript
 
 type ApiExtrasTagsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	tagRequest *[]TagRequest
 }
 
@@ -31191,7 +33489,7 @@ func (a *ExtrasAPIService) ExtrasTagsBulkDestroyExecute(r ApiExtrasTagsBulkDestr
 
 type ApiExtrasTagsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	tagRequest *[]TagRequest
 }
 
@@ -31315,7 +33613,7 @@ func (a *ExtrasAPIService) ExtrasTagsBulkPartialUpdateExecute(r ApiExtrasTagsBul
 
 type ApiExtrasTagsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	tagRequest *[]TagRequest
 }
 
@@ -31439,7 +33737,7 @@ func (a *ExtrasAPIService) ExtrasTagsBulkUpdateExecute(r ApiExtrasTagsBulkUpdate
 
 type ApiExtrasTagsCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	tagRequest *TagRequest
 }
 
@@ -31563,7 +33861,7 @@ func (a *ExtrasAPIService) ExtrasTagsCreateExecute(r ApiExtrasTagsCreateRequest)
 
 type ApiExtrasTagsDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -31669,7 +33967,7 @@ func (a *ExtrasAPIService) ExtrasTagsDestroyExecute(r ApiExtrasTagsDestroyReques
 
 type ApiExtrasTagsListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	color *[]string
 	colorEmpty *bool
 	colorIc *[]string
@@ -32999,7 +35297,7 @@ func (a *ExtrasAPIService) ExtrasTagsListExecute(r ApiExtrasTagsListRequest) (*P
 
 type ApiExtrasTagsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedTagRequest *PatchedTagRequest
 }
@@ -33124,7 +35422,7 @@ func (a *ExtrasAPIService) ExtrasTagsPartialUpdateExecute(r ApiExtrasTagsPartial
 
 type ApiExtrasTagsRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -33241,7 +35539,7 @@ func (a *ExtrasAPIService) ExtrasTagsRetrieveExecute(r ApiExtrasTagsRetrieveRequ
 
 type ApiExtrasTagsUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	tagRequest *TagRequest
 }
@@ -33369,7 +35667,7 @@ func (a *ExtrasAPIService) ExtrasTagsUpdateExecute(r ApiExtrasTagsUpdateRequest)
 
 type ApiExtrasWebhooksBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	webhookRequest *[]WebhookRequest
 }
 
@@ -33482,7 +35780,7 @@ func (a *ExtrasAPIService) ExtrasWebhooksBulkDestroyExecute(r ApiExtrasWebhooksB
 
 type ApiExtrasWebhooksBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	webhookRequest *[]WebhookRequest
 }
 
@@ -33606,7 +35904,7 @@ func (a *ExtrasAPIService) ExtrasWebhooksBulkPartialUpdateExecute(r ApiExtrasWeb
 
 type ApiExtrasWebhooksBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	webhookRequest *[]WebhookRequest
 }
 
@@ -33730,7 +36028,7 @@ func (a *ExtrasAPIService) ExtrasWebhooksBulkUpdateExecute(r ApiExtrasWebhooksBu
 
 type ApiExtrasWebhooksCreateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	webhookRequest *WebhookRequest
 }
 
@@ -33854,7 +36152,7 @@ func (a *ExtrasAPIService) ExtrasWebhooksCreateExecute(r ApiExtrasWebhooksCreate
 
 type ApiExtrasWebhooksDestroyRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -33960,7 +36258,7 @@ func (a *ExtrasAPIService) ExtrasWebhooksDestroyExecute(r ApiExtrasWebhooksDestr
 
 type ApiExtrasWebhooksListRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	caFilePath *[]string
 	caFilePathEmpty *bool
 	caFilePathIc *[]string
@@ -35632,7 +37930,7 @@ func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequ
 
 type ApiExtrasWebhooksPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	patchedWebhookRequest *PatchedWebhookRequest
 }
@@ -35757,7 +38055,7 @@ func (a *ExtrasAPIService) ExtrasWebhooksPartialUpdateExecute(r ApiExtrasWebhook
 
 type ApiExtrasWebhooksRetrieveRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 }
 
@@ -35874,7 +38172,7 @@ func (a *ExtrasAPIService) ExtrasWebhooksRetrieveExecute(r ApiExtrasWebhooksRetr
 
 type ApiExtrasWebhooksUpdateRequest struct {
 	ctx context.Context
-	ApiService *ExtrasAPIService
+	ApiService ExtrasAPI
 	id int64
 	webhookRequest *WebhookRequest
 }

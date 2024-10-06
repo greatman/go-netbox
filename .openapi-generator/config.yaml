@@ -4,6 +4,7 @@ gitHost: github.com
 gitUserId: greatman
 gitRepoId: go-netbox/v4
 packageName: netbox
+generateInterfaces: true
 disallowAdditionalPropertiesIfNotPresent: false
 globalProperty:
   apiDocs: false
