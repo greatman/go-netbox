@@ -16,7 +16,7 @@ import (
 )
 
 // VpnIpsecPoliciesListPfsGroupIcParameterInner the model 'VpnIpsecPoliciesListPfsGroupIcParameterInner'
-type VpnIpsecPoliciesListPfsGroupIcParameterInner int32
+type VpnIpsecPoliciesListPfsGroupIcParameterInner int64
 
 // List of vpn_ipsec_policies_list_pfs_group__ic_parameter_inner
 const (
@@ -75,7 +75,7 @@ var AllowedVpnIpsecPoliciesListPfsGroupIcParameterInnerEnumValues = []VpnIpsecPo
 }
 
 func (v *VpnIpsecPoliciesListPfsGroupIcParameterInner) UnmarshalJSON(src []byte) error {
-	var value int32
+	var value int64
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
@@ -93,7 +93,7 @@ func (v *VpnIpsecPoliciesListPfsGroupIcParameterInner) UnmarshalJSON(src []byte)
 
 // NewVpnIpsecPoliciesListPfsGroupIcParameterInnerFromValue returns a pointer to a valid VpnIpsecPoliciesListPfsGroupIcParameterInner
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewVpnIpsecPoliciesListPfsGroupIcParameterInnerFromValue(v int32) (*VpnIpsecPoliciesListPfsGroupIcParameterInner, error) {
+func NewVpnIpsecPoliciesListPfsGroupIcParameterInnerFromValue(v int64) (*VpnIpsecPoliciesListPfsGroupIcParameterInner, error) {
 	ev := VpnIpsecPoliciesListPfsGroupIcParameterInner(v)
 	if ev.IsValid() {
 		return &ev, nil

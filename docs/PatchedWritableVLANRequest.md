@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Site** | Pointer to [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
 **Group** | Pointer to [**NullableBriefVLANGroupRequest**](BriefVLANGroupRequest.md) |  | [optional] 
-**Vid** | Pointer to **int32** | Numeric VLAN ID (1-4094) | [optional] 
+**Vid** | Pointer to **int64** | Numeric VLAN ID (1-4094) | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Status** | Pointer to [**PatchedWritableVLANRequestStatus**](PatchedWritableVLANRequestStatus.md) |  | [optional] 
@@ -107,20 +107,20 @@ HasGroup returns a boolean if a field has been set.
 UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetVid
 
-`func (o *PatchedWritableVLANRequest) GetVid() int32`
+`func (o *PatchedWritableVLANRequest) GetVid() int64`
 
 GetVid returns the Vid field if non-nil, zero value otherwise.
 
 ### GetVidOk
 
-`func (o *PatchedWritableVLANRequest) GetVidOk() (*int32, bool)`
+`func (o *PatchedWritableVLANRequest) GetVidOk() (*int64, bool)`
 
 GetVidOk returns a tuple with the Vid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVid
 
-`func (o *PatchedWritableVLANRequest) SetVid(v int32)`
+`func (o *PatchedWritableVLANRequest) SetVid(v int64)`
 
 SetVid sets Vid field to given value.
 

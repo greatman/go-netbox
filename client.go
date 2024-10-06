@@ -49,29 +49,29 @@ type APIClient struct {
 
 	// API Services
 
-	CircuitsAPI CircuitsAPI
+	CircuitsAPI *CircuitsAPIService
 
-	CoreAPI CoreAPI
+	CoreAPI *CoreAPIService
 
-	DcimAPI DcimAPI
+	DcimAPI *DcimAPIService
 
-	ExtrasAPI ExtrasAPI
+	ExtrasAPI *ExtrasAPIService
 
-	IpamAPI IpamAPI
+	IpamAPI *IpamAPIService
 
-	SchemaAPI SchemaAPI
+	SchemaAPI *SchemaAPIService
 
-	StatusAPI StatusAPI
+	StatusAPI *StatusAPIService
 
-	TenancyAPI TenancyAPI
+	TenancyAPI *TenancyAPIService
 
-	UsersAPI UsersAPI
+	UsersAPI *UsersAPIService
 
-	VirtualizationAPI VirtualizationAPI
+	VirtualizationAPI *VirtualizationAPIService
 
-	VpnAPI VpnAPI
+	VpnAPI *VpnAPIService
 
-	WirelessAPI WirelessAPI
+	WirelessAPI *WirelessAPIService
 }
 
 type service struct {

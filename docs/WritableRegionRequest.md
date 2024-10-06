@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Parent** | **NullableInt32** |  | 
+**Parent** | **NullableInt64** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewWritableRegionRequest
 
-`func NewWritableRegionRequest(name string, slug string, parent NullableInt32, ) *WritableRegionRequest`
+`func NewWritableRegionRequest(name string, slug string, parent NullableInt64, ) *WritableRegionRequest`
 
 NewWritableRegionRequest instantiates a new WritableRegionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -72,20 +72,20 @@ SetSlug sets Slug field to given value.
 
 ### GetParent
 
-`func (o *WritableRegionRequest) GetParent() int32`
+`func (o *WritableRegionRequest) GetParent() int64`
 
 GetParent returns the Parent field if non-nil, zero value otherwise.
 
 ### GetParentOk
 
-`func (o *WritableRegionRequest) GetParentOk() (*int32, bool)`
+`func (o *WritableRegionRequest) GetParentOk() (*int64, bool)`
 
 GetParentOk returns a tuple with the Parent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParent
 
-`func (o *WritableRegionRequest) SetParent(v int32)`
+`func (o *WritableRegionRequest) SetParent(v int64)`
 
 SetParent sets Parent field to given value.
 

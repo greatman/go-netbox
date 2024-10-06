@@ -34,22 +34,22 @@ type WritableRackRequest struct {
 	FormFactor *PatchedWritableRackRequestFormFactor `json:"form_factor,omitempty"`
 	Width *PatchedWritableRackRequestWidth `json:"width,omitempty"`
 	// Height in rack units
-	UHeight *int32 `json:"u_height,omitempty"`
+	UHeight *int64 `json:"u_height,omitempty"`
 	// Starting unit for rack
-	StartingUnit *int32 `json:"starting_unit,omitempty"`
+	StartingUnit *int64 `json:"starting_unit,omitempty"`
 	Weight NullableFloat64 `json:"weight,omitempty"`
 	// Maximum load capacity for the rack
-	MaxWeight NullableInt32 `json:"max_weight,omitempty"`
+	MaxWeight NullableInt64 `json:"max_weight,omitempty"`
 	WeightUnit *DeviceTypeWeightUnitValue `json:"weight_unit,omitempty"`
 	// Units are numbered top-to-bottom
 	DescUnits *bool `json:"desc_units,omitempty"`
 	// Outer dimension of rack (width)
-	OuterWidth NullableInt32 `json:"outer_width,omitempty"`
+	OuterWidth NullableInt64 `json:"outer_width,omitempty"`
 	// Outer dimension of rack (depth)
-	OuterDepth NullableInt32 `json:"outer_depth,omitempty"`
+	OuterDepth NullableInt64 `json:"outer_depth,omitempty"`
 	OuterUnit *PatchedWritableRackRequestOuterUnit `json:"outer_unit,omitempty"`
 	// Maximum depth of a mounted device, in millimeters. For four-post racks, this is the distance between the front and rear rails.
-	MountingDepth NullableInt32 `json:"mounting_depth,omitempty"`
+	MountingDepth NullableInt64 `json:"mounting_depth,omitempty"`
 	Airflow *PatchedWritableRackRequestAirflow `json:"airflow,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Comments *string `json:"comments,omitempty"`
@@ -508,9 +508,9 @@ func (o *WritableRackRequest) SetWidth(v PatchedWritableRackRequestWidth) {
 }
 
 // GetUHeight returns the UHeight field value if set, zero value otherwise.
-func (o *WritableRackRequest) GetUHeight() int32 {
+func (o *WritableRackRequest) GetUHeight() int64 {
 	if o == nil || IsNil(o.UHeight) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.UHeight
@@ -518,7 +518,7 @@ func (o *WritableRackRequest) GetUHeight() int32 {
 
 // GetUHeightOk returns a tuple with the UHeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableRackRequest) GetUHeightOk() (*int32, bool) {
+func (o *WritableRackRequest) GetUHeightOk() (*int64, bool) {
 	if o == nil || IsNil(o.UHeight) {
 		return nil, false
 	}
@@ -534,15 +534,15 @@ func (o *WritableRackRequest) HasUHeight() bool {
 	return false
 }
 
-// SetUHeight gets a reference to the given int32 and assigns it to the UHeight field.
-func (o *WritableRackRequest) SetUHeight(v int32) {
+// SetUHeight gets a reference to the given int64 and assigns it to the UHeight field.
+func (o *WritableRackRequest) SetUHeight(v int64) {
 	o.UHeight = &v
 }
 
 // GetStartingUnit returns the StartingUnit field value if set, zero value otherwise.
-func (o *WritableRackRequest) GetStartingUnit() int32 {
+func (o *WritableRackRequest) GetStartingUnit() int64 {
 	if o == nil || IsNil(o.StartingUnit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StartingUnit
@@ -550,7 +550,7 @@ func (o *WritableRackRequest) GetStartingUnit() int32 {
 
 // GetStartingUnitOk returns a tuple with the StartingUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableRackRequest) GetStartingUnitOk() (*int32, bool) {
+func (o *WritableRackRequest) GetStartingUnitOk() (*int64, bool) {
 	if o == nil || IsNil(o.StartingUnit) {
 		return nil, false
 	}
@@ -566,8 +566,8 @@ func (o *WritableRackRequest) HasStartingUnit() bool {
 	return false
 }
 
-// SetStartingUnit gets a reference to the given int32 and assigns it to the StartingUnit field.
-func (o *WritableRackRequest) SetStartingUnit(v int32) {
+// SetStartingUnit gets a reference to the given int64 and assigns it to the StartingUnit field.
+func (o *WritableRackRequest) SetStartingUnit(v int64) {
 	o.StartingUnit = &v
 }
 
@@ -614,9 +614,9 @@ func (o *WritableRackRequest) UnsetWeight() {
 }
 
 // GetMaxWeight returns the MaxWeight field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *WritableRackRequest) GetMaxWeight() int32 {
+func (o *WritableRackRequest) GetMaxWeight() int64 {
 	if o == nil || IsNil(o.MaxWeight.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxWeight.Get()
@@ -625,7 +625,7 @@ func (o *WritableRackRequest) GetMaxWeight() int32 {
 // GetMaxWeightOk returns a tuple with the MaxWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *WritableRackRequest) GetMaxWeightOk() (*int32, bool) {
+func (o *WritableRackRequest) GetMaxWeightOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -641,8 +641,8 @@ func (o *WritableRackRequest) HasMaxWeight() bool {
 	return false
 }
 
-// SetMaxWeight gets a reference to the given NullableInt32 and assigns it to the MaxWeight field.
-func (o *WritableRackRequest) SetMaxWeight(v int32) {
+// SetMaxWeight gets a reference to the given NullableInt64 and assigns it to the MaxWeight field.
+func (o *WritableRackRequest) SetMaxWeight(v int64) {
 	o.MaxWeight.Set(&v)
 }
 // SetMaxWeightNil sets the value for MaxWeight to be an explicit nil
@@ -720,9 +720,9 @@ func (o *WritableRackRequest) SetDescUnits(v bool) {
 }
 
 // GetOuterWidth returns the OuterWidth field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *WritableRackRequest) GetOuterWidth() int32 {
+func (o *WritableRackRequest) GetOuterWidth() int64 {
 	if o == nil || IsNil(o.OuterWidth.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OuterWidth.Get()
@@ -731,7 +731,7 @@ func (o *WritableRackRequest) GetOuterWidth() int32 {
 // GetOuterWidthOk returns a tuple with the OuterWidth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *WritableRackRequest) GetOuterWidthOk() (*int32, bool) {
+func (o *WritableRackRequest) GetOuterWidthOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -747,8 +747,8 @@ func (o *WritableRackRequest) HasOuterWidth() bool {
 	return false
 }
 
-// SetOuterWidth gets a reference to the given NullableInt32 and assigns it to the OuterWidth field.
-func (o *WritableRackRequest) SetOuterWidth(v int32) {
+// SetOuterWidth gets a reference to the given NullableInt64 and assigns it to the OuterWidth field.
+func (o *WritableRackRequest) SetOuterWidth(v int64) {
 	o.OuterWidth.Set(&v)
 }
 // SetOuterWidthNil sets the value for OuterWidth to be an explicit nil
@@ -762,9 +762,9 @@ func (o *WritableRackRequest) UnsetOuterWidth() {
 }
 
 // GetOuterDepth returns the OuterDepth field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *WritableRackRequest) GetOuterDepth() int32 {
+func (o *WritableRackRequest) GetOuterDepth() int64 {
 	if o == nil || IsNil(o.OuterDepth.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OuterDepth.Get()
@@ -773,7 +773,7 @@ func (o *WritableRackRequest) GetOuterDepth() int32 {
 // GetOuterDepthOk returns a tuple with the OuterDepth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *WritableRackRequest) GetOuterDepthOk() (*int32, bool) {
+func (o *WritableRackRequest) GetOuterDepthOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -789,8 +789,8 @@ func (o *WritableRackRequest) HasOuterDepth() bool {
 	return false
 }
 
-// SetOuterDepth gets a reference to the given NullableInt32 and assigns it to the OuterDepth field.
-func (o *WritableRackRequest) SetOuterDepth(v int32) {
+// SetOuterDepth gets a reference to the given NullableInt64 and assigns it to the OuterDepth field.
+func (o *WritableRackRequest) SetOuterDepth(v int64) {
 	o.OuterDepth.Set(&v)
 }
 // SetOuterDepthNil sets the value for OuterDepth to be an explicit nil
@@ -836,9 +836,9 @@ func (o *WritableRackRequest) SetOuterUnit(v PatchedWritableRackRequestOuterUnit
 }
 
 // GetMountingDepth returns the MountingDepth field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *WritableRackRequest) GetMountingDepth() int32 {
+func (o *WritableRackRequest) GetMountingDepth() int64 {
 	if o == nil || IsNil(o.MountingDepth.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MountingDepth.Get()
@@ -847,7 +847,7 @@ func (o *WritableRackRequest) GetMountingDepth() int32 {
 // GetMountingDepthOk returns a tuple with the MountingDepth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *WritableRackRequest) GetMountingDepthOk() (*int32, bool) {
+func (o *WritableRackRequest) GetMountingDepthOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -863,8 +863,8 @@ func (o *WritableRackRequest) HasMountingDepth() bool {
 	return false
 }
 
-// SetMountingDepth gets a reference to the given NullableInt32 and assigns it to the MountingDepth field.
-func (o *WritableRackRequest) SetMountingDepth(v int32) {
+// SetMountingDepth gets a reference to the given NullableInt64 and assigns it to the MountingDepth field.
+func (o *WritableRackRequest) SetMountingDepth(v int64) {
 	o.MountingDepth.Set(&v)
 }
 // SetMountingDepthNil sets the value for MountingDepth to be an explicit nil

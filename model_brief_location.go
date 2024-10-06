@@ -20,14 +20,14 @@ var _ MappedNullable = &BriefLocation{}
 
 // BriefLocation Extends PrimaryModelSerializer to include MPTT support.
 type BriefLocation struct {
-	Id int32 `json:"id"`
+	Id int64 `json:"id"`
 	Url string `json:"url"`
 	Display string `json:"display"`
 	Name string `json:"name"`
 	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	Description *string `json:"description,omitempty"`
-	RackCount *int32 `json:"rack_count,omitempty"`
-	Depth int32 `json:"_depth"`
+	RackCount *int64 `json:"rack_count,omitempty"`
+	Depth int64 `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -37,7 +37,7 @@ type _BriefLocation BriefLocation
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefLocation(id int32, url string, display string, name string, slug string, depth int32) *BriefLocation {
+func NewBriefLocation(id int64, url string, display string, name string, slug string, depth int64) *BriefLocation {
 	this := BriefLocation{}
 	this.Id = id
 	this.Url = url
@@ -57,9 +57,9 @@ func NewBriefLocationWithDefaults() *BriefLocation {
 }
 
 // GetId returns the Id field value
-func (o *BriefLocation) GetId() int32 {
+func (o *BriefLocation) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -68,7 +68,7 @@ func (o *BriefLocation) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *BriefLocation) GetIdOk() (*int32, bool) {
+func (o *BriefLocation) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -76,7 +76,7 @@ func (o *BriefLocation) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *BriefLocation) SetId(v int32) {
+func (o *BriefLocation) SetId(v int64) {
 	o.Id = v
 }
 
@@ -209,9 +209,9 @@ func (o *BriefLocation) SetDescription(v string) {
 }
 
 // GetRackCount returns the RackCount field value if set, zero value otherwise.
-func (o *BriefLocation) GetRackCount() int32 {
+func (o *BriefLocation) GetRackCount() int64 {
 	if o == nil || IsNil(o.RackCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RackCount
@@ -219,7 +219,7 @@ func (o *BriefLocation) GetRackCount() int32 {
 
 // GetRackCountOk returns a tuple with the RackCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BriefLocation) GetRackCountOk() (*int32, bool) {
+func (o *BriefLocation) GetRackCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.RackCount) {
 		return nil, false
 	}
@@ -235,15 +235,15 @@ func (o *BriefLocation) HasRackCount() bool {
 	return false
 }
 
-// SetRackCount gets a reference to the given int32 and assigns it to the RackCount field.
-func (o *BriefLocation) SetRackCount(v int32) {
+// SetRackCount gets a reference to the given int64 and assigns it to the RackCount field.
+func (o *BriefLocation) SetRackCount(v int64) {
 	o.RackCount = &v
 }
 
 // GetDepth returns the Depth field value
-func (o *BriefLocation) GetDepth() int32 {
+func (o *BriefLocation) GetDepth() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -252,7 +252,7 @@ func (o *BriefLocation) GetDepth() int32 {
 
 // GetDepthOk returns a tuple with the Depth field value
 // and a boolean to check if the value has been set.
-func (o *BriefLocation) GetDepthOk() (*int32, bool) {
+func (o *BriefLocation) GetDepthOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -260,7 +260,7 @@ func (o *BriefLocation) GetDepthOk() (*int32, bool) {
 }
 
 // SetDepth sets field value
-func (o *BriefLocation) SetDepth(v int32) {
+func (o *BriefLocation) SetDepth(v int64) {
 	o.Depth = v
 }
 

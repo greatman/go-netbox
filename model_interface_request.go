@@ -21,7 +21,7 @@ var _ MappedNullable = &InterfaceRequest{}
 // InterfaceRequest Adds support for custom fields and tags.
 type InterfaceRequest struct {
 	Device BriefDeviceRequest `json:"device"`
-	Vdcs []int32 `json:"vdcs,omitempty"`
+	Vdcs []int64 `json:"vdcs,omitempty"`
 	Module NullableBriefModuleRequest `json:"module,omitempty"`
 	Name string `json:"name"`
 	// Physical label
@@ -31,9 +31,9 @@ type InterfaceRequest struct {
 	Parent NullableNestedInterfaceRequest `json:"parent,omitempty"`
 	Bridge NullableNestedInterfaceRequest `json:"bridge,omitempty"`
 	Lag NullableNestedInterfaceRequest `json:"lag,omitempty"`
-	Mtu NullableInt32 `json:"mtu,omitempty"`
+	Mtu NullableInt64 `json:"mtu,omitempty"`
 	MacAddress NullableString `json:"mac_address,omitempty"`
-	Speed NullableInt32 `json:"speed,omitempty"`
+	Speed NullableInt64 `json:"speed,omitempty"`
 	Duplex NullableInterfaceRequestDuplex `json:"duplex,omitempty"`
 	Wwn NullableString `json:"wwn,omitempty"`
 	// This interface is used only for out-of-band management
@@ -48,12 +48,12 @@ type InterfaceRequest struct {
 	RfChannelFrequency NullableFloat64 `json:"rf_channel_frequency,omitempty"`
 	// Populated by selected channel (if set)
 	RfChannelWidth NullableFloat64 `json:"rf_channel_width,omitempty"`
-	TxPower NullableInt32 `json:"tx_power,omitempty"`
+	TxPower NullableInt64 `json:"tx_power,omitempty"`
 	UntaggedVlan NullableBriefVLANRequest `json:"untagged_vlan,omitempty"`
-	TaggedVlans []int32 `json:"tagged_vlans,omitempty"`
+	TaggedVlans []int64 `json:"tagged_vlans,omitempty"`
 	// Treat as if a cable is connected
 	MarkConnected *bool `json:"mark_connected,omitempty"`
-	WirelessLans []int32 `json:"wireless_lans,omitempty"`
+	WirelessLans []int64 `json:"wireless_lans,omitempty"`
 	Vrf NullableBriefVRFRequest `json:"vrf,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields *map[string]string `json:"custom_fields,omitempty"`
@@ -107,9 +107,9 @@ func (o *InterfaceRequest) SetDevice(v BriefDeviceRequest) {
 }
 
 // GetVdcs returns the Vdcs field value if set, zero value otherwise.
-func (o *InterfaceRequest) GetVdcs() []int32 {
+func (o *InterfaceRequest) GetVdcs() []int64 {
 	if o == nil || IsNil(o.Vdcs) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Vdcs
@@ -117,7 +117,7 @@ func (o *InterfaceRequest) GetVdcs() []int32 {
 
 // GetVdcsOk returns a tuple with the Vdcs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfaceRequest) GetVdcsOk() ([]int32, bool) {
+func (o *InterfaceRequest) GetVdcsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Vdcs) {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *InterfaceRequest) HasVdcs() bool {
 	return false
 }
 
-// SetVdcs gets a reference to the given []int32 and assigns it to the Vdcs field.
-func (o *InterfaceRequest) SetVdcs(v []int32) {
+// SetVdcs gets a reference to the given []int64 and assigns it to the Vdcs field.
+func (o *InterfaceRequest) SetVdcs(v []int64) {
 	o.Vdcs = v
 }
 
@@ -419,9 +419,9 @@ func (o *InterfaceRequest) UnsetLag() {
 }
 
 // GetMtu returns the Mtu field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InterfaceRequest) GetMtu() int32 {
+func (o *InterfaceRequest) GetMtu() int64 {
 	if o == nil || IsNil(o.Mtu.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Mtu.Get()
@@ -430,7 +430,7 @@ func (o *InterfaceRequest) GetMtu() int32 {
 // GetMtuOk returns a tuple with the Mtu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InterfaceRequest) GetMtuOk() (*int32, bool) {
+func (o *InterfaceRequest) GetMtuOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -446,8 +446,8 @@ func (o *InterfaceRequest) HasMtu() bool {
 	return false
 }
 
-// SetMtu gets a reference to the given NullableInt32 and assigns it to the Mtu field.
-func (o *InterfaceRequest) SetMtu(v int32) {
+// SetMtu gets a reference to the given NullableInt64 and assigns it to the Mtu field.
+func (o *InterfaceRequest) SetMtu(v int64) {
 	o.Mtu.Set(&v)
 }
 // SetMtuNil sets the value for Mtu to be an explicit nil
@@ -503,9 +503,9 @@ func (o *InterfaceRequest) UnsetMacAddress() {
 }
 
 // GetSpeed returns the Speed field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InterfaceRequest) GetSpeed() int32 {
+func (o *InterfaceRequest) GetSpeed() int64 {
 	if o == nil || IsNil(o.Speed.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Speed.Get()
@@ -514,7 +514,7 @@ func (o *InterfaceRequest) GetSpeed() int32 {
 // GetSpeedOk returns a tuple with the Speed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InterfaceRequest) GetSpeedOk() (*int32, bool) {
+func (o *InterfaceRequest) GetSpeedOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -530,8 +530,8 @@ func (o *InterfaceRequest) HasSpeed() bool {
 	return false
 }
 
-// SetSpeed gets a reference to the given NullableInt32 and assigns it to the Speed field.
-func (o *InterfaceRequest) SetSpeed(v int32) {
+// SetSpeed gets a reference to the given NullableInt64 and assigns it to the Speed field.
+func (o *InterfaceRequest) SetSpeed(v int64) {
 	o.Speed.Set(&v)
 }
 // SetSpeedNil sets the value for Speed to be an explicit nil
@@ -937,9 +937,9 @@ func (o *InterfaceRequest) UnsetRfChannelWidth() {
 }
 
 // GetTxPower returns the TxPower field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InterfaceRequest) GetTxPower() int32 {
+func (o *InterfaceRequest) GetTxPower() int64 {
 	if o == nil || IsNil(o.TxPower.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TxPower.Get()
@@ -948,7 +948,7 @@ func (o *InterfaceRequest) GetTxPower() int32 {
 // GetTxPowerOk returns a tuple with the TxPower field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InterfaceRequest) GetTxPowerOk() (*int32, bool) {
+func (o *InterfaceRequest) GetTxPowerOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -964,8 +964,8 @@ func (o *InterfaceRequest) HasTxPower() bool {
 	return false
 }
 
-// SetTxPower gets a reference to the given NullableInt32 and assigns it to the TxPower field.
-func (o *InterfaceRequest) SetTxPower(v int32) {
+// SetTxPower gets a reference to the given NullableInt64 and assigns it to the TxPower field.
+func (o *InterfaceRequest) SetTxPower(v int64) {
 	o.TxPower.Set(&v)
 }
 // SetTxPowerNil sets the value for TxPower to be an explicit nil
@@ -1021,9 +1021,9 @@ func (o *InterfaceRequest) UnsetUntaggedVlan() {
 }
 
 // GetTaggedVlans returns the TaggedVlans field value if set, zero value otherwise.
-func (o *InterfaceRequest) GetTaggedVlans() []int32 {
+func (o *InterfaceRequest) GetTaggedVlans() []int64 {
 	if o == nil || IsNil(o.TaggedVlans) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.TaggedVlans
@@ -1031,7 +1031,7 @@ func (o *InterfaceRequest) GetTaggedVlans() []int32 {
 
 // GetTaggedVlansOk returns a tuple with the TaggedVlans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfaceRequest) GetTaggedVlansOk() ([]int32, bool) {
+func (o *InterfaceRequest) GetTaggedVlansOk() ([]int64, bool) {
 	if o == nil || IsNil(o.TaggedVlans) {
 		return nil, false
 	}
@@ -1047,8 +1047,8 @@ func (o *InterfaceRequest) HasTaggedVlans() bool {
 	return false
 }
 
-// SetTaggedVlans gets a reference to the given []int32 and assigns it to the TaggedVlans field.
-func (o *InterfaceRequest) SetTaggedVlans(v []int32) {
+// SetTaggedVlans gets a reference to the given []int64 and assigns it to the TaggedVlans field.
+func (o *InterfaceRequest) SetTaggedVlans(v []int64) {
 	o.TaggedVlans = v
 }
 
@@ -1085,9 +1085,9 @@ func (o *InterfaceRequest) SetMarkConnected(v bool) {
 }
 
 // GetWirelessLans returns the WirelessLans field value if set, zero value otherwise.
-func (o *InterfaceRequest) GetWirelessLans() []int32 {
+func (o *InterfaceRequest) GetWirelessLans() []int64 {
 	if o == nil || IsNil(o.WirelessLans) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.WirelessLans
@@ -1095,7 +1095,7 @@ func (o *InterfaceRequest) GetWirelessLans() []int32 {
 
 // GetWirelessLansOk returns a tuple with the WirelessLans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfaceRequest) GetWirelessLansOk() ([]int32, bool) {
+func (o *InterfaceRequest) GetWirelessLansOk() ([]int64, bool) {
 	if o == nil || IsNil(o.WirelessLans) {
 		return nil, false
 	}
@@ -1111,8 +1111,8 @@ func (o *InterfaceRequest) HasWirelessLans() bool {
 	return false
 }
 
-// SetWirelessLans gets a reference to the given []int32 and assigns it to the WirelessLans field.
-func (o *InterfaceRequest) SetWirelessLans(v []int32) {
+// SetWirelessLans gets a reference to the given []int64 and assigns it to the WirelessLans field.
+func (o *InterfaceRequest) SetWirelessLans(v []int64) {
 	o.WirelessLans = v
 }
 

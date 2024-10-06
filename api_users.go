@@ -22,555 +22,12 @@ import (
 )
 
 
-type UsersAPI interface {
-
-	/*
-	UsersConfigRetrieve Method for UsersConfigRetrieve
-
-	An API endpoint via which a user can update his or her own UserConfig data (but no one else's).
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersConfigRetrieveRequest
-	*/
-	UsersConfigRetrieve(ctx context.Context) ApiUsersConfigRetrieveRequest
-
-	// UsersConfigRetrieveExecute executes the request
-	//  @return map[string]interface{}
-	UsersConfigRetrieveExecute(r ApiUsersConfigRetrieveRequest) (map[string]interface{}, *http.Response, error)
-
-	/*
-	UsersGroupsBulkDestroy Method for UsersGroupsBulkDestroy
-
-	Delete a list of group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersGroupsBulkDestroyRequest
-	*/
-	UsersGroupsBulkDestroy(ctx context.Context) ApiUsersGroupsBulkDestroyRequest
-
-	// UsersGroupsBulkDestroyExecute executes the request
-	UsersGroupsBulkDestroyExecute(r ApiUsersGroupsBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	UsersGroupsBulkPartialUpdate Method for UsersGroupsBulkPartialUpdate
-
-	Patch a list of group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersGroupsBulkPartialUpdateRequest
-	*/
-	UsersGroupsBulkPartialUpdate(ctx context.Context) ApiUsersGroupsBulkPartialUpdateRequest
-
-	// UsersGroupsBulkPartialUpdateExecute executes the request
-	//  @return []Group
-	UsersGroupsBulkPartialUpdateExecute(r ApiUsersGroupsBulkPartialUpdateRequest) ([]Group, *http.Response, error)
-
-	/*
-	UsersGroupsBulkUpdate Method for UsersGroupsBulkUpdate
-
-	Put a list of group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersGroupsBulkUpdateRequest
-	*/
-	UsersGroupsBulkUpdate(ctx context.Context) ApiUsersGroupsBulkUpdateRequest
-
-	// UsersGroupsBulkUpdateExecute executes the request
-	//  @return []Group
-	UsersGroupsBulkUpdateExecute(r ApiUsersGroupsBulkUpdateRequest) ([]Group, *http.Response, error)
-
-	/*
-	UsersGroupsCreate Method for UsersGroupsCreate
-
-	Post a list of group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersGroupsCreateRequest
-	*/
-	UsersGroupsCreate(ctx context.Context) ApiUsersGroupsCreateRequest
-
-	// UsersGroupsCreateExecute executes the request
-	//  @return Group
-	UsersGroupsCreateExecute(r ApiUsersGroupsCreateRequest) (*Group, *http.Response, error)
-
-	/*
-	UsersGroupsDestroy Method for UsersGroupsDestroy
-
-	Delete a group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this group.
-	@return ApiUsersGroupsDestroyRequest
-	*/
-	UsersGroupsDestroy(ctx context.Context, id int32) ApiUsersGroupsDestroyRequest
-
-	// UsersGroupsDestroyExecute executes the request
-	UsersGroupsDestroyExecute(r ApiUsersGroupsDestroyRequest) (*http.Response, error)
-
-	/*
-	UsersGroupsList Method for UsersGroupsList
-
-	Get a list of group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersGroupsListRequest
-	*/
-	UsersGroupsList(ctx context.Context) ApiUsersGroupsListRequest
-
-	// UsersGroupsListExecute executes the request
-	//  @return PaginatedGroupList
-	UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*PaginatedGroupList, *http.Response, error)
-
-	/*
-	UsersGroupsPartialUpdate Method for UsersGroupsPartialUpdate
-
-	Patch a group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this group.
-	@return ApiUsersGroupsPartialUpdateRequest
-	*/
-	UsersGroupsPartialUpdate(ctx context.Context, id int32) ApiUsersGroupsPartialUpdateRequest
-
-	// UsersGroupsPartialUpdateExecute executes the request
-	//  @return Group
-	UsersGroupsPartialUpdateExecute(r ApiUsersGroupsPartialUpdateRequest) (*Group, *http.Response, error)
-
-	/*
-	UsersGroupsRetrieve Method for UsersGroupsRetrieve
-
-	Get a group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this group.
-	@return ApiUsersGroupsRetrieveRequest
-	*/
-	UsersGroupsRetrieve(ctx context.Context, id int32) ApiUsersGroupsRetrieveRequest
-
-	// UsersGroupsRetrieveExecute executes the request
-	//  @return Group
-	UsersGroupsRetrieveExecute(r ApiUsersGroupsRetrieveRequest) (*Group, *http.Response, error)
-
-	/*
-	UsersGroupsUpdate Method for UsersGroupsUpdate
-
-	Put a group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this group.
-	@return ApiUsersGroupsUpdateRequest
-	*/
-	UsersGroupsUpdate(ctx context.Context, id int32) ApiUsersGroupsUpdateRequest
-
-	// UsersGroupsUpdateExecute executes the request
-	//  @return Group
-	UsersGroupsUpdateExecute(r ApiUsersGroupsUpdateRequest) (*Group, *http.Response, error)
-
-	/*
-	UsersPermissionsBulkDestroy Method for UsersPermissionsBulkDestroy
-
-	Delete a list of permission objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersPermissionsBulkDestroyRequest
-	*/
-	UsersPermissionsBulkDestroy(ctx context.Context) ApiUsersPermissionsBulkDestroyRequest
-
-	// UsersPermissionsBulkDestroyExecute executes the request
-	UsersPermissionsBulkDestroyExecute(r ApiUsersPermissionsBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	UsersPermissionsBulkPartialUpdate Method for UsersPermissionsBulkPartialUpdate
-
-	Patch a list of permission objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersPermissionsBulkPartialUpdateRequest
-	*/
-	UsersPermissionsBulkPartialUpdate(ctx context.Context) ApiUsersPermissionsBulkPartialUpdateRequest
-
-	// UsersPermissionsBulkPartialUpdateExecute executes the request
-	//  @return []ObjectPermission
-	UsersPermissionsBulkPartialUpdateExecute(r ApiUsersPermissionsBulkPartialUpdateRequest) ([]ObjectPermission, *http.Response, error)
-
-	/*
-	UsersPermissionsBulkUpdate Method for UsersPermissionsBulkUpdate
-
-	Put a list of permission objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersPermissionsBulkUpdateRequest
-	*/
-	UsersPermissionsBulkUpdate(ctx context.Context) ApiUsersPermissionsBulkUpdateRequest
-
-	// UsersPermissionsBulkUpdateExecute executes the request
-	//  @return []ObjectPermission
-	UsersPermissionsBulkUpdateExecute(r ApiUsersPermissionsBulkUpdateRequest) ([]ObjectPermission, *http.Response, error)
-
-	/*
-	UsersPermissionsCreate Method for UsersPermissionsCreate
-
-	Post a list of permission objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersPermissionsCreateRequest
-	*/
-	UsersPermissionsCreate(ctx context.Context) ApiUsersPermissionsCreateRequest
-
-	// UsersPermissionsCreateExecute executes the request
-	//  @return ObjectPermission
-	UsersPermissionsCreateExecute(r ApiUsersPermissionsCreateRequest) (*ObjectPermission, *http.Response, error)
-
-	/*
-	UsersPermissionsDestroy Method for UsersPermissionsDestroy
-
-	Delete a permission object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this permission.
-	@return ApiUsersPermissionsDestroyRequest
-	*/
-	UsersPermissionsDestroy(ctx context.Context, id int32) ApiUsersPermissionsDestroyRequest
-
-	// UsersPermissionsDestroyExecute executes the request
-	UsersPermissionsDestroyExecute(r ApiUsersPermissionsDestroyRequest) (*http.Response, error)
-
-	/*
-	UsersPermissionsList Method for UsersPermissionsList
-
-	Get a list of permission objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersPermissionsListRequest
-	*/
-	UsersPermissionsList(ctx context.Context) ApiUsersPermissionsListRequest
-
-	// UsersPermissionsListExecute executes the request
-	//  @return PaginatedObjectPermissionList
-	UsersPermissionsListExecute(r ApiUsersPermissionsListRequest) (*PaginatedObjectPermissionList, *http.Response, error)
-
-	/*
-	UsersPermissionsPartialUpdate Method for UsersPermissionsPartialUpdate
-
-	Patch a permission object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this permission.
-	@return ApiUsersPermissionsPartialUpdateRequest
-	*/
-	UsersPermissionsPartialUpdate(ctx context.Context, id int32) ApiUsersPermissionsPartialUpdateRequest
-
-	// UsersPermissionsPartialUpdateExecute executes the request
-	//  @return ObjectPermission
-	UsersPermissionsPartialUpdateExecute(r ApiUsersPermissionsPartialUpdateRequest) (*ObjectPermission, *http.Response, error)
-
-	/*
-	UsersPermissionsRetrieve Method for UsersPermissionsRetrieve
-
-	Get a permission object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this permission.
-	@return ApiUsersPermissionsRetrieveRequest
-	*/
-	UsersPermissionsRetrieve(ctx context.Context, id int32) ApiUsersPermissionsRetrieveRequest
-
-	// UsersPermissionsRetrieveExecute executes the request
-	//  @return ObjectPermission
-	UsersPermissionsRetrieveExecute(r ApiUsersPermissionsRetrieveRequest) (*ObjectPermission, *http.Response, error)
-
-	/*
-	UsersPermissionsUpdate Method for UsersPermissionsUpdate
-
-	Put a permission object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this permission.
-	@return ApiUsersPermissionsUpdateRequest
-	*/
-	UsersPermissionsUpdate(ctx context.Context, id int32) ApiUsersPermissionsUpdateRequest
-
-	// UsersPermissionsUpdateExecute executes the request
-	//  @return ObjectPermission
-	UsersPermissionsUpdateExecute(r ApiUsersPermissionsUpdateRequest) (*ObjectPermission, *http.Response, error)
-
-	/*
-	UsersTokensBulkDestroy Method for UsersTokensBulkDestroy
-
-	Delete a list of token objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersTokensBulkDestroyRequest
-	*/
-	UsersTokensBulkDestroy(ctx context.Context) ApiUsersTokensBulkDestroyRequest
-
-	// UsersTokensBulkDestroyExecute executes the request
-	UsersTokensBulkDestroyExecute(r ApiUsersTokensBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	UsersTokensBulkPartialUpdate Method for UsersTokensBulkPartialUpdate
-
-	Patch a list of token objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersTokensBulkPartialUpdateRequest
-	*/
-	UsersTokensBulkPartialUpdate(ctx context.Context) ApiUsersTokensBulkPartialUpdateRequest
-
-	// UsersTokensBulkPartialUpdateExecute executes the request
-	//  @return []Token
-	UsersTokensBulkPartialUpdateExecute(r ApiUsersTokensBulkPartialUpdateRequest) ([]Token, *http.Response, error)
-
-	/*
-	UsersTokensBulkUpdate Method for UsersTokensBulkUpdate
-
-	Put a list of token objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersTokensBulkUpdateRequest
-	*/
-	UsersTokensBulkUpdate(ctx context.Context) ApiUsersTokensBulkUpdateRequest
-
-	// UsersTokensBulkUpdateExecute executes the request
-	//  @return []Token
-	UsersTokensBulkUpdateExecute(r ApiUsersTokensBulkUpdateRequest) ([]Token, *http.Response, error)
-
-	/*
-	UsersTokensCreate Method for UsersTokensCreate
-
-	Post a list of token objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersTokensCreateRequest
-	*/
-	UsersTokensCreate(ctx context.Context) ApiUsersTokensCreateRequest
-
-	// UsersTokensCreateExecute executes the request
-	//  @return Token
-	UsersTokensCreateExecute(r ApiUsersTokensCreateRequest) (*Token, *http.Response, error)
-
-	/*
-	UsersTokensDestroy Method for UsersTokensDestroy
-
-	Delete a token object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this token.
-	@return ApiUsersTokensDestroyRequest
-	*/
-	UsersTokensDestroy(ctx context.Context, id int32) ApiUsersTokensDestroyRequest
-
-	// UsersTokensDestroyExecute executes the request
-	UsersTokensDestroyExecute(r ApiUsersTokensDestroyRequest) (*http.Response, error)
-
-	/*
-	UsersTokensList Method for UsersTokensList
-
-	Get a list of token objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersTokensListRequest
-	*/
-	UsersTokensList(ctx context.Context) ApiUsersTokensListRequest
-
-	// UsersTokensListExecute executes the request
-	//  @return PaginatedTokenList
-	UsersTokensListExecute(r ApiUsersTokensListRequest) (*PaginatedTokenList, *http.Response, error)
-
-	/*
-	UsersTokensPartialUpdate Method for UsersTokensPartialUpdate
-
-	Patch a token object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this token.
-	@return ApiUsersTokensPartialUpdateRequest
-	*/
-	UsersTokensPartialUpdate(ctx context.Context, id int32) ApiUsersTokensPartialUpdateRequest
-
-	// UsersTokensPartialUpdateExecute executes the request
-	//  @return Token
-	UsersTokensPartialUpdateExecute(r ApiUsersTokensPartialUpdateRequest) (*Token, *http.Response, error)
-
-	/*
-	UsersTokensProvisionCreate Method for UsersTokensProvisionCreate
-
-	Non-authenticated REST API endpoint via which a user may create a Token.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersTokensProvisionCreateRequest
-	*/
-	UsersTokensProvisionCreate(ctx context.Context) ApiUsersTokensProvisionCreateRequest
-
-	// UsersTokensProvisionCreateExecute executes the request
-	//  @return TokenProvision
-	UsersTokensProvisionCreateExecute(r ApiUsersTokensProvisionCreateRequest) (*TokenProvision, *http.Response, error)
-
-	/*
-	UsersTokensRetrieve Method for UsersTokensRetrieve
-
-	Get a token object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this token.
-	@return ApiUsersTokensRetrieveRequest
-	*/
-	UsersTokensRetrieve(ctx context.Context, id int32) ApiUsersTokensRetrieveRequest
-
-	// UsersTokensRetrieveExecute executes the request
-	//  @return Token
-	UsersTokensRetrieveExecute(r ApiUsersTokensRetrieveRequest) (*Token, *http.Response, error)
-
-	/*
-	UsersTokensUpdate Method for UsersTokensUpdate
-
-	Put a token object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this token.
-	@return ApiUsersTokensUpdateRequest
-	*/
-	UsersTokensUpdate(ctx context.Context, id int32) ApiUsersTokensUpdateRequest
-
-	// UsersTokensUpdateExecute executes the request
-	//  @return Token
-	UsersTokensUpdateExecute(r ApiUsersTokensUpdateRequest) (*Token, *http.Response, error)
-
-	/*
-	UsersUsersBulkDestroy Method for UsersUsersBulkDestroy
-
-	Delete a list of user objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersUsersBulkDestroyRequest
-	*/
-	UsersUsersBulkDestroy(ctx context.Context) ApiUsersUsersBulkDestroyRequest
-
-	// UsersUsersBulkDestroyExecute executes the request
-	UsersUsersBulkDestroyExecute(r ApiUsersUsersBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	UsersUsersBulkPartialUpdate Method for UsersUsersBulkPartialUpdate
-
-	Patch a list of user objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersUsersBulkPartialUpdateRequest
-	*/
-	UsersUsersBulkPartialUpdate(ctx context.Context) ApiUsersUsersBulkPartialUpdateRequest
-
-	// UsersUsersBulkPartialUpdateExecute executes the request
-	//  @return []User
-	UsersUsersBulkPartialUpdateExecute(r ApiUsersUsersBulkPartialUpdateRequest) ([]User, *http.Response, error)
-
-	/*
-	UsersUsersBulkUpdate Method for UsersUsersBulkUpdate
-
-	Put a list of user objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersUsersBulkUpdateRequest
-	*/
-	UsersUsersBulkUpdate(ctx context.Context) ApiUsersUsersBulkUpdateRequest
-
-	// UsersUsersBulkUpdateExecute executes the request
-	//  @return []User
-	UsersUsersBulkUpdateExecute(r ApiUsersUsersBulkUpdateRequest) ([]User, *http.Response, error)
-
-	/*
-	UsersUsersCreate Method for UsersUsersCreate
-
-	Post a list of user objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersUsersCreateRequest
-	*/
-	UsersUsersCreate(ctx context.Context) ApiUsersUsersCreateRequest
-
-	// UsersUsersCreateExecute executes the request
-	//  @return User
-	UsersUsersCreateExecute(r ApiUsersUsersCreateRequest) (*User, *http.Response, error)
-
-	/*
-	UsersUsersDestroy Method for UsersUsersDestroy
-
-	Delete a user object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this user.
-	@return ApiUsersUsersDestroyRequest
-	*/
-	UsersUsersDestroy(ctx context.Context, id int32) ApiUsersUsersDestroyRequest
-
-	// UsersUsersDestroyExecute executes the request
-	UsersUsersDestroyExecute(r ApiUsersUsersDestroyRequest) (*http.Response, error)
-
-	/*
-	UsersUsersList Method for UsersUsersList
-
-	Get a list of user objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUsersUsersListRequest
-	*/
-	UsersUsersList(ctx context.Context) ApiUsersUsersListRequest
-
-	// UsersUsersListExecute executes the request
-	//  @return PaginatedUserList
-	UsersUsersListExecute(r ApiUsersUsersListRequest) (*PaginatedUserList, *http.Response, error)
-
-	/*
-	UsersUsersPartialUpdate Method for UsersUsersPartialUpdate
-
-	Patch a user object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this user.
-	@return ApiUsersUsersPartialUpdateRequest
-	*/
-	UsersUsersPartialUpdate(ctx context.Context, id int32) ApiUsersUsersPartialUpdateRequest
-
-	// UsersUsersPartialUpdateExecute executes the request
-	//  @return User
-	UsersUsersPartialUpdateExecute(r ApiUsersUsersPartialUpdateRequest) (*User, *http.Response, error)
-
-	/*
-	UsersUsersRetrieve Method for UsersUsersRetrieve
-
-	Get a user object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this user.
-	@return ApiUsersUsersRetrieveRequest
-	*/
-	UsersUsersRetrieve(ctx context.Context, id int32) ApiUsersUsersRetrieveRequest
-
-	// UsersUsersRetrieveExecute executes the request
-	//  @return User
-	UsersUsersRetrieveExecute(r ApiUsersUsersRetrieveRequest) (*User, *http.Response, error)
-
-	/*
-	UsersUsersUpdate Method for UsersUsersUpdate
-
-	Put a user object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this user.
-	@return ApiUsersUsersUpdateRequest
-	*/
-	UsersUsersUpdate(ctx context.Context, id int32) ApiUsersUsersUpdateRequest
-
-	// UsersUsersUpdateExecute executes the request
-	//  @return User
-	UsersUsersUpdateExecute(r ApiUsersUsersUpdateRequest) (*User, *http.Response, error)
-}
-
 // UsersAPIService UsersAPI service
 type UsersAPIService service
 
 type ApiUsersConfigRetrieveRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 }
 
 func (r ApiUsersConfigRetrieveRequest) Execute() (map[string]interface{}, *http.Response, error) {
@@ -683,7 +140,7 @@ func (a *UsersAPIService) UsersConfigRetrieveExecute(r ApiUsersConfigRetrieveReq
 
 type ApiUsersGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	groupRequest *[]GroupRequest
 }
 
@@ -796,7 +253,7 @@ func (a *UsersAPIService) UsersGroupsBulkDestroyExecute(r ApiUsersGroupsBulkDest
 
 type ApiUsersGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	groupRequest *[]GroupRequest
 }
 
@@ -920,7 +377,7 @@ func (a *UsersAPIService) UsersGroupsBulkPartialUpdateExecute(r ApiUsersGroupsBu
 
 type ApiUsersGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	groupRequest *[]GroupRequest
 }
 
@@ -1044,7 +501,7 @@ func (a *UsersAPIService) UsersGroupsBulkUpdateExecute(r ApiUsersGroupsBulkUpdat
 
 type ApiUsersGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	groupRequest *GroupRequest
 }
 
@@ -1168,8 +625,8 @@ func (a *UsersAPIService) UsersGroupsCreateExecute(r ApiUsersGroupsCreateRequest
 
 type ApiUsersGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 }
 
 func (r ApiUsersGroupsDestroyRequest) Execute() (*http.Response, error) {
@@ -1185,7 +642,7 @@ Delete a group object.
  @param id A unique integer value identifying this group.
  @return ApiUsersGroupsDestroyRequest
 */
-func (a *UsersAPIService) UsersGroupsDestroy(ctx context.Context, id int32) ApiUsersGroupsDestroyRequest {
+func (a *UsersAPIService) UsersGroupsDestroy(ctx context.Context, id int64) ApiUsersGroupsDestroyRequest {
 	return ApiUsersGroupsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1274,7 +731,7 @@ func (a *UsersAPIService) UsersGroupsDestroyExecute(r ApiUsersGroupsDestroyReque
 
 type ApiUsersGroupsListRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	description *[]string
 	descriptionEmpty *bool
 	descriptionIc *[]string
@@ -1286,14 +743,14 @@ type ApiUsersGroupsListRequest struct {
 	descriptionNie *[]string
 	descriptionNiew *[]string
 	descriptionNisw *[]string
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	limit *int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
+	limit *int64
 	name *[]string
 	nameEmpty *bool
 	nameIc *[]string
@@ -1305,15 +762,15 @@ type ApiUsersGroupsListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	notificationGroupId *[]int32
-	notificationGroupIdN *[]int32
-	offset *int32
+	notificationGroupId *[]int64
+	notificationGroupIdN *[]int64
+	offset *int64
 	ordering *string
-	permissionId *[]int32
-	permissionIdN *[]int32
+	permissionId *[]int64
+	permissionIdN *[]int64
 	q *string
-	userId *[]int32
-	userIdN *[]int32
+	userId *[]int64
+	userIdN *[]int64
 }
 
 func (r ApiUsersGroupsListRequest) Description(description []string) ApiUsersGroupsListRequest {
@@ -1371,7 +828,7 @@ func (r ApiUsersGroupsListRequest) DescriptionNisw(descriptionNisw []string) Api
 	return r
 }
 
-func (r ApiUsersGroupsListRequest) Id(id []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) Id(id []int64) ApiUsersGroupsListRequest {
 	r.id = &id
 	return r
 }
@@ -1381,33 +838,33 @@ func (r ApiUsersGroupsListRequest) IdEmpty(idEmpty bool) ApiUsersGroupsListReque
 	return r
 }
 
-func (r ApiUsersGroupsListRequest) IdGt(idGt []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) IdGt(idGt []int64) ApiUsersGroupsListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiUsersGroupsListRequest) IdGte(idGte []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) IdGte(idGte []int64) ApiUsersGroupsListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiUsersGroupsListRequest) IdLt(idLt []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) IdLt(idLt []int64) ApiUsersGroupsListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiUsersGroupsListRequest) IdLte(idLte []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) IdLte(idLte []int64) ApiUsersGroupsListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiUsersGroupsListRequest) IdN(idN []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) IdN(idN []int64) ApiUsersGroupsListRequest {
 	r.idN = &idN
 	return r
 }
 
 // Number of results to return per page.
-func (r ApiUsersGroupsListRequest) Limit(limit int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) Limit(limit int64) ApiUsersGroupsListRequest {
 	r.limit = &limit
 	return r
 }
@@ -1468,19 +925,19 @@ func (r ApiUsersGroupsListRequest) NameNisw(nameNisw []string) ApiUsersGroupsLis
 }
 
 // Notification group (ID)
-func (r ApiUsersGroupsListRequest) NotificationGroupId(notificationGroupId []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) NotificationGroupId(notificationGroupId []int64) ApiUsersGroupsListRequest {
 	r.notificationGroupId = &notificationGroupId
 	return r
 }
 
 // Notification group (ID)
-func (r ApiUsersGroupsListRequest) NotificationGroupIdN(notificationGroupIdN []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) NotificationGroupIdN(notificationGroupIdN []int64) ApiUsersGroupsListRequest {
 	r.notificationGroupIdN = &notificationGroupIdN
 	return r
 }
 
 // The initial index from which to return the results.
-func (r ApiUsersGroupsListRequest) Offset(offset int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) Offset(offset int64) ApiUsersGroupsListRequest {
 	r.offset = &offset
 	return r
 }
@@ -1492,13 +949,13 @@ func (r ApiUsersGroupsListRequest) Ordering(ordering string) ApiUsersGroupsListR
 }
 
 // Permission (ID)
-func (r ApiUsersGroupsListRequest) PermissionId(permissionId []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) PermissionId(permissionId []int64) ApiUsersGroupsListRequest {
 	r.permissionId = &permissionId
 	return r
 }
 
 // Permission (ID)
-func (r ApiUsersGroupsListRequest) PermissionIdN(permissionIdN []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) PermissionIdN(permissionIdN []int64) ApiUsersGroupsListRequest {
 	r.permissionIdN = &permissionIdN
 	return r
 }
@@ -1510,13 +967,13 @@ func (r ApiUsersGroupsListRequest) Q(q string) ApiUsersGroupsListRequest {
 }
 
 // User (ID)
-func (r ApiUsersGroupsListRequest) UserId(userId []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) UserId(userId []int64) ApiUsersGroupsListRequest {
 	r.userId = &userId
 	return r
 }
 
 // User (ID)
-func (r ApiUsersGroupsListRequest) UserIdN(userIdN []int32) ApiUsersGroupsListRequest {
+func (r ApiUsersGroupsListRequest) UserIdN(userIdN []int64) ApiUsersGroupsListRequest {
 	r.userIdN = &userIdN
 	return r
 }
@@ -2004,8 +1461,8 @@ func (a *UsersAPIService) UsersGroupsListExecute(r ApiUsersGroupsListRequest) (*
 
 type ApiUsersGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 	patchedGroupRequest *PatchedGroupRequest
 }
 
@@ -2027,7 +1484,7 @@ Patch a group object.
  @param id A unique integer value identifying this group.
  @return ApiUsersGroupsPartialUpdateRequest
 */
-func (a *UsersAPIService) UsersGroupsPartialUpdate(ctx context.Context, id int32) ApiUsersGroupsPartialUpdateRequest {
+func (a *UsersAPIService) UsersGroupsPartialUpdate(ctx context.Context, id int64) ApiUsersGroupsPartialUpdateRequest {
 	return ApiUsersGroupsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2129,8 +1586,8 @@ func (a *UsersAPIService) UsersGroupsPartialUpdateExecute(r ApiUsersGroupsPartia
 
 type ApiUsersGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 }
 
 func (r ApiUsersGroupsRetrieveRequest) Execute() (*Group, *http.Response, error) {
@@ -2146,7 +1603,7 @@ Get a group object.
  @param id A unique integer value identifying this group.
  @return ApiUsersGroupsRetrieveRequest
 */
-func (a *UsersAPIService) UsersGroupsRetrieve(ctx context.Context, id int32) ApiUsersGroupsRetrieveRequest {
+func (a *UsersAPIService) UsersGroupsRetrieve(ctx context.Context, id int64) ApiUsersGroupsRetrieveRequest {
 	return ApiUsersGroupsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2246,8 +1703,8 @@ func (a *UsersAPIService) UsersGroupsRetrieveExecute(r ApiUsersGroupsRetrieveReq
 
 type ApiUsersGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 	groupRequest *GroupRequest
 }
 
@@ -2269,7 +1726,7 @@ Put a group object.
  @param id A unique integer value identifying this group.
  @return ApiUsersGroupsUpdateRequest
 */
-func (a *UsersAPIService) UsersGroupsUpdate(ctx context.Context, id int32) ApiUsersGroupsUpdateRequest {
+func (a *UsersAPIService) UsersGroupsUpdate(ctx context.Context, id int64) ApiUsersGroupsUpdateRequest {
 	return ApiUsersGroupsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2374,7 +1831,7 @@ func (a *UsersAPIService) UsersGroupsUpdateExecute(r ApiUsersGroupsUpdateRequest
 
 type ApiUsersPermissionsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	objectPermissionRequest *[]ObjectPermissionRequest
 }
 
@@ -2487,7 +1944,7 @@ func (a *UsersAPIService) UsersPermissionsBulkDestroyExecute(r ApiUsersPermissio
 
 type ApiUsersPermissionsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	objectPermissionRequest *[]ObjectPermissionRequest
 }
 
@@ -2611,7 +2068,7 @@ func (a *UsersAPIService) UsersPermissionsBulkPartialUpdateExecute(r ApiUsersPer
 
 type ApiUsersPermissionsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	objectPermissionRequest *[]ObjectPermissionRequest
 }
 
@@ -2735,7 +2192,7 @@ func (a *UsersAPIService) UsersPermissionsBulkUpdateExecute(r ApiUsersPermission
 
 type ApiUsersPermissionsCreateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	objectPermissionRequest *ObjectPermissionRequest
 }
 
@@ -2859,8 +2316,8 @@ func (a *UsersAPIService) UsersPermissionsCreateExecute(r ApiUsersPermissionsCre
 
 type ApiUsersPermissionsDestroyRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 }
 
 func (r ApiUsersPermissionsDestroyRequest) Execute() (*http.Response, error) {
@@ -2876,7 +2333,7 @@ Delete a permission object.
  @param id A unique integer value identifying this permission.
  @return ApiUsersPermissionsDestroyRequest
 */
-func (a *UsersAPIService) UsersPermissionsDestroy(ctx context.Context, id int32) ApiUsersPermissionsDestroyRequest {
+func (a *UsersAPIService) UsersPermissionsDestroy(ctx context.Context, id int64) ApiUsersPermissionsDestroyRequest {
 	return ApiUsersPermissionsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2965,7 +2422,7 @@ func (a *UsersAPIService) UsersPermissionsDestroyExecute(r ApiUsersPermissionsDe
 
 type ApiUsersPermissionsListRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	canAdd *bool
 	canChange *bool
 	canDelete *bool
@@ -2984,16 +2441,16 @@ type ApiUsersPermissionsListRequest struct {
 	enabled *bool
 	group *[]string
 	groupN *[]string
-	groupId *[]int32
-	groupIdN *[]int32
-	id *[]int32
+	groupId *[]int64
+	groupIdN *[]int64
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	limit *int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
+	limit *int64
 	name *[]string
 	nameEmpty *bool
 	nameIc *[]string
@@ -3015,17 +2472,17 @@ type ApiUsersPermissionsListRequest struct {
 	objectTypeNie *string
 	objectTypeNiew *string
 	objectTypeNisw *string
-	objectTypeId *[]int32
-	objectTypeIdN *[]int32
-	objectTypes *[]int32
-	objectTypesN *[]int32
-	offset *int32
+	objectTypeId *[]int64
+	objectTypeIdN *[]int64
+	objectTypes *[]int64
+	objectTypesN *[]int64
+	offset *int64
 	ordering *string
 	q *string
 	user *[]string
 	userN *[]string
-	userId *[]int32
-	userIdN *[]int32
+	userId *[]int64
+	userIdN *[]int64
 }
 
 func (r ApiUsersPermissionsListRequest) CanAdd(canAdd bool) ApiUsersPermissionsListRequest {
@@ -3121,18 +2578,18 @@ func (r ApiUsersPermissionsListRequest) GroupN(groupN []string) ApiUsersPermissi
 }
 
 // Group
-func (r ApiUsersPermissionsListRequest) GroupId(groupId []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) GroupId(groupId []int64) ApiUsersPermissionsListRequest {
 	r.groupId = &groupId
 	return r
 }
 
 // Group
-func (r ApiUsersPermissionsListRequest) GroupIdN(groupIdN []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) GroupIdN(groupIdN []int64) ApiUsersPermissionsListRequest {
 	r.groupIdN = &groupIdN
 	return r
 }
 
-func (r ApiUsersPermissionsListRequest) Id(id []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) Id(id []int64) ApiUsersPermissionsListRequest {
 	r.id = &id
 	return r
 }
@@ -3142,33 +2599,33 @@ func (r ApiUsersPermissionsListRequest) IdEmpty(idEmpty bool) ApiUsersPermission
 	return r
 }
 
-func (r ApiUsersPermissionsListRequest) IdGt(idGt []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) IdGt(idGt []int64) ApiUsersPermissionsListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiUsersPermissionsListRequest) IdGte(idGte []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) IdGte(idGte []int64) ApiUsersPermissionsListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiUsersPermissionsListRequest) IdLt(idLt []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) IdLt(idLt []int64) ApiUsersPermissionsListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiUsersPermissionsListRequest) IdLte(idLte []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) IdLte(idLte []int64) ApiUsersPermissionsListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiUsersPermissionsListRequest) IdN(idN []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) IdN(idN []int64) ApiUsersPermissionsListRequest {
 	r.idN = &idN
 	return r
 }
 
 // Number of results to return per page.
-func (r ApiUsersPermissionsListRequest) Limit(limit int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) Limit(limit int64) ApiUsersPermissionsListRequest {
 	r.limit = &limit
 	return r
 }
@@ -3278,28 +2735,28 @@ func (r ApiUsersPermissionsListRequest) ObjectTypeNisw(objectTypeNisw string) Ap
 	return r
 }
 
-func (r ApiUsersPermissionsListRequest) ObjectTypeId(objectTypeId []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) ObjectTypeId(objectTypeId []int64) ApiUsersPermissionsListRequest {
 	r.objectTypeId = &objectTypeId
 	return r
 }
 
-func (r ApiUsersPermissionsListRequest) ObjectTypeIdN(objectTypeIdN []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) ObjectTypeIdN(objectTypeIdN []int64) ApiUsersPermissionsListRequest {
 	r.objectTypeIdN = &objectTypeIdN
 	return r
 }
 
-func (r ApiUsersPermissionsListRequest) ObjectTypes(objectTypes []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) ObjectTypes(objectTypes []int64) ApiUsersPermissionsListRequest {
 	r.objectTypes = &objectTypes
 	return r
 }
 
-func (r ApiUsersPermissionsListRequest) ObjectTypesN(objectTypesN []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) ObjectTypesN(objectTypesN []int64) ApiUsersPermissionsListRequest {
 	r.objectTypesN = &objectTypesN
 	return r
 }
 
 // The initial index from which to return the results.
-func (r ApiUsersPermissionsListRequest) Offset(offset int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) Offset(offset int64) ApiUsersPermissionsListRequest {
 	r.offset = &offset
 	return r
 }
@@ -3329,13 +2786,13 @@ func (r ApiUsersPermissionsListRequest) UserN(userN []string) ApiUsersPermission
 }
 
 // User
-func (r ApiUsersPermissionsListRequest) UserId(userId []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) UserId(userId []int64) ApiUsersPermissionsListRequest {
 	r.userId = &userId
 	return r
 }
 
 // User
-func (r ApiUsersPermissionsListRequest) UserIdN(userIdN []int32) ApiUsersPermissionsListRequest {
+func (r ApiUsersPermissionsListRequest) UserIdN(userIdN []int64) ApiUsersPermissionsListRequest {
 	r.userIdN = &userIdN
 	return r
 }
@@ -3934,8 +3391,8 @@ func (a *UsersAPIService) UsersPermissionsListExecute(r ApiUsersPermissionsListR
 
 type ApiUsersPermissionsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 	patchedObjectPermissionRequest *PatchedObjectPermissionRequest
 }
 
@@ -3957,7 +3414,7 @@ Patch a permission object.
  @param id A unique integer value identifying this permission.
  @return ApiUsersPermissionsPartialUpdateRequest
 */
-func (a *UsersAPIService) UsersPermissionsPartialUpdate(ctx context.Context, id int32) ApiUsersPermissionsPartialUpdateRequest {
+func (a *UsersAPIService) UsersPermissionsPartialUpdate(ctx context.Context, id int64) ApiUsersPermissionsPartialUpdateRequest {
 	return ApiUsersPermissionsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4059,8 +3516,8 @@ func (a *UsersAPIService) UsersPermissionsPartialUpdateExecute(r ApiUsersPermiss
 
 type ApiUsersPermissionsRetrieveRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 }
 
 func (r ApiUsersPermissionsRetrieveRequest) Execute() (*ObjectPermission, *http.Response, error) {
@@ -4076,7 +3533,7 @@ Get a permission object.
  @param id A unique integer value identifying this permission.
  @return ApiUsersPermissionsRetrieveRequest
 */
-func (a *UsersAPIService) UsersPermissionsRetrieve(ctx context.Context, id int32) ApiUsersPermissionsRetrieveRequest {
+func (a *UsersAPIService) UsersPermissionsRetrieve(ctx context.Context, id int64) ApiUsersPermissionsRetrieveRequest {
 	return ApiUsersPermissionsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4176,8 +3633,8 @@ func (a *UsersAPIService) UsersPermissionsRetrieveExecute(r ApiUsersPermissionsR
 
 type ApiUsersPermissionsUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 	objectPermissionRequest *ObjectPermissionRequest
 }
 
@@ -4199,7 +3656,7 @@ Put a permission object.
  @param id A unique integer value identifying this permission.
  @return ApiUsersPermissionsUpdateRequest
 */
-func (a *UsersAPIService) UsersPermissionsUpdate(ctx context.Context, id int32) ApiUsersPermissionsUpdateRequest {
+func (a *UsersAPIService) UsersPermissionsUpdate(ctx context.Context, id int64) ApiUsersPermissionsUpdateRequest {
 	return ApiUsersPermissionsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4304,7 +3761,7 @@ func (a *UsersAPIService) UsersPermissionsUpdateExecute(r ApiUsersPermissionsUpd
 
 type ApiUsersTokensBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	tokenRequest *[]TokenRequest
 }
 
@@ -4417,7 +3874,7 @@ func (a *UsersAPIService) UsersTokensBulkDestroyExecute(r ApiUsersTokensBulkDest
 
 type ApiUsersTokensBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	tokenRequest *[]TokenRequest
 }
 
@@ -4541,7 +3998,7 @@ func (a *UsersAPIService) UsersTokensBulkPartialUpdateExecute(r ApiUsersTokensBu
 
 type ApiUsersTokensBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	tokenRequest *[]TokenRequest
 }
 
@@ -4665,7 +4122,7 @@ func (a *UsersAPIService) UsersTokensBulkUpdateExecute(r ApiUsersTokensBulkUpdat
 
 type ApiUsersTokensCreateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	tokenRequest *TokenRequest
 }
 
@@ -4789,8 +4246,8 @@ func (a *UsersAPIService) UsersTokensCreateExecute(r ApiUsersTokensCreateRequest
 
 type ApiUsersTokensDestroyRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 }
 
 func (r ApiUsersTokensDestroyRequest) Execute() (*http.Response, error) {
@@ -4806,7 +4263,7 @@ Delete a token object.
  @param id A unique integer value identifying this token.
  @return ApiUsersTokensDestroyRequest
 */
-func (a *UsersAPIService) UsersTokensDestroy(ctx context.Context, id int32) ApiUsersTokensDestroyRequest {
+func (a *UsersAPIService) UsersTokensDestroy(ctx context.Context, id int64) ApiUsersTokensDestroyRequest {
 	return ApiUsersTokensDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4895,7 +4352,7 @@ func (a *UsersAPIService) UsersTokensDestroyExecute(r ApiUsersTokensDestroyReque
 
 type ApiUsersTokensListRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	created *time.Time
 	createdGte *time.Time
 	createdLte *time.Time
@@ -4913,13 +4370,13 @@ type ApiUsersTokensListRequest struct {
 	expires *time.Time
 	expiresGte *time.Time
 	expiresLte *time.Time
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	key *[]string
 	keyEmpty *bool
 	keyIc *[]string
@@ -4938,14 +4395,14 @@ type ApiUsersTokensListRequest struct {
 	lastUsedLt *[]time.Time
 	lastUsedLte *[]time.Time
 	lastUsedN *[]time.Time
-	limit *int32
-	offset *int32
+	limit *int64
+	offset *int64
 	ordering *string
 	q *string
 	user *[]string
 	userN *[]string
-	userId *[]int32
-	userIdN *[]int32
+	userId *[]int64
+	userIdN *[]int64
 	writeEnabled *bool
 }
 
@@ -5034,7 +4491,7 @@ func (r ApiUsersTokensListRequest) ExpiresLte(expiresLte time.Time) ApiUsersToke
 	return r
 }
 
-func (r ApiUsersTokensListRequest) Id(id []int32) ApiUsersTokensListRequest {
+func (r ApiUsersTokensListRequest) Id(id []int64) ApiUsersTokensListRequest {
 	r.id = &id
 	return r
 }
@@ -5044,27 +4501,27 @@ func (r ApiUsersTokensListRequest) IdEmpty(idEmpty bool) ApiUsersTokensListReque
 	return r
 }
 
-func (r ApiUsersTokensListRequest) IdGt(idGt []int32) ApiUsersTokensListRequest {
+func (r ApiUsersTokensListRequest) IdGt(idGt []int64) ApiUsersTokensListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiUsersTokensListRequest) IdGte(idGte []int32) ApiUsersTokensListRequest {
+func (r ApiUsersTokensListRequest) IdGte(idGte []int64) ApiUsersTokensListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiUsersTokensListRequest) IdLt(idLt []int32) ApiUsersTokensListRequest {
+func (r ApiUsersTokensListRequest) IdLt(idLt []int64) ApiUsersTokensListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiUsersTokensListRequest) IdLte(idLte []int32) ApiUsersTokensListRequest {
+func (r ApiUsersTokensListRequest) IdLte(idLte []int64) ApiUsersTokensListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiUsersTokensListRequest) IdN(idN []int32) ApiUsersTokensListRequest {
+func (r ApiUsersTokensListRequest) IdN(idN []int64) ApiUsersTokensListRequest {
 	r.idN = &idN
 	return r
 }
@@ -5160,13 +4617,13 @@ func (r ApiUsersTokensListRequest) LastUsedN(lastUsedN []time.Time) ApiUsersToke
 }
 
 // Number of results to return per page.
-func (r ApiUsersTokensListRequest) Limit(limit int32) ApiUsersTokensListRequest {
+func (r ApiUsersTokensListRequest) Limit(limit int64) ApiUsersTokensListRequest {
 	r.limit = &limit
 	return r
 }
 
 // The initial index from which to return the results.
-func (r ApiUsersTokensListRequest) Offset(offset int32) ApiUsersTokensListRequest {
+func (r ApiUsersTokensListRequest) Offset(offset int64) ApiUsersTokensListRequest {
 	r.offset = &offset
 	return r
 }
@@ -5196,13 +4653,13 @@ func (r ApiUsersTokensListRequest) UserN(userN []string) ApiUsersTokensListReque
 }
 
 // User
-func (r ApiUsersTokensListRequest) UserId(userId []int32) ApiUsersTokensListRequest {
+func (r ApiUsersTokensListRequest) UserId(userId []int64) ApiUsersTokensListRequest {
 	r.userId = &userId
 	return r
 }
 
 // User
-func (r ApiUsersTokensListRequest) UserIdN(userIdN []int32) ApiUsersTokensListRequest {
+func (r ApiUsersTokensListRequest) UserIdN(userIdN []int64) ApiUsersTokensListRequest {
 	r.userIdN = &userIdN
 	return r
 }
@@ -5763,8 +5220,8 @@ func (a *UsersAPIService) UsersTokensListExecute(r ApiUsersTokensListRequest) (*
 
 type ApiUsersTokensPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 	patchedTokenRequest *PatchedTokenRequest
 }
 
@@ -5786,7 +5243,7 @@ Patch a token object.
  @param id A unique integer value identifying this token.
  @return ApiUsersTokensPartialUpdateRequest
 */
-func (a *UsersAPIService) UsersTokensPartialUpdate(ctx context.Context, id int32) ApiUsersTokensPartialUpdateRequest {
+func (a *UsersAPIService) UsersTokensPartialUpdate(ctx context.Context, id int64) ApiUsersTokensPartialUpdateRequest {
 	return ApiUsersTokensPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5888,7 +5345,7 @@ func (a *UsersAPIService) UsersTokensPartialUpdateExecute(r ApiUsersTokensPartia
 
 type ApiUsersTokensProvisionCreateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	tokenProvisionRequest *TokenProvisionRequest
 }
 
@@ -6022,8 +5479,8 @@ func (a *UsersAPIService) UsersTokensProvisionCreateExecute(r ApiUsersTokensProv
 
 type ApiUsersTokensRetrieveRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 }
 
 func (r ApiUsersTokensRetrieveRequest) Execute() (*Token, *http.Response, error) {
@@ -6039,7 +5496,7 @@ Get a token object.
  @param id A unique integer value identifying this token.
  @return ApiUsersTokensRetrieveRequest
 */
-func (a *UsersAPIService) UsersTokensRetrieve(ctx context.Context, id int32) ApiUsersTokensRetrieveRequest {
+func (a *UsersAPIService) UsersTokensRetrieve(ctx context.Context, id int64) ApiUsersTokensRetrieveRequest {
 	return ApiUsersTokensRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6139,8 +5596,8 @@ func (a *UsersAPIService) UsersTokensRetrieveExecute(r ApiUsersTokensRetrieveReq
 
 type ApiUsersTokensUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 	tokenRequest *TokenRequest
 }
 
@@ -6162,7 +5619,7 @@ Put a token object.
  @param id A unique integer value identifying this token.
  @return ApiUsersTokensUpdateRequest
 */
-func (a *UsersAPIService) UsersTokensUpdate(ctx context.Context, id int32) ApiUsersTokensUpdateRequest {
+func (a *UsersAPIService) UsersTokensUpdate(ctx context.Context, id int64) ApiUsersTokensUpdateRequest {
 	return ApiUsersTokensUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6267,7 +5724,7 @@ func (a *UsersAPIService) UsersTokensUpdateExecute(r ApiUsersTokensUpdateRequest
 
 type ApiUsersUsersBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	userRequest *[]UserRequest
 }
 
@@ -6380,7 +5837,7 @@ func (a *UsersAPIService) UsersUsersBulkDestroyExecute(r ApiUsersUsersBulkDestro
 
 type ApiUsersUsersBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	userRequest *[]UserRequest
 }
 
@@ -6504,7 +5961,7 @@ func (a *UsersAPIService) UsersUsersBulkPartialUpdateExecute(r ApiUsersUsersBulk
 
 type ApiUsersUsersBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	userRequest *[]UserRequest
 }
 
@@ -6628,7 +6085,7 @@ func (a *UsersAPIService) UsersUsersBulkUpdateExecute(r ApiUsersUsersBulkUpdateR
 
 type ApiUsersUsersCreateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	userRequest *UserRequest
 }
 
@@ -6752,8 +6209,8 @@ func (a *UsersAPIService) UsersUsersCreateExecute(r ApiUsersUsersCreateRequest) 
 
 type ApiUsersUsersDestroyRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 }
 
 func (r ApiUsersUsersDestroyRequest) Execute() (*http.Response, error) {
@@ -6769,7 +6226,7 @@ Delete a user object.
  @param id A unique integer value identifying this user.
  @return ApiUsersUsersDestroyRequest
 */
-func (a *UsersAPIService) UsersUsersDestroy(ctx context.Context, id int32) ApiUsersUsersDestroyRequest {
+func (a *UsersAPIService) UsersUsersDestroy(ctx context.Context, id int64) ApiUsersUsersDestroyRequest {
 	return ApiUsersUsersDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6858,7 +6315,7 @@ func (a *UsersAPIService) UsersUsersDestroyExecute(r ApiUsersUsersDestroyRequest
 
 type ApiUsersUsersListRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	dateJoined *[]time.Time
 	dateJoinedEmpty *bool
 	dateJoinedGt *[]time.Time
@@ -6890,15 +6347,15 @@ type ApiUsersUsersListRequest struct {
 	firstNameNisw *[]string
 	group *[]string
 	groupN *[]string
-	groupId *[]int32
-	groupIdN *[]int32
-	id *[]int32
+	groupId *[]int64
+	groupIdN *[]int64
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	isActive *bool
 	isStaff *bool
 	isSuperuser *bool
@@ -6920,13 +6377,13 @@ type ApiUsersUsersListRequest struct {
 	lastNameNie *[]string
 	lastNameNiew *[]string
 	lastNameNisw *[]string
-	limit *int32
-	notificationGroupId *[]int32
-	notificationGroupIdN *[]int32
-	offset *int32
+	limit *int64
+	notificationGroupId *[]int64
+	notificationGroupIdN *[]int64
+	offset *int64
 	ordering *string
-	permissionId *[]int32
-	permissionIdN *[]int32
+	permissionId *[]int64
+	permissionIdN *[]int64
 	q *string
 	username *[]string
 	usernameEmpty *bool
@@ -7099,18 +6556,18 @@ func (r ApiUsersUsersListRequest) GroupN(groupN []string) ApiUsersUsersListReque
 }
 
 // Group
-func (r ApiUsersUsersListRequest) GroupId(groupId []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) GroupId(groupId []int64) ApiUsersUsersListRequest {
 	r.groupId = &groupId
 	return r
 }
 
 // Group
-func (r ApiUsersUsersListRequest) GroupIdN(groupIdN []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) GroupIdN(groupIdN []int64) ApiUsersUsersListRequest {
 	r.groupIdN = &groupIdN
 	return r
 }
 
-func (r ApiUsersUsersListRequest) Id(id []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) Id(id []int64) ApiUsersUsersListRequest {
 	r.id = &id
 	return r
 }
@@ -7120,27 +6577,27 @@ func (r ApiUsersUsersListRequest) IdEmpty(idEmpty bool) ApiUsersUsersListRequest
 	return r
 }
 
-func (r ApiUsersUsersListRequest) IdGt(idGt []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) IdGt(idGt []int64) ApiUsersUsersListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiUsersUsersListRequest) IdGte(idGte []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) IdGte(idGte []int64) ApiUsersUsersListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiUsersUsersListRequest) IdLt(idLt []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) IdLt(idLt []int64) ApiUsersUsersListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiUsersUsersListRequest) IdLte(idLte []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) IdLte(idLte []int64) ApiUsersUsersListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiUsersUsersListRequest) IdN(idN []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) IdN(idN []int64) ApiUsersUsersListRequest {
 	r.idN = &idN
 	return r
 }
@@ -7251,25 +6708,25 @@ func (r ApiUsersUsersListRequest) LastNameNisw(lastNameNisw []string) ApiUsersUs
 }
 
 // Number of results to return per page.
-func (r ApiUsersUsersListRequest) Limit(limit int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) Limit(limit int64) ApiUsersUsersListRequest {
 	r.limit = &limit
 	return r
 }
 
 // Notification group (ID)
-func (r ApiUsersUsersListRequest) NotificationGroupId(notificationGroupId []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) NotificationGroupId(notificationGroupId []int64) ApiUsersUsersListRequest {
 	r.notificationGroupId = &notificationGroupId
 	return r
 }
 
 // Notification group (ID)
-func (r ApiUsersUsersListRequest) NotificationGroupIdN(notificationGroupIdN []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) NotificationGroupIdN(notificationGroupIdN []int64) ApiUsersUsersListRequest {
 	r.notificationGroupIdN = &notificationGroupIdN
 	return r
 }
 
 // The initial index from which to return the results.
-func (r ApiUsersUsersListRequest) Offset(offset int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) Offset(offset int64) ApiUsersUsersListRequest {
 	r.offset = &offset
 	return r
 }
@@ -7281,13 +6738,13 @@ func (r ApiUsersUsersListRequest) Ordering(ordering string) ApiUsersUsersListReq
 }
 
 // Permission (ID)
-func (r ApiUsersUsersListRequest) PermissionId(permissionId []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) PermissionId(permissionId []int64) ApiUsersUsersListRequest {
 	r.permissionId = &permissionId
 	return r
 }
 
 // Permission (ID)
-func (r ApiUsersUsersListRequest) PermissionIdN(permissionIdN []int32) ApiUsersUsersListRequest {
+func (r ApiUsersUsersListRequest) PermissionIdN(permissionIdN []int64) ApiUsersUsersListRequest {
 	r.permissionIdN = &permissionIdN
 	return r
 }
@@ -8231,8 +7688,8 @@ func (a *UsersAPIService) UsersUsersListExecute(r ApiUsersUsersListRequest) (*Pa
 
 type ApiUsersUsersPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 	patchedUserRequest *PatchedUserRequest
 }
 
@@ -8254,7 +7711,7 @@ Patch a user object.
  @param id A unique integer value identifying this user.
  @return ApiUsersUsersPartialUpdateRequest
 */
-func (a *UsersAPIService) UsersUsersPartialUpdate(ctx context.Context, id int32) ApiUsersUsersPartialUpdateRequest {
+func (a *UsersAPIService) UsersUsersPartialUpdate(ctx context.Context, id int64) ApiUsersUsersPartialUpdateRequest {
 	return ApiUsersUsersPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8356,8 +7813,8 @@ func (a *UsersAPIService) UsersUsersPartialUpdateExecute(r ApiUsersUsersPartialU
 
 type ApiUsersUsersRetrieveRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 }
 
 func (r ApiUsersUsersRetrieveRequest) Execute() (*User, *http.Response, error) {
@@ -8373,7 +7830,7 @@ Get a user object.
  @param id A unique integer value identifying this user.
  @return ApiUsersUsersRetrieveRequest
 */
-func (a *UsersAPIService) UsersUsersRetrieve(ctx context.Context, id int32) ApiUsersUsersRetrieveRequest {
+func (a *UsersAPIService) UsersUsersRetrieve(ctx context.Context, id int64) ApiUsersUsersRetrieveRequest {
 	return ApiUsersUsersRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8473,8 +7930,8 @@ func (a *UsersAPIService) UsersUsersRetrieveExecute(r ApiUsersUsersRetrieveReque
 
 type ApiUsersUsersUpdateRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
-	id int32
+	ApiService *UsersAPIService
+	id int64
 	userRequest *UserRequest
 }
 
@@ -8496,7 +7953,7 @@ Put a user object.
  @param id A unique integer value identifying this user.
  @return ApiUsersUsersUpdateRequest
 */
-func (a *UsersAPIService) UsersUsersUpdate(ctx context.Context, id int32) ApiUsersUsersUpdateRequest {
+func (a *UsersAPIService) UsersUsersUpdate(ctx context.Context, id int64) ApiUsersUsersUpdateRequest {
 	return ApiUsersUsersUpdateRequest{
 		ApiService: a,
 		ctx: ctx,

@@ -444,7 +444,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this aggregate.
+	id := int64(56) // int64 | A unique integer value identifying this aggregate.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -462,7 +462,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this aggregate. | 
+**id** | **int64** | A unique integer value identifying this aggregate. | 
 
 ### Other Parameters
 
@@ -540,13 +540,13 @@ func main() {
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	family := float32(8.14) // float32 |  (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -554,16 +554,16 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	prefix := "prefix_example" // string | Prefix (optional)
 	q := "q_example" // string | Search (optional)
 	rir := []string{"Inner_example"} // []string | RIR (slug) (optional)
 	rirN := []string{"Inner_example"} // []string | RIR (slug) (optional)
-	rirId := []int32{int32(123)} // []int32 | RIR (ID) (optional)
-	rirIdN := []int32{int32(123)} // []int32 | RIR (ID) (optional)
+	rirId := []int64{int64(123)} // []int64 | RIR (ID) (optional)
+	rirIdN := []int64{int64(123)} // []int64 | RIR (ID) (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
@@ -572,8 +572,8 @@ func main() {
 	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
-	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
-	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tenantId := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
+	tenantIdN := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -626,13 +626,13 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **family** | **float32** |  | 
- **id** | **[]int32** |  | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -640,16 +640,16 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **prefix** | **string** | Prefix | 
  **q** | **string** | Search | 
  **rir** | **[]string** | RIR (slug) | 
  **rirN** | **[]string** | RIR (slug) | 
- **rirId** | **[]int32** | RIR (ID) | 
- **rirIdN** | **[]int32** | RIR (ID) | 
+ **rirId** | **[]int64** | RIR (ID) | 
+ **rirIdN** | **[]int64** | RIR (ID) | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
@@ -658,8 +658,8 @@ Name | Type | Description  | Notes
  **tenantGroupN** | **[]string** |  | 
  **tenantGroupId** | **[]string** |  | 
  **tenantGroupIdN** | **[]string** |  | 
- **tenantId** | **[]int32** | Tenant (ID) | 
- **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **tenantId** | **[]int64** | Tenant (ID) | 
+ **tenantIdN** | **[]int64** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -701,7 +701,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this aggregate.
+	id := int64(56) // int64 | A unique integer value identifying this aggregate.
 	patchedWritableAggregateRequest := *openapiclient.NewPatchedWritableAggregateRequest() // PatchedWritableAggregateRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -722,7 +722,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this aggregate. | 
+**id** | **int64** | A unique integer value identifying this aggregate. | 
 
 ### Other Parameters
 
@@ -773,7 +773,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this aggregate.
+	id := int64(56) // int64 | A unique integer value identifying this aggregate.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -793,7 +793,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this aggregate. | 
+**id** | **int64** | A unique integer value identifying this aggregate. | 
 
 ### Other Parameters
 
@@ -843,7 +843,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this aggregate.
+	id := int64(56) // int64 | A unique integer value identifying this aggregate.
 	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")) // WritableAggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -864,7 +864,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this aggregate. | 
+**id** | **int64** | A unique integer value identifying this aggregate. | 
 
 ### Other Parameters
 
@@ -915,7 +915,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | 
+	id := int64(56) // int64 | 
 	aSNRequest := []openapiclient.ASNRequest{*openapiclient.NewASNRequest(int64(123))} // []ASNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -936,7 +936,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -987,7 +987,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | 
+	id := int64(56) // int64 | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1007,7 +1007,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -1319,7 +1319,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this ASN range.
+	id := int64(56) // int64 | A unique integer value identifying this ASN range.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1337,7 +1337,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this ASN range. | 
+**id** | **int64** | A unique integer value identifying this ASN range. | 
 
 ### Other Parameters
 
@@ -1407,20 +1407,20 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
-	end := []int32{int32(123)} // []int32 |  (optional)
+	end := []int64{int64(123)} // []int64 |  (optional)
 	endEmpty := true // bool |  (optional)
-	endGt := []int32{int32(123)} // []int32 |  (optional)
-	endGte := []int32{int32(123)} // []int32 |  (optional)
-	endLt := []int32{int32(123)} // []int32 |  (optional)
-	endLte := []int32{int32(123)} // []int32 |  (optional)
-	endN := []int32{int32(123)} // []int32 |  (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	endGt := []int64{int64(123)} // []int64 |  (optional)
+	endGte := []int64{int64(123)} // []int64 |  (optional)
+	endLt := []int64{int64(123)} // []int64 |  (optional)
+	endLte := []int64{int64(123)} // []int64 |  (optional)
+	endN := []int64{int64(123)} // []int64 |  (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1428,7 +1428,7 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -1441,13 +1441,13 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
 	rir := []string{"Inner_example"} // []string | RIR (slug) (optional)
 	rirN := []string{"Inner_example"} // []string | RIR (slug) (optional)
-	rirId := []int32{int32(123)} // []int32 | RIR (ID) (optional)
-	rirIdN := []int32{int32(123)} // []int32 | RIR (ID) (optional)
+	rirId := []int64{int64(123)} // []int64 | RIR (ID) (optional)
+	rirIdN := []int64{int64(123)} // []int64 | RIR (ID) (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
 	slugEmpty := true // bool |  (optional)
 	slugIc := []string{"Inner_example"} // []string |  (optional)
@@ -1459,13 +1459,13 @@ func main() {
 	slugNie := []string{"Inner_example"} // []string |  (optional)
 	slugNiew := []string{"Inner_example"} // []string |  (optional)
 	slugNisw := []string{"Inner_example"} // []string |  (optional)
-	start := []int32{int32(123)} // []int32 |  (optional)
+	start := []int64{int64(123)} // []int64 |  (optional)
 	startEmpty := true // bool |  (optional)
-	startGt := []int32{int32(123)} // []int32 |  (optional)
-	startGte := []int32{int32(123)} // []int32 |  (optional)
-	startLt := []int32{int32(123)} // []int32 |  (optional)
-	startLte := []int32{int32(123)} // []int32 |  (optional)
-	startN := []int32{int32(123)} // []int32 |  (optional)
+	startGt := []int64{int64(123)} // []int64 |  (optional)
+	startGte := []int64{int64(123)} // []int64 |  (optional)
+	startLt := []int64{int64(123)} // []int64 |  (optional)
+	startLte := []int64{int64(123)} // []int64 |  (optional)
+	startN := []int64{int64(123)} // []int64 |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
@@ -1474,8 +1474,8 @@ func main() {
 	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
-	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
-	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tenantId := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
+	tenantIdN := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1520,20 +1520,20 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
- **end** | **[]int32** |  | 
+ **end** | **[]int64** |  | 
  **endEmpty** | **bool** |  | 
- **endGt** | **[]int32** |  | 
- **endGte** | **[]int32** |  | 
- **endLt** | **[]int32** |  | 
- **endLte** | **[]int32** |  | 
- **endN** | **[]int32** |  | 
- **id** | **[]int32** |  | 
+ **endGt** | **[]int64** |  | 
+ **endGte** | **[]int64** |  | 
+ **endLt** | **[]int64** |  | 
+ **endLte** | **[]int64** |  | 
+ **endN** | **[]int64** |  | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -1541,7 +1541,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -1554,13 +1554,13 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
  **rir** | **[]string** | RIR (slug) | 
  **rirN** | **[]string** | RIR (slug) | 
- **rirId** | **[]int32** | RIR (ID) | 
- **rirIdN** | **[]int32** | RIR (ID) | 
+ **rirId** | **[]int64** | RIR (ID) | 
+ **rirIdN** | **[]int64** | RIR (ID) | 
  **slug** | **[]string** |  | 
  **slugEmpty** | **bool** |  | 
  **slugIc** | **[]string** |  | 
@@ -1572,13 +1572,13 @@ Name | Type | Description  | Notes
  **slugNie** | **[]string** |  | 
  **slugNiew** | **[]string** |  | 
  **slugNisw** | **[]string** |  | 
- **start** | **[]int32** |  | 
+ **start** | **[]int64** |  | 
  **startEmpty** | **bool** |  | 
- **startGt** | **[]int32** |  | 
- **startGte** | **[]int32** |  | 
- **startLt** | **[]int32** |  | 
- **startLte** | **[]int32** |  | 
- **startN** | **[]int32** |  | 
+ **startGt** | **[]int64** |  | 
+ **startGte** | **[]int64** |  | 
+ **startLt** | **[]int64** |  | 
+ **startLte** | **[]int64** |  | 
+ **startN** | **[]int64** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
@@ -1587,8 +1587,8 @@ Name | Type | Description  | Notes
  **tenantGroupN** | **[]string** |  | 
  **tenantGroupId** | **[]string** |  | 
  **tenantGroupIdN** | **[]string** |  | 
- **tenantId** | **[]int32** | Tenant (ID) | 
- **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **tenantId** | **[]int64** | Tenant (ID) | 
+ **tenantIdN** | **[]int64** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -1630,7 +1630,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this ASN range.
+	id := int64(56) // int64 | A unique integer value identifying this ASN range.
 	patchedASNRangeRequest := *openapiclient.NewPatchedASNRangeRequest() // PatchedASNRangeRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1651,7 +1651,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this ASN range. | 
+**id** | **int64** | A unique integer value identifying this ASN range. | 
 
 ### Other Parameters
 
@@ -1702,7 +1702,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this ASN range.
+	id := int64(56) // int64 | A unique integer value identifying this ASN range.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1722,7 +1722,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this ASN range. | 
+**id** | **int64** | A unique integer value identifying this ASN range. | 
 
 ### Other Parameters
 
@@ -1772,7 +1772,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this ASN range.
+	id := int64(56) // int64 | A unique integer value identifying this ASN range.
 	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123)) // ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -1793,7 +1793,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this ASN range. | 
+**id** | **int64** | A unique integer value identifying this ASN range. | 
 
 ### Other Parameters
 
@@ -2106,7 +2106,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this ASN.
+	id := int64(56) // int64 | A unique integer value identifying this ASN.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2124,7 +2124,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this ASN. | 
+**id** | **int64** | A unique integer value identifying this ASN. | 
 
 ### Other Parameters
 
@@ -2175,13 +2175,13 @@ import (
 )
 
 func main() {
-	asn := []int32{int32(123)} // []int32 |  (optional)
+	asn := []int64{int64(123)} // []int64 |  (optional)
 	asnEmpty := true // bool |  (optional)
-	asnGt := []int32{int32(123)} // []int32 |  (optional)
-	asnGte := []int32{int32(123)} // []int32 |  (optional)
-	asnLt := []int32{int32(123)} // []int32 |  (optional)
-	asnLte := []int32{int32(123)} // []int32 |  (optional)
-	asnN := []int32{int32(123)} // []int32 |  (optional)
+	asnGt := []int64{int64(123)} // []int64 |  (optional)
+	asnGte := []int64{int64(123)} // []int64 |  (optional)
+	asnLt := []int64{int64(123)} // []int64 |  (optional)
+	asnLte := []int64{int64(123)} // []int64 |  (optional)
+	asnN := []int64{int64(123)} // []int64 |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2201,13 +2201,13 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2215,23 +2215,23 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	provider := []string{"Inner_example"} // []string | Provider (slug) (optional)
 	providerN := []string{"Inner_example"} // []string | Provider (slug) (optional)
-	providerId := []int32{int32(123)} // []int32 | Provider (ID) (optional)
-	providerIdN := []int32{int32(123)} // []int32 | Provider (ID) (optional)
+	providerId := []int64{int64(123)} // []int64 | Provider (ID) (optional)
+	providerIdN := []int64{int64(123)} // []int64 | Provider (ID) (optional)
 	q := "q_example" // string | Search (optional)
 	rir := []string{"Inner_example"} // []string | RIR (slug) (optional)
 	rirN := []string{"Inner_example"} // []string | RIR (slug) (optional)
-	rirId := []int32{int32(123)} // []int32 | RIR (ID) (optional)
-	rirIdN := []int32{int32(123)} // []int32 | RIR (ID) (optional)
+	rirId := []int64{int64(123)} // []int64 | RIR (ID) (optional)
+	rirIdN := []int64{int64(123)} // []int64 | RIR (ID) (optional)
 	site := []string{"Inner_example"} // []string | Site (slug) (optional)
 	siteN := []string{"Inner_example"} // []string | Site (slug) (optional)
-	siteId := []int32{int32(123)} // []int32 | Site (ID) (optional)
-	siteIdN := []int32{int32(123)} // []int32 | Site (ID) (optional)
+	siteId := []int64{int64(123)} // []int64 | Site (ID) (optional)
+	siteIdN := []int64{int64(123)} // []int64 | Site (ID) (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
@@ -2240,8 +2240,8 @@ func main() {
 	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
-	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
-	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tenantId := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
+	tenantIdN := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -2267,13 +2267,13 @@ Other parameters are passed through a pointer to a apiIpamAsnsListRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **asn** | **[]int32** |  | 
+ **asn** | **[]int64** |  | 
  **asnEmpty** | **bool** |  | 
- **asnGt** | **[]int32** |  | 
- **asnGte** | **[]int32** |  | 
- **asnLt** | **[]int32** |  | 
- **asnLte** | **[]int32** |  | 
- **asnN** | **[]int32** |  | 
+ **asnGt** | **[]int64** |  | 
+ **asnGte** | **[]int64** |  | 
+ **asnLt** | **[]int64** |  | 
+ **asnLte** | **[]int64** |  | 
+ **asnN** | **[]int64** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2293,13 +2293,13 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
- **id** | **[]int32** |  | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2307,23 +2307,23 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **provider** | **[]string** | Provider (slug) | 
  **providerN** | **[]string** | Provider (slug) | 
- **providerId** | **[]int32** | Provider (ID) | 
- **providerIdN** | **[]int32** | Provider (ID) | 
+ **providerId** | **[]int64** | Provider (ID) | 
+ **providerIdN** | **[]int64** | Provider (ID) | 
  **q** | **string** | Search | 
  **rir** | **[]string** | RIR (slug) | 
  **rirN** | **[]string** | RIR (slug) | 
- **rirId** | **[]int32** | RIR (ID) | 
- **rirIdN** | **[]int32** | RIR (ID) | 
+ **rirId** | **[]int64** | RIR (ID) | 
+ **rirIdN** | **[]int64** | RIR (ID) | 
  **site** | **[]string** | Site (slug) | 
  **siteN** | **[]string** | Site (slug) | 
- **siteId** | **[]int32** | Site (ID) | 
- **siteIdN** | **[]int32** | Site (ID) | 
+ **siteId** | **[]int64** | Site (ID) | 
+ **siteIdN** | **[]int64** | Site (ID) | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
@@ -2332,8 +2332,8 @@ Name | Type | Description  | Notes
  **tenantGroupN** | **[]string** |  | 
  **tenantGroupId** | **[]string** |  | 
  **tenantGroupIdN** | **[]string** |  | 
- **tenantId** | **[]int32** | Tenant (ID) | 
- **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **tenantId** | **[]int64** | Tenant (ID) | 
+ **tenantIdN** | **[]int64** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -2375,7 +2375,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this ASN.
+	id := int64(56) // int64 | A unique integer value identifying this ASN.
 	patchedASNRequest := *openapiclient.NewPatchedASNRequest() // PatchedASNRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -2396,7 +2396,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this ASN. | 
+**id** | **int64** | A unique integer value identifying this ASN. | 
 
 ### Other Parameters
 
@@ -2447,7 +2447,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this ASN.
+	id := int64(56) // int64 | A unique integer value identifying this ASN.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2467,7 +2467,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this ASN. | 
+**id** | **int64** | A unique integer value identifying this ASN. | 
 
 ### Other Parameters
 
@@ -2517,7 +2517,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this ASN.
+	id := int64(56) // int64 | A unique integer value identifying this ASN.
 	aSNRequest := *openapiclient.NewASNRequest(int64(123)) // ASNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -2538,7 +2538,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this ASN. | 
+**id** | **int64** | A unique integer value identifying this ASN. | 
 
 ### Other Parameters
 
@@ -2589,7 +2589,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int64(123)), "InterfaceType_example", int64(123), int64(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2653,7 +2653,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int64(123)), "InterfaceType_example", int64(123), int64(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2719,7 +2719,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int64(123)), "InterfaceType_example", int64(123), int64(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2785,7 +2785,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int64(123)), "InterfaceType_example", int64(123), int64(123)) // FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2851,7 +2851,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this FHRP group assignment.
+	id := int64(56) // int64 | A unique integer value identifying this FHRP group assignment.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2869,7 +2869,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this FHRP group assignment. | 
+**id** | **int64** | A unique integer value identifying this FHRP group assignment. | 
 
 ### Other Parameters
 
@@ -2929,23 +2929,23 @@ func main() {
 	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	device := []string{"Inner_example"} // []string |  (optional)
-	deviceId := []int32{int32(123)} // []int32 |  (optional)
-	groupId := []int32{int32(123)} // []int32 | Group (ID) (optional)
-	groupIdN := []int32{int32(123)} // []int32 | Group (ID) (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	deviceId := []int64{int64(123)} // []int64 |  (optional)
+	groupId := []int64{int64(123)} // []int64 | Group (ID) (optional)
+	groupIdN := []int64{int64(123)} // []int64 | Group (ID) (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
-	interfaceId := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
+	interfaceId := []int64{int64(123)} // []int64 |  (optional)
 	interfaceIdEmpty := true // bool |  (optional)
-	interfaceIdGt := []int32{int32(123)} // []int32 |  (optional)
-	interfaceIdGte := []int32{int32(123)} // []int32 |  (optional)
-	interfaceIdLt := []int32{int32(123)} // []int32 |  (optional)
-	interfaceIdLte := []int32{int32(123)} // []int32 |  (optional)
-	interfaceIdN := []int32{int32(123)} // []int32 |  (optional)
+	interfaceIdGt := []int64{int64(123)} // []int64 |  (optional)
+	interfaceIdGte := []int64{int64(123)} // []int64 |  (optional)
+	interfaceIdLt := []int64{int64(123)} // []int64 |  (optional)
+	interfaceIdLte := []int64{int64(123)} // []int64 |  (optional)
+	interfaceIdN := []int64{int64(123)} // []int64 |  (optional)
 	interfaceType := "interfaceType_example" // string |  (optional)
 	interfaceTypeN := "interfaceTypeN_example" // string |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2955,20 +2955,20 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
-	priority := []int32{int32(123)} // []int32 |  (optional)
+	priority := []int64{int64(123)} // []int64 |  (optional)
 	priorityEmpty := true // bool |  (optional)
-	priorityGt := []int32{int32(123)} // []int32 |  (optional)
-	priorityGte := []int32{int32(123)} // []int32 |  (optional)
-	priorityLt := []int32{int32(123)} // []int32 |  (optional)
-	priorityLte := []int32{int32(123)} // []int32 |  (optional)
-	priorityN := []int32{int32(123)} // []int32 |  (optional)
+	priorityGt := []int64{int64(123)} // []int64 |  (optional)
+	priorityGte := []int64{int64(123)} // []int64 |  (optional)
+	priorityLt := []int64{int64(123)} // []int64 |  (optional)
+	priorityLte := []int64{int64(123)} // []int64 |  (optional)
+	priorityN := []int64{int64(123)} // []int64 |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	virtualMachine := []string{"Inner_example"} // []string |  (optional)
-	virtualMachineId := []int32{int32(123)} // []int32 |  (optional)
+	virtualMachineId := []int64{int64(123)} // []int64 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3002,23 +3002,23 @@ Name | Type | Description  | Notes
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
  **device** | **[]string** |  | 
- **deviceId** | **[]int32** |  | 
- **groupId** | **[]int32** | Group (ID) | 
- **groupIdN** | **[]int32** | Group (ID) | 
- **id** | **[]int32** |  | 
+ **deviceId** | **[]int64** |  | 
+ **groupId** | **[]int64** | Group (ID) | 
+ **groupIdN** | **[]int64** | Group (ID) | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
- **interfaceId** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
+ **interfaceId** | **[]int64** |  | 
  **interfaceIdEmpty** | **bool** |  | 
- **interfaceIdGt** | **[]int32** |  | 
- **interfaceIdGte** | **[]int32** |  | 
- **interfaceIdLt** | **[]int32** |  | 
- **interfaceIdLte** | **[]int32** |  | 
- **interfaceIdN** | **[]int32** |  | 
+ **interfaceIdGt** | **[]int64** |  | 
+ **interfaceIdGte** | **[]int64** |  | 
+ **interfaceIdLt** | **[]int64** |  | 
+ **interfaceIdLte** | **[]int64** |  | 
+ **interfaceIdN** | **[]int64** |  | 
  **interfaceType** | **string** |  | 
  **interfaceTypeN** | **string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
@@ -3028,20 +3028,20 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
- **priority** | **[]int32** |  | 
+ **priority** | **[]int64** |  | 
  **priorityEmpty** | **bool** |  | 
- **priorityGt** | **[]int32** |  | 
- **priorityGte** | **[]int32** |  | 
- **priorityLt** | **[]int32** |  | 
- **priorityLte** | **[]int32** |  | 
- **priorityN** | **[]int32** |  | 
+ **priorityGt** | **[]int64** |  | 
+ **priorityGte** | **[]int64** |  | 
+ **priorityLt** | **[]int64** |  | 
+ **priorityLte** | **[]int64** |  | 
+ **priorityN** | **[]int64** |  | 
  **updatedByRequest** | **string** |  | 
  **virtualMachine** | **[]string** |  | 
- **virtualMachineId** | **[]int32** |  | 
+ **virtualMachineId** | **[]int64** |  | 
 
 ### Return type
 
@@ -3082,7 +3082,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this FHRP group assignment.
+	id := int64(56) // int64 | A unique integer value identifying this FHRP group assignment.
 	patchedFHRPGroupAssignmentRequest := *openapiclient.NewPatchedFHRPGroupAssignmentRequest() // PatchedFHRPGroupAssignmentRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -3103,7 +3103,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this FHRP group assignment. | 
+**id** | **int64** | A unique integer value identifying this FHRP group assignment. | 
 
 ### Other Parameters
 
@@ -3154,7 +3154,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this FHRP group assignment.
+	id := int64(56) // int64 | A unique integer value identifying this FHRP group assignment.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3174,7 +3174,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this FHRP group assignment. | 
+**id** | **int64** | A unique integer value identifying this FHRP group assignment. | 
 
 ### Other Parameters
 
@@ -3224,8 +3224,8 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this FHRP group assignment.
-	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
+	id := int64(56) // int64 | A unique integer value identifying this FHRP group assignment.
+	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int64(123)), "InterfaceType_example", int64(123), int64(123)) // FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3245,7 +3245,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this FHRP group assignment. | 
+**id** | **int64** | A unique integer value identifying this FHRP group assignment. | 
 
 ### Other Parameters
 
@@ -3296,7 +3296,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
+	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int64(123))} // []FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3360,7 +3360,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
+	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int64(123))} // []FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3426,7 +3426,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
+	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int64(123))} // []FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3492,7 +3492,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)) // FHRPGroupRequest | 
+	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int64(123)) // FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3558,7 +3558,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this FHRP group.
+	id := int64(56) // int64 | A unique integer value identifying this FHRP group.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3576,7 +3576,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this FHRP group. | 
+**id** | **int64** | A unique integer value identifying this FHRP group. | 
 
 ### Other Parameters
 
@@ -3668,20 +3668,20 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
-	groupId := []int32{int32(123)} // []int32 |  (optional)
+	groupId := []int64{int64(123)} // []int64 |  (optional)
 	groupIdEmpty := true // bool |  (optional)
-	groupIdGt := []int32{int32(123)} // []int32 |  (optional)
-	groupIdGte := []int32{int32(123)} // []int32 |  (optional)
-	groupIdLt := []int32{int32(123)} // []int32 |  (optional)
-	groupIdLte := []int32{int32(123)} // []int32 |  (optional)
-	groupIdN := []int32{int32(123)} // []int32 |  (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	groupIdGt := []int64{int64(123)} // []int64 |  (optional)
+	groupIdGte := []int64{int64(123)} // []int64 |  (optional)
+	groupIdLt := []int64{int64(123)} // []int64 |  (optional)
+	groupIdLte := []int64{int64(123)} // []int64 |  (optional)
+	groupIdN := []int64{int64(123)} // []int64 |  (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -3689,7 +3689,7 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -3702,7 +3702,7 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	protocol := []string{"Inner_example"} // []string |  (optional)
 	protocolEmpty := true // bool |  (optional)
@@ -3785,20 +3785,20 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
- **groupId** | **[]int32** |  | 
+ **groupId** | **[]int64** |  | 
  **groupIdEmpty** | **bool** |  | 
- **groupIdGt** | **[]int32** |  | 
- **groupIdGte** | **[]int32** |  | 
- **groupIdLt** | **[]int32** |  | 
- **groupIdLte** | **[]int32** |  | 
- **groupIdN** | **[]int32** |  | 
- **id** | **[]int32** |  | 
+ **groupIdGt** | **[]int64** |  | 
+ **groupIdGte** | **[]int64** |  | 
+ **groupIdLt** | **[]int64** |  | 
+ **groupIdLte** | **[]int64** |  | 
+ **groupIdN** | **[]int64** |  | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -3806,7 +3806,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -3819,7 +3819,7 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **protocol** | **[]string** |  | 
  **protocolEmpty** | **bool** |  | 
@@ -3877,7 +3877,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this FHRP group.
+	id := int64(56) // int64 | A unique integer value identifying this FHRP group.
 	patchedFHRPGroupRequest := *openapiclient.NewPatchedFHRPGroupRequest() // PatchedFHRPGroupRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -3898,7 +3898,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this FHRP group. | 
+**id** | **int64** | A unique integer value identifying this FHRP group. | 
 
 ### Other Parameters
 
@@ -3949,7 +3949,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this FHRP group.
+	id := int64(56) // int64 | A unique integer value identifying this FHRP group.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3969,7 +3969,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this FHRP group. | 
+**id** | **int64** | A unique integer value identifying this FHRP group. | 
 
 ### Other Parameters
 
@@ -4019,8 +4019,8 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this FHRP group.
-	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)) // FHRPGroupRequest | 
+	id := int64(56) // int64 | A unique integer value identifying this FHRP group.
+	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int64(123)) // FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4040,7 +4040,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this FHRP group. | 
+**id** | **int64** | A unique integer value identifying this FHRP group. | 
 
 ### Other Parameters
 
@@ -4353,7 +4353,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this IP address.
+	id := int64(56) // int64 | A unique integer value identifying this IP address.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4371,7 +4371,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this IP address. | 
+**id** | **int64** | A unique integer value identifying this IP address. | 
 
 ### Other Parameters
 
@@ -4424,15 +4424,15 @@ import (
 func main() {
 	address := []string{"Inner_example"} // []string |  (optional)
 	assigned := true // bool | Is assigned (optional)
-	assignedObjectId := []int32{int32(123)} // []int32 |  (optional)
+	assignedObjectId := []int64{int64(123)} // []int64 |  (optional)
 	assignedObjectIdEmpty := true // bool |  (optional)
-	assignedObjectIdGt := []int32{int32(123)} // []int32 |  (optional)
-	assignedObjectIdGte := []int32{int32(123)} // []int32 |  (optional)
-	assignedObjectIdLt := []int32{int32(123)} // []int32 |  (optional)
-	assignedObjectIdLte := []int32{int32(123)} // []int32 |  (optional)
-	assignedObjectIdN := []int32{int32(123)} // []int32 |  (optional)
-	assignedObjectType := int32(56) // int32 |  (optional)
-	assignedObjectTypeN := int32(56) // int32 |  (optional)
+	assignedObjectIdGt := []int64{int64(123)} // []int64 |  (optional)
+	assignedObjectIdGte := []int64{int64(123)} // []int64 |  (optional)
+	assignedObjectIdLt := []int64{int64(123)} // []int64 |  (optional)
+	assignedObjectIdLte := []int64{int64(123)} // []int64 |  (optional)
+	assignedObjectIdN := []int64{int64(123)} // []int64 |  (optional)
+	assignedObjectType := int64(56) // int64 |  (optional)
+	assignedObjectTypeN := int64(56) // int64 |  (optional)
 	assignedToInterface := true // bool | Is assigned to an interface (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4454,7 +4454,7 @@ func main() {
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	device := []string{"Inner_example"} // []string |  (optional)
-	deviceId := []int32{int32(123)} // []int32 |  (optional)
+	deviceId := []int64{int64(123)} // []int64 |  (optional)
 	dnsName := []string{"Inner_example"} // []string |  (optional)
 	dnsNameEmpty := true // bool |  (optional)
 	dnsNameIc := []string{"Inner_example"} // []string |  (optional)
@@ -4467,19 +4467,19 @@ func main() {
 	dnsNameNiew := []string{"Inner_example"} // []string |  (optional)
 	dnsNameNisw := []string{"Inner_example"} // []string |  (optional)
 	family := float32(8.14) // float32 |  (optional)
-	fhrpgroupId := []int32{int32(123)} // []int32 | FHRP group (ID) (optional)
-	fhrpgroupIdN := []int32{int32(123)} // []int32 | FHRP group (ID) (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	fhrpgroupId := []int64{int64(123)} // []int64 | FHRP group (ID) (optional)
+	fhrpgroupIdN := []int64{int64(123)} // []int64 | FHRP group (ID) (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	interface_ := []string{"Inner_example"} // []string | Interface (name) (optional)
 	interfaceN := []string{"Inner_example"} // []string | Interface (name) (optional)
-	interfaceId := []int32{int32(123)} // []int32 | Interface (ID) (optional)
-	interfaceIdN := []int32{int32(123)} // []int32 | Interface (ID) (optional)
+	interfaceId := []int64{int64(123)} // []int64 | Interface (ID) (optional)
+	interfaceIdN := []int64{int64(123)} // []int64 | Interface (ID) (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4487,14 +4487,14 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
-	maskLength := []int32{int32(123)} // []int32 |  (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
+	maskLength := []int64{int64(123)} // []int64 |  (optional)
 	maskLengthGte := float32(8.14) // float32 |  (optional)
 	maskLengthLte := float32(8.14) // float32 |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	natInsideId := []int32{int32(123)} // []int32 | NAT inside IP address (ID) (optional)
-	natInsideIdN := []int32{int32(123)} // []int32 | NAT inside IP address (ID) (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	natInsideId := []int64{int64(123)} // []int64 | NAT inside IP address (ID) (optional)
+	natInsideIdN := []int64{int64(123)} // []int64 | NAT inside IP address (ID) (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	parent := []string{"Inner_example"} // []string |  (optional)
 	presentInVrf := "presentInVrf_example" // string |  (optional)
@@ -4511,8 +4511,8 @@ func main() {
 	roleNie := []openapiclient.IpamIpAddressesListRoleIcParameterInner{openapiclient.ipam_ip_addresses_list_role__ic_parameter_inner("")} // []IpamIpAddressesListRoleIcParameterInner | The functional role of this IP  * `loopback` - Loopback * `secondary` - Secondary * `anycast` - Anycast * `vip` - VIP * `vrrp` - VRRP * `hsrp` - HSRP * `glbp` - GLBP * `carp` - CARP (optional)
 	roleNiew := []openapiclient.IpamIpAddressesListRoleIcParameterInner{openapiclient.ipam_ip_addresses_list_role__ic_parameter_inner("")} // []IpamIpAddressesListRoleIcParameterInner | The functional role of this IP  * `loopback` - Loopback * `secondary` - Secondary * `anycast` - Anycast * `vip` - VIP * `vrrp` - VRRP * `hsrp` - HSRP * `glbp` - GLBP * `carp` - CARP (optional)
 	roleNisw := []openapiclient.IpamIpAddressesListRoleIcParameterInner{openapiclient.ipam_ip_addresses_list_role__ic_parameter_inner("")} // []IpamIpAddressesListRoleIcParameterInner | The functional role of this IP  * `loopback` - Loopback * `secondary` - Secondary * `anycast` - Anycast * `vip` - VIP * `vrrp` - VRRP * `hsrp` - HSRP * `glbp` - GLBP * `carp` - CARP (optional)
-	serviceId := []int32{int32(123)} // []int32 | Service (ID) (optional)
-	serviceIdN := []int32{int32(123)} // []int32 | Service (ID) (optional)
+	serviceId := []int64{int64(123)} // []int64 | Service (ID) (optional)
+	serviceIdN := []int64{int64(123)} // []int64 | Service (ID) (optional)
 	status := []string{"Inner_example"} // []string | The operational status of this IP (optional)
 	statusEmpty := true // bool |  (optional)
 	statusIc := []openapiclient.IpamIpAddressesListStatusIcParameterInner{openapiclient.ipam_ip_addresses_list_status__ic_parameter_inner("active")} // []IpamIpAddressesListStatusIcParameterInner | The operational status of this IP  * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated * `dhcp` - DHCP * `slaac` - SLAAC (optional)
@@ -4532,19 +4532,19 @@ func main() {
 	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
-	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
-	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tenantId := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
+	tenantIdN := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	virtualMachine := []string{"Inner_example"} // []string |  (optional)
-	virtualMachineId := []int32{int32(123)} // []int32 |  (optional)
+	virtualMachineId := []int64{int64(123)} // []int64 |  (optional)
 	vminterface := []string{"Inner_example"} // []string | VM interface (name) (optional)
 	vminterfaceN := []string{"Inner_example"} // []string | VM interface (name) (optional)
-	vminterfaceId := []int32{int32(123)} // []int32 | VM interface (ID) (optional)
-	vminterfaceIdN := []int32{int32(123)} // []int32 | VM interface (ID) (optional)
+	vminterfaceId := []int64{int64(123)} // []int64 | VM interface (ID) (optional)
+	vminterfaceIdN := []int64{int64(123)} // []int64 | VM interface (ID) (optional)
 	vrf := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
 	vrfN := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
-	vrfId := []*int32{int32(123)} // []*int32 | VRF (optional)
-	vrfIdN := []*int32{int32(123)} // []*int32 | VRF (optional)
+	vrfId := []*int64{int64(123)} // []*int64 | VRF (optional)
+	vrfIdN := []*int64{int64(123)} // []*int64 | VRF (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4571,15 +4571,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address** | **[]string** |  | 
  **assigned** | **bool** | Is assigned | 
- **assignedObjectId** | **[]int32** |  | 
+ **assignedObjectId** | **[]int64** |  | 
  **assignedObjectIdEmpty** | **bool** |  | 
- **assignedObjectIdGt** | **[]int32** |  | 
- **assignedObjectIdGte** | **[]int32** |  | 
- **assignedObjectIdLt** | **[]int32** |  | 
- **assignedObjectIdLte** | **[]int32** |  | 
- **assignedObjectIdN** | **[]int32** |  | 
- **assignedObjectType** | **int32** |  | 
- **assignedObjectTypeN** | **int32** |  | 
+ **assignedObjectIdGt** | **[]int64** |  | 
+ **assignedObjectIdGte** | **[]int64** |  | 
+ **assignedObjectIdLt** | **[]int64** |  | 
+ **assignedObjectIdLte** | **[]int64** |  | 
+ **assignedObjectIdN** | **[]int64** |  | 
+ **assignedObjectType** | **int64** |  | 
+ **assignedObjectTypeN** | **int64** |  | 
  **assignedToInterface** | **bool** | Is assigned to an interface | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
@@ -4601,7 +4601,7 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **device** | **[]string** |  | 
- **deviceId** | **[]int32** |  | 
+ **deviceId** | **[]int64** |  | 
  **dnsName** | **[]string** |  | 
  **dnsNameEmpty** | **bool** |  | 
  **dnsNameIc** | **[]string** |  | 
@@ -4614,19 +4614,19 @@ Name | Type | Description  | Notes
  **dnsNameNiew** | **[]string** |  | 
  **dnsNameNisw** | **[]string** |  | 
  **family** | **float32** |  | 
- **fhrpgroupId** | **[]int32** | FHRP group (ID) | 
- **fhrpgroupIdN** | **[]int32** | FHRP group (ID) | 
- **id** | **[]int32** |  | 
+ **fhrpgroupId** | **[]int64** | FHRP group (ID) | 
+ **fhrpgroupIdN** | **[]int64** | FHRP group (ID) | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **interface_** | **[]string** | Interface (name) | 
  **interfaceN** | **[]string** | Interface (name) | 
- **interfaceId** | **[]int32** | Interface (ID) | 
- **interfaceIdN** | **[]int32** | Interface (ID) | 
+ **interfaceId** | **[]int64** | Interface (ID) | 
+ **interfaceIdN** | **[]int64** | Interface (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -4634,14 +4634,14 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
- **maskLength** | **[]int32** |  | 
+ **limit** | **int64** | Number of results to return per page. | 
+ **maskLength** | **[]int64** |  | 
  **maskLengthGte** | **float32** |  | 
  **maskLengthLte** | **float32** |  | 
  **modifiedByRequest** | **string** |  | 
- **natInsideId** | **[]int32** | NAT inside IP address (ID) | 
- **natInsideIdN** | **[]int32** | NAT inside IP address (ID) | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **natInsideId** | **[]int64** | NAT inside IP address (ID) | 
+ **natInsideIdN** | **[]int64** | NAT inside IP address (ID) | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **parent** | **[]string** |  | 
  **presentInVrf** | **string** |  | 
@@ -4658,8 +4658,8 @@ Name | Type | Description  | Notes
  **roleNie** | [**[]IpamIpAddressesListRoleIcParameterInner**](IpamIpAddressesListRoleIcParameterInner.md) | The functional role of this IP  * &#x60;loopback&#x60; - Loopback * &#x60;secondary&#x60; - Secondary * &#x60;anycast&#x60; - Anycast * &#x60;vip&#x60; - VIP * &#x60;vrrp&#x60; - VRRP * &#x60;hsrp&#x60; - HSRP * &#x60;glbp&#x60; - GLBP * &#x60;carp&#x60; - CARP | 
  **roleNiew** | [**[]IpamIpAddressesListRoleIcParameterInner**](IpamIpAddressesListRoleIcParameterInner.md) | The functional role of this IP  * &#x60;loopback&#x60; - Loopback * &#x60;secondary&#x60; - Secondary * &#x60;anycast&#x60; - Anycast * &#x60;vip&#x60; - VIP * &#x60;vrrp&#x60; - VRRP * &#x60;hsrp&#x60; - HSRP * &#x60;glbp&#x60; - GLBP * &#x60;carp&#x60; - CARP | 
  **roleNisw** | [**[]IpamIpAddressesListRoleIcParameterInner**](IpamIpAddressesListRoleIcParameterInner.md) | The functional role of this IP  * &#x60;loopback&#x60; - Loopback * &#x60;secondary&#x60; - Secondary * &#x60;anycast&#x60; - Anycast * &#x60;vip&#x60; - VIP * &#x60;vrrp&#x60; - VRRP * &#x60;hsrp&#x60; - HSRP * &#x60;glbp&#x60; - GLBP * &#x60;carp&#x60; - CARP | 
- **serviceId** | **[]int32** | Service (ID) | 
- **serviceIdN** | **[]int32** | Service (ID) | 
+ **serviceId** | **[]int64** | Service (ID) | 
+ **serviceIdN** | **[]int64** | Service (ID) | 
  **status** | **[]string** | The operational status of this IP | 
  **statusEmpty** | **bool** |  | 
  **statusIc** | [**[]IpamIpAddressesListStatusIcParameterInner**](IpamIpAddressesListStatusIcParameterInner.md) | The operational status of this IP  * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated * &#x60;dhcp&#x60; - DHCP * &#x60;slaac&#x60; - SLAAC | 
@@ -4679,19 +4679,19 @@ Name | Type | Description  | Notes
  **tenantGroupN** | **[]string** |  | 
  **tenantGroupId** | **[]string** |  | 
  **tenantGroupIdN** | **[]string** |  | 
- **tenantId** | **[]int32** | Tenant (ID) | 
- **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **tenantId** | **[]int64** | Tenant (ID) | 
+ **tenantIdN** | **[]int64** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
  **virtualMachine** | **[]string** |  | 
- **virtualMachineId** | **[]int32** |  | 
+ **virtualMachineId** | **[]int64** |  | 
  **vminterface** | **[]string** | VM interface (name) | 
  **vminterfaceN** | **[]string** | VM interface (name) | 
- **vminterfaceId** | **[]int32** | VM interface (ID) | 
- **vminterfaceIdN** | **[]int32** | VM interface (ID) | 
+ **vminterfaceId** | **[]int64** | VM interface (ID) | 
+ **vminterfaceIdN** | **[]int64** | VM interface (ID) | 
  **vrf** | **[]string** | VRF (RD) | 
  **vrfN** | **[]string** | VRF (RD) | 
- **vrfId** | **[]int32** | VRF | 
- **vrfIdN** | **[]int32** | VRF | 
+ **vrfId** | **[]int64** | VRF | 
+ **vrfIdN** | **[]int64** | VRF | 
 
 ### Return type
 
@@ -4732,7 +4732,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this IP address.
+	id := int64(56) // int64 | A unique integer value identifying this IP address.
 	patchedWritableIPAddressRequest := *openapiclient.NewPatchedWritableIPAddressRequest() // PatchedWritableIPAddressRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -4753,7 +4753,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this IP address. | 
+**id** | **int64** | A unique integer value identifying this IP address. | 
 
 ### Other Parameters
 
@@ -4804,7 +4804,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this IP address.
+	id := int64(56) // int64 | A unique integer value identifying this IP address.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4824,7 +4824,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this IP address. | 
+**id** | **int64** | A unique integer value identifying this IP address. | 
 
 ### Other Parameters
 
@@ -4874,7 +4874,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this IP address.
+	id := int64(56) // int64 | A unique integer value identifying this IP address.
 	writableIPAddressRequest := *openapiclient.NewWritableIPAddressRequest("Address_example") // WritableIPAddressRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -4895,7 +4895,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this IP address. | 
+**id** | **int64** | A unique integer value identifying this IP address. | 
 
 ### Other Parameters
 
@@ -4946,7 +4946,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | 
+	id := int64(56) // int64 | 
 	iPAddressRequest := []openapiclient.IPAddressRequest{*openapiclient.NewIPAddressRequest("Address_example")} // []IPAddressRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -4967,7 +4967,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -5018,7 +5018,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | 
+	id := int64(56) // int64 | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5038,7 +5038,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -5350,7 +5350,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this IP range.
+	id := int64(56) // int64 | A unique integer value identifying this IP range.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5368,7 +5368,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this IP range. | 
+**id** | **int64** | A unique integer value identifying this IP range. | 
 
 ### Other Parameters
 
@@ -5441,13 +5441,13 @@ func main() {
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	endAddress := []string{"Inner_example"} // []string |  (optional)
 	family := float32(8.14) // float32 |  (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -5455,24 +5455,24 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	markUtilized := true // bool |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	parent := []string{"Inner_example"} // []string |  (optional)
 	q := "q_example" // string | Search (optional)
 	role := []string{"Inner_example"} // []string | Role (slug) (optional)
 	roleN := []string{"Inner_example"} // []string | Role (slug) (optional)
-	roleId := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
-	roleIdN := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
-	size := []int32{int32(123)} // []int32 |  (optional)
+	roleId := []*int64{int64(123)} // []*int64 | Role (ID) (optional)
+	roleIdN := []*int64{int64(123)} // []*int64 | Role (ID) (optional)
+	size := []int64{int64(123)} // []int64 |  (optional)
 	sizeEmpty := true // bool |  (optional)
-	sizeGt := []int32{int32(123)} // []int32 |  (optional)
-	sizeGte := []int32{int32(123)} // []int32 |  (optional)
-	sizeLt := []int32{int32(123)} // []int32 |  (optional)
-	sizeLte := []int32{int32(123)} // []int32 |  (optional)
-	sizeN := []int32{int32(123)} // []int32 |  (optional)
+	sizeGt := []int64{int64(123)} // []int64 |  (optional)
+	sizeGte := []int64{int64(123)} // []int64 |  (optional)
+	sizeLt := []int64{int64(123)} // []int64 |  (optional)
+	sizeLte := []int64{int64(123)} // []int64 |  (optional)
+	sizeN := []int64{int64(123)} // []int64 |  (optional)
 	startAddress := []string{"Inner_example"} // []string |  (optional)
 	status := []string{"Inner_example"} // []string | Operational status of this range (optional)
 	statusEmpty := true // bool |  (optional)
@@ -5493,13 +5493,13 @@ func main() {
 	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
-	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
-	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tenantId := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
+	tenantIdN := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	vrf := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
 	vrfN := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
-	vrfId := []*int32{int32(123)} // []*int32 | VRF (optional)
-	vrfIdN := []*int32{int32(123)} // []*int32 | VRF (optional)
+	vrfId := []*int64{int64(123)} // []*int64 | VRF (optional)
+	vrfIdN := []*int64{int64(123)} // []*int64 | VRF (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5546,13 +5546,13 @@ Name | Type | Description  | Notes
  **descriptionNisw** | **[]string** |  | 
  **endAddress** | **[]string** |  | 
  **family** | **float32** |  | 
- **id** | **[]int32** |  | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -5560,24 +5560,24 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **markUtilized** | **bool** |  | 
  **modifiedByRequest** | **string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **parent** | **[]string** |  | 
  **q** | **string** | Search | 
  **role** | **[]string** | Role (slug) | 
  **roleN** | **[]string** | Role (slug) | 
- **roleId** | **[]int32** | Role (ID) | 
- **roleIdN** | **[]int32** | Role (ID) | 
- **size** | **[]int32** |  | 
+ **roleId** | **[]int64** | Role (ID) | 
+ **roleIdN** | **[]int64** | Role (ID) | 
+ **size** | **[]int64** |  | 
  **sizeEmpty** | **bool** |  | 
- **sizeGt** | **[]int32** |  | 
- **sizeGte** | **[]int32** |  | 
- **sizeLt** | **[]int32** |  | 
- **sizeLte** | **[]int32** |  | 
- **sizeN** | **[]int32** |  | 
+ **sizeGt** | **[]int64** |  | 
+ **sizeGte** | **[]int64** |  | 
+ **sizeLt** | **[]int64** |  | 
+ **sizeLte** | **[]int64** |  | 
+ **sizeN** | **[]int64** |  | 
  **startAddress** | **[]string** |  | 
  **status** | **[]string** | Operational status of this range | 
  **statusEmpty** | **bool** |  | 
@@ -5598,13 +5598,13 @@ Name | Type | Description  | Notes
  **tenantGroupN** | **[]string** |  | 
  **tenantGroupId** | **[]string** |  | 
  **tenantGroupIdN** | **[]string** |  | 
- **tenantId** | **[]int32** | Tenant (ID) | 
- **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **tenantId** | **[]int64** | Tenant (ID) | 
+ **tenantIdN** | **[]int64** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
  **vrf** | **[]string** | VRF (RD) | 
  **vrfN** | **[]string** | VRF (RD) | 
- **vrfId** | **[]int32** | VRF | 
- **vrfIdN** | **[]int32** | VRF | 
+ **vrfId** | **[]int64** | VRF | 
+ **vrfIdN** | **[]int64** | VRF | 
 
 ### Return type
 
@@ -5645,7 +5645,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this IP range.
+	id := int64(56) // int64 | A unique integer value identifying this IP range.
 	patchedWritableIPRangeRequest := *openapiclient.NewPatchedWritableIPRangeRequest() // PatchedWritableIPRangeRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -5666,7 +5666,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this IP range. | 
+**id** | **int64** | A unique integer value identifying this IP range. | 
 
 ### Other Parameters
 
@@ -5717,7 +5717,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this IP range.
+	id := int64(56) // int64 | A unique integer value identifying this IP range.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5737,7 +5737,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this IP range. | 
+**id** | **int64** | A unique integer value identifying this IP range. | 
 
 ### Other Parameters
 
@@ -5787,7 +5787,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this IP range.
+	id := int64(56) // int64 | A unique integer value identifying this IP range.
 	writableIPRangeRequest := *openapiclient.NewWritableIPRangeRequest("StartAddress_example", "EndAddress_example") // WritableIPRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -5808,7 +5808,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this IP range. | 
+**id** | **int64** | A unique integer value identifying this IP range. | 
 
 ### Other Parameters
 
@@ -5859,7 +5859,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | 
+	id := int64(56) // int64 | 
 	iPAddressRequest := []openapiclient.IPAddressRequest{*openapiclient.NewIPAddressRequest("Address_example")} // []IPAddressRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -5880,7 +5880,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -5931,7 +5931,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | 
+	id := int64(56) // int64 | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5951,7 +5951,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -6001,7 +6001,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | 
+	id := int64(56) // int64 | 
 	prefixRequest := []openapiclient.PrefixRequest{*openapiclient.NewPrefixRequest("Prefix_example")} // []PrefixRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -6022,7 +6022,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -6073,7 +6073,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | 
+	id := int64(56) // int64 | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6093,7 +6093,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -6405,7 +6405,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this prefix.
+	id := int64(56) // int64 | A unique integer value identifying this prefix.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6423,7 +6423,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this prefix. | 
+**id** | **int64** | A unique integer value identifying this prefix. | 
 
 ### Other Parameters
 
@@ -6474,13 +6474,13 @@ import (
 )
 
 func main() {
-	children := []int32{int32(123)} // []int32 |  (optional)
-	childrenEmpty := []int32{int32(123)} // []int32 |  (optional)
-	childrenGt := []int32{int32(123)} // []int32 |  (optional)
-	childrenGte := []int32{int32(123)} // []int32 |  (optional)
-	childrenLt := []int32{int32(123)} // []int32 |  (optional)
-	childrenLte := []int32{int32(123)} // []int32 |  (optional)
-	childrenN := []int32{int32(123)} // []int32 |  (optional)
+	children := []int64{int64(123)} // []int64 |  (optional)
+	childrenEmpty := []int64{int64(123)} // []int64 |  (optional)
+	childrenGt := []int64{int64(123)} // []int64 |  (optional)
+	childrenGte := []int64{int64(123)} // []int64 |  (optional)
+	childrenLt := []int64{int64(123)} // []int64 |  (optional)
+	childrenLte := []int64{int64(123)} // []int64 |  (optional)
+	childrenN := []int64{int64(123)} // []int64 |  (optional)
 	contains := "contains_example" // string | Prefixes which contain this prefix or IP (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -6490,13 +6490,13 @@ func main() {
 	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	depth := []int32{int32(123)} // []int32 |  (optional)
-	depthEmpty := []int32{int32(123)} // []int32 |  (optional)
-	depthGt := []int32{int32(123)} // []int32 |  (optional)
-	depthGte := []int32{int32(123)} // []int32 |  (optional)
-	depthLt := []int32{int32(123)} // []int32 |  (optional)
-	depthLte := []int32{int32(123)} // []int32 |  (optional)
-	depthN := []int32{int32(123)} // []int32 |  (optional)
+	depth := []int64{int64(123)} // []int64 |  (optional)
+	depthEmpty := []int64{int64(123)} // []int64 |  (optional)
+	depthGt := []int64{int64(123)} // []int64 |  (optional)
+	depthGte := []int64{int64(123)} // []int64 |  (optional)
+	depthLt := []int64{int64(123)} // []int64 |  (optional)
+	depthLte := []int64{int64(123)} // []int64 |  (optional)
+	depthN := []int64{int64(123)} // []int64 |  (optional)
 	description := []string{"Inner_example"} // []string |  (optional)
 	descriptionEmpty := true // bool |  (optional)
 	descriptionIc := []string{"Inner_example"} // []string |  (optional)
@@ -6509,13 +6509,13 @@ func main() {
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	family := float32(8.14) // float32 |  (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	isPool := true // bool |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -6524,13 +6524,13 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	markUtilized := true // bool |  (optional)
-	maskLength := []int32{int32(123)} // []int32 |  (optional)
+	maskLength := []int64{int64(123)} // []int64 |  (optional)
 	maskLengthGte := float32(8.14) // float32 |  (optional)
 	maskLengthLte := float32(8.14) // float32 |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	prefix := []string{"Inner_example"} // []string |  (optional)
 	presentInVrf := "presentInVrf_example" // string |  (optional)
@@ -6542,16 +6542,16 @@ func main() {
 	regionIdN := []string{"Inner_example"} // []string |  (optional)
 	role := []string{"Inner_example"} // []string | Role (slug) (optional)
 	roleN := []string{"Inner_example"} // []string | Role (slug) (optional)
-	roleId := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
-	roleIdN := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
+	roleId := []*int64{int64(123)} // []*int64 | Role (ID) (optional)
+	roleIdN := []*int64{int64(123)} // []*int64 | Role (ID) (optional)
 	site := []string{"Inner_example"} // []string | Site (slug) (optional)
 	siteN := []string{"Inner_example"} // []string | Site (slug) (optional)
 	siteGroup := []string{"Inner_example"} // []string |  (optional)
 	siteGroupN := []string{"Inner_example"} // []string |  (optional)
 	siteGroupId := []string{"Inner_example"} // []string |  (optional)
 	siteGroupIdN := []string{"Inner_example"} // []string |  (optional)
-	siteId := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
-	siteIdN := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
+	siteId := []*int64{int64(123)} // []*int64 | Site (ID) (optional)
+	siteIdN := []*int64{int64(123)} // []*int64 | Site (ID) (optional)
 	status := []string{"Inner_example"} // []string | Operational status of this prefix (optional)
 	statusEmpty := true // bool |  (optional)
 	statusIc := []openapiclient.IpamPrefixesListStatusIcParameterInner{openapiclient.ipam_prefixes_list_status__ic_parameter_inner("active")} // []IpamPrefixesListStatusIcParameterInner | Operational status of this prefix  * `container` - Container * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated (optional)
@@ -6571,22 +6571,22 @@ func main() {
 	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
-	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
-	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tenantId := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
+	tenantIdN := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	vlanId := []*int32{int32(123)} // []*int32 | VLAN (ID) (optional)
-	vlanIdN := []*int32{int32(123)} // []*int32 | VLAN (ID) (optional)
-	vlanVid := int32(56) // int32 | VLAN number (1-4094) (optional)
-	vlanVidEmpty := int32(56) // int32 | VLAN number (1-4094) (optional)
-	vlanVidGt := int32(56) // int32 | VLAN number (1-4094) (optional)
-	vlanVidGte := int32(56) // int32 | VLAN number (1-4094) (optional)
-	vlanVidLt := int32(56) // int32 | VLAN number (1-4094) (optional)
-	vlanVidLte := int32(56) // int32 | VLAN number (1-4094) (optional)
-	vlanVidN := int32(56) // int32 | VLAN number (1-4094) (optional)
+	vlanId := []*int64{int64(123)} // []*int64 | VLAN (ID) (optional)
+	vlanIdN := []*int64{int64(123)} // []*int64 | VLAN (ID) (optional)
+	vlanVid := int64(56) // int64 | VLAN number (1-4094) (optional)
+	vlanVidEmpty := int64(56) // int64 | VLAN number (1-4094) (optional)
+	vlanVidGt := int64(56) // int64 | VLAN number (1-4094) (optional)
+	vlanVidGte := int64(56) // int64 | VLAN number (1-4094) (optional)
+	vlanVidLt := int64(56) // int64 | VLAN number (1-4094) (optional)
+	vlanVidLte := int64(56) // int64 | VLAN number (1-4094) (optional)
+	vlanVidN := int64(56) // int64 | VLAN number (1-4094) (optional)
 	vrf := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
 	vrfN := []*string{"Inner_example"} // []*string | VRF (RD) (optional)
-	vrfId := []*int32{int32(123)} // []*int32 | VRF (optional)
-	vrfIdN := []*int32{int32(123)} // []*int32 | VRF (optional)
+	vrfId := []*int64{int64(123)} // []*int64 | VRF (optional)
+	vrfIdN := []*int64{int64(123)} // []*int64 | VRF (optional)
 	within := "within_example" // string | Within prefix (optional)
 	withinInclude := "withinInclude_example" // string | Within and including prefix (optional)
 
@@ -6613,13 +6613,13 @@ Other parameters are passed through a pointer to a apiIpamPrefixesListRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **children** | **[]int32** |  | 
- **childrenEmpty** | **[]int32** |  | 
- **childrenGt** | **[]int32** |  | 
- **childrenGte** | **[]int32** |  | 
- **childrenLt** | **[]int32** |  | 
- **childrenLte** | **[]int32** |  | 
- **childrenN** | **[]int32** |  | 
+ **children** | **[]int64** |  | 
+ **childrenEmpty** | **[]int64** |  | 
+ **childrenGt** | **[]int64** |  | 
+ **childrenGte** | **[]int64** |  | 
+ **childrenLt** | **[]int64** |  | 
+ **childrenLte** | **[]int64** |  | 
+ **childrenN** | **[]int64** |  | 
  **contains** | **string** | Prefixes which contain this prefix or IP | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
@@ -6629,13 +6629,13 @@ Name | Type | Description  | Notes
  **createdLte** | [**[]time.Time**](time.Time.md) |  | 
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
- **depth** | **[]int32** |  | 
- **depthEmpty** | **[]int32** |  | 
- **depthGt** | **[]int32** |  | 
- **depthGte** | **[]int32** |  | 
- **depthLt** | **[]int32** |  | 
- **depthLte** | **[]int32** |  | 
- **depthN** | **[]int32** |  | 
+ **depth** | **[]int64** |  | 
+ **depthEmpty** | **[]int64** |  | 
+ **depthGt** | **[]int64** |  | 
+ **depthGte** | **[]int64** |  | 
+ **depthLt** | **[]int64** |  | 
+ **depthLte** | **[]int64** |  | 
+ **depthN** | **[]int64** |  | 
  **description** | **[]string** |  | 
  **descriptionEmpty** | **bool** |  | 
  **descriptionIc** | **[]string** |  | 
@@ -6648,13 +6648,13 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **family** | **float32** |  | 
- **id** | **[]int32** |  | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **isPool** | **bool** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
@@ -6663,13 +6663,13 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **markUtilized** | **bool** |  | 
- **maskLength** | **[]int32** |  | 
+ **maskLength** | **[]int64** |  | 
  **maskLengthGte** | **float32** |  | 
  **maskLengthLte** | **float32** |  | 
  **modifiedByRequest** | **string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **prefix** | **[]string** |  | 
  **presentInVrf** | **string** |  | 
@@ -6681,16 +6681,16 @@ Name | Type | Description  | Notes
  **regionIdN** | **[]string** |  | 
  **role** | **[]string** | Role (slug) | 
  **roleN** | **[]string** | Role (slug) | 
- **roleId** | **[]int32** | Role (ID) | 
- **roleIdN** | **[]int32** | Role (ID) | 
+ **roleId** | **[]int64** | Role (ID) | 
+ **roleIdN** | **[]int64** | Role (ID) | 
  **site** | **[]string** | Site (slug) | 
  **siteN** | **[]string** | Site (slug) | 
  **siteGroup** | **[]string** |  | 
  **siteGroupN** | **[]string** |  | 
  **siteGroupId** | **[]string** |  | 
  **siteGroupIdN** | **[]string** |  | 
- **siteId** | **[]int32** | Site (ID) | 
- **siteIdN** | **[]int32** | Site (ID) | 
+ **siteId** | **[]int64** | Site (ID) | 
+ **siteIdN** | **[]int64** | Site (ID) | 
  **status** | **[]string** | Operational status of this prefix | 
  **statusEmpty** | **bool** |  | 
  **statusIc** | [**[]IpamPrefixesListStatusIcParameterInner**](IpamPrefixesListStatusIcParameterInner.md) | Operational status of this prefix  * &#x60;container&#x60; - Container * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated | 
@@ -6710,22 +6710,22 @@ Name | Type | Description  | Notes
  **tenantGroupN** | **[]string** |  | 
  **tenantGroupId** | **[]string** |  | 
  **tenantGroupIdN** | **[]string** |  | 
- **tenantId** | **[]int32** | Tenant (ID) | 
- **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **tenantId** | **[]int64** | Tenant (ID) | 
+ **tenantIdN** | **[]int64** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
- **vlanId** | **[]int32** | VLAN (ID) | 
- **vlanIdN** | **[]int32** | VLAN (ID) | 
- **vlanVid** | **int32** | VLAN number (1-4094) | 
- **vlanVidEmpty** | **int32** | VLAN number (1-4094) | 
- **vlanVidGt** | **int32** | VLAN number (1-4094) | 
- **vlanVidGte** | **int32** | VLAN number (1-4094) | 
- **vlanVidLt** | **int32** | VLAN number (1-4094) | 
- **vlanVidLte** | **int32** | VLAN number (1-4094) | 
- **vlanVidN** | **int32** | VLAN number (1-4094) | 
+ **vlanId** | **[]int64** | VLAN (ID) | 
+ **vlanIdN** | **[]int64** | VLAN (ID) | 
+ **vlanVid** | **int64** | VLAN number (1-4094) | 
+ **vlanVidEmpty** | **int64** | VLAN number (1-4094) | 
+ **vlanVidGt** | **int64** | VLAN number (1-4094) | 
+ **vlanVidGte** | **int64** | VLAN number (1-4094) | 
+ **vlanVidLt** | **int64** | VLAN number (1-4094) | 
+ **vlanVidLte** | **int64** | VLAN number (1-4094) | 
+ **vlanVidN** | **int64** | VLAN number (1-4094) | 
  **vrf** | **[]string** | VRF (RD) | 
  **vrfN** | **[]string** | VRF (RD) | 
- **vrfId** | **[]int32** | VRF | 
- **vrfIdN** | **[]int32** | VRF | 
+ **vrfId** | **[]int64** | VRF | 
+ **vrfIdN** | **[]int64** | VRF | 
  **within** | **string** | Within prefix | 
  **withinInclude** | **string** | Within and including prefix | 
 
@@ -6768,7 +6768,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this prefix.
+	id := int64(56) // int64 | A unique integer value identifying this prefix.
 	patchedWritablePrefixRequest := *openapiclient.NewPatchedWritablePrefixRequest() // PatchedWritablePrefixRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -6789,7 +6789,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this prefix. | 
+**id** | **int64** | A unique integer value identifying this prefix. | 
 
 ### Other Parameters
 
@@ -6840,7 +6840,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this prefix.
+	id := int64(56) // int64 | A unique integer value identifying this prefix.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6860,7 +6860,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this prefix. | 
+**id** | **int64** | A unique integer value identifying this prefix. | 
 
 ### Other Parameters
 
@@ -6910,7 +6910,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this prefix.
+	id := int64(56) // int64 | A unique integer value identifying this prefix.
 	writablePrefixRequest := *openapiclient.NewWritablePrefixRequest("Prefix_example") // WritablePrefixRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -6931,7 +6931,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this prefix. | 
+**id** | **int64** | A unique integer value identifying this prefix. | 
 
 ### Other Parameters
 
@@ -7244,7 +7244,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this RIR.
+	id := int64(56) // int64 | A unique integer value identifying this RIR.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7262,7 +7262,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this RIR. | 
+**id** | **int64** | A unique integer value identifying this RIR. | 
 
 ### Other Parameters
 
@@ -7332,13 +7332,13 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	isPrivate := true // bool |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -7347,7 +7347,7 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -7360,7 +7360,7 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
@@ -7420,13 +7420,13 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
- **id** | **[]int32** |  | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **isPrivate** | **bool** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
@@ -7435,7 +7435,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -7448,7 +7448,7 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
  **slug** | **[]string** |  | 
@@ -7505,7 +7505,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this RIR.
+	id := int64(56) // int64 | A unique integer value identifying this RIR.
 	patchedRIRRequest := *openapiclient.NewPatchedRIRRequest() // PatchedRIRRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -7526,7 +7526,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this RIR. | 
+**id** | **int64** | A unique integer value identifying this RIR. | 
 
 ### Other Parameters
 
@@ -7577,7 +7577,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this RIR.
+	id := int64(56) // int64 | A unique integer value identifying this RIR.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7597,7 +7597,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this RIR. | 
+**id** | **int64** | A unique integer value identifying this RIR. | 
 
 ### Other Parameters
 
@@ -7647,7 +7647,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this RIR.
+	id := int64(56) // int64 | A unique integer value identifying this RIR.
 	rIRRequest := *openapiclient.NewRIRRequest("Name_example", "Slug_example") // RIRRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -7668,7 +7668,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this RIR. | 
+**id** | **int64** | A unique integer value identifying this RIR. | 
 
 ### Other Parameters
 
@@ -7981,7 +7981,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this role.
+	id := int64(56) // int64 | A unique integer value identifying this role.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7999,7 +7999,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this role. | 
+**id** | **int64** | A unique integer value identifying this role. | 
 
 ### Other Parameters
 
@@ -8069,13 +8069,13 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -8083,7 +8083,7 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -8096,7 +8096,7 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
@@ -8113,13 +8113,13 @@ func main() {
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	weight := []int32{int32(123)} // []int32 |  (optional)
+	weight := []int64{int64(123)} // []int64 |  (optional)
 	weightEmpty := true // bool |  (optional)
-	weightGt := []int32{int32(123)} // []int32 |  (optional)
-	weightGte := []int32{int32(123)} // []int32 |  (optional)
-	weightLt := []int32{int32(123)} // []int32 |  (optional)
-	weightLte := []int32{int32(123)} // []int32 |  (optional)
-	weightN := []int32{int32(123)} // []int32 |  (optional)
+	weightGt := []int64{int64(123)} // []int64 |  (optional)
+	weightGte := []int64{int64(123)} // []int64 |  (optional)
+	weightLt := []int64{int64(123)} // []int64 |  (optional)
+	weightLte := []int64{int64(123)} // []int64 |  (optional)
+	weightN := []int64{int64(123)} // []int64 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8163,13 +8163,13 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
- **id** | **[]int32** |  | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -8177,7 +8177,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -8190,7 +8190,7 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
  **slug** | **[]string** |  | 
@@ -8207,13 +8207,13 @@ Name | Type | Description  | Notes
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **updatedByRequest** | **string** |  | 
- **weight** | **[]int32** |  | 
+ **weight** | **[]int64** |  | 
  **weightEmpty** | **bool** |  | 
- **weightGt** | **[]int32** |  | 
- **weightGte** | **[]int32** |  | 
- **weightLt** | **[]int32** |  | 
- **weightLte** | **[]int32** |  | 
- **weightN** | **[]int32** |  | 
+ **weightGt** | **[]int64** |  | 
+ **weightGte** | **[]int64** |  | 
+ **weightLt** | **[]int64** |  | 
+ **weightLte** | **[]int64** |  | 
+ **weightN** | **[]int64** |  | 
 
 ### Return type
 
@@ -8254,7 +8254,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this role.
+	id := int64(56) // int64 | A unique integer value identifying this role.
 	patchedRoleRequest := *openapiclient.NewPatchedRoleRequest() // PatchedRoleRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8275,7 +8275,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this role. | 
+**id** | **int64** | A unique integer value identifying this role. | 
 
 ### Other Parameters
 
@@ -8326,7 +8326,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this role.
+	id := int64(56) // int64 | A unique integer value identifying this role.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8346,7 +8346,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this role. | 
+**id** | **int64** | A unique integer value identifying this role. | 
 
 ### Other Parameters
 
@@ -8396,7 +8396,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this role.
+	id := int64(56) // int64 | A unique integer value identifying this role.
 	roleRequest := *openapiclient.NewRoleRequest("Name_example", "Slug_example") // RoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -8417,7 +8417,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this role. | 
+**id** | **int64** | A unique integer value identifying this role. | 
 
 ### Other Parameters
 
@@ -8730,7 +8730,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this route target.
+	id := int64(56) // int64 | A unique integer value identifying this route target.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8748,7 +8748,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this route target. | 
+**id** | **int64** | A unique integer value identifying this route target. | 
 
 ### Other Parameters
 
@@ -8820,27 +8820,27 @@ func main() {
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	exportingL2vpn := []*int64{int64(123)} // []*int64 | Exporting L2VPN (identifier) (optional)
 	exportingL2vpnN := []*int64{int64(123)} // []*int64 | Exporting L2VPN (identifier) (optional)
-	exportingL2vpnId := []int32{int32(123)} // []int32 | Exporting L2VPN (optional)
-	exportingL2vpnIdN := []int32{int32(123)} // []int32 | Exporting L2VPN (optional)
+	exportingL2vpnId := []int64{int64(123)} // []int64 | Exporting L2VPN (optional)
+	exportingL2vpnIdN := []int64{int64(123)} // []int64 | Exporting L2VPN (optional)
 	exportingVrf := []*string{"Inner_example"} // []*string | Export VRF (RD) (optional)
 	exportingVrfN := []*string{"Inner_example"} // []*string | Export VRF (RD) (optional)
-	exportingVrfId := []int32{int32(123)} // []int32 | Exporting VRF (optional)
-	exportingVrfIdN := []int32{int32(123)} // []int32 | Exporting VRF (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	exportingVrfId := []int64{int64(123)} // []int64 | Exporting VRF (optional)
+	exportingVrfIdN := []int64{int64(123)} // []int64 | Exporting VRF (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	importingL2vpn := []*int64{int64(123)} // []*int64 | Importing L2VPN (identifier) (optional)
 	importingL2vpnN := []*int64{int64(123)} // []*int64 | Importing L2VPN (identifier) (optional)
-	importingL2vpnId := []int32{int32(123)} // []int32 | Importing L2VPN (optional)
-	importingL2vpnIdN := []int32{int32(123)} // []int32 | Importing L2VPN (optional)
+	importingL2vpnId := []int64{int64(123)} // []int64 | Importing L2VPN (optional)
+	importingL2vpnIdN := []int64{int64(123)} // []int64 | Importing L2VPN (optional)
 	importingVrf := []*string{"Inner_example"} // []*string | Import VRF (RD) (optional)
 	importingVrfN := []*string{"Inner_example"} // []*string | Import VRF (RD) (optional)
-	importingVrfId := []int32{int32(123)} // []int32 | Importing VRF (optional)
-	importingVrfIdN := []int32{int32(123)} // []int32 | Importing VRF (optional)
+	importingVrfId := []int64{int64(123)} // []int64 | Importing VRF (optional)
+	importingVrfIdN := []int64{int64(123)} // []int64 | Importing VRF (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -8848,7 +8848,7 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -8861,7 +8861,7 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
@@ -8872,8 +8872,8 @@ func main() {
 	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
-	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
-	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tenantId := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
+	tenantIdN := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8920,27 +8920,27 @@ Name | Type | Description  | Notes
  **descriptionNisw** | **[]string** |  | 
  **exportingL2vpn** | **[]int64** | Exporting L2VPN (identifier) | 
  **exportingL2vpnN** | **[]int64** | Exporting L2VPN (identifier) | 
- **exportingL2vpnId** | **[]int32** | Exporting L2VPN | 
- **exportingL2vpnIdN** | **[]int32** | Exporting L2VPN | 
+ **exportingL2vpnId** | **[]int64** | Exporting L2VPN | 
+ **exportingL2vpnIdN** | **[]int64** | Exporting L2VPN | 
  **exportingVrf** | **[]string** | Export VRF (RD) | 
  **exportingVrfN** | **[]string** | Export VRF (RD) | 
- **exportingVrfId** | **[]int32** | Exporting VRF | 
- **exportingVrfIdN** | **[]int32** | Exporting VRF | 
- **id** | **[]int32** |  | 
+ **exportingVrfId** | **[]int64** | Exporting VRF | 
+ **exportingVrfIdN** | **[]int64** | Exporting VRF | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **importingL2vpn** | **[]int64** | Importing L2VPN (identifier) | 
  **importingL2vpnN** | **[]int64** | Importing L2VPN (identifier) | 
- **importingL2vpnId** | **[]int32** | Importing L2VPN | 
- **importingL2vpnIdN** | **[]int32** | Importing L2VPN | 
+ **importingL2vpnId** | **[]int64** | Importing L2VPN | 
+ **importingL2vpnIdN** | **[]int64** | Importing L2VPN | 
  **importingVrf** | **[]string** | Import VRF (RD) | 
  **importingVrfN** | **[]string** | Import VRF (RD) | 
- **importingVrfId** | **[]int32** | Importing VRF | 
- **importingVrfIdN** | **[]int32** | Importing VRF | 
+ **importingVrfId** | **[]int64** | Importing VRF | 
+ **importingVrfIdN** | **[]int64** | Importing VRF | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -8948,7 +8948,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -8961,7 +8961,7 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
  **tag** | **[]string** |  | 
@@ -8972,8 +8972,8 @@ Name | Type | Description  | Notes
  **tenantGroupN** | **[]string** |  | 
  **tenantGroupId** | **[]string** |  | 
  **tenantGroupIdN** | **[]string** |  | 
- **tenantId** | **[]int32** | Tenant (ID) | 
- **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **tenantId** | **[]int64** | Tenant (ID) | 
+ **tenantIdN** | **[]int64** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -9015,7 +9015,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this route target.
+	id := int64(56) // int64 | A unique integer value identifying this route target.
 	patchedRouteTargetRequest := *openapiclient.NewPatchedRouteTargetRequest() // PatchedRouteTargetRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -9036,7 +9036,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this route target. | 
+**id** | **int64** | A unique integer value identifying this route target. | 
 
 ### Other Parameters
 
@@ -9087,7 +9087,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this route target.
+	id := int64(56) // int64 | A unique integer value identifying this route target.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9107,7 +9107,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this route target. | 
+**id** | **int64** | A unique integer value identifying this route target. | 
 
 ### Other Parameters
 
@@ -9157,7 +9157,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this route target.
+	id := int64(56) // int64 | A unique integer value identifying this route target.
 	routeTargetRequest := *openapiclient.NewRouteTargetRequest("Name_example") // RouteTargetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -9178,7 +9178,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this route target. | 
+**id** | **int64** | A unique integer value identifying this route target. | 
 
 ### Other Parameters
 
@@ -9229,7 +9229,7 @@ import (
 )
 
 func main() {
-	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest("Name_example", []int32{int32(123)})} // []ServiceTemplateRequest | 
+	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest("Name_example", []int64{int64(123)})} // []ServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9293,7 +9293,7 @@ import (
 )
 
 func main() {
-	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest("Name_example", []int32{int32(123)})} // []ServiceTemplateRequest | 
+	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest("Name_example", []int64{int64(123)})} // []ServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9359,7 +9359,7 @@ import (
 )
 
 func main() {
-	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest("Name_example", []int32{int32(123)})} // []ServiceTemplateRequest | 
+	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest("Name_example", []int64{int64(123)})} // []ServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9425,7 +9425,7 @@ import (
 )
 
 func main() {
-	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceTemplateRequest | 
+	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int64{int64(123)}) // WritableServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9491,7 +9491,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this service template.
+	id := int64(56) // int64 | A unique integer value identifying this service template.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9509,7 +9509,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this service template. | 
+**id** | **int64** | A unique integer value identifying this service template. | 
 
 ### Other Parameters
 
@@ -9579,13 +9579,13 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -9593,7 +9593,7 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -9606,7 +9606,7 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	port := float32(8.14) // float32 |  (optional)
 	protocol := openapiclient.ipam_service_templates_list_protocol_parameter("sctp") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
@@ -9657,13 +9657,13 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
- **id** | **[]int32** |  | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -9671,7 +9671,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -9684,7 +9684,7 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **port** | **float32** |  | 
  **protocol** | [**IpamServiceTemplatesListProtocolParameter**](IpamServiceTemplatesListProtocolParameter.md) | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
@@ -9732,7 +9732,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this service template.
+	id := int64(56) // int64 | A unique integer value identifying this service template.
 	patchedWritableServiceTemplateRequest := *openapiclient.NewPatchedWritableServiceTemplateRequest() // PatchedWritableServiceTemplateRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -9753,7 +9753,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this service template. | 
+**id** | **int64** | A unique integer value identifying this service template. | 
 
 ### Other Parameters
 
@@ -9804,7 +9804,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this service template.
+	id := int64(56) // int64 | A unique integer value identifying this service template.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9824,7 +9824,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this service template. | 
+**id** | **int64** | A unique integer value identifying this service template. | 
 
 ### Other Parameters
 
@@ -9874,8 +9874,8 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this service template.
-	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceTemplateRequest | 
+	id := int64(56) // int64 | A unique integer value identifying this service template.
+	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int64{int64(123)}) // WritableServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9895,7 +9895,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this service template. | 
+**id** | **int64** | A unique integer value identifying this service template. | 
 
 ### Other Parameters
 
@@ -9946,7 +9946,7 @@ import (
 )
 
 func main() {
-	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest("Name_example", []int32{int32(123)})} // []ServiceRequest | 
+	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest("Name_example", []int64{int64(123)})} // []ServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10010,7 +10010,7 @@ import (
 )
 
 func main() {
-	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest("Name_example", []int32{int32(123)})} // []ServiceRequest | 
+	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest("Name_example", []int64{int64(123)})} // []ServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10076,7 +10076,7 @@ import (
 )
 
 func main() {
-	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest("Name_example", []int32{int32(123)})} // []ServiceRequest | 
+	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest("Name_example", []int64{int64(123)})} // []ServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10142,7 +10142,7 @@ import (
 )
 
 func main() {
-	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceRequest | 
+	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int64{int64(123)}) // WritableServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10208,7 +10208,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this service.
+	id := int64(56) // int64 | A unique integer value identifying this service.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10226,7 +10226,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this service. | 
+**id** | **int64** | A unique integer value identifying this service. | 
 
 ### Other Parameters
 
@@ -10298,19 +10298,19 @@ func main() {
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	device := []*string{"Inner_example"} // []*string | Device (name) (optional)
 	deviceN := []*string{"Inner_example"} // []*string | Device (name) (optional)
-	deviceId := []*int32{int32(123)} // []*int32 | Device (ID) (optional)
-	deviceIdN := []*int32{int32(123)} // []*int32 | Device (ID) (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	deviceId := []*int64{int64(123)} // []*int64 | Device (ID) (optional)
+	deviceIdN := []*int64{int64(123)} // []*int64 | Device (ID) (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	ipAddress := []string{"Inner_example"} // []string | IP address (optional)
 	ipAddressN := []string{"Inner_example"} // []string | IP address (optional)
-	ipAddressId := []int32{int32(123)} // []int32 | IP address (ID) (optional)
-	ipAddressIdN := []int32{int32(123)} // []int32 | IP address (ID) (optional)
+	ipAddressId := []int64{int64(123)} // []int64 | IP address (ID) (optional)
+	ipAddressIdN := []int64{int64(123)} // []int64 | IP address (ID) (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -10318,7 +10318,7 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -10331,7 +10331,7 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	port := float32(8.14) // float32 |  (optional)
 	protocol := openapiclient.ipam_service_templates_list_protocol_parameter("sctp") // IpamServiceTemplatesListProtocolParameter | * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP (optional)
@@ -10341,8 +10341,8 @@ func main() {
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	virtualMachine := []string{"Inner_example"} // []string | Virtual machine (name) (optional)
 	virtualMachineN := []string{"Inner_example"} // []string | Virtual machine (name) (optional)
-	virtualMachineId := []*int32{int32(123)} // []*int32 | Virtual machine (ID) (optional)
-	virtualMachineIdN := []*int32{int32(123)} // []*int32 | Virtual machine (ID) (optional)
+	virtualMachineId := []*int64{int64(123)} // []*int64 | Virtual machine (ID) (optional)
+	virtualMachineIdN := []*int64{int64(123)} // []*int64 | Virtual machine (ID) (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10388,19 +10388,19 @@ Name | Type | Description  | Notes
  **descriptionNisw** | **[]string** |  | 
  **device** | **[]string** | Device (name) | 
  **deviceN** | **[]string** | Device (name) | 
- **deviceId** | **[]int32** | Device (ID) | 
- **deviceIdN** | **[]int32** | Device (ID) | 
- **id** | **[]int32** |  | 
+ **deviceId** | **[]int64** | Device (ID) | 
+ **deviceIdN** | **[]int64** | Device (ID) | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **ipAddress** | **[]string** | IP address | 
  **ipAddressN** | **[]string** | IP address | 
- **ipAddressId** | **[]int32** | IP address (ID) | 
- **ipAddressIdN** | **[]int32** | IP address (ID) | 
+ **ipAddressId** | **[]int64** | IP address (ID) | 
+ **ipAddressIdN** | **[]int64** | IP address (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -10408,7 +10408,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -10421,7 +10421,7 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **port** | **float32** |  | 
  **protocol** | [**IpamServiceTemplatesListProtocolParameter**](IpamServiceTemplatesListProtocolParameter.md) | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
@@ -10431,8 +10431,8 @@ Name | Type | Description  | Notes
  **updatedByRequest** | **string** |  | 
  **virtualMachine** | **[]string** | Virtual machine (name) | 
  **virtualMachineN** | **[]string** | Virtual machine (name) | 
- **virtualMachineId** | **[]int32** | Virtual machine (ID) | 
- **virtualMachineIdN** | **[]int32** | Virtual machine (ID) | 
+ **virtualMachineId** | **[]int64** | Virtual machine (ID) | 
+ **virtualMachineIdN** | **[]int64** | Virtual machine (ID) | 
 
 ### Return type
 
@@ -10473,7 +10473,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this service.
+	id := int64(56) // int64 | A unique integer value identifying this service.
 	patchedWritableServiceRequest := *openapiclient.NewPatchedWritableServiceRequest() // PatchedWritableServiceRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -10494,7 +10494,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this service. | 
+**id** | **int64** | A unique integer value identifying this service. | 
 
 ### Other Parameters
 
@@ -10545,7 +10545,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this service.
+	id := int64(56) // int64 | A unique integer value identifying this service.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10565,7 +10565,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this service. | 
+**id** | **int64** | A unique integer value identifying this service. | 
 
 ### Other Parameters
 
@@ -10615,8 +10615,8 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this service.
-	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceRequest | 
+	id := int64(56) // int64 | A unique integer value identifying this service.
+	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int64{int64(123)}) // WritableServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10636,7 +10636,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this service. | 
+**id** | **int64** | A unique integer value identifying this service. | 
 
 ### Other Parameters
 
@@ -10687,8 +10687,8 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | 
-	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123), "Name_example")} // []VLANRequest | 
+	id := int64(56) // int64 | 
+	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int64(123), "Name_example")} // []VLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10708,7 +10708,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -10759,7 +10759,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | 
+	id := int64(56) // int64 | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10779,7 +10779,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -11091,7 +11091,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VLAN group.
+	id := int64(56) // int64 | A unique integer value identifying this VLAN group.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11109,7 +11109,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VLAN group. | 
+**id** | **int64** | A unique integer value identifying this VLAN group. | 
 
 ### Other Parameters
 
@@ -11160,8 +11160,8 @@ import (
 )
 
 func main() {
-	cluster := int32(56) // int32 |  (optional)
-	clusterGroup := int32(56) // int32 |  (optional)
+	cluster := int64(56) // int64 |  (optional)
+	clusterGroup := int64(56) // int64 |  (optional)
 	containsVid := float32(8.14) // float32 |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -11182,13 +11182,13 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -11196,8 +11196,8 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
-	location := int32(56) // int32 |  (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
+	location := int64(56) // int64 |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -11210,22 +11210,22 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
-	rack := int32(56) // int32 |  (optional)
-	region := int32(56) // int32 |  (optional)
-	scopeId := []int32{int32(123)} // []int32 |  (optional)
+	rack := int64(56) // int64 |  (optional)
+	region := int64(56) // int64 |  (optional)
+	scopeId := []int64{int64(123)} // []int64 |  (optional)
 	scopeIdEmpty := true // bool |  (optional)
-	scopeIdGt := []int32{int32(123)} // []int32 |  (optional)
-	scopeIdGte := []int32{int32(123)} // []int32 |  (optional)
-	scopeIdLt := []int32{int32(123)} // []int32 |  (optional)
-	scopeIdLte := []int32{int32(123)} // []int32 |  (optional)
-	scopeIdN := []int32{int32(123)} // []int32 |  (optional)
+	scopeIdGt := []int64{int64(123)} // []int64 |  (optional)
+	scopeIdGte := []int64{int64(123)} // []int64 |  (optional)
+	scopeIdLt := []int64{int64(123)} // []int64 |  (optional)
+	scopeIdLte := []int64{int64(123)} // []int64 |  (optional)
+	scopeIdN := []int64{int64(123)} // []int64 |  (optional)
 	scopeType := "scopeType_example" // string |  (optional)
 	scopeTypeN := "scopeTypeN_example" // string |  (optional)
-	site := int32(56) // int32 |  (optional)
-	siteGroup := int32(56) // int32 |  (optional)
+	site := int64(56) // int64 |  (optional)
+	siteGroup := int64(56) // int64 |  (optional)
 	slug := []string{"Inner_example"} // []string |  (optional)
 	slugEmpty := true // bool |  (optional)
 	slugIc := []string{"Inner_example"} // []string |  (optional)
@@ -11264,8 +11264,8 @@ Other parameters are passed through a pointer to a apiIpamVlanGroupsListRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster** | **int32** |  | 
- **clusterGroup** | **int32** |  | 
+ **cluster** | **int64** |  | 
+ **clusterGroup** | **int64** |  | 
  **containsVid** | **float32** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
@@ -11286,13 +11286,13 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
- **id** | **[]int32** |  | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -11300,8 +11300,8 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
- **location** | **int32** |  | 
+ **limit** | **int64** | Number of results to return per page. | 
+ **location** | **int64** |  | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -11314,22 +11314,22 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
- **rack** | **int32** |  | 
- **region** | **int32** |  | 
- **scopeId** | **[]int32** |  | 
+ **rack** | **int64** |  | 
+ **region** | **int64** |  | 
+ **scopeId** | **[]int64** |  | 
  **scopeIdEmpty** | **bool** |  | 
- **scopeIdGt** | **[]int32** |  | 
- **scopeIdGte** | **[]int32** |  | 
- **scopeIdLt** | **[]int32** |  | 
- **scopeIdLte** | **[]int32** |  | 
- **scopeIdN** | **[]int32** |  | 
+ **scopeIdGt** | **[]int64** |  | 
+ **scopeIdGte** | **[]int64** |  | 
+ **scopeIdLt** | **[]int64** |  | 
+ **scopeIdLte** | **[]int64** |  | 
+ **scopeIdN** | **[]int64** |  | 
  **scopeType** | **string** |  | 
  **scopeTypeN** | **string** |  | 
- **site** | **int32** |  | 
- **siteGroup** | **int32** |  | 
+ **site** | **int64** |  | 
+ **siteGroup** | **int64** |  | 
  **slug** | **[]string** |  | 
  **slugEmpty** | **bool** |  | 
  **slugIc** | **[]string** |  | 
@@ -11384,7 +11384,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VLAN group.
+	id := int64(56) // int64 | A unique integer value identifying this VLAN group.
 	patchedVLANGroupRequest := *openapiclient.NewPatchedVLANGroupRequest() // PatchedVLANGroupRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -11405,7 +11405,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VLAN group. | 
+**id** | **int64** | A unique integer value identifying this VLAN group. | 
 
 ### Other Parameters
 
@@ -11456,7 +11456,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VLAN group.
+	id := int64(56) // int64 | A unique integer value identifying this VLAN group.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11476,7 +11476,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VLAN group. | 
+**id** | **int64** | A unique integer value identifying this VLAN group. | 
 
 ### Other Parameters
 
@@ -11526,7 +11526,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VLAN group.
+	id := int64(56) // int64 | A unique integer value identifying this VLAN group.
 	vLANGroupRequest := *openapiclient.NewVLANGroupRequest("Name_example", "Slug_example") // VLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -11547,7 +11547,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VLAN group. | 
+**id** | **int64** | A unique integer value identifying this VLAN group. | 
 
 ### Other Parameters
 
@@ -11598,7 +11598,7 @@ import (
 )
 
 func main() {
-	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123), "Name_example")} // []VLANRequest | 
+	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int64(123), "Name_example")} // []VLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11662,7 +11662,7 @@ import (
 )
 
 func main() {
-	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123), "Name_example")} // []VLANRequest | 
+	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int64(123), "Name_example")} // []VLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11728,7 +11728,7 @@ import (
 )
 
 func main() {
-	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123), "Name_example")} // []VLANRequest | 
+	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int64(123), "Name_example")} // []VLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11794,7 +11794,7 @@ import (
 )
 
 func main() {
-	writableVLANRequest := *openapiclient.NewWritableVLANRequest(int32(123), "Name_example") // WritableVLANRequest | 
+	writableVLANRequest := *openapiclient.NewWritableVLANRequest(int64(123), "Name_example") // WritableVLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11860,7 +11860,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VLAN.
+	id := int64(56) // int64 | A unique integer value identifying this VLAN.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11878,7 +11878,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VLAN. | 
+**id** | **int64** | A unique integer value identifying this VLAN. | 
 
 ### Other Parameters
 
@@ -11953,19 +11953,19 @@ func main() {
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	group := []string{"Inner_example"} // []string | Group (optional)
 	groupN := []string{"Inner_example"} // []string | Group (optional)
-	groupId := []*int32{int32(123)} // []*int32 | Group (ID) (optional)
-	groupIdN := []*int32{int32(123)} // []*int32 | Group (ID) (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	groupId := []*int64{int64(123)} // []*int64 | Group (ID) (optional)
+	groupIdN := []*int64{int64(123)} // []*int64 | Group (ID) (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	l2vpn := []*int64{int64(123)} // []*int64 | L2VPN (optional)
 	l2vpnN := []*int64{int64(123)} // []*int64 | L2VPN (optional)
-	l2vpnId := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
-	l2vpnIdN := []int32{int32(123)} // []int32 | L2VPN (ID) (optional)
+	l2vpnId := []int64{int64(123)} // []int64 | L2VPN (ID) (optional)
+	l2vpnIdN := []int64{int64(123)} // []int64 | L2VPN (ID) (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -11973,7 +11973,7 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -11986,7 +11986,7 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
 	region := []string{"Inner_example"} // []string |  (optional)
@@ -11995,16 +11995,16 @@ func main() {
 	regionIdN := []string{"Inner_example"} // []string |  (optional)
 	role := []string{"Inner_example"} // []string | Role (slug) (optional)
 	roleN := []string{"Inner_example"} // []string | Role (slug) (optional)
-	roleId := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
-	roleIdN := []*int32{int32(123)} // []*int32 | Role (ID) (optional)
+	roleId := []*int64{int64(123)} // []*int64 | Role (ID) (optional)
+	roleIdN := []*int64{int64(123)} // []*int64 | Role (ID) (optional)
 	site := []string{"Inner_example"} // []string | Site (slug) (optional)
 	siteN := []string{"Inner_example"} // []string | Site (slug) (optional)
 	siteGroup := []string{"Inner_example"} // []string |  (optional)
 	siteGroupN := []string{"Inner_example"} // []string |  (optional)
 	siteGroupId := []string{"Inner_example"} // []string |  (optional)
 	siteGroupIdN := []string{"Inner_example"} // []string |  (optional)
-	siteId := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
-	siteIdN := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
+	siteId := []*int64{int64(123)} // []*int64 | Site (ID) (optional)
+	siteIdN := []*int64{int64(123)} // []*int64 | Site (ID) (optional)
 	status := []string{"Inner_example"} // []string | Operational status of this VLAN (optional)
 	statusEmpty := true // bool |  (optional)
 	statusIc := []openapiclient.IpamIpRangesListStatusIcParameterInner{openapiclient.ipam_ip_ranges_list_status__ic_parameter_inner("active")} // []IpamIpRangesListStatusIcParameterInner | Operational status of this VLAN  * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated (optional)
@@ -12024,16 +12024,16 @@ func main() {
 	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
-	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
-	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tenantId := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
+	tenantIdN := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
-	vid := []int32{int32(123)} // []int32 |  (optional)
+	vid := []int64{int64(123)} // []int64 |  (optional)
 	vidEmpty := true // bool |  (optional)
-	vidGt := []int32{int32(123)} // []int32 |  (optional)
-	vidGte := []int32{int32(123)} // []int32 |  (optional)
-	vidLt := []int32{int32(123)} // []int32 |  (optional)
-	vidLte := []int32{int32(123)} // []int32 |  (optional)
-	vidN := []int32{int32(123)} // []int32 |  (optional)
+	vidGt := []int64{int64(123)} // []int64 |  (optional)
+	vidGte := []int64{int64(123)} // []int64 |  (optional)
+	vidLt := []int64{int64(123)} // []int64 |  (optional)
+	vidLte := []int64{int64(123)} // []int64 |  (optional)
+	vidN := []int64{int64(123)} // []int64 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12082,19 +12082,19 @@ Name | Type | Description  | Notes
  **descriptionNisw** | **[]string** |  | 
  **group** | **[]string** | Group | 
  **groupN** | **[]string** | Group | 
- **groupId** | **[]int32** | Group (ID) | 
- **groupIdN** | **[]int32** | Group (ID) | 
- **id** | **[]int32** |  | 
+ **groupId** | **[]int64** | Group (ID) | 
+ **groupIdN** | **[]int64** | Group (ID) | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **l2vpn** | **[]int64** | L2VPN | 
  **l2vpnN** | **[]int64** | L2VPN | 
- **l2vpnId** | **[]int32** | L2VPN (ID) | 
- **l2vpnIdN** | **[]int32** | L2VPN (ID) | 
+ **l2vpnId** | **[]int64** | L2VPN (ID) | 
+ **l2vpnIdN** | **[]int64** | L2VPN (ID) | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -12102,7 +12102,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -12115,7 +12115,7 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
  **region** | **[]string** |  | 
@@ -12124,16 +12124,16 @@ Name | Type | Description  | Notes
  **regionIdN** | **[]string** |  | 
  **role** | **[]string** | Role (slug) | 
  **roleN** | **[]string** | Role (slug) | 
- **roleId** | **[]int32** | Role (ID) | 
- **roleIdN** | **[]int32** | Role (ID) | 
+ **roleId** | **[]int64** | Role (ID) | 
+ **roleIdN** | **[]int64** | Role (ID) | 
  **site** | **[]string** | Site (slug) | 
  **siteN** | **[]string** | Site (slug) | 
  **siteGroup** | **[]string** |  | 
  **siteGroupN** | **[]string** |  | 
  **siteGroupId** | **[]string** |  | 
  **siteGroupIdN** | **[]string** |  | 
- **siteId** | **[]int32** | Site (ID) | 
- **siteIdN** | **[]int32** | Site (ID) | 
+ **siteId** | **[]int64** | Site (ID) | 
+ **siteIdN** | **[]int64** | Site (ID) | 
  **status** | **[]string** | Operational status of this VLAN | 
  **statusEmpty** | **bool** |  | 
  **statusIc** | [**[]IpamIpRangesListStatusIcParameterInner**](IpamIpRangesListStatusIcParameterInner.md) | Operational status of this VLAN  * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated | 
@@ -12153,16 +12153,16 @@ Name | Type | Description  | Notes
  **tenantGroupN** | **[]string** |  | 
  **tenantGroupId** | **[]string** |  | 
  **tenantGroupIdN** | **[]string** |  | 
- **tenantId** | **[]int32** | Tenant (ID) | 
- **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **tenantId** | **[]int64** | Tenant (ID) | 
+ **tenantIdN** | **[]int64** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
- **vid** | **[]int32** |  | 
+ **vid** | **[]int64** |  | 
  **vidEmpty** | **bool** |  | 
- **vidGt** | **[]int32** |  | 
- **vidGte** | **[]int32** |  | 
- **vidLt** | **[]int32** |  | 
- **vidLte** | **[]int32** |  | 
- **vidN** | **[]int32** |  | 
+ **vidGt** | **[]int64** |  | 
+ **vidGte** | **[]int64** |  | 
+ **vidLt** | **[]int64** |  | 
+ **vidLte** | **[]int64** |  | 
+ **vidN** | **[]int64** |  | 
 
 ### Return type
 
@@ -12203,7 +12203,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VLAN.
+	id := int64(56) // int64 | A unique integer value identifying this VLAN.
 	patchedWritableVLANRequest := *openapiclient.NewPatchedWritableVLANRequest() // PatchedWritableVLANRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -12224,7 +12224,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VLAN. | 
+**id** | **int64** | A unique integer value identifying this VLAN. | 
 
 ### Other Parameters
 
@@ -12275,7 +12275,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VLAN.
+	id := int64(56) // int64 | A unique integer value identifying this VLAN.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12295,7 +12295,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VLAN. | 
+**id** | **int64** | A unique integer value identifying this VLAN. | 
 
 ### Other Parameters
 
@@ -12345,8 +12345,8 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VLAN.
-	writableVLANRequest := *openapiclient.NewWritableVLANRequest(int32(123), "Name_example") // WritableVLANRequest | 
+	id := int64(56) // int64 | A unique integer value identifying this VLAN.
+	writableVLANRequest := *openapiclient.NewWritableVLANRequest(int64(123), "Name_example") // WritableVLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12366,7 +12366,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VLAN. | 
+**id** | **int64** | A unique integer value identifying this VLAN. | 
 
 ### Other Parameters
 
@@ -12679,7 +12679,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VRF.
+	id := int64(56) // int64 | A unique integer value identifying this VRF.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12697,7 +12697,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VRF. | 
+**id** | **int64** | A unique integer value identifying this VRF. | 
 
 ### Other Parameters
 
@@ -12770,19 +12770,19 @@ func main() {
 	enforceUnique := true // bool |  (optional)
 	exportTarget := []string{"Inner_example"} // []string | Export target (name) (optional)
 	exportTargetN := []string{"Inner_example"} // []string | Export target (name) (optional)
-	exportTargetId := []int32{int32(123)} // []int32 | Export target (optional)
-	exportTargetIdN := []int32{int32(123)} // []int32 | Export target (optional)
-	id := []int32{int32(123)} // []int32 |  (optional)
+	exportTargetId := []int64{int64(123)} // []int64 | Export target (optional)
+	exportTargetIdN := []int64{int64(123)} // []int64 | Export target (optional)
+	id := []int64{int64(123)} // []int64 |  (optional)
 	idEmpty := true // bool |  (optional)
-	idGt := []int32{int32(123)} // []int32 |  (optional)
-	idGte := []int32{int32(123)} // []int32 |  (optional)
-	idLt := []int32{int32(123)} // []int32 |  (optional)
-	idLte := []int32{int32(123)} // []int32 |  (optional)
-	idN := []int32{int32(123)} // []int32 |  (optional)
+	idGt := []int64{int64(123)} // []int64 |  (optional)
+	idGte := []int64{int64(123)} // []int64 |  (optional)
+	idLt := []int64{int64(123)} // []int64 |  (optional)
+	idLte := []int64{int64(123)} // []int64 |  (optional)
+	idN := []int64{int64(123)} // []int64 |  (optional)
 	importTarget := []string{"Inner_example"} // []string | Import target (name) (optional)
 	importTargetN := []string{"Inner_example"} // []string | Import target (name) (optional)
-	importTargetId := []int32{int32(123)} // []int32 | Import target (optional)
-	importTargetIdN := []int32{int32(123)} // []int32 | Import target (optional)
+	importTargetId := []int64{int64(123)} // []int64 | Import target (optional)
+	importTargetIdN := []int64{int64(123)} // []int64 | Import target (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -12790,7 +12790,7 @@ func main() {
 	lastUpdatedLt := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
-	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	limit := int64(56) // int64 | Number of results to return per page. (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	name := []string{"Inner_example"} // []string |  (optional)
 	nameEmpty := true // bool |  (optional)
@@ -12803,7 +12803,7 @@ func main() {
 	nameNie := []string{"Inner_example"} // []string |  (optional)
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
-	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	offset := int64(56) // int64 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
 	rd := []string{"Inner_example"} // []string |  (optional)
@@ -12825,8 +12825,8 @@ func main() {
 	tenantGroupN := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupId := []string{"Inner_example"} // []string |  (optional)
 	tenantGroupIdN := []string{"Inner_example"} // []string |  (optional)
-	tenantId := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
-	tenantIdN := []*int32{int32(123)} // []*int32 | Tenant (ID) (optional)
+	tenantId := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
+	tenantIdN := []*int64{int64(123)} // []*int64 | Tenant (ID) (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -12874,19 +12874,19 @@ Name | Type | Description  | Notes
  **enforceUnique** | **bool** |  | 
  **exportTarget** | **[]string** | Export target (name) | 
  **exportTargetN** | **[]string** | Export target (name) | 
- **exportTargetId** | **[]int32** | Export target | 
- **exportTargetIdN** | **[]int32** | Export target | 
- **id** | **[]int32** |  | 
+ **exportTargetId** | **[]int64** | Export target | 
+ **exportTargetIdN** | **[]int64** | Export target | 
+ **id** | **[]int64** |  | 
  **idEmpty** | **bool** |  | 
- **idGt** | **[]int32** |  | 
- **idGte** | **[]int32** |  | 
- **idLt** | **[]int32** |  | 
- **idLte** | **[]int32** |  | 
- **idN** | **[]int32** |  | 
+ **idGt** | **[]int64** |  | 
+ **idGte** | **[]int64** |  | 
+ **idLt** | **[]int64** |  | 
+ **idLte** | **[]int64** |  | 
+ **idN** | **[]int64** |  | 
  **importTarget** | **[]string** | Import target (name) | 
  **importTargetN** | **[]string** | Import target (name) | 
- **importTargetId** | **[]int32** | Import target | 
- **importTargetIdN** | **[]int32** | Import target | 
+ **importTargetId** | **[]int64** | Import target | 
+ **importTargetIdN** | **[]int64** | Import target | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -12894,7 +12894,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLt** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
- **limit** | **int32** | Number of results to return per page. | 
+ **limit** | **int64** | Number of results to return per page. | 
  **modifiedByRequest** | **string** |  | 
  **name** | **[]string** |  | 
  **nameEmpty** | **bool** |  | 
@@ -12907,7 +12907,7 @@ Name | Type | Description  | Notes
  **nameNie** | **[]string** |  | 
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
- **offset** | **int32** | The initial index from which to return the results. | 
+ **offset** | **int64** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
  **rd** | **[]string** |  | 
@@ -12929,8 +12929,8 @@ Name | Type | Description  | Notes
  **tenantGroupN** | **[]string** |  | 
  **tenantGroupId** | **[]string** |  | 
  **tenantGroupIdN** | **[]string** |  | 
- **tenantId** | **[]int32** | Tenant (ID) | 
- **tenantIdN** | **[]int32** | Tenant (ID) | 
+ **tenantId** | **[]int64** | Tenant (ID) | 
+ **tenantIdN** | **[]int64** | Tenant (ID) | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -12972,7 +12972,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VRF.
+	id := int64(56) // int64 | A unique integer value identifying this VRF.
 	patchedVRFRequest := *openapiclient.NewPatchedVRFRequest() // PatchedVRFRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -12993,7 +12993,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VRF. | 
+**id** | **int64** | A unique integer value identifying this VRF. | 
 
 ### Other Parameters
 
@@ -13044,7 +13044,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VRF.
+	id := int64(56) // int64 | A unique integer value identifying this VRF.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -13064,7 +13064,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VRF. | 
+**id** | **int64** | A unique integer value identifying this VRF. | 
 
 ### Other Parameters
 
@@ -13114,7 +13114,7 @@ import (
 )
 
 func main() {
-	id := int32(56) // int32 | A unique integer value identifying this VRF.
+	id := int64(56) // int64 | A unique integer value identifying this VRF.
 	vRFRequest := *openapiclient.NewVRFRequest("Name_example") // VRFRequest | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -13135,7 +13135,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | A unique integer value identifying this VRF. | 
+**id** | **int64** | A unique integer value identifying this VRF. | 
 
 ### Other Parameters
 

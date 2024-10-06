@@ -16,7 +16,7 @@ import (
 )
 
 // DcimRackTypesListWidthIcParameterInner the model 'DcimRackTypesListWidthIcParameterInner'
-type DcimRackTypesListWidthIcParameterInner int32
+type DcimRackTypesListWidthIcParameterInner int64
 
 // List of dcim_rack_types_list_width__ic_parameter_inner
 const (
@@ -35,7 +35,7 @@ var AllowedDcimRackTypesListWidthIcParameterInnerEnumValues = []DcimRackTypesLis
 }
 
 func (v *DcimRackTypesListWidthIcParameterInner) UnmarshalJSON(src []byte) error {
-	var value int32
+	var value int64
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
@@ -53,7 +53,7 @@ func (v *DcimRackTypesListWidthIcParameterInner) UnmarshalJSON(src []byte) error
 
 // NewDcimRackTypesListWidthIcParameterInnerFromValue returns a pointer to a valid DcimRackTypesListWidthIcParameterInner
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewDcimRackTypesListWidthIcParameterInnerFromValue(v int32) (*DcimRackTypesListWidthIcParameterInner, error) {
+func NewDcimRackTypesListWidthIcParameterInnerFromValue(v int64) (*DcimRackTypesListWidthIcParameterInner, error) {
 	ev := DcimRackTypesListWidthIcParameterInner(v)
 	if ev.IsValid() {
 		return &ev, nil

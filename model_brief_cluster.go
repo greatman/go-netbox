@@ -20,7 +20,7 @@ var _ MappedNullable = &BriefCluster{}
 
 // BriefCluster Adds support for custom fields and tags.
 type BriefCluster struct {
-	Id int32 `json:"id"`
+	Id int64 `json:"id"`
 	Url string `json:"url"`
 	Display string `json:"display"`
 	Name string `json:"name"`
@@ -35,7 +35,7 @@ type _BriefCluster BriefCluster
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefCluster(id int32, url string, display string, name string) *BriefCluster {
+func NewBriefCluster(id int64, url string, display string, name string) *BriefCluster {
 	this := BriefCluster{}
 	this.Id = id
 	this.Url = url
@@ -53,9 +53,9 @@ func NewBriefClusterWithDefaults() *BriefCluster {
 }
 
 // GetId returns the Id field value
-func (o *BriefCluster) GetId() int32 {
+func (o *BriefCluster) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -64,7 +64,7 @@ func (o *BriefCluster) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *BriefCluster) GetIdOk() (*int32, bool) {
+func (o *BriefCluster) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -72,7 +72,7 @@ func (o *BriefCluster) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *BriefCluster) SetId(v int32) {
+func (o *BriefCluster) SetId(v int64) {
 	o.Id = v
 }
 

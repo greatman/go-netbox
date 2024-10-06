@@ -29,7 +29,7 @@ type FrontPortRequest struct {
 	Color *string `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
 	RearPort FrontPortRearPortRequest `json:"rear_port"`
 	// Mapped position on corresponding rear port
-	RearPortPosition *int32 `json:"rear_port_position,omitempty"`
+	RearPortPosition *int64 `json:"rear_port_position,omitempty"`
 	Description *string `json:"description,omitempty"`
 	// Treat as if a cable is connected
 	MarkConnected *bool `json:"mark_connected,omitempty"`
@@ -50,7 +50,7 @@ func NewFrontPortRequest(device BriefDeviceRequest, name string, type_ FrontPort
 	this.Name = name
 	this.Type = type_
 	this.RearPort = rearPort
-	var rearPortPosition int32 = 1
+	var rearPortPosition int64 = 1
 	this.RearPortPosition = &rearPortPosition
 	return &this
 }
@@ -60,7 +60,7 @@ func NewFrontPortRequest(device BriefDeviceRequest, name string, type_ FrontPort
 // but it doesn't guarantee that properties required by API are set
 func NewFrontPortRequestWithDefaults() *FrontPortRequest {
 	this := FrontPortRequest{}
-	var rearPortPosition int32 = 1
+	var rearPortPosition int64 = 1
 	this.RearPortPosition = &rearPortPosition
 	return &this
 }
@@ -268,9 +268,9 @@ func (o *FrontPortRequest) SetRearPort(v FrontPortRearPortRequest) {
 }
 
 // GetRearPortPosition returns the RearPortPosition field value if set, zero value otherwise.
-func (o *FrontPortRequest) GetRearPortPosition() int32 {
+func (o *FrontPortRequest) GetRearPortPosition() int64 {
 	if o == nil || IsNil(o.RearPortPosition) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RearPortPosition
@@ -278,7 +278,7 @@ func (o *FrontPortRequest) GetRearPortPosition() int32 {
 
 // GetRearPortPositionOk returns a tuple with the RearPortPosition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FrontPortRequest) GetRearPortPositionOk() (*int32, bool) {
+func (o *FrontPortRequest) GetRearPortPositionOk() (*int64, bool) {
 	if o == nil || IsNil(o.RearPortPosition) {
 		return nil, false
 	}
@@ -294,8 +294,8 @@ func (o *FrontPortRequest) HasRearPortPosition() bool {
 	return false
 }
 
-// SetRearPortPosition gets a reference to the given int32 and assigns it to the RearPortPosition field.
-func (o *FrontPortRequest) SetRearPortPosition(v int32) {
+// SetRearPortPosition gets a reference to the given int64 and assigns it to the RearPortPosition field.
+func (o *FrontPortRequest) SetRearPortPosition(v int64) {
 	o.RearPortPosition = &v
 }
 

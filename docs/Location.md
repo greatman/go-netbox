@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** |  | [readonly] 
+**Id** | **int64** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
@@ -20,15 +20,15 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**RackCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
-**DeviceCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
-**Depth** | **int32** |  | [readonly] 
+**RackCount** | Pointer to **int64** |  | [optional] [readonly] [default to 0]
+**DeviceCount** | Pointer to **int64** |  | [optional] [readonly] [default to 0]
+**Depth** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewLocation
 
-`func NewLocation(id int32, url string, displayUrl string, display string, name string, slug string, site BriefSite, created NullableTime, lastUpdated NullableTime, depth int32, ) *Location`
+`func NewLocation(id int64, url string, displayUrl string, display string, name string, slug string, site BriefSite, created NullableTime, lastUpdated NullableTime, depth int64, ) *Location`
 
 NewLocation instantiates a new Location object
 This constructor will assign default values to properties that have it defined,
@@ -45,20 +45,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *Location) GetId() int32`
+`func (o *Location) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *Location) GetIdOk() (*int32, bool)`
+`func (o *Location) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *Location) SetId(v int32)`
+`func (o *Location) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -440,20 +440,20 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetRackCount
 
-`func (o *Location) GetRackCount() int32`
+`func (o *Location) GetRackCount() int64`
 
 GetRackCount returns the RackCount field if non-nil, zero value otherwise.
 
 ### GetRackCountOk
 
-`func (o *Location) GetRackCountOk() (*int32, bool)`
+`func (o *Location) GetRackCountOk() (*int64, bool)`
 
 GetRackCountOk returns a tuple with the RackCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRackCount
 
-`func (o *Location) SetRackCount(v int32)`
+`func (o *Location) SetRackCount(v int64)`
 
 SetRackCount sets RackCount field to given value.
 
@@ -465,20 +465,20 @@ HasRackCount returns a boolean if a field has been set.
 
 ### GetDeviceCount
 
-`func (o *Location) GetDeviceCount() int32`
+`func (o *Location) GetDeviceCount() int64`
 
 GetDeviceCount returns the DeviceCount field if non-nil, zero value otherwise.
 
 ### GetDeviceCountOk
 
-`func (o *Location) GetDeviceCountOk() (*int32, bool)`
+`func (o *Location) GetDeviceCountOk() (*int64, bool)`
 
 GetDeviceCountOk returns a tuple with the DeviceCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceCount
 
-`func (o *Location) SetDeviceCount(v int32)`
+`func (o *Location) SetDeviceCount(v int64)`
 
 SetDeviceCount sets DeviceCount field to given value.
 
@@ -490,20 +490,20 @@ HasDeviceCount returns a boolean if a field has been set.
 
 ### GetDepth
 
-`func (o *Location) GetDepth() int32`
+`func (o *Location) GetDepth() int64`
 
 GetDepth returns the Depth field if non-nil, zero value otherwise.
 
 ### GetDepthOk
 
-`func (o *Location) GetDepthOk() (*int32, bool)`
+`func (o *Location) GetDepthOk() (*int64, bool)`
 
 GetDepthOk returns a tuple with the Depth field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDepth
 
-`func (o *Location) SetDepth(v int32)`
+`func (o *Location) SetDepth(v int64)`
 
 SetDepth sets Depth field to given value.
 

@@ -21,7 +21,7 @@ var _ MappedNullable = &VMInterface{}
 
 // VMInterface Adds support for custom fields and tags.
 type VMInterface struct {
-	Id int32 `json:"id"`
+	Id int64 `json:"id"`
 	Url string `json:"url"`
 	DisplayUrl string `json:"display_url"`
 	Display string `json:"display"`
@@ -30,7 +30,7 @@ type VMInterface struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Parent NullableNestedVMInterface `json:"parent,omitempty"`
 	Bridge NullableNestedVMInterface `json:"bridge,omitempty"`
-	Mtu NullableInt32 `json:"mtu,omitempty"`
+	Mtu NullableInt64 `json:"mtu,omitempty"`
 	MacAddress NullableString `json:"mac_address,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Mode *InterfaceMode `json:"mode,omitempty"`
@@ -42,8 +42,8 @@ type VMInterface struct {
 	CustomFields *map[string]string `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	CountIpaddresses int32 `json:"count_ipaddresses"`
-	CountFhrpGroups int32 `json:"count_fhrp_groups"`
+	CountIpaddresses int64 `json:"count_ipaddresses"`
+	CountFhrpGroups int64 `json:"count_fhrp_groups"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -53,7 +53,7 @@ type _VMInterface VMInterface
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVMInterface(id int32, url string, displayUrl string, display string, virtualMachine BriefVirtualMachine, name string, l2vpnTermination NullableBriefL2VPNTermination, created NullableTime, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32) *VMInterface {
+func NewVMInterface(id int64, url string, displayUrl string, display string, virtualMachine BriefVirtualMachine, name string, l2vpnTermination NullableBriefL2VPNTermination, created NullableTime, lastUpdated NullableTime, countIpaddresses int64, countFhrpGroups int64) *VMInterface {
 	this := VMInterface{}
 	this.Id = id
 	this.Url = url
@@ -78,9 +78,9 @@ func NewVMInterfaceWithDefaults() *VMInterface {
 }
 
 // GetId returns the Id field value
-func (o *VMInterface) GetId() int32 {
+func (o *VMInterface) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -89,7 +89,7 @@ func (o *VMInterface) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *VMInterface) GetIdOk() (*int32, bool) {
+func (o *VMInterface) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -97,7 +97,7 @@ func (o *VMInterface) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *VMInterface) SetId(v int32) {
+func (o *VMInterface) SetId(v int64) {
 	o.Id = v
 }
 
@@ -338,9 +338,9 @@ func (o *VMInterface) UnsetBridge() {
 }
 
 // GetMtu returns the Mtu field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VMInterface) GetMtu() int32 {
+func (o *VMInterface) GetMtu() int64 {
 	if o == nil || IsNil(o.Mtu.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Mtu.Get()
@@ -349,7 +349,7 @@ func (o *VMInterface) GetMtu() int32 {
 // GetMtuOk returns a tuple with the Mtu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VMInterface) GetMtuOk() (*int32, bool) {
+func (o *VMInterface) GetMtuOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -365,8 +365,8 @@ func (o *VMInterface) HasMtu() bool {
 	return false
 }
 
-// SetMtu gets a reference to the given NullableInt32 and assigns it to the Mtu field.
-func (o *VMInterface) SetMtu(v int32) {
+// SetMtu gets a reference to the given NullableInt64 and assigns it to the Mtu field.
+func (o *VMInterface) SetMtu(v int64) {
 	o.Mtu.Set(&v)
 }
 // SetMtuNil sets the value for Mtu to be an explicit nil
@@ -744,9 +744,9 @@ func (o *VMInterface) SetLastUpdated(v time.Time) {
 }
 
 // GetCountIpaddresses returns the CountIpaddresses field value
-func (o *VMInterface) GetCountIpaddresses() int32 {
+func (o *VMInterface) GetCountIpaddresses() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -755,7 +755,7 @@ func (o *VMInterface) GetCountIpaddresses() int32 {
 
 // GetCountIpaddressesOk returns a tuple with the CountIpaddresses field value
 // and a boolean to check if the value has been set.
-func (o *VMInterface) GetCountIpaddressesOk() (*int32, bool) {
+func (o *VMInterface) GetCountIpaddressesOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -763,14 +763,14 @@ func (o *VMInterface) GetCountIpaddressesOk() (*int32, bool) {
 }
 
 // SetCountIpaddresses sets field value
-func (o *VMInterface) SetCountIpaddresses(v int32) {
+func (o *VMInterface) SetCountIpaddresses(v int64) {
 	o.CountIpaddresses = v
 }
 
 // GetCountFhrpGroups returns the CountFhrpGroups field value
-func (o *VMInterface) GetCountFhrpGroups() int32 {
+func (o *VMInterface) GetCountFhrpGroups() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -779,7 +779,7 @@ func (o *VMInterface) GetCountFhrpGroups() int32 {
 
 // GetCountFhrpGroupsOk returns a tuple with the CountFhrpGroups field value
 // and a boolean to check if the value has been set.
-func (o *VMInterface) GetCountFhrpGroupsOk() (*int32, bool) {
+func (o *VMInterface) GetCountFhrpGroupsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -787,7 +787,7 @@ func (o *VMInterface) GetCountFhrpGroupsOk() (*int32, bool) {
 }
 
 // SetCountFhrpGroups sets field value
-func (o *VMInterface) SetCountFhrpGroups(v int32) {
+func (o *VMInterface) SetCountFhrpGroups(v int64) {
 	o.CountFhrpGroups = v
 }
 

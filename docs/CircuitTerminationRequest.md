@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **TermSide** | [**Termination1**](Termination1.md) |  | 
 **Site** | Pointer to [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
 **ProviderNetwork** | Pointer to [**NullableBriefProviderNetworkRequest**](BriefProviderNetworkRequest.md) |  | [optional] 
-**PortSpeed** | Pointer to **NullableInt32** | Physical circuit speed | [optional] 
-**UpstreamSpeed** | Pointer to **NullableInt32** | Upstream speed, if different from port speed | [optional] 
+**PortSpeed** | Pointer to **NullableInt64** | Physical circuit speed | [optional] 
+**UpstreamSpeed** | Pointer to **NullableInt64** | Upstream speed, if different from port speed | [optional] 
 **XconnectId** | Pointer to **string** | ID of the local cross-connect | [optional] 
 **PpInfo** | Pointer to **string** | Patch panel ID and port number(s) | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -148,20 +148,20 @@ HasProviderNetwork returns a boolean if a field has been set.
 UnsetProviderNetwork ensures that no value is present for ProviderNetwork, not even an explicit nil
 ### GetPortSpeed
 
-`func (o *CircuitTerminationRequest) GetPortSpeed() int32`
+`func (o *CircuitTerminationRequest) GetPortSpeed() int64`
 
 GetPortSpeed returns the PortSpeed field if non-nil, zero value otherwise.
 
 ### GetPortSpeedOk
 
-`func (o *CircuitTerminationRequest) GetPortSpeedOk() (*int32, bool)`
+`func (o *CircuitTerminationRequest) GetPortSpeedOk() (*int64, bool)`
 
 GetPortSpeedOk returns a tuple with the PortSpeed field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPortSpeed
 
-`func (o *CircuitTerminationRequest) SetPortSpeed(v int32)`
+`func (o *CircuitTerminationRequest) SetPortSpeed(v int64)`
 
 SetPortSpeed sets PortSpeed field to given value.
 
@@ -183,20 +183,20 @@ HasPortSpeed returns a boolean if a field has been set.
 UnsetPortSpeed ensures that no value is present for PortSpeed, not even an explicit nil
 ### GetUpstreamSpeed
 
-`func (o *CircuitTerminationRequest) GetUpstreamSpeed() int32`
+`func (o *CircuitTerminationRequest) GetUpstreamSpeed() int64`
 
 GetUpstreamSpeed returns the UpstreamSpeed field if non-nil, zero value otherwise.
 
 ### GetUpstreamSpeedOk
 
-`func (o *CircuitTerminationRequest) GetUpstreamSpeedOk() (*int32, bool)`
+`func (o *CircuitTerminationRequest) GetUpstreamSpeedOk() (*int64, bool)`
 
 GetUpstreamSpeedOk returns a tuple with the UpstreamSpeed field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpstreamSpeed
 
-`func (o *CircuitTerminationRequest) SetUpstreamSpeed(v int32)`
+`func (o *CircuitTerminationRequest) SetUpstreamSpeed(v int64)`
 
 SetUpstreamSpeed sets UpstreamSpeed field to given value.
 

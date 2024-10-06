@@ -22,7 +22,7 @@ type PatchedWritableVLANRequest struct {
 	Site NullableBriefSiteRequest `json:"site,omitempty"`
 	Group NullableBriefVLANGroupRequest `json:"group,omitempty"`
 	// Numeric VLAN ID (1-4094)
-	Vid *int32 `json:"vid,omitempty"`
+	Vid *int64 `json:"vid,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
 	Status *PatchedWritableVLANRequestStatus `json:"status,omitempty"`
@@ -138,9 +138,9 @@ func (o *PatchedWritableVLANRequest) UnsetGroup() {
 }
 
 // GetVid returns the Vid field value if set, zero value otherwise.
-func (o *PatchedWritableVLANRequest) GetVid() int32 {
+func (o *PatchedWritableVLANRequest) GetVid() int64 {
 	if o == nil || IsNil(o.Vid) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Vid
@@ -148,7 +148,7 @@ func (o *PatchedWritableVLANRequest) GetVid() int32 {
 
 // GetVidOk returns a tuple with the Vid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableVLANRequest) GetVidOk() (*int32, bool) {
+func (o *PatchedWritableVLANRequest) GetVidOk() (*int64, bool) {
 	if o == nil || IsNil(o.Vid) {
 		return nil, false
 	}
@@ -164,8 +164,8 @@ func (o *PatchedWritableVLANRequest) HasVid() bool {
 	return false
 }
 
-// SetVid gets a reference to the given int32 and assigns it to the Vid field.
-func (o *PatchedWritableVLANRequest) SetVid(v int32) {
+// SetVid gets a reference to the given int64 and assigns it to the Vid field.
+func (o *PatchedWritableVLANRequest) SetVid(v int64) {
 	o.Vid = &v
 }
 

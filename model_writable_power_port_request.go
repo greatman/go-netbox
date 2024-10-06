@@ -27,9 +27,9 @@ type WritablePowerPortRequest struct {
 	Label *string `json:"label,omitempty"`
 	Type *PatchedWritablePowerPortRequestType `json:"type,omitempty"`
 	// Maximum power draw (watts)
-	MaximumDraw NullableInt32 `json:"maximum_draw,omitempty"`
+	MaximumDraw NullableInt64 `json:"maximum_draw,omitempty"`
 	// Allocated power draw (watts)
-	AllocatedDraw NullableInt32 `json:"allocated_draw,omitempty"`
+	AllocatedDraw NullableInt64 `json:"allocated_draw,omitempty"`
 	Description *string `json:"description,omitempty"`
 	// Treat as if a cable is connected
 	MarkConnected *bool `json:"mark_connected,omitempty"`
@@ -214,9 +214,9 @@ func (o *WritablePowerPortRequest) SetType(v PatchedWritablePowerPortRequestType
 }
 
 // GetMaximumDraw returns the MaximumDraw field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *WritablePowerPortRequest) GetMaximumDraw() int32 {
+func (o *WritablePowerPortRequest) GetMaximumDraw() int64 {
 	if o == nil || IsNil(o.MaximumDraw.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumDraw.Get()
@@ -225,7 +225,7 @@ func (o *WritablePowerPortRequest) GetMaximumDraw() int32 {
 // GetMaximumDrawOk returns a tuple with the MaximumDraw field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *WritablePowerPortRequest) GetMaximumDrawOk() (*int32, bool) {
+func (o *WritablePowerPortRequest) GetMaximumDrawOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -241,8 +241,8 @@ func (o *WritablePowerPortRequest) HasMaximumDraw() bool {
 	return false
 }
 
-// SetMaximumDraw gets a reference to the given NullableInt32 and assigns it to the MaximumDraw field.
-func (o *WritablePowerPortRequest) SetMaximumDraw(v int32) {
+// SetMaximumDraw gets a reference to the given NullableInt64 and assigns it to the MaximumDraw field.
+func (o *WritablePowerPortRequest) SetMaximumDraw(v int64) {
 	o.MaximumDraw.Set(&v)
 }
 // SetMaximumDrawNil sets the value for MaximumDraw to be an explicit nil
@@ -256,9 +256,9 @@ func (o *WritablePowerPortRequest) UnsetMaximumDraw() {
 }
 
 // GetAllocatedDraw returns the AllocatedDraw field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *WritablePowerPortRequest) GetAllocatedDraw() int32 {
+func (o *WritablePowerPortRequest) GetAllocatedDraw() int64 {
 	if o == nil || IsNil(o.AllocatedDraw.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllocatedDraw.Get()
@@ -267,7 +267,7 @@ func (o *WritablePowerPortRequest) GetAllocatedDraw() int32 {
 // GetAllocatedDrawOk returns a tuple with the AllocatedDraw field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *WritablePowerPortRequest) GetAllocatedDrawOk() (*int32, bool) {
+func (o *WritablePowerPortRequest) GetAllocatedDrawOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -283,8 +283,8 @@ func (o *WritablePowerPortRequest) HasAllocatedDraw() bool {
 	return false
 }
 
-// SetAllocatedDraw gets a reference to the given NullableInt32 and assigns it to the AllocatedDraw field.
-func (o *WritablePowerPortRequest) SetAllocatedDraw(v int32) {
+// SetAllocatedDraw gets a reference to the given NullableInt64 and assigns it to the AllocatedDraw field.
+func (o *WritablePowerPortRequest) SetAllocatedDraw(v int64) {
 	o.AllocatedDraw.Set(&v)
 }
 // SetAllocatedDrawNil sets the value for AllocatedDraw to be an explicit nil

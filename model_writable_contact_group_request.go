@@ -22,7 +22,7 @@ var _ MappedNullable = &WritableContactGroupRequest{}
 type WritableContactGroupRequest struct {
 	Name string `json:"name"`
 	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	Parent NullableInt32 `json:"parent"`
+	Parent NullableInt64 `json:"parent"`
 	Description *string `json:"description,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields *map[string]string `json:"custom_fields,omitempty"`
@@ -35,7 +35,7 @@ type _WritableContactGroupRequest WritableContactGroupRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableContactGroupRequest(name string, slug string, parent NullableInt32) *WritableContactGroupRequest {
+func NewWritableContactGroupRequest(name string, slug string, parent NullableInt64) *WritableContactGroupRequest {
 	this := WritableContactGroupRequest{}
 	this.Name = name
 	this.Slug = slug
@@ -100,10 +100,10 @@ func (o *WritableContactGroupRequest) SetSlug(v string) {
 }
 
 // GetParent returns the Parent field value
-// If the value is explicit nil, the zero value for int32 will be returned
-func (o *WritableContactGroupRequest) GetParent() int32 {
+// If the value is explicit nil, the zero value for int64 will be returned
+func (o *WritableContactGroupRequest) GetParent() int64 {
 	if o == nil || o.Parent.Get() == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -113,7 +113,7 @@ func (o *WritableContactGroupRequest) GetParent() int32 {
 // GetParentOk returns a tuple with the Parent field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *WritableContactGroupRequest) GetParentOk() (*int32, bool) {
+func (o *WritableContactGroupRequest) GetParentOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -121,7 +121,7 @@ func (o *WritableContactGroupRequest) GetParentOk() (*int32, bool) {
 }
 
 // SetParent sets field value
-func (o *WritableContactGroupRequest) SetParent(v int32) {
+func (o *WritableContactGroupRequest) SetParent(v int64) {
 	o.Parent.Set(&v)
 }
 

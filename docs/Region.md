@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** |  | [readonly] 
+**Id** | **int64** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **DisplayUrl** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]string** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**SiteCount** | **int32** |  | [readonly] [default to 0]
-**Depth** | **int32** |  | [readonly] 
+**SiteCount** | **int64** |  | [readonly] [default to 0]
+**Depth** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewRegion
 
-`func NewRegion(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, siteCount int32, depth int32, ) *Region`
+`func NewRegion(id int64, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, siteCount int64, depth int64, ) *Region`
 
 NewRegion instantiates a new Region object
 This constructor will assign default values to properties that have it defined,
@@ -40,20 +40,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *Region) GetId() int32`
+`func (o *Region) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *Region) GetIdOk() (*int32, bool)`
+`func (o *Region) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *Region) SetId(v int32)`
+`func (o *Region) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -330,40 +330,40 @@ SetLastUpdated sets LastUpdated field to given value.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetSiteCount
 
-`func (o *Region) GetSiteCount() int32`
+`func (o *Region) GetSiteCount() int64`
 
 GetSiteCount returns the SiteCount field if non-nil, zero value otherwise.
 
 ### GetSiteCountOk
 
-`func (o *Region) GetSiteCountOk() (*int32, bool)`
+`func (o *Region) GetSiteCountOk() (*int64, bool)`
 
 GetSiteCountOk returns a tuple with the SiteCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSiteCount
 
-`func (o *Region) SetSiteCount(v int32)`
+`func (o *Region) SetSiteCount(v int64)`
 
 SetSiteCount sets SiteCount field to given value.
 
 
 ### GetDepth
 
-`func (o *Region) GetDepth() int32`
+`func (o *Region) GetDepth() int64`
 
 GetDepth returns the Depth field if non-nil, zero value otherwise.
 
 ### GetDepthOk
 
-`func (o *Region) GetDepthOk() (*int32, bool)`
+`func (o *Region) GetDepthOk() (*int64, bool)`
 
 GetDepthOk returns a tuple with the Depth field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDepth
 
-`func (o *Region) SetDepth(v int32)`
+`func (o *Region) SetDepth(v int64)`
 
 SetDepth sets Depth field to given value.
 

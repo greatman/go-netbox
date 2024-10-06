@@ -22,1295 +22,12 @@ import (
 )
 
 
-type VpnAPI interface {
-
-	/*
-	VpnIkePoliciesBulkDestroy Method for VpnIkePoliciesBulkDestroy
-
-	Delete a list of IKE policy objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkePoliciesBulkDestroyRequest
-	*/
-	VpnIkePoliciesBulkDestroy(ctx context.Context) ApiVpnIkePoliciesBulkDestroyRequest
-
-	// VpnIkePoliciesBulkDestroyExecute executes the request
-	VpnIkePoliciesBulkDestroyExecute(r ApiVpnIkePoliciesBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnIkePoliciesBulkPartialUpdate Method for VpnIkePoliciesBulkPartialUpdate
-
-	Patch a list of IKE policy objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkePoliciesBulkPartialUpdateRequest
-	*/
-	VpnIkePoliciesBulkPartialUpdate(ctx context.Context) ApiVpnIkePoliciesBulkPartialUpdateRequest
-
-	// VpnIkePoliciesBulkPartialUpdateExecute executes the request
-	//  @return []IKEPolicy
-	VpnIkePoliciesBulkPartialUpdateExecute(r ApiVpnIkePoliciesBulkPartialUpdateRequest) ([]IKEPolicy, *http.Response, error)
-
-	/*
-	VpnIkePoliciesBulkUpdate Method for VpnIkePoliciesBulkUpdate
-
-	Put a list of IKE policy objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkePoliciesBulkUpdateRequest
-	*/
-	VpnIkePoliciesBulkUpdate(ctx context.Context) ApiVpnIkePoliciesBulkUpdateRequest
-
-	// VpnIkePoliciesBulkUpdateExecute executes the request
-	//  @return []IKEPolicy
-	VpnIkePoliciesBulkUpdateExecute(r ApiVpnIkePoliciesBulkUpdateRequest) ([]IKEPolicy, *http.Response, error)
-
-	/*
-	VpnIkePoliciesCreate Method for VpnIkePoliciesCreate
-
-	Post a list of IKE policy objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkePoliciesCreateRequest
-	*/
-	VpnIkePoliciesCreate(ctx context.Context) ApiVpnIkePoliciesCreateRequest
-
-	// VpnIkePoliciesCreateExecute executes the request
-	//  @return IKEPolicy
-	VpnIkePoliciesCreateExecute(r ApiVpnIkePoliciesCreateRequest) (*IKEPolicy, *http.Response, error)
-
-	/*
-	VpnIkePoliciesDestroy Method for VpnIkePoliciesDestroy
-
-	Delete a IKE policy object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE policy.
-	@return ApiVpnIkePoliciesDestroyRequest
-	*/
-	VpnIkePoliciesDestroy(ctx context.Context, id int32) ApiVpnIkePoliciesDestroyRequest
-
-	// VpnIkePoliciesDestroyExecute executes the request
-	VpnIkePoliciesDestroyExecute(r ApiVpnIkePoliciesDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnIkePoliciesList Method for VpnIkePoliciesList
-
-	Get a list of IKE policy objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkePoliciesListRequest
-	*/
-	VpnIkePoliciesList(ctx context.Context) ApiVpnIkePoliciesListRequest
-
-	// VpnIkePoliciesListExecute executes the request
-	//  @return PaginatedIKEPolicyList
-	VpnIkePoliciesListExecute(r ApiVpnIkePoliciesListRequest) (*PaginatedIKEPolicyList, *http.Response, error)
-
-	/*
-	VpnIkePoliciesPartialUpdate Method for VpnIkePoliciesPartialUpdate
-
-	Patch a IKE policy object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE policy.
-	@return ApiVpnIkePoliciesPartialUpdateRequest
-	*/
-	VpnIkePoliciesPartialUpdate(ctx context.Context, id int32) ApiVpnIkePoliciesPartialUpdateRequest
-
-	// VpnIkePoliciesPartialUpdateExecute executes the request
-	//  @return IKEPolicy
-	VpnIkePoliciesPartialUpdateExecute(r ApiVpnIkePoliciesPartialUpdateRequest) (*IKEPolicy, *http.Response, error)
-
-	/*
-	VpnIkePoliciesRetrieve Method for VpnIkePoliciesRetrieve
-
-	Get a IKE policy object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE policy.
-	@return ApiVpnIkePoliciesRetrieveRequest
-	*/
-	VpnIkePoliciesRetrieve(ctx context.Context, id int32) ApiVpnIkePoliciesRetrieveRequest
-
-	// VpnIkePoliciesRetrieveExecute executes the request
-	//  @return IKEPolicy
-	VpnIkePoliciesRetrieveExecute(r ApiVpnIkePoliciesRetrieveRequest) (*IKEPolicy, *http.Response, error)
-
-	/*
-	VpnIkePoliciesUpdate Method for VpnIkePoliciesUpdate
-
-	Put a IKE policy object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE policy.
-	@return ApiVpnIkePoliciesUpdateRequest
-	*/
-	VpnIkePoliciesUpdate(ctx context.Context, id int32) ApiVpnIkePoliciesUpdateRequest
-
-	// VpnIkePoliciesUpdateExecute executes the request
-	//  @return IKEPolicy
-	VpnIkePoliciesUpdateExecute(r ApiVpnIkePoliciesUpdateRequest) (*IKEPolicy, *http.Response, error)
-
-	/*
-	VpnIkeProposalsBulkDestroy Method for VpnIkeProposalsBulkDestroy
-
-	Delete a list of IKE proposal objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkeProposalsBulkDestroyRequest
-	*/
-	VpnIkeProposalsBulkDestroy(ctx context.Context) ApiVpnIkeProposalsBulkDestroyRequest
-
-	// VpnIkeProposalsBulkDestroyExecute executes the request
-	VpnIkeProposalsBulkDestroyExecute(r ApiVpnIkeProposalsBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnIkeProposalsBulkPartialUpdate Method for VpnIkeProposalsBulkPartialUpdate
-
-	Patch a list of IKE proposal objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkeProposalsBulkPartialUpdateRequest
-	*/
-	VpnIkeProposalsBulkPartialUpdate(ctx context.Context) ApiVpnIkeProposalsBulkPartialUpdateRequest
-
-	// VpnIkeProposalsBulkPartialUpdateExecute executes the request
-	//  @return []IKEProposal
-	VpnIkeProposalsBulkPartialUpdateExecute(r ApiVpnIkeProposalsBulkPartialUpdateRequest) ([]IKEProposal, *http.Response, error)
-
-	/*
-	VpnIkeProposalsBulkUpdate Method for VpnIkeProposalsBulkUpdate
-
-	Put a list of IKE proposal objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkeProposalsBulkUpdateRequest
-	*/
-	VpnIkeProposalsBulkUpdate(ctx context.Context) ApiVpnIkeProposalsBulkUpdateRequest
-
-	// VpnIkeProposalsBulkUpdateExecute executes the request
-	//  @return []IKEProposal
-	VpnIkeProposalsBulkUpdateExecute(r ApiVpnIkeProposalsBulkUpdateRequest) ([]IKEProposal, *http.Response, error)
-
-	/*
-	VpnIkeProposalsCreate Method for VpnIkeProposalsCreate
-
-	Post a list of IKE proposal objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkeProposalsCreateRequest
-	*/
-	VpnIkeProposalsCreate(ctx context.Context) ApiVpnIkeProposalsCreateRequest
-
-	// VpnIkeProposalsCreateExecute executes the request
-	//  @return IKEProposal
-	VpnIkeProposalsCreateExecute(r ApiVpnIkeProposalsCreateRequest) (*IKEProposal, *http.Response, error)
-
-	/*
-	VpnIkeProposalsDestroy Method for VpnIkeProposalsDestroy
-
-	Delete a IKE proposal object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE proposal.
-	@return ApiVpnIkeProposalsDestroyRequest
-	*/
-	VpnIkeProposalsDestroy(ctx context.Context, id int32) ApiVpnIkeProposalsDestroyRequest
-
-	// VpnIkeProposalsDestroyExecute executes the request
-	VpnIkeProposalsDestroyExecute(r ApiVpnIkeProposalsDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnIkeProposalsList Method for VpnIkeProposalsList
-
-	Get a list of IKE proposal objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIkeProposalsListRequest
-	*/
-	VpnIkeProposalsList(ctx context.Context) ApiVpnIkeProposalsListRequest
-
-	// VpnIkeProposalsListExecute executes the request
-	//  @return PaginatedIKEProposalList
-	VpnIkeProposalsListExecute(r ApiVpnIkeProposalsListRequest) (*PaginatedIKEProposalList, *http.Response, error)
-
-	/*
-	VpnIkeProposalsPartialUpdate Method for VpnIkeProposalsPartialUpdate
-
-	Patch a IKE proposal object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE proposal.
-	@return ApiVpnIkeProposalsPartialUpdateRequest
-	*/
-	VpnIkeProposalsPartialUpdate(ctx context.Context, id int32) ApiVpnIkeProposalsPartialUpdateRequest
-
-	// VpnIkeProposalsPartialUpdateExecute executes the request
-	//  @return IKEProposal
-	VpnIkeProposalsPartialUpdateExecute(r ApiVpnIkeProposalsPartialUpdateRequest) (*IKEProposal, *http.Response, error)
-
-	/*
-	VpnIkeProposalsRetrieve Method for VpnIkeProposalsRetrieve
-
-	Get a IKE proposal object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE proposal.
-	@return ApiVpnIkeProposalsRetrieveRequest
-	*/
-	VpnIkeProposalsRetrieve(ctx context.Context, id int32) ApiVpnIkeProposalsRetrieveRequest
-
-	// VpnIkeProposalsRetrieveExecute executes the request
-	//  @return IKEProposal
-	VpnIkeProposalsRetrieveExecute(r ApiVpnIkeProposalsRetrieveRequest) (*IKEProposal, *http.Response, error)
-
-	/*
-	VpnIkeProposalsUpdate Method for VpnIkeProposalsUpdate
-
-	Put a IKE proposal object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IKE proposal.
-	@return ApiVpnIkeProposalsUpdateRequest
-	*/
-	VpnIkeProposalsUpdate(ctx context.Context, id int32) ApiVpnIkeProposalsUpdateRequest
-
-	// VpnIkeProposalsUpdateExecute executes the request
-	//  @return IKEProposal
-	VpnIkeProposalsUpdateExecute(r ApiVpnIkeProposalsUpdateRequest) (*IKEProposal, *http.Response, error)
-
-	/*
-	VpnIpsecPoliciesBulkDestroy Method for VpnIpsecPoliciesBulkDestroy
-
-	Delete a list of IPSec policy objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecPoliciesBulkDestroyRequest
-	*/
-	VpnIpsecPoliciesBulkDestroy(ctx context.Context) ApiVpnIpsecPoliciesBulkDestroyRequest
-
-	// VpnIpsecPoliciesBulkDestroyExecute executes the request
-	VpnIpsecPoliciesBulkDestroyExecute(r ApiVpnIpsecPoliciesBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnIpsecPoliciesBulkPartialUpdate Method for VpnIpsecPoliciesBulkPartialUpdate
-
-	Patch a list of IPSec policy objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecPoliciesBulkPartialUpdateRequest
-	*/
-	VpnIpsecPoliciesBulkPartialUpdate(ctx context.Context) ApiVpnIpsecPoliciesBulkPartialUpdateRequest
-
-	// VpnIpsecPoliciesBulkPartialUpdateExecute executes the request
-	//  @return []IPSecPolicy
-	VpnIpsecPoliciesBulkPartialUpdateExecute(r ApiVpnIpsecPoliciesBulkPartialUpdateRequest) ([]IPSecPolicy, *http.Response, error)
-
-	/*
-	VpnIpsecPoliciesBulkUpdate Method for VpnIpsecPoliciesBulkUpdate
-
-	Put a list of IPSec policy objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecPoliciesBulkUpdateRequest
-	*/
-	VpnIpsecPoliciesBulkUpdate(ctx context.Context) ApiVpnIpsecPoliciesBulkUpdateRequest
-
-	// VpnIpsecPoliciesBulkUpdateExecute executes the request
-	//  @return []IPSecPolicy
-	VpnIpsecPoliciesBulkUpdateExecute(r ApiVpnIpsecPoliciesBulkUpdateRequest) ([]IPSecPolicy, *http.Response, error)
-
-	/*
-	VpnIpsecPoliciesCreate Method for VpnIpsecPoliciesCreate
-
-	Post a list of IPSec policy objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecPoliciesCreateRequest
-	*/
-	VpnIpsecPoliciesCreate(ctx context.Context) ApiVpnIpsecPoliciesCreateRequest
-
-	// VpnIpsecPoliciesCreateExecute executes the request
-	//  @return IPSecPolicy
-	VpnIpsecPoliciesCreateExecute(r ApiVpnIpsecPoliciesCreateRequest) (*IPSecPolicy, *http.Response, error)
-
-	/*
-	VpnIpsecPoliciesDestroy Method for VpnIpsecPoliciesDestroy
-
-	Delete a IPSec policy object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec policy.
-	@return ApiVpnIpsecPoliciesDestroyRequest
-	*/
-	VpnIpsecPoliciesDestroy(ctx context.Context, id int32) ApiVpnIpsecPoliciesDestroyRequest
-
-	// VpnIpsecPoliciesDestroyExecute executes the request
-	VpnIpsecPoliciesDestroyExecute(r ApiVpnIpsecPoliciesDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnIpsecPoliciesList Method for VpnIpsecPoliciesList
-
-	Get a list of IPSec policy objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecPoliciesListRequest
-	*/
-	VpnIpsecPoliciesList(ctx context.Context) ApiVpnIpsecPoliciesListRequest
-
-	// VpnIpsecPoliciesListExecute executes the request
-	//  @return PaginatedIPSecPolicyList
-	VpnIpsecPoliciesListExecute(r ApiVpnIpsecPoliciesListRequest) (*PaginatedIPSecPolicyList, *http.Response, error)
-
-	/*
-	VpnIpsecPoliciesPartialUpdate Method for VpnIpsecPoliciesPartialUpdate
-
-	Patch a IPSec policy object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec policy.
-	@return ApiVpnIpsecPoliciesPartialUpdateRequest
-	*/
-	VpnIpsecPoliciesPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecPoliciesPartialUpdateRequest
-
-	// VpnIpsecPoliciesPartialUpdateExecute executes the request
-	//  @return IPSecPolicy
-	VpnIpsecPoliciesPartialUpdateExecute(r ApiVpnIpsecPoliciesPartialUpdateRequest) (*IPSecPolicy, *http.Response, error)
-
-	/*
-	VpnIpsecPoliciesRetrieve Method for VpnIpsecPoliciesRetrieve
-
-	Get a IPSec policy object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec policy.
-	@return ApiVpnIpsecPoliciesRetrieveRequest
-	*/
-	VpnIpsecPoliciesRetrieve(ctx context.Context, id int32) ApiVpnIpsecPoliciesRetrieveRequest
-
-	// VpnIpsecPoliciesRetrieveExecute executes the request
-	//  @return IPSecPolicy
-	VpnIpsecPoliciesRetrieveExecute(r ApiVpnIpsecPoliciesRetrieveRequest) (*IPSecPolicy, *http.Response, error)
-
-	/*
-	VpnIpsecPoliciesUpdate Method for VpnIpsecPoliciesUpdate
-
-	Put a IPSec policy object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec policy.
-	@return ApiVpnIpsecPoliciesUpdateRequest
-	*/
-	VpnIpsecPoliciesUpdate(ctx context.Context, id int32) ApiVpnIpsecPoliciesUpdateRequest
-
-	// VpnIpsecPoliciesUpdateExecute executes the request
-	//  @return IPSecPolicy
-	VpnIpsecPoliciesUpdateExecute(r ApiVpnIpsecPoliciesUpdateRequest) (*IPSecPolicy, *http.Response, error)
-
-	/*
-	VpnIpsecProfilesBulkDestroy Method for VpnIpsecProfilesBulkDestroy
-
-	Delete a list of IPSec profile objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProfilesBulkDestroyRequest
-	*/
-	VpnIpsecProfilesBulkDestroy(ctx context.Context) ApiVpnIpsecProfilesBulkDestroyRequest
-
-	// VpnIpsecProfilesBulkDestroyExecute executes the request
-	VpnIpsecProfilesBulkDestroyExecute(r ApiVpnIpsecProfilesBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnIpsecProfilesBulkPartialUpdate Method for VpnIpsecProfilesBulkPartialUpdate
-
-	Patch a list of IPSec profile objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProfilesBulkPartialUpdateRequest
-	*/
-	VpnIpsecProfilesBulkPartialUpdate(ctx context.Context) ApiVpnIpsecProfilesBulkPartialUpdateRequest
-
-	// VpnIpsecProfilesBulkPartialUpdateExecute executes the request
-	//  @return []IPSecProfile
-	VpnIpsecProfilesBulkPartialUpdateExecute(r ApiVpnIpsecProfilesBulkPartialUpdateRequest) ([]IPSecProfile, *http.Response, error)
-
-	/*
-	VpnIpsecProfilesBulkUpdate Method for VpnIpsecProfilesBulkUpdate
-
-	Put a list of IPSec profile objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProfilesBulkUpdateRequest
-	*/
-	VpnIpsecProfilesBulkUpdate(ctx context.Context) ApiVpnIpsecProfilesBulkUpdateRequest
-
-	// VpnIpsecProfilesBulkUpdateExecute executes the request
-	//  @return []IPSecProfile
-	VpnIpsecProfilesBulkUpdateExecute(r ApiVpnIpsecProfilesBulkUpdateRequest) ([]IPSecProfile, *http.Response, error)
-
-	/*
-	VpnIpsecProfilesCreate Method for VpnIpsecProfilesCreate
-
-	Post a list of IPSec profile objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProfilesCreateRequest
-	*/
-	VpnIpsecProfilesCreate(ctx context.Context) ApiVpnIpsecProfilesCreateRequest
-
-	// VpnIpsecProfilesCreateExecute executes the request
-	//  @return IPSecProfile
-	VpnIpsecProfilesCreateExecute(r ApiVpnIpsecProfilesCreateRequest) (*IPSecProfile, *http.Response, error)
-
-	/*
-	VpnIpsecProfilesDestroy Method for VpnIpsecProfilesDestroy
-
-	Delete a IPSec profile object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec profile.
-	@return ApiVpnIpsecProfilesDestroyRequest
-	*/
-	VpnIpsecProfilesDestroy(ctx context.Context, id int32) ApiVpnIpsecProfilesDestroyRequest
-
-	// VpnIpsecProfilesDestroyExecute executes the request
-	VpnIpsecProfilesDestroyExecute(r ApiVpnIpsecProfilesDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnIpsecProfilesList Method for VpnIpsecProfilesList
-
-	Get a list of IPSec profile objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProfilesListRequest
-	*/
-	VpnIpsecProfilesList(ctx context.Context) ApiVpnIpsecProfilesListRequest
-
-	// VpnIpsecProfilesListExecute executes the request
-	//  @return PaginatedIPSecProfileList
-	VpnIpsecProfilesListExecute(r ApiVpnIpsecProfilesListRequest) (*PaginatedIPSecProfileList, *http.Response, error)
-
-	/*
-	VpnIpsecProfilesPartialUpdate Method for VpnIpsecProfilesPartialUpdate
-
-	Patch a IPSec profile object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec profile.
-	@return ApiVpnIpsecProfilesPartialUpdateRequest
-	*/
-	VpnIpsecProfilesPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecProfilesPartialUpdateRequest
-
-	// VpnIpsecProfilesPartialUpdateExecute executes the request
-	//  @return IPSecProfile
-	VpnIpsecProfilesPartialUpdateExecute(r ApiVpnIpsecProfilesPartialUpdateRequest) (*IPSecProfile, *http.Response, error)
-
-	/*
-	VpnIpsecProfilesRetrieve Method for VpnIpsecProfilesRetrieve
-
-	Get a IPSec profile object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec profile.
-	@return ApiVpnIpsecProfilesRetrieveRequest
-	*/
-	VpnIpsecProfilesRetrieve(ctx context.Context, id int32) ApiVpnIpsecProfilesRetrieveRequest
-
-	// VpnIpsecProfilesRetrieveExecute executes the request
-	//  @return IPSecProfile
-	VpnIpsecProfilesRetrieveExecute(r ApiVpnIpsecProfilesRetrieveRequest) (*IPSecProfile, *http.Response, error)
-
-	/*
-	VpnIpsecProfilesUpdate Method for VpnIpsecProfilesUpdate
-
-	Put a IPSec profile object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec profile.
-	@return ApiVpnIpsecProfilesUpdateRequest
-	*/
-	VpnIpsecProfilesUpdate(ctx context.Context, id int32) ApiVpnIpsecProfilesUpdateRequest
-
-	// VpnIpsecProfilesUpdateExecute executes the request
-	//  @return IPSecProfile
-	VpnIpsecProfilesUpdateExecute(r ApiVpnIpsecProfilesUpdateRequest) (*IPSecProfile, *http.Response, error)
-
-	/*
-	VpnIpsecProposalsBulkDestroy Method for VpnIpsecProposalsBulkDestroy
-
-	Delete a list of IPSec proposal objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProposalsBulkDestroyRequest
-	*/
-	VpnIpsecProposalsBulkDestroy(ctx context.Context) ApiVpnIpsecProposalsBulkDestroyRequest
-
-	// VpnIpsecProposalsBulkDestroyExecute executes the request
-	VpnIpsecProposalsBulkDestroyExecute(r ApiVpnIpsecProposalsBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnIpsecProposalsBulkPartialUpdate Method for VpnIpsecProposalsBulkPartialUpdate
-
-	Patch a list of IPSec proposal objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProposalsBulkPartialUpdateRequest
-	*/
-	VpnIpsecProposalsBulkPartialUpdate(ctx context.Context) ApiVpnIpsecProposalsBulkPartialUpdateRequest
-
-	// VpnIpsecProposalsBulkPartialUpdateExecute executes the request
-	//  @return []IPSecProposal
-	VpnIpsecProposalsBulkPartialUpdateExecute(r ApiVpnIpsecProposalsBulkPartialUpdateRequest) ([]IPSecProposal, *http.Response, error)
-
-	/*
-	VpnIpsecProposalsBulkUpdate Method for VpnIpsecProposalsBulkUpdate
-
-	Put a list of IPSec proposal objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProposalsBulkUpdateRequest
-	*/
-	VpnIpsecProposalsBulkUpdate(ctx context.Context) ApiVpnIpsecProposalsBulkUpdateRequest
-
-	// VpnIpsecProposalsBulkUpdateExecute executes the request
-	//  @return []IPSecProposal
-	VpnIpsecProposalsBulkUpdateExecute(r ApiVpnIpsecProposalsBulkUpdateRequest) ([]IPSecProposal, *http.Response, error)
-
-	/*
-	VpnIpsecProposalsCreate Method for VpnIpsecProposalsCreate
-
-	Post a list of IPSec proposal objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProposalsCreateRequest
-	*/
-	VpnIpsecProposalsCreate(ctx context.Context) ApiVpnIpsecProposalsCreateRequest
-
-	// VpnIpsecProposalsCreateExecute executes the request
-	//  @return IPSecProposal
-	VpnIpsecProposalsCreateExecute(r ApiVpnIpsecProposalsCreateRequest) (*IPSecProposal, *http.Response, error)
-
-	/*
-	VpnIpsecProposalsDestroy Method for VpnIpsecProposalsDestroy
-
-	Delete a IPSec proposal object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec proposal.
-	@return ApiVpnIpsecProposalsDestroyRequest
-	*/
-	VpnIpsecProposalsDestroy(ctx context.Context, id int32) ApiVpnIpsecProposalsDestroyRequest
-
-	// VpnIpsecProposalsDestroyExecute executes the request
-	VpnIpsecProposalsDestroyExecute(r ApiVpnIpsecProposalsDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnIpsecProposalsList Method for VpnIpsecProposalsList
-
-	Get a list of IPSec proposal objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnIpsecProposalsListRequest
-	*/
-	VpnIpsecProposalsList(ctx context.Context) ApiVpnIpsecProposalsListRequest
-
-	// VpnIpsecProposalsListExecute executes the request
-	//  @return PaginatedIPSecProposalList
-	VpnIpsecProposalsListExecute(r ApiVpnIpsecProposalsListRequest) (*PaginatedIPSecProposalList, *http.Response, error)
-
-	/*
-	VpnIpsecProposalsPartialUpdate Method for VpnIpsecProposalsPartialUpdate
-
-	Patch a IPSec proposal object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec proposal.
-	@return ApiVpnIpsecProposalsPartialUpdateRequest
-	*/
-	VpnIpsecProposalsPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecProposalsPartialUpdateRequest
-
-	// VpnIpsecProposalsPartialUpdateExecute executes the request
-	//  @return IPSecProposal
-	VpnIpsecProposalsPartialUpdateExecute(r ApiVpnIpsecProposalsPartialUpdateRequest) (*IPSecProposal, *http.Response, error)
-
-	/*
-	VpnIpsecProposalsRetrieve Method for VpnIpsecProposalsRetrieve
-
-	Get a IPSec proposal object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec proposal.
-	@return ApiVpnIpsecProposalsRetrieveRequest
-	*/
-	VpnIpsecProposalsRetrieve(ctx context.Context, id int32) ApiVpnIpsecProposalsRetrieveRequest
-
-	// VpnIpsecProposalsRetrieveExecute executes the request
-	//  @return IPSecProposal
-	VpnIpsecProposalsRetrieveExecute(r ApiVpnIpsecProposalsRetrieveRequest) (*IPSecProposal, *http.Response, error)
-
-	/*
-	VpnIpsecProposalsUpdate Method for VpnIpsecProposalsUpdate
-
-	Put a IPSec proposal object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this IPSec proposal.
-	@return ApiVpnIpsecProposalsUpdateRequest
-	*/
-	VpnIpsecProposalsUpdate(ctx context.Context, id int32) ApiVpnIpsecProposalsUpdateRequest
-
-	// VpnIpsecProposalsUpdateExecute executes the request
-	//  @return IPSecProposal
-	VpnIpsecProposalsUpdateExecute(r ApiVpnIpsecProposalsUpdateRequest) (*IPSecProposal, *http.Response, error)
-
-	/*
-	VpnL2vpnTerminationsBulkDestroy Method for VpnL2vpnTerminationsBulkDestroy
-
-	Delete a list of L2VPN termination objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnTerminationsBulkDestroyRequest
-	*/
-	VpnL2vpnTerminationsBulkDestroy(ctx context.Context) ApiVpnL2vpnTerminationsBulkDestroyRequest
-
-	// VpnL2vpnTerminationsBulkDestroyExecute executes the request
-	VpnL2vpnTerminationsBulkDestroyExecute(r ApiVpnL2vpnTerminationsBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnL2vpnTerminationsBulkPartialUpdate Method for VpnL2vpnTerminationsBulkPartialUpdate
-
-	Patch a list of L2VPN termination objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnTerminationsBulkPartialUpdateRequest
-	*/
-	VpnL2vpnTerminationsBulkPartialUpdate(ctx context.Context) ApiVpnL2vpnTerminationsBulkPartialUpdateRequest
-
-	// VpnL2vpnTerminationsBulkPartialUpdateExecute executes the request
-	//  @return []L2VPNTermination
-	VpnL2vpnTerminationsBulkPartialUpdateExecute(r ApiVpnL2vpnTerminationsBulkPartialUpdateRequest) ([]L2VPNTermination, *http.Response, error)
-
-	/*
-	VpnL2vpnTerminationsBulkUpdate Method for VpnL2vpnTerminationsBulkUpdate
-
-	Put a list of L2VPN termination objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnTerminationsBulkUpdateRequest
-	*/
-	VpnL2vpnTerminationsBulkUpdate(ctx context.Context) ApiVpnL2vpnTerminationsBulkUpdateRequest
-
-	// VpnL2vpnTerminationsBulkUpdateExecute executes the request
-	//  @return []L2VPNTermination
-	VpnL2vpnTerminationsBulkUpdateExecute(r ApiVpnL2vpnTerminationsBulkUpdateRequest) ([]L2VPNTermination, *http.Response, error)
-
-	/*
-	VpnL2vpnTerminationsCreate Method for VpnL2vpnTerminationsCreate
-
-	Post a list of L2VPN termination objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnTerminationsCreateRequest
-	*/
-	VpnL2vpnTerminationsCreate(ctx context.Context) ApiVpnL2vpnTerminationsCreateRequest
-
-	// VpnL2vpnTerminationsCreateExecute executes the request
-	//  @return L2VPNTermination
-	VpnL2vpnTerminationsCreateExecute(r ApiVpnL2vpnTerminationsCreateRequest) (*L2VPNTermination, *http.Response, error)
-
-	/*
-	VpnL2vpnTerminationsDestroy Method for VpnL2vpnTerminationsDestroy
-
-	Delete a L2VPN termination object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN termination.
-	@return ApiVpnL2vpnTerminationsDestroyRequest
-	*/
-	VpnL2vpnTerminationsDestroy(ctx context.Context, id int32) ApiVpnL2vpnTerminationsDestroyRequest
-
-	// VpnL2vpnTerminationsDestroyExecute executes the request
-	VpnL2vpnTerminationsDestroyExecute(r ApiVpnL2vpnTerminationsDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnL2vpnTerminationsList Method for VpnL2vpnTerminationsList
-
-	Get a list of L2VPN termination objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnTerminationsListRequest
-	*/
-	VpnL2vpnTerminationsList(ctx context.Context) ApiVpnL2vpnTerminationsListRequest
-
-	// VpnL2vpnTerminationsListExecute executes the request
-	//  @return PaginatedL2VPNTerminationList
-	VpnL2vpnTerminationsListExecute(r ApiVpnL2vpnTerminationsListRequest) (*PaginatedL2VPNTerminationList, *http.Response, error)
-
-	/*
-	VpnL2vpnTerminationsPartialUpdate Method for VpnL2vpnTerminationsPartialUpdate
-
-	Patch a L2VPN termination object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN termination.
-	@return ApiVpnL2vpnTerminationsPartialUpdateRequest
-	*/
-	VpnL2vpnTerminationsPartialUpdate(ctx context.Context, id int32) ApiVpnL2vpnTerminationsPartialUpdateRequest
-
-	// VpnL2vpnTerminationsPartialUpdateExecute executes the request
-	//  @return L2VPNTermination
-	VpnL2vpnTerminationsPartialUpdateExecute(r ApiVpnL2vpnTerminationsPartialUpdateRequest) (*L2VPNTermination, *http.Response, error)
-
-	/*
-	VpnL2vpnTerminationsRetrieve Method for VpnL2vpnTerminationsRetrieve
-
-	Get a L2VPN termination object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN termination.
-	@return ApiVpnL2vpnTerminationsRetrieveRequest
-	*/
-	VpnL2vpnTerminationsRetrieve(ctx context.Context, id int32) ApiVpnL2vpnTerminationsRetrieveRequest
-
-	// VpnL2vpnTerminationsRetrieveExecute executes the request
-	//  @return L2VPNTermination
-	VpnL2vpnTerminationsRetrieveExecute(r ApiVpnL2vpnTerminationsRetrieveRequest) (*L2VPNTermination, *http.Response, error)
-
-	/*
-	VpnL2vpnTerminationsUpdate Method for VpnL2vpnTerminationsUpdate
-
-	Put a L2VPN termination object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN termination.
-	@return ApiVpnL2vpnTerminationsUpdateRequest
-	*/
-	VpnL2vpnTerminationsUpdate(ctx context.Context, id int32) ApiVpnL2vpnTerminationsUpdateRequest
-
-	// VpnL2vpnTerminationsUpdateExecute executes the request
-	//  @return L2VPNTermination
-	VpnL2vpnTerminationsUpdateExecute(r ApiVpnL2vpnTerminationsUpdateRequest) (*L2VPNTermination, *http.Response, error)
-
-	/*
-	VpnL2vpnsBulkDestroy Method for VpnL2vpnsBulkDestroy
-
-	Delete a list of L2VPN objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnsBulkDestroyRequest
-	*/
-	VpnL2vpnsBulkDestroy(ctx context.Context) ApiVpnL2vpnsBulkDestroyRequest
-
-	// VpnL2vpnsBulkDestroyExecute executes the request
-	VpnL2vpnsBulkDestroyExecute(r ApiVpnL2vpnsBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnL2vpnsBulkPartialUpdate Method for VpnL2vpnsBulkPartialUpdate
-
-	Patch a list of L2VPN objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnsBulkPartialUpdateRequest
-	*/
-	VpnL2vpnsBulkPartialUpdate(ctx context.Context) ApiVpnL2vpnsBulkPartialUpdateRequest
-
-	// VpnL2vpnsBulkPartialUpdateExecute executes the request
-	//  @return []L2VPN
-	VpnL2vpnsBulkPartialUpdateExecute(r ApiVpnL2vpnsBulkPartialUpdateRequest) ([]L2VPN, *http.Response, error)
-
-	/*
-	VpnL2vpnsBulkUpdate Method for VpnL2vpnsBulkUpdate
-
-	Put a list of L2VPN objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnsBulkUpdateRequest
-	*/
-	VpnL2vpnsBulkUpdate(ctx context.Context) ApiVpnL2vpnsBulkUpdateRequest
-
-	// VpnL2vpnsBulkUpdateExecute executes the request
-	//  @return []L2VPN
-	VpnL2vpnsBulkUpdateExecute(r ApiVpnL2vpnsBulkUpdateRequest) ([]L2VPN, *http.Response, error)
-
-	/*
-	VpnL2vpnsCreate Method for VpnL2vpnsCreate
-
-	Post a list of L2VPN objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnsCreateRequest
-	*/
-	VpnL2vpnsCreate(ctx context.Context) ApiVpnL2vpnsCreateRequest
-
-	// VpnL2vpnsCreateExecute executes the request
-	//  @return L2VPN
-	VpnL2vpnsCreateExecute(r ApiVpnL2vpnsCreateRequest) (*L2VPN, *http.Response, error)
-
-	/*
-	VpnL2vpnsDestroy Method for VpnL2vpnsDestroy
-
-	Delete a L2VPN object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN.
-	@return ApiVpnL2vpnsDestroyRequest
-	*/
-	VpnL2vpnsDestroy(ctx context.Context, id int32) ApiVpnL2vpnsDestroyRequest
-
-	// VpnL2vpnsDestroyExecute executes the request
-	VpnL2vpnsDestroyExecute(r ApiVpnL2vpnsDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnL2vpnsList Method for VpnL2vpnsList
-
-	Get a list of L2VPN objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnL2vpnsListRequest
-	*/
-	VpnL2vpnsList(ctx context.Context) ApiVpnL2vpnsListRequest
-
-	// VpnL2vpnsListExecute executes the request
-	//  @return PaginatedL2VPNList
-	VpnL2vpnsListExecute(r ApiVpnL2vpnsListRequest) (*PaginatedL2VPNList, *http.Response, error)
-
-	/*
-	VpnL2vpnsPartialUpdate Method for VpnL2vpnsPartialUpdate
-
-	Patch a L2VPN object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN.
-	@return ApiVpnL2vpnsPartialUpdateRequest
-	*/
-	VpnL2vpnsPartialUpdate(ctx context.Context, id int32) ApiVpnL2vpnsPartialUpdateRequest
-
-	// VpnL2vpnsPartialUpdateExecute executes the request
-	//  @return L2VPN
-	VpnL2vpnsPartialUpdateExecute(r ApiVpnL2vpnsPartialUpdateRequest) (*L2VPN, *http.Response, error)
-
-	/*
-	VpnL2vpnsRetrieve Method for VpnL2vpnsRetrieve
-
-	Get a L2VPN object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN.
-	@return ApiVpnL2vpnsRetrieveRequest
-	*/
-	VpnL2vpnsRetrieve(ctx context.Context, id int32) ApiVpnL2vpnsRetrieveRequest
-
-	// VpnL2vpnsRetrieveExecute executes the request
-	//  @return L2VPN
-	VpnL2vpnsRetrieveExecute(r ApiVpnL2vpnsRetrieveRequest) (*L2VPN, *http.Response, error)
-
-	/*
-	VpnL2vpnsUpdate Method for VpnL2vpnsUpdate
-
-	Put a L2VPN object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this L2VPN.
-	@return ApiVpnL2vpnsUpdateRequest
-	*/
-	VpnL2vpnsUpdate(ctx context.Context, id int32) ApiVpnL2vpnsUpdateRequest
-
-	// VpnL2vpnsUpdateExecute executes the request
-	//  @return L2VPN
-	VpnL2vpnsUpdateExecute(r ApiVpnL2vpnsUpdateRequest) (*L2VPN, *http.Response, error)
-
-	/*
-	VpnTunnelGroupsBulkDestroy Method for VpnTunnelGroupsBulkDestroy
-
-	Delete a list of tunnel group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelGroupsBulkDestroyRequest
-	*/
-	VpnTunnelGroupsBulkDestroy(ctx context.Context) ApiVpnTunnelGroupsBulkDestroyRequest
-
-	// VpnTunnelGroupsBulkDestroyExecute executes the request
-	VpnTunnelGroupsBulkDestroyExecute(r ApiVpnTunnelGroupsBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnTunnelGroupsBulkPartialUpdate Method for VpnTunnelGroupsBulkPartialUpdate
-
-	Patch a list of tunnel group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelGroupsBulkPartialUpdateRequest
-	*/
-	VpnTunnelGroupsBulkPartialUpdate(ctx context.Context) ApiVpnTunnelGroupsBulkPartialUpdateRequest
-
-	// VpnTunnelGroupsBulkPartialUpdateExecute executes the request
-	//  @return []TunnelGroup
-	VpnTunnelGroupsBulkPartialUpdateExecute(r ApiVpnTunnelGroupsBulkPartialUpdateRequest) ([]TunnelGroup, *http.Response, error)
-
-	/*
-	VpnTunnelGroupsBulkUpdate Method for VpnTunnelGroupsBulkUpdate
-
-	Put a list of tunnel group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelGroupsBulkUpdateRequest
-	*/
-	VpnTunnelGroupsBulkUpdate(ctx context.Context) ApiVpnTunnelGroupsBulkUpdateRequest
-
-	// VpnTunnelGroupsBulkUpdateExecute executes the request
-	//  @return []TunnelGroup
-	VpnTunnelGroupsBulkUpdateExecute(r ApiVpnTunnelGroupsBulkUpdateRequest) ([]TunnelGroup, *http.Response, error)
-
-	/*
-	VpnTunnelGroupsCreate Method for VpnTunnelGroupsCreate
-
-	Post a list of tunnel group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelGroupsCreateRequest
-	*/
-	VpnTunnelGroupsCreate(ctx context.Context) ApiVpnTunnelGroupsCreateRequest
-
-	// VpnTunnelGroupsCreateExecute executes the request
-	//  @return TunnelGroup
-	VpnTunnelGroupsCreateExecute(r ApiVpnTunnelGroupsCreateRequest) (*TunnelGroup, *http.Response, error)
-
-	/*
-	VpnTunnelGroupsDestroy Method for VpnTunnelGroupsDestroy
-
-	Delete a tunnel group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel group.
-	@return ApiVpnTunnelGroupsDestroyRequest
-	*/
-	VpnTunnelGroupsDestroy(ctx context.Context, id int32) ApiVpnTunnelGroupsDestroyRequest
-
-	// VpnTunnelGroupsDestroyExecute executes the request
-	VpnTunnelGroupsDestroyExecute(r ApiVpnTunnelGroupsDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnTunnelGroupsList Method for VpnTunnelGroupsList
-
-	Get a list of tunnel group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelGroupsListRequest
-	*/
-	VpnTunnelGroupsList(ctx context.Context) ApiVpnTunnelGroupsListRequest
-
-	// VpnTunnelGroupsListExecute executes the request
-	//  @return PaginatedTunnelGroupList
-	VpnTunnelGroupsListExecute(r ApiVpnTunnelGroupsListRequest) (*PaginatedTunnelGroupList, *http.Response, error)
-
-	/*
-	VpnTunnelGroupsPartialUpdate Method for VpnTunnelGroupsPartialUpdate
-
-	Patch a tunnel group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel group.
-	@return ApiVpnTunnelGroupsPartialUpdateRequest
-	*/
-	VpnTunnelGroupsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelGroupsPartialUpdateRequest
-
-	// VpnTunnelGroupsPartialUpdateExecute executes the request
-	//  @return TunnelGroup
-	VpnTunnelGroupsPartialUpdateExecute(r ApiVpnTunnelGroupsPartialUpdateRequest) (*TunnelGroup, *http.Response, error)
-
-	/*
-	VpnTunnelGroupsRetrieve Method for VpnTunnelGroupsRetrieve
-
-	Get a tunnel group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel group.
-	@return ApiVpnTunnelGroupsRetrieveRequest
-	*/
-	VpnTunnelGroupsRetrieve(ctx context.Context, id int32) ApiVpnTunnelGroupsRetrieveRequest
-
-	// VpnTunnelGroupsRetrieveExecute executes the request
-	//  @return TunnelGroup
-	VpnTunnelGroupsRetrieveExecute(r ApiVpnTunnelGroupsRetrieveRequest) (*TunnelGroup, *http.Response, error)
-
-	/*
-	VpnTunnelGroupsUpdate Method for VpnTunnelGroupsUpdate
-
-	Put a tunnel group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel group.
-	@return ApiVpnTunnelGroupsUpdateRequest
-	*/
-	VpnTunnelGroupsUpdate(ctx context.Context, id int32) ApiVpnTunnelGroupsUpdateRequest
-
-	// VpnTunnelGroupsUpdateExecute executes the request
-	//  @return TunnelGroup
-	VpnTunnelGroupsUpdateExecute(r ApiVpnTunnelGroupsUpdateRequest) (*TunnelGroup, *http.Response, error)
-
-	/*
-	VpnTunnelTerminationsBulkDestroy Method for VpnTunnelTerminationsBulkDestroy
-
-	Delete a list of tunnel termination objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelTerminationsBulkDestroyRequest
-	*/
-	VpnTunnelTerminationsBulkDestroy(ctx context.Context) ApiVpnTunnelTerminationsBulkDestroyRequest
-
-	// VpnTunnelTerminationsBulkDestroyExecute executes the request
-	VpnTunnelTerminationsBulkDestroyExecute(r ApiVpnTunnelTerminationsBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnTunnelTerminationsBulkPartialUpdate Method for VpnTunnelTerminationsBulkPartialUpdate
-
-	Patch a list of tunnel termination objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelTerminationsBulkPartialUpdateRequest
-	*/
-	VpnTunnelTerminationsBulkPartialUpdate(ctx context.Context) ApiVpnTunnelTerminationsBulkPartialUpdateRequest
-
-	// VpnTunnelTerminationsBulkPartialUpdateExecute executes the request
-	//  @return []TunnelTermination
-	VpnTunnelTerminationsBulkPartialUpdateExecute(r ApiVpnTunnelTerminationsBulkPartialUpdateRequest) ([]TunnelTermination, *http.Response, error)
-
-	/*
-	VpnTunnelTerminationsBulkUpdate Method for VpnTunnelTerminationsBulkUpdate
-
-	Put a list of tunnel termination objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelTerminationsBulkUpdateRequest
-	*/
-	VpnTunnelTerminationsBulkUpdate(ctx context.Context) ApiVpnTunnelTerminationsBulkUpdateRequest
-
-	// VpnTunnelTerminationsBulkUpdateExecute executes the request
-	//  @return []TunnelTermination
-	VpnTunnelTerminationsBulkUpdateExecute(r ApiVpnTunnelTerminationsBulkUpdateRequest) ([]TunnelTermination, *http.Response, error)
-
-	/*
-	VpnTunnelTerminationsCreate Method for VpnTunnelTerminationsCreate
-
-	Post a list of tunnel termination objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelTerminationsCreateRequest
-	*/
-	VpnTunnelTerminationsCreate(ctx context.Context) ApiVpnTunnelTerminationsCreateRequest
-
-	// VpnTunnelTerminationsCreateExecute executes the request
-	//  @return TunnelTermination
-	VpnTunnelTerminationsCreateExecute(r ApiVpnTunnelTerminationsCreateRequest) (*TunnelTermination, *http.Response, error)
-
-	/*
-	VpnTunnelTerminationsDestroy Method for VpnTunnelTerminationsDestroy
-
-	Delete a tunnel termination object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel termination.
-	@return ApiVpnTunnelTerminationsDestroyRequest
-	*/
-	VpnTunnelTerminationsDestroy(ctx context.Context, id int32) ApiVpnTunnelTerminationsDestroyRequest
-
-	// VpnTunnelTerminationsDestroyExecute executes the request
-	VpnTunnelTerminationsDestroyExecute(r ApiVpnTunnelTerminationsDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnTunnelTerminationsList Method for VpnTunnelTerminationsList
-
-	Get a list of tunnel termination objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelTerminationsListRequest
-	*/
-	VpnTunnelTerminationsList(ctx context.Context) ApiVpnTunnelTerminationsListRequest
-
-	// VpnTunnelTerminationsListExecute executes the request
-	//  @return PaginatedTunnelTerminationList
-	VpnTunnelTerminationsListExecute(r ApiVpnTunnelTerminationsListRequest) (*PaginatedTunnelTerminationList, *http.Response, error)
-
-	/*
-	VpnTunnelTerminationsPartialUpdate Method for VpnTunnelTerminationsPartialUpdate
-
-	Patch a tunnel termination object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel termination.
-	@return ApiVpnTunnelTerminationsPartialUpdateRequest
-	*/
-	VpnTunnelTerminationsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelTerminationsPartialUpdateRequest
-
-	// VpnTunnelTerminationsPartialUpdateExecute executes the request
-	//  @return TunnelTermination
-	VpnTunnelTerminationsPartialUpdateExecute(r ApiVpnTunnelTerminationsPartialUpdateRequest) (*TunnelTermination, *http.Response, error)
-
-	/*
-	VpnTunnelTerminationsRetrieve Method for VpnTunnelTerminationsRetrieve
-
-	Get a tunnel termination object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel termination.
-	@return ApiVpnTunnelTerminationsRetrieveRequest
-	*/
-	VpnTunnelTerminationsRetrieve(ctx context.Context, id int32) ApiVpnTunnelTerminationsRetrieveRequest
-
-	// VpnTunnelTerminationsRetrieveExecute executes the request
-	//  @return TunnelTermination
-	VpnTunnelTerminationsRetrieveExecute(r ApiVpnTunnelTerminationsRetrieveRequest) (*TunnelTermination, *http.Response, error)
-
-	/*
-	VpnTunnelTerminationsUpdate Method for VpnTunnelTerminationsUpdate
-
-	Put a tunnel termination object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel termination.
-	@return ApiVpnTunnelTerminationsUpdateRequest
-	*/
-	VpnTunnelTerminationsUpdate(ctx context.Context, id int32) ApiVpnTunnelTerminationsUpdateRequest
-
-	// VpnTunnelTerminationsUpdateExecute executes the request
-	//  @return TunnelTermination
-	VpnTunnelTerminationsUpdateExecute(r ApiVpnTunnelTerminationsUpdateRequest) (*TunnelTermination, *http.Response, error)
-
-	/*
-	VpnTunnelsBulkDestroy Method for VpnTunnelsBulkDestroy
-
-	Delete a list of tunnel objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelsBulkDestroyRequest
-	*/
-	VpnTunnelsBulkDestroy(ctx context.Context) ApiVpnTunnelsBulkDestroyRequest
-
-	// VpnTunnelsBulkDestroyExecute executes the request
-	VpnTunnelsBulkDestroyExecute(r ApiVpnTunnelsBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnTunnelsBulkPartialUpdate Method for VpnTunnelsBulkPartialUpdate
-
-	Patch a list of tunnel objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelsBulkPartialUpdateRequest
-	*/
-	VpnTunnelsBulkPartialUpdate(ctx context.Context) ApiVpnTunnelsBulkPartialUpdateRequest
-
-	// VpnTunnelsBulkPartialUpdateExecute executes the request
-	//  @return []Tunnel
-	VpnTunnelsBulkPartialUpdateExecute(r ApiVpnTunnelsBulkPartialUpdateRequest) ([]Tunnel, *http.Response, error)
-
-	/*
-	VpnTunnelsBulkUpdate Method for VpnTunnelsBulkUpdate
-
-	Put a list of tunnel objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelsBulkUpdateRequest
-	*/
-	VpnTunnelsBulkUpdate(ctx context.Context) ApiVpnTunnelsBulkUpdateRequest
-
-	// VpnTunnelsBulkUpdateExecute executes the request
-	//  @return []Tunnel
-	VpnTunnelsBulkUpdateExecute(r ApiVpnTunnelsBulkUpdateRequest) ([]Tunnel, *http.Response, error)
-
-	/*
-	VpnTunnelsCreate Method for VpnTunnelsCreate
-
-	Post a list of tunnel objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelsCreateRequest
-	*/
-	VpnTunnelsCreate(ctx context.Context) ApiVpnTunnelsCreateRequest
-
-	// VpnTunnelsCreateExecute executes the request
-	//  @return Tunnel
-	VpnTunnelsCreateExecute(r ApiVpnTunnelsCreateRequest) (*Tunnel, *http.Response, error)
-
-	/*
-	VpnTunnelsDestroy Method for VpnTunnelsDestroy
-
-	Delete a tunnel object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel.
-	@return ApiVpnTunnelsDestroyRequest
-	*/
-	VpnTunnelsDestroy(ctx context.Context, id int32) ApiVpnTunnelsDestroyRequest
-
-	// VpnTunnelsDestroyExecute executes the request
-	VpnTunnelsDestroyExecute(r ApiVpnTunnelsDestroyRequest) (*http.Response, error)
-
-	/*
-	VpnTunnelsList Method for VpnTunnelsList
-
-	Get a list of tunnel objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVpnTunnelsListRequest
-	*/
-	VpnTunnelsList(ctx context.Context) ApiVpnTunnelsListRequest
-
-	// VpnTunnelsListExecute executes the request
-	//  @return PaginatedTunnelList
-	VpnTunnelsListExecute(r ApiVpnTunnelsListRequest) (*PaginatedTunnelList, *http.Response, error)
-
-	/*
-	VpnTunnelsPartialUpdate Method for VpnTunnelsPartialUpdate
-
-	Patch a tunnel object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel.
-	@return ApiVpnTunnelsPartialUpdateRequest
-	*/
-	VpnTunnelsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelsPartialUpdateRequest
-
-	// VpnTunnelsPartialUpdateExecute executes the request
-	//  @return Tunnel
-	VpnTunnelsPartialUpdateExecute(r ApiVpnTunnelsPartialUpdateRequest) (*Tunnel, *http.Response, error)
-
-	/*
-	VpnTunnelsRetrieve Method for VpnTunnelsRetrieve
-
-	Get a tunnel object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel.
-	@return ApiVpnTunnelsRetrieveRequest
-	*/
-	VpnTunnelsRetrieve(ctx context.Context, id int32) ApiVpnTunnelsRetrieveRequest
-
-	// VpnTunnelsRetrieveExecute executes the request
-	//  @return Tunnel
-	VpnTunnelsRetrieveExecute(r ApiVpnTunnelsRetrieveRequest) (*Tunnel, *http.Response, error)
-
-	/*
-	VpnTunnelsUpdate Method for VpnTunnelsUpdate
-
-	Put a tunnel object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this tunnel.
-	@return ApiVpnTunnelsUpdateRequest
-	*/
-	VpnTunnelsUpdate(ctx context.Context, id int32) ApiVpnTunnelsUpdateRequest
-
-	// VpnTunnelsUpdateExecute executes the request
-	//  @return Tunnel
-	VpnTunnelsUpdateExecute(r ApiVpnTunnelsUpdateRequest) (*Tunnel, *http.Response, error)
-}
-
 // VpnAPIService VpnAPI service
 type VpnAPIService service
 
 type ApiVpnIkePoliciesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iKEPolicyRequest *[]IKEPolicyRequest
 }
 
@@ -1423,7 +140,7 @@ func (a *VpnAPIService) VpnIkePoliciesBulkDestroyExecute(r ApiVpnIkePoliciesBulk
 
 type ApiVpnIkePoliciesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iKEPolicyRequest *[]IKEPolicyRequest
 }
 
@@ -1547,7 +264,7 @@ func (a *VpnAPIService) VpnIkePoliciesBulkPartialUpdateExecute(r ApiVpnIkePolici
 
 type ApiVpnIkePoliciesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iKEPolicyRequest *[]IKEPolicyRequest
 }
 
@@ -1671,7 +388,7 @@ func (a *VpnAPIService) VpnIkePoliciesBulkUpdateExecute(r ApiVpnIkePoliciesBulkU
 
 type ApiVpnIkePoliciesCreateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	writableIKEPolicyRequest *WritableIKEPolicyRequest
 }
 
@@ -1795,8 +512,8 @@ func (a *VpnAPIService) VpnIkePoliciesCreateExecute(r ApiVpnIkePoliciesCreateReq
 
 type ApiVpnIkePoliciesDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnIkePoliciesDestroyRequest) Execute() (*http.Response, error) {
@@ -1812,7 +529,7 @@ Delete a IKE policy object.
  @param id A unique integer value identifying this IKE policy.
  @return ApiVpnIkePoliciesDestroyRequest
 */
-func (a *VpnAPIService) VpnIkePoliciesDestroy(ctx context.Context, id int32) ApiVpnIkePoliciesDestroyRequest {
+func (a *VpnAPIService) VpnIkePoliciesDestroy(ctx context.Context, id int64) ApiVpnIkePoliciesDestroyRequest {
 	return ApiVpnIkePoliciesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1901,7 +618,7 @@ func (a *VpnAPIService) VpnIkePoliciesDestroyExecute(r ApiVpnIkePoliciesDestroyR
 
 type ApiVpnIkePoliciesListRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -1921,17 +638,17 @@ type ApiVpnIkePoliciesListRequest struct {
 	descriptionNie *[]string
 	descriptionNiew *[]string
 	descriptionNisw *[]string
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	ikeProposal *[]string
 	ikeProposalN *[]string
-	ikeProposalId *[]int32
-	ikeProposalIdN *[]int32
+	ikeProposalId *[]int64
+	ikeProposalIdN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -1939,7 +656,7 @@ type ApiVpnIkePoliciesListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	mode *[]string
 	modeEmpty *bool
 	modeIc *[]VpnIkePoliciesListModeIcParameterInner
@@ -1963,7 +680,7 @@ type ApiVpnIkePoliciesListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	presharedKey *string
 	presharedKeyIc *string
@@ -1979,7 +696,7 @@ type ApiVpnIkePoliciesListRequest struct {
 	tag *[]string
 	tagN *[]string
 	updatedByRequest *string
-	version *[]int32
+	version *[]int64
 	versionIc *[]VpnIkePoliciesListVersionIcParameterInner
 	versionIe *[]VpnIkePoliciesListVersionIcParameterInner
 	versionIew *[]VpnIkePoliciesListVersionIcParameterInner
@@ -2086,7 +803,7 @@ func (r ApiVpnIkePoliciesListRequest) DescriptionNisw(descriptionNisw []string) 
 	return r
 }
 
-func (r ApiVpnIkePoliciesListRequest) Id(id []int32) ApiVpnIkePoliciesListRequest {
+func (r ApiVpnIkePoliciesListRequest) Id(id []int64) ApiVpnIkePoliciesListRequest {
 	r.id = &id
 	return r
 }
@@ -2096,27 +813,27 @@ func (r ApiVpnIkePoliciesListRequest) IdEmpty(idEmpty bool) ApiVpnIkePoliciesLis
 	return r
 }
 
-func (r ApiVpnIkePoliciesListRequest) IdGt(idGt []int32) ApiVpnIkePoliciesListRequest {
+func (r ApiVpnIkePoliciesListRequest) IdGt(idGt []int64) ApiVpnIkePoliciesListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVpnIkePoliciesListRequest) IdGte(idGte []int32) ApiVpnIkePoliciesListRequest {
+func (r ApiVpnIkePoliciesListRequest) IdGte(idGte []int64) ApiVpnIkePoliciesListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVpnIkePoliciesListRequest) IdLt(idLt []int32) ApiVpnIkePoliciesListRequest {
+func (r ApiVpnIkePoliciesListRequest) IdLt(idLt []int64) ApiVpnIkePoliciesListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVpnIkePoliciesListRequest) IdLte(idLte []int32) ApiVpnIkePoliciesListRequest {
+func (r ApiVpnIkePoliciesListRequest) IdLte(idLte []int64) ApiVpnIkePoliciesListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVpnIkePoliciesListRequest) IdN(idN []int32) ApiVpnIkePoliciesListRequest {
+func (r ApiVpnIkePoliciesListRequest) IdN(idN []int64) ApiVpnIkePoliciesListRequest {
 	r.idN = &idN
 	return r
 }
@@ -2131,12 +848,12 @@ func (r ApiVpnIkePoliciesListRequest) IkeProposalN(ikeProposalN []string) ApiVpn
 	return r
 }
 
-func (r ApiVpnIkePoliciesListRequest) IkeProposalId(ikeProposalId []int32) ApiVpnIkePoliciesListRequest {
+func (r ApiVpnIkePoliciesListRequest) IkeProposalId(ikeProposalId []int64) ApiVpnIkePoliciesListRequest {
 	r.ikeProposalId = &ikeProposalId
 	return r
 }
 
-func (r ApiVpnIkePoliciesListRequest) IkeProposalIdN(ikeProposalIdN []int32) ApiVpnIkePoliciesListRequest {
+func (r ApiVpnIkePoliciesListRequest) IkeProposalIdN(ikeProposalIdN []int64) ApiVpnIkePoliciesListRequest {
 	r.ikeProposalIdN = &ikeProposalIdN
 	return r
 }
@@ -2177,7 +894,7 @@ func (r ApiVpnIkePoliciesListRequest) LastUpdatedN(lastUpdatedN []time.Time) Api
 }
 
 // Number of results to return per page.
-func (r ApiVpnIkePoliciesListRequest) Limit(limit int32) ApiVpnIkePoliciesListRequest {
+func (r ApiVpnIkePoliciesListRequest) Limit(limit int64) ApiVpnIkePoliciesListRequest {
 	r.limit = &limit
 	return r
 }
@@ -2307,7 +1024,7 @@ func (r ApiVpnIkePoliciesListRequest) NameNisw(nameNisw []string) ApiVpnIkePolic
 }
 
 // The initial index from which to return the results.
-func (r ApiVpnIkePoliciesListRequest) Offset(offset int32) ApiVpnIkePoliciesListRequest {
+func (r ApiVpnIkePoliciesListRequest) Offset(offset int64) ApiVpnIkePoliciesListRequest {
 	r.offset = &offset
 	return r
 }
@@ -2389,7 +1106,7 @@ func (r ApiVpnIkePoliciesListRequest) UpdatedByRequest(updatedByRequest string) 
 	return r
 }
 
-func (r ApiVpnIkePoliciesListRequest) Version(version []int32) ApiVpnIkePoliciesListRequest {
+func (r ApiVpnIkePoliciesListRequest) Version(version []int64) ApiVpnIkePoliciesListRequest {
 	r.version = &version
 	return r
 }
@@ -3347,8 +2064,8 @@ func (a *VpnAPIService) VpnIkePoliciesListExecute(r ApiVpnIkePoliciesListRequest
 
 type ApiVpnIkePoliciesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	patchedWritableIKEPolicyRequest *PatchedWritableIKEPolicyRequest
 }
 
@@ -3370,7 +2087,7 @@ Patch a IKE policy object.
  @param id A unique integer value identifying this IKE policy.
  @return ApiVpnIkePoliciesPartialUpdateRequest
 */
-func (a *VpnAPIService) VpnIkePoliciesPartialUpdate(ctx context.Context, id int32) ApiVpnIkePoliciesPartialUpdateRequest {
+func (a *VpnAPIService) VpnIkePoliciesPartialUpdate(ctx context.Context, id int64) ApiVpnIkePoliciesPartialUpdateRequest {
 	return ApiVpnIkePoliciesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3472,8 +2189,8 @@ func (a *VpnAPIService) VpnIkePoliciesPartialUpdateExecute(r ApiVpnIkePoliciesPa
 
 type ApiVpnIkePoliciesRetrieveRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnIkePoliciesRetrieveRequest) Execute() (*IKEPolicy, *http.Response, error) {
@@ -3489,7 +2206,7 @@ Get a IKE policy object.
  @param id A unique integer value identifying this IKE policy.
  @return ApiVpnIkePoliciesRetrieveRequest
 */
-func (a *VpnAPIService) VpnIkePoliciesRetrieve(ctx context.Context, id int32) ApiVpnIkePoliciesRetrieveRequest {
+func (a *VpnAPIService) VpnIkePoliciesRetrieve(ctx context.Context, id int64) ApiVpnIkePoliciesRetrieveRequest {
 	return ApiVpnIkePoliciesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3589,8 +2306,8 @@ func (a *VpnAPIService) VpnIkePoliciesRetrieveExecute(r ApiVpnIkePoliciesRetriev
 
 type ApiVpnIkePoliciesUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	writableIKEPolicyRequest *WritableIKEPolicyRequest
 }
 
@@ -3612,7 +2329,7 @@ Put a IKE policy object.
  @param id A unique integer value identifying this IKE policy.
  @return ApiVpnIkePoliciesUpdateRequest
 */
-func (a *VpnAPIService) VpnIkePoliciesUpdate(ctx context.Context, id int32) ApiVpnIkePoliciesUpdateRequest {
+func (a *VpnAPIService) VpnIkePoliciesUpdate(ctx context.Context, id int64) ApiVpnIkePoliciesUpdateRequest {
 	return ApiVpnIkePoliciesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3717,7 +2434,7 @@ func (a *VpnAPIService) VpnIkePoliciesUpdateExecute(r ApiVpnIkePoliciesUpdateReq
 
 type ApiVpnIkeProposalsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iKEProposalRequest *[]IKEProposalRequest
 }
 
@@ -3830,7 +2547,7 @@ func (a *VpnAPIService) VpnIkeProposalsBulkDestroyExecute(r ApiVpnIkeProposalsBu
 
 type ApiVpnIkeProposalsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iKEProposalRequest *[]IKEProposalRequest
 }
 
@@ -3954,7 +2671,7 @@ func (a *VpnAPIService) VpnIkeProposalsBulkPartialUpdateExecute(r ApiVpnIkePropo
 
 type ApiVpnIkeProposalsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iKEProposalRequest *[]IKEProposalRequest
 }
 
@@ -4078,7 +2795,7 @@ func (a *VpnAPIService) VpnIkeProposalsBulkUpdateExecute(r ApiVpnIkeProposalsBul
 
 type ApiVpnIkeProposalsCreateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	writableIKEProposalRequest *WritableIKEProposalRequest
 }
 
@@ -4202,8 +2919,8 @@ func (a *VpnAPIService) VpnIkeProposalsCreateExecute(r ApiVpnIkeProposalsCreateR
 
 type ApiVpnIkeProposalsDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnIkeProposalsDestroyRequest) Execute() (*http.Response, error) {
@@ -4219,7 +2936,7 @@ Delete a IKE proposal object.
  @param id A unique integer value identifying this IKE proposal.
  @return ApiVpnIkeProposalsDestroyRequest
 */
-func (a *VpnAPIService) VpnIkeProposalsDestroy(ctx context.Context, id int32) ApiVpnIkeProposalsDestroyRequest {
+func (a *VpnAPIService) VpnIkeProposalsDestroy(ctx context.Context, id int64) ApiVpnIkeProposalsDestroyRequest {
 	return ApiVpnIkeProposalsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4308,7 +3025,7 @@ func (a *VpnAPIService) VpnIkeProposalsDestroyExecute(r ApiVpnIkeProposalsDestro
 
 type ApiVpnIkeProposalsListRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	authenticationAlgorithm *[]string
 	authenticationAlgorithmEmpty *bool
 	authenticationAlgorithmIc *[]VpnIkeProposalsListAuthenticationAlgorithmIcParameterInner
@@ -4361,7 +3078,7 @@ type ApiVpnIkeProposalsListRequest struct {
 	encryptionAlgorithmNie *[]VpnIkeProposalsListEncryptionAlgorithmIcParameterInner
 	encryptionAlgorithmNiew *[]VpnIkeProposalsListEncryptionAlgorithmIcParameterInner
 	encryptionAlgorithmNisw *[]VpnIkeProposalsListEncryptionAlgorithmIcParameterInner
-	group *[]int32
+	group *[]int64
 	groupIc *[]VpnIkeProposalsListGroupIcParameterInner
 	groupIe *[]VpnIkeProposalsListGroupIcParameterInner
 	groupIew *[]VpnIkeProposalsListGroupIcParameterInner
@@ -4371,17 +3088,17 @@ type ApiVpnIkeProposalsListRequest struct {
 	groupNie *[]VpnIkeProposalsListGroupIcParameterInner
 	groupNiew *[]VpnIkeProposalsListGroupIcParameterInner
 	groupNisw *[]VpnIkeProposalsListGroupIcParameterInner
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	ikePolicy *[]string
 	ikePolicyN *[]string
-	ikePolicyId *[]int32
-	ikePolicyIdN *[]int32
+	ikePolicyId *[]int64
+	ikePolicyIdN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -4389,7 +3106,7 @@ type ApiVpnIkeProposalsListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
 	name *[]string
 	nameEmpty *bool
@@ -4402,16 +3119,16 @@ type ApiVpnIkeProposalsListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	q *string
-	saLifetime *[]int32
+	saLifetime *[]int64
 	saLifetimeEmpty *bool
-	saLifetimeGt *[]int32
-	saLifetimeGte *[]int32
-	saLifetimeLt *[]int32
-	saLifetimeLte *[]int32
-	saLifetimeN *[]int32
+	saLifetimeGt *[]int64
+	saLifetimeGte *[]int64
+	saLifetimeLt *[]int64
+	saLifetimeLte *[]int64
+	saLifetimeN *[]int64
 	tag *[]string
 	tagN *[]string
 	updatedByRequest *string
@@ -4705,7 +3422,7 @@ func (r ApiVpnIkeProposalsListRequest) EncryptionAlgorithmNisw(encryptionAlgorit
 }
 
 // Diffie-Hellman group ID
-func (r ApiVpnIkeProposalsListRequest) Group(group []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) Group(group []int64) ApiVpnIkeProposalsListRequest {
 	r.group = &group
 	return r
 }
@@ -4764,7 +3481,7 @@ func (r ApiVpnIkeProposalsListRequest) GroupNisw(groupNisw []VpnIkeProposalsList
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) Id(id []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) Id(id []int64) ApiVpnIkeProposalsListRequest {
 	r.id = &id
 	return r
 }
@@ -4774,27 +3491,27 @@ func (r ApiVpnIkeProposalsListRequest) IdEmpty(idEmpty bool) ApiVpnIkeProposalsL
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) IdGt(idGt []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) IdGt(idGt []int64) ApiVpnIkeProposalsListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) IdGte(idGte []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) IdGte(idGte []int64) ApiVpnIkeProposalsListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) IdLt(idLt []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) IdLt(idLt []int64) ApiVpnIkeProposalsListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) IdLte(idLte []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) IdLte(idLte []int64) ApiVpnIkeProposalsListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) IdN(idN []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) IdN(idN []int64) ApiVpnIkeProposalsListRequest {
 	r.idN = &idN
 	return r
 }
@@ -4812,13 +3529,13 @@ func (r ApiVpnIkeProposalsListRequest) IkePolicyN(ikePolicyN []string) ApiVpnIke
 }
 
 // IKE policy (ID)
-func (r ApiVpnIkeProposalsListRequest) IkePolicyId(ikePolicyId []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) IkePolicyId(ikePolicyId []int64) ApiVpnIkeProposalsListRequest {
 	r.ikePolicyId = &ikePolicyId
 	return r
 }
 
 // IKE policy (ID)
-func (r ApiVpnIkeProposalsListRequest) IkePolicyIdN(ikePolicyIdN []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) IkePolicyIdN(ikePolicyIdN []int64) ApiVpnIkeProposalsListRequest {
 	r.ikePolicyIdN = &ikePolicyIdN
 	return r
 }
@@ -4859,7 +3576,7 @@ func (r ApiVpnIkeProposalsListRequest) LastUpdatedN(lastUpdatedN []time.Time) Ap
 }
 
 // Number of results to return per page.
-func (r ApiVpnIkeProposalsListRequest) Limit(limit int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) Limit(limit int64) ApiVpnIkeProposalsListRequest {
 	r.limit = &limit
 	return r
 }
@@ -4925,7 +3642,7 @@ func (r ApiVpnIkeProposalsListRequest) NameNisw(nameNisw []string) ApiVpnIkeProp
 }
 
 // The initial index from which to return the results.
-func (r ApiVpnIkeProposalsListRequest) Offset(offset int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) Offset(offset int64) ApiVpnIkeProposalsListRequest {
 	r.offset = &offset
 	return r
 }
@@ -4942,7 +3659,7 @@ func (r ApiVpnIkeProposalsListRequest) Q(q string) ApiVpnIkeProposalsListRequest
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) SaLifetime(saLifetime []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) SaLifetime(saLifetime []int64) ApiVpnIkeProposalsListRequest {
 	r.saLifetime = &saLifetime
 	return r
 }
@@ -4952,27 +3669,27 @@ func (r ApiVpnIkeProposalsListRequest) SaLifetimeEmpty(saLifetimeEmpty bool) Api
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) SaLifetimeGt(saLifetimeGt []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) SaLifetimeGt(saLifetimeGt []int64) ApiVpnIkeProposalsListRequest {
 	r.saLifetimeGt = &saLifetimeGt
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) SaLifetimeGte(saLifetimeGte []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) SaLifetimeGte(saLifetimeGte []int64) ApiVpnIkeProposalsListRequest {
 	r.saLifetimeGte = &saLifetimeGte
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) SaLifetimeLt(saLifetimeLt []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) SaLifetimeLt(saLifetimeLt []int64) ApiVpnIkeProposalsListRequest {
 	r.saLifetimeLt = &saLifetimeLt
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) SaLifetimeLte(saLifetimeLte []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) SaLifetimeLte(saLifetimeLte []int64) ApiVpnIkeProposalsListRequest {
 	r.saLifetimeLte = &saLifetimeLte
 	return r
 }
 
-func (r ApiVpnIkeProposalsListRequest) SaLifetimeN(saLifetimeN []int32) ApiVpnIkeProposalsListRequest {
+func (r ApiVpnIkeProposalsListRequest) SaLifetimeN(saLifetimeN []int64) ApiVpnIkeProposalsListRequest {
 	r.saLifetimeN = &saLifetimeN
 	return r
 }
@@ -6156,8 +4873,8 @@ func (a *VpnAPIService) VpnIkeProposalsListExecute(r ApiVpnIkeProposalsListReque
 
 type ApiVpnIkeProposalsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	patchedWritableIKEProposalRequest *PatchedWritableIKEProposalRequest
 }
 
@@ -6179,7 +4896,7 @@ Patch a IKE proposal object.
  @param id A unique integer value identifying this IKE proposal.
  @return ApiVpnIkeProposalsPartialUpdateRequest
 */
-func (a *VpnAPIService) VpnIkeProposalsPartialUpdate(ctx context.Context, id int32) ApiVpnIkeProposalsPartialUpdateRequest {
+func (a *VpnAPIService) VpnIkeProposalsPartialUpdate(ctx context.Context, id int64) ApiVpnIkeProposalsPartialUpdateRequest {
 	return ApiVpnIkeProposalsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6281,8 +4998,8 @@ func (a *VpnAPIService) VpnIkeProposalsPartialUpdateExecute(r ApiVpnIkeProposals
 
 type ApiVpnIkeProposalsRetrieveRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnIkeProposalsRetrieveRequest) Execute() (*IKEProposal, *http.Response, error) {
@@ -6298,7 +5015,7 @@ Get a IKE proposal object.
  @param id A unique integer value identifying this IKE proposal.
  @return ApiVpnIkeProposalsRetrieveRequest
 */
-func (a *VpnAPIService) VpnIkeProposalsRetrieve(ctx context.Context, id int32) ApiVpnIkeProposalsRetrieveRequest {
+func (a *VpnAPIService) VpnIkeProposalsRetrieve(ctx context.Context, id int64) ApiVpnIkeProposalsRetrieveRequest {
 	return ApiVpnIkeProposalsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6398,8 +5115,8 @@ func (a *VpnAPIService) VpnIkeProposalsRetrieveExecute(r ApiVpnIkeProposalsRetri
 
 type ApiVpnIkeProposalsUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	writableIKEProposalRequest *WritableIKEProposalRequest
 }
 
@@ -6421,7 +5138,7 @@ Put a IKE proposal object.
  @param id A unique integer value identifying this IKE proposal.
  @return ApiVpnIkeProposalsUpdateRequest
 */
-func (a *VpnAPIService) VpnIkeProposalsUpdate(ctx context.Context, id int32) ApiVpnIkeProposalsUpdateRequest {
+func (a *VpnAPIService) VpnIkeProposalsUpdate(ctx context.Context, id int64) ApiVpnIkeProposalsUpdateRequest {
 	return ApiVpnIkeProposalsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6526,7 +5243,7 @@ func (a *VpnAPIService) VpnIkeProposalsUpdateExecute(r ApiVpnIkeProposalsUpdateR
 
 type ApiVpnIpsecPoliciesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iPSecPolicyRequest *[]IPSecPolicyRequest
 }
 
@@ -6639,7 +5356,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesBulkDestroyExecute(r ApiVpnIpsecPolicies
 
 type ApiVpnIpsecPoliciesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iPSecPolicyRequest *[]IPSecPolicyRequest
 }
 
@@ -6763,7 +5480,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesBulkPartialUpdateExecute(r ApiVpnIpsecPo
 
 type ApiVpnIpsecPoliciesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iPSecPolicyRequest *[]IPSecPolicyRequest
 }
 
@@ -6887,7 +5604,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesBulkUpdateExecute(r ApiVpnIpsecPoliciesB
 
 type ApiVpnIpsecPoliciesCreateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	writableIPSecPolicyRequest *WritableIPSecPolicyRequest
 }
 
@@ -7011,8 +5728,8 @@ func (a *VpnAPIService) VpnIpsecPoliciesCreateExecute(r ApiVpnIpsecPoliciesCreat
 
 type ApiVpnIpsecPoliciesDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnIpsecPoliciesDestroyRequest) Execute() (*http.Response, error) {
@@ -7028,7 +5745,7 @@ Delete a IPSec policy object.
  @param id A unique integer value identifying this IPSec policy.
  @return ApiVpnIpsecPoliciesDestroyRequest
 */
-func (a *VpnAPIService) VpnIpsecPoliciesDestroy(ctx context.Context, id int32) ApiVpnIpsecPoliciesDestroyRequest {
+func (a *VpnAPIService) VpnIpsecPoliciesDestroy(ctx context.Context, id int64) ApiVpnIpsecPoliciesDestroyRequest {
 	return ApiVpnIpsecPoliciesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7117,7 +5834,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesDestroyExecute(r ApiVpnIpsecPoliciesDest
 
 type ApiVpnIpsecPoliciesListRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -7137,17 +5854,17 @@ type ApiVpnIpsecPoliciesListRequest struct {
 	descriptionNie *[]string
 	descriptionNiew *[]string
 	descriptionNisw *[]string
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	ipsecProposal *[]string
 	ipsecProposalN *[]string
-	ipsecProposalId *[]int32
-	ipsecProposalIdN *[]int32
+	ipsecProposalId *[]int64
+	ipsecProposalIdN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -7155,7 +5872,7 @@ type ApiVpnIpsecPoliciesListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
 	name *[]string
 	nameEmpty *bool
@@ -7168,9 +5885,9 @@ type ApiVpnIpsecPoliciesListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
-	pfsGroup *[]*int32
+	pfsGroup *[]*int64
 	pfsGroupIc *[]VpnIpsecPoliciesListPfsGroupIcParameterInner
 	pfsGroupIe *[]VpnIpsecPoliciesListPfsGroupIcParameterInner
 	pfsGroupIew *[]VpnIpsecPoliciesListPfsGroupIcParameterInner
@@ -7281,7 +5998,7 @@ func (r ApiVpnIpsecPoliciesListRequest) DescriptionNisw(descriptionNisw []string
 	return r
 }
 
-func (r ApiVpnIpsecPoliciesListRequest) Id(id []int32) ApiVpnIpsecPoliciesListRequest {
+func (r ApiVpnIpsecPoliciesListRequest) Id(id []int64) ApiVpnIpsecPoliciesListRequest {
 	r.id = &id
 	return r
 }
@@ -7291,27 +6008,27 @@ func (r ApiVpnIpsecPoliciesListRequest) IdEmpty(idEmpty bool) ApiVpnIpsecPolicie
 	return r
 }
 
-func (r ApiVpnIpsecPoliciesListRequest) IdGt(idGt []int32) ApiVpnIpsecPoliciesListRequest {
+func (r ApiVpnIpsecPoliciesListRequest) IdGt(idGt []int64) ApiVpnIpsecPoliciesListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVpnIpsecPoliciesListRequest) IdGte(idGte []int32) ApiVpnIpsecPoliciesListRequest {
+func (r ApiVpnIpsecPoliciesListRequest) IdGte(idGte []int64) ApiVpnIpsecPoliciesListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVpnIpsecPoliciesListRequest) IdLt(idLt []int32) ApiVpnIpsecPoliciesListRequest {
+func (r ApiVpnIpsecPoliciesListRequest) IdLt(idLt []int64) ApiVpnIpsecPoliciesListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVpnIpsecPoliciesListRequest) IdLte(idLte []int32) ApiVpnIpsecPoliciesListRequest {
+func (r ApiVpnIpsecPoliciesListRequest) IdLte(idLte []int64) ApiVpnIpsecPoliciesListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVpnIpsecPoliciesListRequest) IdN(idN []int32) ApiVpnIpsecPoliciesListRequest {
+func (r ApiVpnIpsecPoliciesListRequest) IdN(idN []int64) ApiVpnIpsecPoliciesListRequest {
 	r.idN = &idN
 	return r
 }
@@ -7326,12 +6043,12 @@ func (r ApiVpnIpsecPoliciesListRequest) IpsecProposalN(ipsecProposalN []string) 
 	return r
 }
 
-func (r ApiVpnIpsecPoliciesListRequest) IpsecProposalId(ipsecProposalId []int32) ApiVpnIpsecPoliciesListRequest {
+func (r ApiVpnIpsecPoliciesListRequest) IpsecProposalId(ipsecProposalId []int64) ApiVpnIpsecPoliciesListRequest {
 	r.ipsecProposalId = &ipsecProposalId
 	return r
 }
 
-func (r ApiVpnIpsecPoliciesListRequest) IpsecProposalIdN(ipsecProposalIdN []int32) ApiVpnIpsecPoliciesListRequest {
+func (r ApiVpnIpsecPoliciesListRequest) IpsecProposalIdN(ipsecProposalIdN []int64) ApiVpnIpsecPoliciesListRequest {
 	r.ipsecProposalIdN = &ipsecProposalIdN
 	return r
 }
@@ -7372,7 +6089,7 @@ func (r ApiVpnIpsecPoliciesListRequest) LastUpdatedN(lastUpdatedN []time.Time) A
 }
 
 // Number of results to return per page.
-func (r ApiVpnIpsecPoliciesListRequest) Limit(limit int32) ApiVpnIpsecPoliciesListRequest {
+func (r ApiVpnIpsecPoliciesListRequest) Limit(limit int64) ApiVpnIpsecPoliciesListRequest {
 	r.limit = &limit
 	return r
 }
@@ -7438,7 +6155,7 @@ func (r ApiVpnIpsecPoliciesListRequest) NameNisw(nameNisw []string) ApiVpnIpsecP
 }
 
 // The initial index from which to return the results.
-func (r ApiVpnIpsecPoliciesListRequest) Offset(offset int32) ApiVpnIpsecPoliciesListRequest {
+func (r ApiVpnIpsecPoliciesListRequest) Offset(offset int64) ApiVpnIpsecPoliciesListRequest {
 	r.offset = &offset
 	return r
 }
@@ -7450,7 +6167,7 @@ func (r ApiVpnIpsecPoliciesListRequest) Ordering(ordering string) ApiVpnIpsecPol
 }
 
 // Diffie-Hellman group for Perfect Forward Secrecy
-func (r ApiVpnIpsecPoliciesListRequest) PfsGroup(pfsGroup []*int32) ApiVpnIpsecPoliciesListRequest {
+func (r ApiVpnIpsecPoliciesListRequest) PfsGroup(pfsGroup []*int64) ApiVpnIpsecPoliciesListRequest {
 	r.pfsGroup = &pfsGroup
 	return r
 }
@@ -8286,8 +7003,8 @@ func (a *VpnAPIService) VpnIpsecPoliciesListExecute(r ApiVpnIpsecPoliciesListReq
 
 type ApiVpnIpsecPoliciesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	patchedWritableIPSecPolicyRequest *PatchedWritableIPSecPolicyRequest
 }
 
@@ -8309,7 +7026,7 @@ Patch a IPSec policy object.
  @param id A unique integer value identifying this IPSec policy.
  @return ApiVpnIpsecPoliciesPartialUpdateRequest
 */
-func (a *VpnAPIService) VpnIpsecPoliciesPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecPoliciesPartialUpdateRequest {
+func (a *VpnAPIService) VpnIpsecPoliciesPartialUpdate(ctx context.Context, id int64) ApiVpnIpsecPoliciesPartialUpdateRequest {
 	return ApiVpnIpsecPoliciesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8411,8 +7128,8 @@ func (a *VpnAPIService) VpnIpsecPoliciesPartialUpdateExecute(r ApiVpnIpsecPolici
 
 type ApiVpnIpsecPoliciesRetrieveRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnIpsecPoliciesRetrieveRequest) Execute() (*IPSecPolicy, *http.Response, error) {
@@ -8428,7 +7145,7 @@ Get a IPSec policy object.
  @param id A unique integer value identifying this IPSec policy.
  @return ApiVpnIpsecPoliciesRetrieveRequest
 */
-func (a *VpnAPIService) VpnIpsecPoliciesRetrieve(ctx context.Context, id int32) ApiVpnIpsecPoliciesRetrieveRequest {
+func (a *VpnAPIService) VpnIpsecPoliciesRetrieve(ctx context.Context, id int64) ApiVpnIpsecPoliciesRetrieveRequest {
 	return ApiVpnIpsecPoliciesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8528,8 +7245,8 @@ func (a *VpnAPIService) VpnIpsecPoliciesRetrieveExecute(r ApiVpnIpsecPoliciesRet
 
 type ApiVpnIpsecPoliciesUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	writableIPSecPolicyRequest *WritableIPSecPolicyRequest
 }
 
@@ -8551,7 +7268,7 @@ Put a IPSec policy object.
  @param id A unique integer value identifying this IPSec policy.
  @return ApiVpnIpsecPoliciesUpdateRequest
 */
-func (a *VpnAPIService) VpnIpsecPoliciesUpdate(ctx context.Context, id int32) ApiVpnIpsecPoliciesUpdateRequest {
+func (a *VpnAPIService) VpnIpsecPoliciesUpdate(ctx context.Context, id int64) ApiVpnIpsecPoliciesUpdateRequest {
 	return ApiVpnIpsecPoliciesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8656,7 +7373,7 @@ func (a *VpnAPIService) VpnIpsecPoliciesUpdateExecute(r ApiVpnIpsecPoliciesUpdat
 
 type ApiVpnIpsecProfilesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iPSecProfileRequest *[]IPSecProfileRequest
 }
 
@@ -8769,7 +7486,7 @@ func (a *VpnAPIService) VpnIpsecProfilesBulkDestroyExecute(r ApiVpnIpsecProfiles
 
 type ApiVpnIpsecProfilesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iPSecProfileRequest *[]IPSecProfileRequest
 }
 
@@ -8893,7 +7610,7 @@ func (a *VpnAPIService) VpnIpsecProfilesBulkPartialUpdateExecute(r ApiVpnIpsecPr
 
 type ApiVpnIpsecProfilesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iPSecProfileRequest *[]IPSecProfileRequest
 }
 
@@ -9017,7 +7734,7 @@ func (a *VpnAPIService) VpnIpsecProfilesBulkUpdateExecute(r ApiVpnIpsecProfilesB
 
 type ApiVpnIpsecProfilesCreateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	writableIPSecProfileRequest *WritableIPSecProfileRequest
 }
 
@@ -9141,8 +7858,8 @@ func (a *VpnAPIService) VpnIpsecProfilesCreateExecute(r ApiVpnIpsecProfilesCreat
 
 type ApiVpnIpsecProfilesDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnIpsecProfilesDestroyRequest) Execute() (*http.Response, error) {
@@ -9158,7 +7875,7 @@ Delete a IPSec profile object.
  @param id A unique integer value identifying this IPSec profile.
  @return ApiVpnIpsecProfilesDestroyRequest
 */
-func (a *VpnAPIService) VpnIpsecProfilesDestroy(ctx context.Context, id int32) ApiVpnIpsecProfilesDestroyRequest {
+func (a *VpnAPIService) VpnIpsecProfilesDestroy(ctx context.Context, id int64) ApiVpnIpsecProfilesDestroyRequest {
 	return ApiVpnIpsecProfilesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -9247,7 +7964,7 @@ func (a *VpnAPIService) VpnIpsecProfilesDestroyExecute(r ApiVpnIpsecProfilesDest
 
 type ApiVpnIpsecProfilesListRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -9267,21 +7984,21 @@ type ApiVpnIpsecProfilesListRequest struct {
 	descriptionNie *[]string
 	descriptionNiew *[]string
 	descriptionNisw *[]string
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	ikePolicy *[]string
 	ikePolicyN *[]string
-	ikePolicyId *[]int32
-	ikePolicyIdN *[]int32
+	ikePolicyId *[]int64
+	ikePolicyIdN *[]int64
 	ipsecPolicy *[]string
 	ipsecPolicyN *[]string
-	ipsecPolicyId *[]int32
-	ipsecPolicyIdN *[]int32
+	ipsecPolicyId *[]int64
+	ipsecPolicyIdN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -9289,7 +8006,7 @@ type ApiVpnIpsecProfilesListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	mode *[]string
 	modeEmpty *bool
 	modeIc *[]VpnIpsecProfilesListModeIcParameterInner
@@ -9313,7 +8030,7 @@ type ApiVpnIpsecProfilesListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	q *string
 	tag *[]string
@@ -9416,7 +8133,7 @@ func (r ApiVpnIpsecProfilesListRequest) DescriptionNisw(descriptionNisw []string
 	return r
 }
 
-func (r ApiVpnIpsecProfilesListRequest) Id(id []int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) Id(id []int64) ApiVpnIpsecProfilesListRequest {
 	r.id = &id
 	return r
 }
@@ -9426,27 +8143,27 @@ func (r ApiVpnIpsecProfilesListRequest) IdEmpty(idEmpty bool) ApiVpnIpsecProfile
 	return r
 }
 
-func (r ApiVpnIpsecProfilesListRequest) IdGt(idGt []int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) IdGt(idGt []int64) ApiVpnIpsecProfilesListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVpnIpsecProfilesListRequest) IdGte(idGte []int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) IdGte(idGte []int64) ApiVpnIpsecProfilesListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVpnIpsecProfilesListRequest) IdLt(idLt []int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) IdLt(idLt []int64) ApiVpnIpsecProfilesListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVpnIpsecProfilesListRequest) IdLte(idLte []int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) IdLte(idLte []int64) ApiVpnIpsecProfilesListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVpnIpsecProfilesListRequest) IdN(idN []int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) IdN(idN []int64) ApiVpnIpsecProfilesListRequest {
 	r.idN = &idN
 	return r
 }
@@ -9464,13 +8181,13 @@ func (r ApiVpnIpsecProfilesListRequest) IkePolicyN(ikePolicyN []string) ApiVpnIp
 }
 
 // IKE policy (ID)
-func (r ApiVpnIpsecProfilesListRequest) IkePolicyId(ikePolicyId []int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) IkePolicyId(ikePolicyId []int64) ApiVpnIpsecProfilesListRequest {
 	r.ikePolicyId = &ikePolicyId
 	return r
 }
 
 // IKE policy (ID)
-func (r ApiVpnIpsecProfilesListRequest) IkePolicyIdN(ikePolicyIdN []int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) IkePolicyIdN(ikePolicyIdN []int64) ApiVpnIpsecProfilesListRequest {
 	r.ikePolicyIdN = &ikePolicyIdN
 	return r
 }
@@ -9488,13 +8205,13 @@ func (r ApiVpnIpsecProfilesListRequest) IpsecPolicyN(ipsecPolicyN []string) ApiV
 }
 
 // IPSec policy (ID)
-func (r ApiVpnIpsecProfilesListRequest) IpsecPolicyId(ipsecPolicyId []int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) IpsecPolicyId(ipsecPolicyId []int64) ApiVpnIpsecProfilesListRequest {
 	r.ipsecPolicyId = &ipsecPolicyId
 	return r
 }
 
 // IPSec policy (ID)
-func (r ApiVpnIpsecProfilesListRequest) IpsecPolicyIdN(ipsecPolicyIdN []int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) IpsecPolicyIdN(ipsecPolicyIdN []int64) ApiVpnIpsecProfilesListRequest {
 	r.ipsecPolicyIdN = &ipsecPolicyIdN
 	return r
 }
@@ -9535,7 +8252,7 @@ func (r ApiVpnIpsecProfilesListRequest) LastUpdatedN(lastUpdatedN []time.Time) A
 }
 
 // Number of results to return per page.
-func (r ApiVpnIpsecProfilesListRequest) Limit(limit int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) Limit(limit int64) ApiVpnIpsecProfilesListRequest {
 	r.limit = &limit
 	return r
 }
@@ -9665,7 +8382,7 @@ func (r ApiVpnIpsecProfilesListRequest) NameNisw(nameNisw []string) ApiVpnIpsecP
 }
 
 // The initial index from which to return the results.
-func (r ApiVpnIpsecProfilesListRequest) Offset(offset int32) ApiVpnIpsecProfilesListRequest {
+func (r ApiVpnIpsecProfilesListRequest) Offset(offset int64) ApiVpnIpsecProfilesListRequest {
 	r.offset = &offset
 	return r
 }
@@ -10500,8 +9217,8 @@ func (a *VpnAPIService) VpnIpsecProfilesListExecute(r ApiVpnIpsecProfilesListReq
 
 type ApiVpnIpsecProfilesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	patchedWritableIPSecProfileRequest *PatchedWritableIPSecProfileRequest
 }
 
@@ -10523,7 +9240,7 @@ Patch a IPSec profile object.
  @param id A unique integer value identifying this IPSec profile.
  @return ApiVpnIpsecProfilesPartialUpdateRequest
 */
-func (a *VpnAPIService) VpnIpsecProfilesPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecProfilesPartialUpdateRequest {
+func (a *VpnAPIService) VpnIpsecProfilesPartialUpdate(ctx context.Context, id int64) ApiVpnIpsecProfilesPartialUpdateRequest {
 	return ApiVpnIpsecProfilesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10625,8 +9342,8 @@ func (a *VpnAPIService) VpnIpsecProfilesPartialUpdateExecute(r ApiVpnIpsecProfil
 
 type ApiVpnIpsecProfilesRetrieveRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnIpsecProfilesRetrieveRequest) Execute() (*IPSecProfile, *http.Response, error) {
@@ -10642,7 +9359,7 @@ Get a IPSec profile object.
  @param id A unique integer value identifying this IPSec profile.
  @return ApiVpnIpsecProfilesRetrieveRequest
 */
-func (a *VpnAPIService) VpnIpsecProfilesRetrieve(ctx context.Context, id int32) ApiVpnIpsecProfilesRetrieveRequest {
+func (a *VpnAPIService) VpnIpsecProfilesRetrieve(ctx context.Context, id int64) ApiVpnIpsecProfilesRetrieveRequest {
 	return ApiVpnIpsecProfilesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10742,8 +9459,8 @@ func (a *VpnAPIService) VpnIpsecProfilesRetrieveExecute(r ApiVpnIpsecProfilesRet
 
 type ApiVpnIpsecProfilesUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	writableIPSecProfileRequest *WritableIPSecProfileRequest
 }
 
@@ -10765,7 +9482,7 @@ Put a IPSec profile object.
  @param id A unique integer value identifying this IPSec profile.
  @return ApiVpnIpsecProfilesUpdateRequest
 */
-func (a *VpnAPIService) VpnIpsecProfilesUpdate(ctx context.Context, id int32) ApiVpnIpsecProfilesUpdateRequest {
+func (a *VpnAPIService) VpnIpsecProfilesUpdate(ctx context.Context, id int64) ApiVpnIpsecProfilesUpdateRequest {
 	return ApiVpnIpsecProfilesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10870,7 +9587,7 @@ func (a *VpnAPIService) VpnIpsecProfilesUpdateExecute(r ApiVpnIpsecProfilesUpdat
 
 type ApiVpnIpsecProposalsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iPSecProposalRequest *[]IPSecProposalRequest
 }
 
@@ -10983,7 +9700,7 @@ func (a *VpnAPIService) VpnIpsecProposalsBulkDestroyExecute(r ApiVpnIpsecProposa
 
 type ApiVpnIpsecProposalsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iPSecProposalRequest *[]IPSecProposalRequest
 }
 
@@ -11107,7 +9824,7 @@ func (a *VpnAPIService) VpnIpsecProposalsBulkPartialUpdateExecute(r ApiVpnIpsecP
 
 type ApiVpnIpsecProposalsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	iPSecProposalRequest *[]IPSecProposalRequest
 }
 
@@ -11231,7 +9948,7 @@ func (a *VpnAPIService) VpnIpsecProposalsBulkUpdateExecute(r ApiVpnIpsecProposal
 
 type ApiVpnIpsecProposalsCreateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	writableIPSecProposalRequest *WritableIPSecProposalRequest
 }
 
@@ -11355,8 +10072,8 @@ func (a *VpnAPIService) VpnIpsecProposalsCreateExecute(r ApiVpnIpsecProposalsCre
 
 type ApiVpnIpsecProposalsDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnIpsecProposalsDestroyRequest) Execute() (*http.Response, error) {
@@ -11372,7 +10089,7 @@ Delete a IPSec proposal object.
  @param id A unique integer value identifying this IPSec proposal.
  @return ApiVpnIpsecProposalsDestroyRequest
 */
-func (a *VpnAPIService) VpnIpsecProposalsDestroy(ctx context.Context, id int32) ApiVpnIpsecProposalsDestroyRequest {
+func (a *VpnAPIService) VpnIpsecProposalsDestroy(ctx context.Context, id int64) ApiVpnIpsecProposalsDestroyRequest {
 	return ApiVpnIpsecProposalsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -11461,7 +10178,7 @@ func (a *VpnAPIService) VpnIpsecProposalsDestroyExecute(r ApiVpnIpsecProposalsDe
 
 type ApiVpnIpsecProposalsListRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	authenticationAlgorithm *[]string
 	authenticationAlgorithmEmpty *bool
 	authenticationAlgorithmIc *[]Authentication
@@ -11503,17 +10220,17 @@ type ApiVpnIpsecProposalsListRequest struct {
 	encryptionAlgorithmNie *[]Encryption
 	encryptionAlgorithmNiew *[]Encryption
 	encryptionAlgorithmNisw *[]Encryption
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	ipsecPolicy *[]string
 	ipsecPolicyN *[]string
-	ipsecPolicyId *[]int32
-	ipsecPolicyIdN *[]int32
+	ipsecPolicyId *[]int64
+	ipsecPolicyIdN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -11521,7 +10238,7 @@ type ApiVpnIpsecProposalsListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
 	name *[]string
 	nameEmpty *bool
@@ -11534,23 +10251,23 @@ type ApiVpnIpsecProposalsListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	q *string
-	saLifetimeData *[]int32
+	saLifetimeData *[]int64
 	saLifetimeDataEmpty *bool
-	saLifetimeDataGt *[]int32
-	saLifetimeDataGte *[]int32
-	saLifetimeDataLt *[]int32
-	saLifetimeDataLte *[]int32
-	saLifetimeDataN *[]int32
-	saLifetimeSeconds *[]int32
+	saLifetimeDataGt *[]int64
+	saLifetimeDataGte *[]int64
+	saLifetimeDataLt *[]int64
+	saLifetimeDataLte *[]int64
+	saLifetimeDataN *[]int64
+	saLifetimeSeconds *[]int64
 	saLifetimeSecondsEmpty *bool
-	saLifetimeSecondsGt *[]int32
-	saLifetimeSecondsGte *[]int32
-	saLifetimeSecondsLt *[]int32
-	saLifetimeSecondsLte *[]int32
-	saLifetimeSecondsN *[]int32
+	saLifetimeSecondsGt *[]int64
+	saLifetimeSecondsGte *[]int64
+	saLifetimeSecondsLt *[]int64
+	saLifetimeSecondsLte *[]int64
+	saLifetimeSecondsN *[]int64
 	tag *[]string
 	tagN *[]string
 	updatedByRequest *string
@@ -11779,7 +10496,7 @@ func (r ApiVpnIpsecProposalsListRequest) EncryptionAlgorithmNisw(encryptionAlgor
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) Id(id []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) Id(id []int64) ApiVpnIpsecProposalsListRequest {
 	r.id = &id
 	return r
 }
@@ -11789,27 +10506,27 @@ func (r ApiVpnIpsecProposalsListRequest) IdEmpty(idEmpty bool) ApiVpnIpsecPropos
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) IdGt(idGt []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) IdGt(idGt []int64) ApiVpnIpsecProposalsListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) IdGte(idGte []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) IdGte(idGte []int64) ApiVpnIpsecProposalsListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) IdLt(idLt []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) IdLt(idLt []int64) ApiVpnIpsecProposalsListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) IdLte(idLte []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) IdLte(idLte []int64) ApiVpnIpsecProposalsListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) IdN(idN []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) IdN(idN []int64) ApiVpnIpsecProposalsListRequest {
 	r.idN = &idN
 	return r
 }
@@ -11827,13 +10544,13 @@ func (r ApiVpnIpsecProposalsListRequest) IpsecPolicyN(ipsecPolicyN []string) Api
 }
 
 // IPSec policy (ID)
-func (r ApiVpnIpsecProposalsListRequest) IpsecPolicyId(ipsecPolicyId []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) IpsecPolicyId(ipsecPolicyId []int64) ApiVpnIpsecProposalsListRequest {
 	r.ipsecPolicyId = &ipsecPolicyId
 	return r
 }
 
 // IPSec policy (ID)
-func (r ApiVpnIpsecProposalsListRequest) IpsecPolicyIdN(ipsecPolicyIdN []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) IpsecPolicyIdN(ipsecPolicyIdN []int64) ApiVpnIpsecProposalsListRequest {
 	r.ipsecPolicyIdN = &ipsecPolicyIdN
 	return r
 }
@@ -11874,7 +10591,7 @@ func (r ApiVpnIpsecProposalsListRequest) LastUpdatedN(lastUpdatedN []time.Time) 
 }
 
 // Number of results to return per page.
-func (r ApiVpnIpsecProposalsListRequest) Limit(limit int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) Limit(limit int64) ApiVpnIpsecProposalsListRequest {
 	r.limit = &limit
 	return r
 }
@@ -11940,7 +10657,7 @@ func (r ApiVpnIpsecProposalsListRequest) NameNisw(nameNisw []string) ApiVpnIpsec
 }
 
 // The initial index from which to return the results.
-func (r ApiVpnIpsecProposalsListRequest) Offset(offset int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) Offset(offset int64) ApiVpnIpsecProposalsListRequest {
 	r.offset = &offset
 	return r
 }
@@ -11957,7 +10674,7 @@ func (r ApiVpnIpsecProposalsListRequest) Q(q string) ApiVpnIpsecProposalsListReq
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeData(saLifetimeData []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeData(saLifetimeData []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeData = &saLifetimeData
 	return r
 }
@@ -11967,32 +10684,32 @@ func (r ApiVpnIpsecProposalsListRequest) SaLifetimeDataEmpty(saLifetimeDataEmpty
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeDataGt(saLifetimeDataGt []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeDataGt(saLifetimeDataGt []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeDataGt = &saLifetimeDataGt
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeDataGte(saLifetimeDataGte []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeDataGte(saLifetimeDataGte []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeDataGte = &saLifetimeDataGte
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeDataLt(saLifetimeDataLt []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeDataLt(saLifetimeDataLt []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeDataLt = &saLifetimeDataLt
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeDataLte(saLifetimeDataLte []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeDataLte(saLifetimeDataLte []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeDataLte = &saLifetimeDataLte
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeDataN(saLifetimeDataN []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeDataN(saLifetimeDataN []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeDataN = &saLifetimeDataN
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSeconds(saLifetimeSeconds []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSeconds(saLifetimeSeconds []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeSeconds = &saLifetimeSeconds
 	return r
 }
@@ -12002,27 +10719,27 @@ func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSecondsEmpty(saLifetimeSecond
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSecondsGt(saLifetimeSecondsGt []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSecondsGt(saLifetimeSecondsGt []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeSecondsGt = &saLifetimeSecondsGt
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSecondsGte(saLifetimeSecondsGte []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSecondsGte(saLifetimeSecondsGte []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeSecondsGte = &saLifetimeSecondsGte
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSecondsLt(saLifetimeSecondsLt []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSecondsLt(saLifetimeSecondsLt []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeSecondsLt = &saLifetimeSecondsLt
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSecondsLte(saLifetimeSecondsLte []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSecondsLte(saLifetimeSecondsLte []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeSecondsLte = &saLifetimeSecondsLte
 	return r
 }
 
-func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSecondsN(saLifetimeSecondsN []int32) ApiVpnIpsecProposalsListRequest {
+func (r ApiVpnIpsecProposalsListRequest) SaLifetimeSecondsN(saLifetimeSecondsN []int64) ApiVpnIpsecProposalsListRequest {
 	r.saLifetimeSecondsN = &saLifetimeSecondsN
 	return r
 }
@@ -13052,8 +11769,8 @@ func (a *VpnAPIService) VpnIpsecProposalsListExecute(r ApiVpnIpsecProposalsListR
 
 type ApiVpnIpsecProposalsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	patchedWritableIPSecProposalRequest *PatchedWritableIPSecProposalRequest
 }
 
@@ -13075,7 +11792,7 @@ Patch a IPSec proposal object.
  @param id A unique integer value identifying this IPSec proposal.
  @return ApiVpnIpsecProposalsPartialUpdateRequest
 */
-func (a *VpnAPIService) VpnIpsecProposalsPartialUpdate(ctx context.Context, id int32) ApiVpnIpsecProposalsPartialUpdateRequest {
+func (a *VpnAPIService) VpnIpsecProposalsPartialUpdate(ctx context.Context, id int64) ApiVpnIpsecProposalsPartialUpdateRequest {
 	return ApiVpnIpsecProposalsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13177,8 +11894,8 @@ func (a *VpnAPIService) VpnIpsecProposalsPartialUpdateExecute(r ApiVpnIpsecPropo
 
 type ApiVpnIpsecProposalsRetrieveRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnIpsecProposalsRetrieveRequest) Execute() (*IPSecProposal, *http.Response, error) {
@@ -13194,7 +11911,7 @@ Get a IPSec proposal object.
  @param id A unique integer value identifying this IPSec proposal.
  @return ApiVpnIpsecProposalsRetrieveRequest
 */
-func (a *VpnAPIService) VpnIpsecProposalsRetrieve(ctx context.Context, id int32) ApiVpnIpsecProposalsRetrieveRequest {
+func (a *VpnAPIService) VpnIpsecProposalsRetrieve(ctx context.Context, id int64) ApiVpnIpsecProposalsRetrieveRequest {
 	return ApiVpnIpsecProposalsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13294,8 +12011,8 @@ func (a *VpnAPIService) VpnIpsecProposalsRetrieveExecute(r ApiVpnIpsecProposalsR
 
 type ApiVpnIpsecProposalsUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	writableIPSecProposalRequest *WritableIPSecProposalRequest
 }
 
@@ -13317,7 +12034,7 @@ Put a IPSec proposal object.
  @param id A unique integer value identifying this IPSec proposal.
  @return ApiVpnIpsecProposalsUpdateRequest
 */
-func (a *VpnAPIService) VpnIpsecProposalsUpdate(ctx context.Context, id int32) ApiVpnIpsecProposalsUpdateRequest {
+func (a *VpnAPIService) VpnIpsecProposalsUpdate(ctx context.Context, id int64) ApiVpnIpsecProposalsUpdateRequest {
 	return ApiVpnIpsecProposalsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -13422,7 +12139,7 @@ func (a *VpnAPIService) VpnIpsecProposalsUpdateExecute(r ApiVpnIpsecProposalsUpd
 
 type ApiVpnL2vpnTerminationsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -13535,7 +12252,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsBulkDestroyExecute(r ApiVpnL2vpnTerm
 
 type ApiVpnL2vpnTerminationsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -13659,7 +12376,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsBulkPartialUpdateExecute(r ApiVpnL2v
 
 type ApiVpnL2vpnTerminationsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	l2VPNTerminationRequest *[]L2VPNTerminationRequest
 }
 
@@ -13783,7 +12500,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsBulkUpdateExecute(r ApiVpnL2vpnTermi
 
 type ApiVpnL2vpnTerminationsCreateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	l2VPNTerminationRequest *L2VPNTerminationRequest
 }
 
@@ -13907,8 +12624,8 @@ func (a *VpnAPIService) VpnL2vpnTerminationsCreateExecute(r ApiVpnL2vpnTerminati
 
 type ApiVpnL2vpnTerminationsDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnL2vpnTerminationsDestroyRequest) Execute() (*http.Response, error) {
@@ -13924,7 +12641,7 @@ Delete a L2VPN termination object.
  @param id A unique integer value identifying this L2VPN termination.
  @return ApiVpnL2vpnTerminationsDestroyRequest
 */
-func (a *VpnAPIService) VpnL2vpnTerminationsDestroy(ctx context.Context, id int32) ApiVpnL2vpnTerminationsDestroyRequest {
+func (a *VpnAPIService) VpnL2vpnTerminationsDestroy(ctx context.Context, id int64) ApiVpnL2vpnTerminationsDestroyRequest {
 	return ApiVpnL2vpnTerminationsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -14013,14 +12730,14 @@ func (a *VpnAPIService) VpnL2vpnTerminationsDestroyExecute(r ApiVpnL2vpnTerminat
 
 type ApiVpnL2vpnTerminationsListRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	assignedObjectId *[]int32
+	ApiService *VpnAPIService
+	assignedObjectId *[]int64
 	assignedObjectIdEmpty *bool
-	assignedObjectIdGt *[]int32
-	assignedObjectIdGte *[]int32
-	assignedObjectIdLt *[]int32
-	assignedObjectIdLte *[]int32
-	assignedObjectIdN *[]int32
+	assignedObjectIdGt *[]int64
+	assignedObjectIdGte *[]int64
+	assignedObjectIdLt *[]int64
+	assignedObjectIdLte *[]int64
+	assignedObjectIdN *[]int64
 	assignedObjectType *string
 	assignedObjectTypeN *string
 	created *[]time.Time
@@ -14033,23 +12750,23 @@ type ApiVpnL2vpnTerminationsListRequest struct {
 	createdByRequest *string
 	device *[]*string
 	deviceN *[]*string
-	deviceId *[]int32
-	deviceIdN *[]int32
-	id *[]int32
+	deviceId *[]int64
+	deviceIdN *[]int64
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	interface_ *[]string
 	interfaceN *[]string
-	interfaceId *[]int32
-	interfaceIdN *[]int32
+	interfaceId *[]int64
+	interfaceIdN *[]int64
 	l2vpn *[]string
 	l2vpnN *[]string
-	l2vpnId *[]int32
-	l2vpnIdN *[]int32
+	l2vpnId *[]int64
+	l2vpnIdN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -14057,40 +12774,40 @@ type ApiVpnL2vpnTerminationsListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
-	offset *int32
+	offset *int64
 	ordering *string
 	q *string
 	region *[]string
-	regionId *[]int32
+	regionId *[]int64
 	site *[]string
-	siteId *[]int32
+	siteId *[]int64
 	tag *[]string
 	tagN *[]string
 	updatedByRequest *string
 	virtualMachine *[]string
 	virtualMachineN *[]string
-	virtualMachineId *[]int32
-	virtualMachineIdN *[]int32
+	virtualMachineId *[]int64
+	virtualMachineIdN *[]int64
 	vlan *[]string
 	vlanN *[]string
-	vlanId *[]int32
-	vlanIdN *[]int32
-	vlanVid *int32
-	vlanVidEmpty *int32
-	vlanVidGt *int32
-	vlanVidGte *int32
-	vlanVidLt *int32
-	vlanVidLte *int32
-	vlanVidN *int32
+	vlanId *[]int64
+	vlanIdN *[]int64
+	vlanVid *int64
+	vlanVidEmpty *int64
+	vlanVidGt *int64
+	vlanVidGte *int64
+	vlanVidLt *int64
+	vlanVidLte *int64
+	vlanVidN *int64
 	vminterface *[]string
 	vminterfaceN *[]string
-	vminterfaceId *[]int32
-	vminterfaceIdN *[]int32
+	vminterfaceId *[]int64
+	vminterfaceIdN *[]int64
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectId(assignedObjectId []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectId(assignedObjectId []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.assignedObjectId = &assignedObjectId
 	return r
 }
@@ -14100,27 +12817,27 @@ func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectIdEmpty(assignedObject
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectIdGt(assignedObjectIdGt []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectIdGt(assignedObjectIdGt []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.assignedObjectIdGt = &assignedObjectIdGt
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectIdGte(assignedObjectIdGte []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectIdGte(assignedObjectIdGte []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.assignedObjectIdGte = &assignedObjectIdGte
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectIdLt(assignedObjectIdLt []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectIdLt(assignedObjectIdLt []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.assignedObjectIdLt = &assignedObjectIdLt
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectIdLte(assignedObjectIdLte []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectIdLte(assignedObjectIdLte []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.assignedObjectIdLte = &assignedObjectIdLte
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectIdN(assignedObjectIdN []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) AssignedObjectIdN(assignedObjectIdN []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.assignedObjectIdN = &assignedObjectIdN
 	return r
 }
@@ -14188,18 +12905,18 @@ func (r ApiVpnL2vpnTerminationsListRequest) DeviceN(deviceN []*string) ApiVpnL2v
 }
 
 // Device (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) DeviceId(deviceId []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) DeviceId(deviceId []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Device (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) DeviceIdN(deviceIdN []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) DeviceIdN(deviceIdN []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.deviceIdN = &deviceIdN
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) Id(id []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) Id(id []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.id = &id
 	return r
 }
@@ -14209,27 +12926,27 @@ func (r ApiVpnL2vpnTerminationsListRequest) IdEmpty(idEmpty bool) ApiVpnL2vpnTer
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) IdGt(idGt []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) IdGt(idGt []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) IdGte(idGte []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) IdGte(idGte []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) IdLt(idLt []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) IdLt(idLt []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) IdLte(idLte []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) IdLte(idLte []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) IdN(idN []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) IdN(idN []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.idN = &idN
 	return r
 }
@@ -14247,13 +12964,13 @@ func (r ApiVpnL2vpnTerminationsListRequest) InterfaceN(interfaceN []string) ApiV
 }
 
 // Interface (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) InterfaceId(interfaceId []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) InterfaceId(interfaceId []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.interfaceId = &interfaceId
 	return r
 }
 
 // Interface (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) InterfaceIdN(interfaceIdN []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) InterfaceIdN(interfaceIdN []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.interfaceIdN = &interfaceIdN
 	return r
 }
@@ -14271,13 +12988,13 @@ func (r ApiVpnL2vpnTerminationsListRequest) L2vpnN(l2vpnN []string) ApiVpnL2vpnT
 }
 
 // L2VPN (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) L2vpnId(l2vpnId []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) L2vpnId(l2vpnId []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.l2vpnId = &l2vpnId
 	return r
 }
 
 // L2VPN (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) L2vpnIdN(l2vpnIdN []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) L2vpnIdN(l2vpnIdN []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.l2vpnIdN = &l2vpnIdN
 	return r
 }
@@ -14318,7 +13035,7 @@ func (r ApiVpnL2vpnTerminationsListRequest) LastUpdatedN(lastUpdatedN []time.Tim
 }
 
 // Number of results to return per page.
-func (r ApiVpnL2vpnTerminationsListRequest) Limit(limit int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) Limit(limit int64) ApiVpnL2vpnTerminationsListRequest {
 	r.limit = &limit
 	return r
 }
@@ -14329,7 +13046,7 @@ func (r ApiVpnL2vpnTerminationsListRequest) ModifiedByRequest(modifiedByRequest 
 }
 
 // The initial index from which to return the results.
-func (r ApiVpnL2vpnTerminationsListRequest) Offset(offset int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) Offset(offset int64) ApiVpnL2vpnTerminationsListRequest {
 	r.offset = &offset
 	return r
 }
@@ -14351,7 +13068,7 @@ func (r ApiVpnL2vpnTerminationsListRequest) Region(region []string) ApiVpnL2vpnT
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) RegionId(regionId []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) RegionId(regionId []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.regionId = &regionId
 	return r
 }
@@ -14361,7 +13078,7 @@ func (r ApiVpnL2vpnTerminationsListRequest) Site(site []string) ApiVpnL2vpnTermi
 	return r
 }
 
-func (r ApiVpnL2vpnTerminationsListRequest) SiteId(siteId []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) SiteId(siteId []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.siteId = &siteId
 	return r
 }
@@ -14394,13 +13111,13 @@ func (r ApiVpnL2vpnTerminationsListRequest) VirtualMachineN(virtualMachineN []st
 }
 
 // Virtual machine (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) VirtualMachineId(virtualMachineId []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VirtualMachineId(virtualMachineId []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.virtualMachineId = &virtualMachineId
 	return r
 }
 
 // Virtual machine (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) VirtualMachineIdN(virtualMachineIdN []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VirtualMachineIdN(virtualMachineIdN []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.virtualMachineIdN = &virtualMachineIdN
 	return r
 }
@@ -14418,55 +13135,55 @@ func (r ApiVpnL2vpnTerminationsListRequest) VlanN(vlanN []string) ApiVpnL2vpnTer
 }
 
 // VLAN (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) VlanId(vlanId []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VlanId(vlanId []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.vlanId = &vlanId
 	return r
 }
 
 // VLAN (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) VlanIdN(vlanIdN []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VlanIdN(vlanIdN []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.vlanIdN = &vlanIdN
 	return r
 }
 
 // VLAN number (1-4094)
-func (r ApiVpnL2vpnTerminationsListRequest) VlanVid(vlanVid int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VlanVid(vlanVid int64) ApiVpnL2vpnTerminationsListRequest {
 	r.vlanVid = &vlanVid
 	return r
 }
 
 // VLAN number (1-4094)
-func (r ApiVpnL2vpnTerminationsListRequest) VlanVidEmpty(vlanVidEmpty int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VlanVidEmpty(vlanVidEmpty int64) ApiVpnL2vpnTerminationsListRequest {
 	r.vlanVidEmpty = &vlanVidEmpty
 	return r
 }
 
 // VLAN number (1-4094)
-func (r ApiVpnL2vpnTerminationsListRequest) VlanVidGt(vlanVidGt int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VlanVidGt(vlanVidGt int64) ApiVpnL2vpnTerminationsListRequest {
 	r.vlanVidGt = &vlanVidGt
 	return r
 }
 
 // VLAN number (1-4094)
-func (r ApiVpnL2vpnTerminationsListRequest) VlanVidGte(vlanVidGte int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VlanVidGte(vlanVidGte int64) ApiVpnL2vpnTerminationsListRequest {
 	r.vlanVidGte = &vlanVidGte
 	return r
 }
 
 // VLAN number (1-4094)
-func (r ApiVpnL2vpnTerminationsListRequest) VlanVidLt(vlanVidLt int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VlanVidLt(vlanVidLt int64) ApiVpnL2vpnTerminationsListRequest {
 	r.vlanVidLt = &vlanVidLt
 	return r
 }
 
 // VLAN number (1-4094)
-func (r ApiVpnL2vpnTerminationsListRequest) VlanVidLte(vlanVidLte int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VlanVidLte(vlanVidLte int64) ApiVpnL2vpnTerminationsListRequest {
 	r.vlanVidLte = &vlanVidLte
 	return r
 }
 
 // VLAN number (1-4094)
-func (r ApiVpnL2vpnTerminationsListRequest) VlanVidN(vlanVidN int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VlanVidN(vlanVidN int64) ApiVpnL2vpnTerminationsListRequest {
 	r.vlanVidN = &vlanVidN
 	return r
 }
@@ -14484,13 +13201,13 @@ func (r ApiVpnL2vpnTerminationsListRequest) VminterfaceN(vminterfaceN []string) 
 }
 
 // VM Interface (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) VminterfaceId(vminterfaceId []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VminterfaceId(vminterfaceId []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.vminterfaceId = &vminterfaceId
 	return r
 }
 
 // VM Interface (ID)
-func (r ApiVpnL2vpnTerminationsListRequest) VminterfaceIdN(vminterfaceIdN []int32) ApiVpnL2vpnTerminationsListRequest {
+func (r ApiVpnL2vpnTerminationsListRequest) VminterfaceIdN(vminterfaceIdN []int64) ApiVpnL2vpnTerminationsListRequest {
 	r.vminterfaceIdN = &vminterfaceIdN
 	return r
 }
@@ -15275,8 +13992,8 @@ func (a *VpnAPIService) VpnL2vpnTerminationsListExecute(r ApiVpnL2vpnTermination
 
 type ApiVpnL2vpnTerminationsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	patchedL2VPNTerminationRequest *PatchedL2VPNTerminationRequest
 }
 
@@ -15298,7 +14015,7 @@ Patch a L2VPN termination object.
  @param id A unique integer value identifying this L2VPN termination.
  @return ApiVpnL2vpnTerminationsPartialUpdateRequest
 */
-func (a *VpnAPIService) VpnL2vpnTerminationsPartialUpdate(ctx context.Context, id int32) ApiVpnL2vpnTerminationsPartialUpdateRequest {
+func (a *VpnAPIService) VpnL2vpnTerminationsPartialUpdate(ctx context.Context, id int64) ApiVpnL2vpnTerminationsPartialUpdateRequest {
 	return ApiVpnL2vpnTerminationsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15400,8 +14117,8 @@ func (a *VpnAPIService) VpnL2vpnTerminationsPartialUpdateExecute(r ApiVpnL2vpnTe
 
 type ApiVpnL2vpnTerminationsRetrieveRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnL2vpnTerminationsRetrieveRequest) Execute() (*L2VPNTermination, *http.Response, error) {
@@ -15417,7 +14134,7 @@ Get a L2VPN termination object.
  @param id A unique integer value identifying this L2VPN termination.
  @return ApiVpnL2vpnTerminationsRetrieveRequest
 */
-func (a *VpnAPIService) VpnL2vpnTerminationsRetrieve(ctx context.Context, id int32) ApiVpnL2vpnTerminationsRetrieveRequest {
+func (a *VpnAPIService) VpnL2vpnTerminationsRetrieve(ctx context.Context, id int64) ApiVpnL2vpnTerminationsRetrieveRequest {
 	return ApiVpnL2vpnTerminationsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15517,8 +14234,8 @@ func (a *VpnAPIService) VpnL2vpnTerminationsRetrieveExecute(r ApiVpnL2vpnTermina
 
 type ApiVpnL2vpnTerminationsUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	l2VPNTerminationRequest *L2VPNTerminationRequest
 }
 
@@ -15540,7 +14257,7 @@ Put a L2VPN termination object.
  @param id A unique integer value identifying this L2VPN termination.
  @return ApiVpnL2vpnTerminationsUpdateRequest
 */
-func (a *VpnAPIService) VpnL2vpnTerminationsUpdate(ctx context.Context, id int32) ApiVpnL2vpnTerminationsUpdateRequest {
+func (a *VpnAPIService) VpnL2vpnTerminationsUpdate(ctx context.Context, id int64) ApiVpnL2vpnTerminationsUpdateRequest {
 	return ApiVpnL2vpnTerminationsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -15645,7 +14362,7 @@ func (a *VpnAPIService) VpnL2vpnTerminationsUpdateExecute(r ApiVpnL2vpnTerminati
 
 type ApiVpnL2vpnsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -15758,7 +14475,7 @@ func (a *VpnAPIService) VpnL2vpnsBulkDestroyExecute(r ApiVpnL2vpnsBulkDestroyReq
 
 type ApiVpnL2vpnsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -15882,7 +14599,7 @@ func (a *VpnAPIService) VpnL2vpnsBulkPartialUpdateExecute(r ApiVpnL2vpnsBulkPart
 
 type ApiVpnL2vpnsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	l2VPNRequest *[]L2VPNRequest
 }
 
@@ -16006,7 +14723,7 @@ func (a *VpnAPIService) VpnL2vpnsBulkUpdateExecute(r ApiVpnL2vpnsBulkUpdateReque
 
 type ApiVpnL2vpnsCreateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	writableL2VPNRequest *WritableL2VPNRequest
 }
 
@@ -16130,8 +14847,8 @@ func (a *VpnAPIService) VpnL2vpnsCreateExecute(r ApiVpnL2vpnsCreateRequest) (*L2
 
 type ApiVpnL2vpnsDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnL2vpnsDestroyRequest) Execute() (*http.Response, error) {
@@ -16147,7 +14864,7 @@ Delete a L2VPN object.
  @param id A unique integer value identifying this L2VPN.
  @return ApiVpnL2vpnsDestroyRequest
 */
-func (a *VpnAPIService) VpnL2vpnsDestroy(ctx context.Context, id int32) ApiVpnL2vpnsDestroyRequest {
+func (a *VpnAPIService) VpnL2vpnsDestroy(ctx context.Context, id int64) ApiVpnL2vpnsDestroyRequest {
 	return ApiVpnL2vpnsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -16236,7 +14953,7 @@ func (a *VpnAPIService) VpnL2vpnsDestroyExecute(r ApiVpnL2vpnsDestroyRequest) (*
 
 type ApiVpnL2vpnsListRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -16258,26 +14975,26 @@ type ApiVpnL2vpnsListRequest struct {
 	descriptionNisw *[]string
 	exportTarget *[]string
 	exportTargetN *[]string
-	exportTargetId *[]int32
-	exportTargetIdN *[]int32
-	id *[]int32
+	exportTargetId *[]int64
+	exportTargetIdN *[]int64
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	identifier *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
+	identifier *[]int64
 	identifierEmpty *bool
-	identifierGt *[]int32
-	identifierGte *[]int32
-	identifierLt *[]int32
-	identifierLte *[]int32
-	identifierN *[]int32
+	identifierGt *[]int64
+	identifierGte *[]int64
+	identifierLt *[]int64
+	identifierLte *[]int64
+	identifierN *[]int64
 	importTarget *[]string
 	importTargetN *[]string
-	importTargetId *[]int32
-	importTargetIdN *[]int32
+	importTargetId *[]int64
+	importTargetIdN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -16285,7 +15002,7 @@ type ApiVpnL2vpnsListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
 	name *[]string
 	nameEmpty *bool
@@ -16298,7 +15015,7 @@ type ApiVpnL2vpnsListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	q *string
 	slug *[]string
@@ -16320,8 +15037,8 @@ type ApiVpnL2vpnsListRequest struct {
 	tenantGroupN *[]string
 	tenantGroupId *[]string
 	tenantGroupIdN *[]string
-	tenantId *[]*int32
-	tenantIdN *[]*int32
+	tenantId *[]*int64
+	tenantIdN *[]*int64
 	type_ *[]string
 	typeEmpty *bool
 	typeIc *[]VpnL2vpnsListTypeIcParameterInner
@@ -16444,18 +15161,18 @@ func (r ApiVpnL2vpnsListRequest) ExportTargetN(exportTargetN []string) ApiVpnL2v
 }
 
 // Export target
-func (r ApiVpnL2vpnsListRequest) ExportTargetId(exportTargetId []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) ExportTargetId(exportTargetId []int64) ApiVpnL2vpnsListRequest {
 	r.exportTargetId = &exportTargetId
 	return r
 }
 
 // Export target
-func (r ApiVpnL2vpnsListRequest) ExportTargetIdN(exportTargetIdN []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) ExportTargetIdN(exportTargetIdN []int64) ApiVpnL2vpnsListRequest {
 	r.exportTargetIdN = &exportTargetIdN
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) Id(id []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) Id(id []int64) ApiVpnL2vpnsListRequest {
 	r.id = &id
 	return r
 }
@@ -16465,32 +15182,32 @@ func (r ApiVpnL2vpnsListRequest) IdEmpty(idEmpty bool) ApiVpnL2vpnsListRequest {
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) IdGt(idGt []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) IdGt(idGt []int64) ApiVpnL2vpnsListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) IdGte(idGte []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) IdGte(idGte []int64) ApiVpnL2vpnsListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) IdLt(idLt []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) IdLt(idLt []int64) ApiVpnL2vpnsListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) IdLte(idLte []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) IdLte(idLte []int64) ApiVpnL2vpnsListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) IdN(idN []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) IdN(idN []int64) ApiVpnL2vpnsListRequest {
 	r.idN = &idN
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) Identifier(identifier []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) Identifier(identifier []int64) ApiVpnL2vpnsListRequest {
 	r.identifier = &identifier
 	return r
 }
@@ -16500,27 +15217,27 @@ func (r ApiVpnL2vpnsListRequest) IdentifierEmpty(identifierEmpty bool) ApiVpnL2v
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) IdentifierGt(identifierGt []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) IdentifierGt(identifierGt []int64) ApiVpnL2vpnsListRequest {
 	r.identifierGt = &identifierGt
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) IdentifierGte(identifierGte []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) IdentifierGte(identifierGte []int64) ApiVpnL2vpnsListRequest {
 	r.identifierGte = &identifierGte
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) IdentifierLt(identifierLt []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) IdentifierLt(identifierLt []int64) ApiVpnL2vpnsListRequest {
 	r.identifierLt = &identifierLt
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) IdentifierLte(identifierLte []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) IdentifierLte(identifierLte []int64) ApiVpnL2vpnsListRequest {
 	r.identifierLte = &identifierLte
 	return r
 }
 
-func (r ApiVpnL2vpnsListRequest) IdentifierN(identifierN []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) IdentifierN(identifierN []int64) ApiVpnL2vpnsListRequest {
 	r.identifierN = &identifierN
 	return r
 }
@@ -16538,13 +15255,13 @@ func (r ApiVpnL2vpnsListRequest) ImportTargetN(importTargetN []string) ApiVpnL2v
 }
 
 // Import target
-func (r ApiVpnL2vpnsListRequest) ImportTargetId(importTargetId []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) ImportTargetId(importTargetId []int64) ApiVpnL2vpnsListRequest {
 	r.importTargetId = &importTargetId
 	return r
 }
 
 // Import target
-func (r ApiVpnL2vpnsListRequest) ImportTargetIdN(importTargetIdN []int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) ImportTargetIdN(importTargetIdN []int64) ApiVpnL2vpnsListRequest {
 	r.importTargetIdN = &importTargetIdN
 	return r
 }
@@ -16585,7 +15302,7 @@ func (r ApiVpnL2vpnsListRequest) LastUpdatedN(lastUpdatedN []time.Time) ApiVpnL2
 }
 
 // Number of results to return per page.
-func (r ApiVpnL2vpnsListRequest) Limit(limit int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) Limit(limit int64) ApiVpnL2vpnsListRequest {
 	r.limit = &limit
 	return r
 }
@@ -16651,7 +15368,7 @@ func (r ApiVpnL2vpnsListRequest) NameNisw(nameNisw []string) ApiVpnL2vpnsListReq
 }
 
 // The initial index from which to return the results.
-func (r ApiVpnL2vpnsListRequest) Offset(offset int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) Offset(offset int64) ApiVpnL2vpnsListRequest {
 	r.offset = &offset
 	return r
 }
@@ -16766,13 +15483,13 @@ func (r ApiVpnL2vpnsListRequest) TenantGroupIdN(tenantGroupIdN []string) ApiVpnL
 }
 
 // Tenant (ID)
-func (r ApiVpnL2vpnsListRequest) TenantId(tenantId []*int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) TenantId(tenantId []*int64) ApiVpnL2vpnsListRequest {
 	r.tenantId = &tenantId
 	return r
 }
 
 // Tenant (ID)
-func (r ApiVpnL2vpnsListRequest) TenantIdN(tenantIdN []*int32) ApiVpnL2vpnsListRequest {
+func (r ApiVpnL2vpnsListRequest) TenantIdN(tenantIdN []*int64) ApiVpnL2vpnsListRequest {
 	r.tenantIdN = &tenantIdN
 	return r
 }
@@ -17919,8 +16636,8 @@ func (a *VpnAPIService) VpnL2vpnsListExecute(r ApiVpnL2vpnsListRequest) (*Pagina
 
 type ApiVpnL2vpnsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	patchedWritableL2VPNRequest *PatchedWritableL2VPNRequest
 }
 
@@ -17942,7 +16659,7 @@ Patch a L2VPN object.
  @param id A unique integer value identifying this L2VPN.
  @return ApiVpnL2vpnsPartialUpdateRequest
 */
-func (a *VpnAPIService) VpnL2vpnsPartialUpdate(ctx context.Context, id int32) ApiVpnL2vpnsPartialUpdateRequest {
+func (a *VpnAPIService) VpnL2vpnsPartialUpdate(ctx context.Context, id int64) ApiVpnL2vpnsPartialUpdateRequest {
 	return ApiVpnL2vpnsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -18044,8 +16761,8 @@ func (a *VpnAPIService) VpnL2vpnsPartialUpdateExecute(r ApiVpnL2vpnsPartialUpdat
 
 type ApiVpnL2vpnsRetrieveRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnL2vpnsRetrieveRequest) Execute() (*L2VPN, *http.Response, error) {
@@ -18061,7 +16778,7 @@ Get a L2VPN object.
  @param id A unique integer value identifying this L2VPN.
  @return ApiVpnL2vpnsRetrieveRequest
 */
-func (a *VpnAPIService) VpnL2vpnsRetrieve(ctx context.Context, id int32) ApiVpnL2vpnsRetrieveRequest {
+func (a *VpnAPIService) VpnL2vpnsRetrieve(ctx context.Context, id int64) ApiVpnL2vpnsRetrieveRequest {
 	return ApiVpnL2vpnsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -18161,8 +16878,8 @@ func (a *VpnAPIService) VpnL2vpnsRetrieveExecute(r ApiVpnL2vpnsRetrieveRequest) 
 
 type ApiVpnL2vpnsUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	writableL2VPNRequest *WritableL2VPNRequest
 }
 
@@ -18184,7 +16901,7 @@ Put a L2VPN object.
  @param id A unique integer value identifying this L2VPN.
  @return ApiVpnL2vpnsUpdateRequest
 */
-func (a *VpnAPIService) VpnL2vpnsUpdate(ctx context.Context, id int32) ApiVpnL2vpnsUpdateRequest {
+func (a *VpnAPIService) VpnL2vpnsUpdate(ctx context.Context, id int64) ApiVpnL2vpnsUpdateRequest {
 	return ApiVpnL2vpnsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -18289,7 +17006,7 @@ func (a *VpnAPIService) VpnL2vpnsUpdateExecute(r ApiVpnL2vpnsUpdateRequest) (*L2
 
 type ApiVpnTunnelGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	tunnelGroupRequest *[]TunnelGroupRequest
 }
 
@@ -18402,7 +17119,7 @@ func (a *VpnAPIService) VpnTunnelGroupsBulkDestroyExecute(r ApiVpnTunnelGroupsBu
 
 type ApiVpnTunnelGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	tunnelGroupRequest *[]TunnelGroupRequest
 }
 
@@ -18526,7 +17243,7 @@ func (a *VpnAPIService) VpnTunnelGroupsBulkPartialUpdateExecute(r ApiVpnTunnelGr
 
 type ApiVpnTunnelGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	tunnelGroupRequest *[]TunnelGroupRequest
 }
 
@@ -18650,7 +17367,7 @@ func (a *VpnAPIService) VpnTunnelGroupsBulkUpdateExecute(r ApiVpnTunnelGroupsBul
 
 type ApiVpnTunnelGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	tunnelGroupRequest *TunnelGroupRequest
 }
 
@@ -18774,8 +17491,8 @@ func (a *VpnAPIService) VpnTunnelGroupsCreateExecute(r ApiVpnTunnelGroupsCreateR
 
 type ApiVpnTunnelGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnTunnelGroupsDestroyRequest) Execute() (*http.Response, error) {
@@ -18791,7 +17508,7 @@ Delete a tunnel group object.
  @param id A unique integer value identifying this tunnel group.
  @return ApiVpnTunnelGroupsDestroyRequest
 */
-func (a *VpnAPIService) VpnTunnelGroupsDestroy(ctx context.Context, id int32) ApiVpnTunnelGroupsDestroyRequest {
+func (a *VpnAPIService) VpnTunnelGroupsDestroy(ctx context.Context, id int64) ApiVpnTunnelGroupsDestroyRequest {
 	return ApiVpnTunnelGroupsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -18880,7 +17597,7 @@ func (a *VpnAPIService) VpnTunnelGroupsDestroyExecute(r ApiVpnTunnelGroupsDestro
 
 type ApiVpnTunnelGroupsListRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -18900,13 +17617,13 @@ type ApiVpnTunnelGroupsListRequest struct {
 	descriptionNie *[]string
 	descriptionNiew *[]string
 	descriptionNisw *[]string
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -18914,7 +17631,7 @@ type ApiVpnTunnelGroupsListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
 	name *[]string
 	nameEmpty *bool
@@ -18927,7 +17644,7 @@ type ApiVpnTunnelGroupsListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	q *string
 	slug *[]string
@@ -19041,7 +17758,7 @@ func (r ApiVpnTunnelGroupsListRequest) DescriptionNisw(descriptionNisw []string)
 	return r
 }
 
-func (r ApiVpnTunnelGroupsListRequest) Id(id []int32) ApiVpnTunnelGroupsListRequest {
+func (r ApiVpnTunnelGroupsListRequest) Id(id []int64) ApiVpnTunnelGroupsListRequest {
 	r.id = &id
 	return r
 }
@@ -19051,27 +17768,27 @@ func (r ApiVpnTunnelGroupsListRequest) IdEmpty(idEmpty bool) ApiVpnTunnelGroupsL
 	return r
 }
 
-func (r ApiVpnTunnelGroupsListRequest) IdGt(idGt []int32) ApiVpnTunnelGroupsListRequest {
+func (r ApiVpnTunnelGroupsListRequest) IdGt(idGt []int64) ApiVpnTunnelGroupsListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVpnTunnelGroupsListRequest) IdGte(idGte []int32) ApiVpnTunnelGroupsListRequest {
+func (r ApiVpnTunnelGroupsListRequest) IdGte(idGte []int64) ApiVpnTunnelGroupsListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVpnTunnelGroupsListRequest) IdLt(idLt []int32) ApiVpnTunnelGroupsListRequest {
+func (r ApiVpnTunnelGroupsListRequest) IdLt(idLt []int64) ApiVpnTunnelGroupsListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVpnTunnelGroupsListRequest) IdLte(idLte []int32) ApiVpnTunnelGroupsListRequest {
+func (r ApiVpnTunnelGroupsListRequest) IdLte(idLte []int64) ApiVpnTunnelGroupsListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVpnTunnelGroupsListRequest) IdN(idN []int32) ApiVpnTunnelGroupsListRequest {
+func (r ApiVpnTunnelGroupsListRequest) IdN(idN []int64) ApiVpnTunnelGroupsListRequest {
 	r.idN = &idN
 	return r
 }
@@ -19112,7 +17829,7 @@ func (r ApiVpnTunnelGroupsListRequest) LastUpdatedN(lastUpdatedN []time.Time) Ap
 }
 
 // Number of results to return per page.
-func (r ApiVpnTunnelGroupsListRequest) Limit(limit int32) ApiVpnTunnelGroupsListRequest {
+func (r ApiVpnTunnelGroupsListRequest) Limit(limit int64) ApiVpnTunnelGroupsListRequest {
 	r.limit = &limit
 	return r
 }
@@ -19178,7 +17895,7 @@ func (r ApiVpnTunnelGroupsListRequest) NameNisw(nameNisw []string) ApiVpnTunnelG
 }
 
 // The initial index from which to return the results.
-func (r ApiVpnTunnelGroupsListRequest) Offset(offset int32) ApiVpnTunnelGroupsListRequest {
+func (r ApiVpnTunnelGroupsListRequest) Offset(offset int64) ApiVpnTunnelGroupsListRequest {
 	r.offset = &offset
 	return r
 }
@@ -19980,8 +18697,8 @@ func (a *VpnAPIService) VpnTunnelGroupsListExecute(r ApiVpnTunnelGroupsListReque
 
 type ApiVpnTunnelGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	patchedTunnelGroupRequest *PatchedTunnelGroupRequest
 }
 
@@ -20003,7 +18720,7 @@ Patch a tunnel group object.
  @param id A unique integer value identifying this tunnel group.
  @return ApiVpnTunnelGroupsPartialUpdateRequest
 */
-func (a *VpnAPIService) VpnTunnelGroupsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelGroupsPartialUpdateRequest {
+func (a *VpnAPIService) VpnTunnelGroupsPartialUpdate(ctx context.Context, id int64) ApiVpnTunnelGroupsPartialUpdateRequest {
 	return ApiVpnTunnelGroupsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20105,8 +18822,8 @@ func (a *VpnAPIService) VpnTunnelGroupsPartialUpdateExecute(r ApiVpnTunnelGroups
 
 type ApiVpnTunnelGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnTunnelGroupsRetrieveRequest) Execute() (*TunnelGroup, *http.Response, error) {
@@ -20122,7 +18839,7 @@ Get a tunnel group object.
  @param id A unique integer value identifying this tunnel group.
  @return ApiVpnTunnelGroupsRetrieveRequest
 */
-func (a *VpnAPIService) VpnTunnelGroupsRetrieve(ctx context.Context, id int32) ApiVpnTunnelGroupsRetrieveRequest {
+func (a *VpnAPIService) VpnTunnelGroupsRetrieve(ctx context.Context, id int64) ApiVpnTunnelGroupsRetrieveRequest {
 	return ApiVpnTunnelGroupsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20222,8 +18939,8 @@ func (a *VpnAPIService) VpnTunnelGroupsRetrieveExecute(r ApiVpnTunnelGroupsRetri
 
 type ApiVpnTunnelGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	tunnelGroupRequest *TunnelGroupRequest
 }
 
@@ -20245,7 +18962,7 @@ Put a tunnel group object.
  @param id A unique integer value identifying this tunnel group.
  @return ApiVpnTunnelGroupsUpdateRequest
 */
-func (a *VpnAPIService) VpnTunnelGroupsUpdate(ctx context.Context, id int32) ApiVpnTunnelGroupsUpdateRequest {
+func (a *VpnAPIService) VpnTunnelGroupsUpdate(ctx context.Context, id int64) ApiVpnTunnelGroupsUpdateRequest {
 	return ApiVpnTunnelGroupsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20350,7 +19067,7 @@ func (a *VpnAPIService) VpnTunnelGroupsUpdateExecute(r ApiVpnTunnelGroupsUpdateR
 
 type ApiVpnTunnelTerminationsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	tunnelTerminationRequest *[]TunnelTerminationRequest
 }
 
@@ -20463,7 +19180,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsBulkDestroyExecute(r ApiVpnTunnelTe
 
 type ApiVpnTunnelTerminationsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	tunnelTerminationRequest *[]TunnelTerminationRequest
 }
 
@@ -20587,7 +19304,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsBulkPartialUpdateExecute(r ApiVpnTu
 
 type ApiVpnTunnelTerminationsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	tunnelTerminationRequest *[]TunnelTerminationRequest
 }
 
@@ -20711,7 +19428,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsBulkUpdateExecute(r ApiVpnTunnelTer
 
 type ApiVpnTunnelTerminationsCreateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	writableTunnelTerminationRequest *WritableTunnelTerminationRequest
 }
 
@@ -20835,8 +19552,8 @@ func (a *VpnAPIService) VpnTunnelTerminationsCreateExecute(r ApiVpnTunnelTermina
 
 type ApiVpnTunnelTerminationsDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnTunnelTerminationsDestroyRequest) Execute() (*http.Response, error) {
@@ -20852,7 +19569,7 @@ Delete a tunnel termination object.
  @param id A unique integer value identifying this tunnel termination.
  @return ApiVpnTunnelTerminationsDestroyRequest
 */
-func (a *VpnAPIService) VpnTunnelTerminationsDestroy(ctx context.Context, id int32) ApiVpnTunnelTerminationsDestroyRequest {
+func (a *VpnAPIService) VpnTunnelTerminationsDestroy(ctx context.Context, id int64) ApiVpnTunnelTerminationsDestroyRequest {
 	return ApiVpnTunnelTerminationsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -20941,7 +19658,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsDestroyExecute(r ApiVpnTunnelTermin
 
 type ApiVpnTunnelTerminationsListRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -20950,17 +19667,17 @@ type ApiVpnTunnelTerminationsListRequest struct {
 	createdLte *[]time.Time
 	createdN *[]time.Time
 	createdByRequest *string
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	interface_ *[]string
 	interfaceN *[]string
-	interfaceId *[]int32
-	interfaceIdN *[]int32
+	interfaceId *[]int64
+	interfaceIdN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -20968,12 +19685,12 @@ type ApiVpnTunnelTerminationsListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
-	offset *int32
+	offset *int64
 	ordering *string
-	outsideIpId *[]int32
-	outsideIpIdN *[]int32
+	outsideIpId *[]int64
+	outsideIpIdN *[]int64
 	q *string
 	role *[]string
 	roleEmpty *bool
@@ -20988,24 +19705,24 @@ type ApiVpnTunnelTerminationsListRequest struct {
 	roleNisw *[]VpnTunnelTerminationsListRoleIcParameterInner
 	tag *[]string
 	tagN *[]string
-	terminationId *[]int32
+	terminationId *[]int64
 	terminationIdEmpty *bool
-	terminationIdGt *[]int32
-	terminationIdGte *[]int32
-	terminationIdLt *[]int32
-	terminationIdLte *[]int32
-	terminationIdN *[]int32
+	terminationIdGt *[]int64
+	terminationIdGte *[]int64
+	terminationIdLt *[]int64
+	terminationIdLte *[]int64
+	terminationIdN *[]int64
 	terminationType *string
 	terminationTypeN *string
 	tunnel *[]string
 	tunnelN *[]string
-	tunnelId *[]int32
-	tunnelIdN *[]int32
+	tunnelId *[]int64
+	tunnelIdN *[]int64
 	updatedByRequest *string
 	vminterface *[]string
 	vminterfaceN *[]string
-	vminterfaceId *[]int32
-	vminterfaceIdN *[]int32
+	vminterfaceId *[]int64
+	vminterfaceIdN *[]int64
 }
 
 func (r ApiVpnTunnelTerminationsListRequest) Created(created []time.Time) ApiVpnTunnelTerminationsListRequest {
@@ -21048,7 +19765,7 @@ func (r ApiVpnTunnelTerminationsListRequest) CreatedByRequest(createdByRequest s
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) Id(id []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) Id(id []int64) ApiVpnTunnelTerminationsListRequest {
 	r.id = &id
 	return r
 }
@@ -21058,27 +19775,27 @@ func (r ApiVpnTunnelTerminationsListRequest) IdEmpty(idEmpty bool) ApiVpnTunnelT
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) IdGt(idGt []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) IdGt(idGt []int64) ApiVpnTunnelTerminationsListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) IdGte(idGte []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) IdGte(idGte []int64) ApiVpnTunnelTerminationsListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) IdLt(idLt []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) IdLt(idLt []int64) ApiVpnTunnelTerminationsListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) IdLte(idLte []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) IdLte(idLte []int64) ApiVpnTunnelTerminationsListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) IdN(idN []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) IdN(idN []int64) ApiVpnTunnelTerminationsListRequest {
 	r.idN = &idN
 	return r
 }
@@ -21096,13 +19813,13 @@ func (r ApiVpnTunnelTerminationsListRequest) InterfaceN(interfaceN []string) Api
 }
 
 // Interface (ID)
-func (r ApiVpnTunnelTerminationsListRequest) InterfaceId(interfaceId []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) InterfaceId(interfaceId []int64) ApiVpnTunnelTerminationsListRequest {
 	r.interfaceId = &interfaceId
 	return r
 }
 
 // Interface (ID)
-func (r ApiVpnTunnelTerminationsListRequest) InterfaceIdN(interfaceIdN []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) InterfaceIdN(interfaceIdN []int64) ApiVpnTunnelTerminationsListRequest {
 	r.interfaceIdN = &interfaceIdN
 	return r
 }
@@ -21143,7 +19860,7 @@ func (r ApiVpnTunnelTerminationsListRequest) LastUpdatedN(lastUpdatedN []time.Ti
 }
 
 // Number of results to return per page.
-func (r ApiVpnTunnelTerminationsListRequest) Limit(limit int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) Limit(limit int64) ApiVpnTunnelTerminationsListRequest {
 	r.limit = &limit
 	return r
 }
@@ -21154,7 +19871,7 @@ func (r ApiVpnTunnelTerminationsListRequest) ModifiedByRequest(modifiedByRequest
 }
 
 // The initial index from which to return the results.
-func (r ApiVpnTunnelTerminationsListRequest) Offset(offset int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) Offset(offset int64) ApiVpnTunnelTerminationsListRequest {
 	r.offset = &offset
 	return r
 }
@@ -21166,13 +19883,13 @@ func (r ApiVpnTunnelTerminationsListRequest) Ordering(ordering string) ApiVpnTun
 }
 
 // Outside IP (ID)
-func (r ApiVpnTunnelTerminationsListRequest) OutsideIpId(outsideIpId []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) OutsideIpId(outsideIpId []int64) ApiVpnTunnelTerminationsListRequest {
 	r.outsideIpId = &outsideIpId
 	return r
 }
 
 // Outside IP (ID)
-func (r ApiVpnTunnelTerminationsListRequest) OutsideIpIdN(outsideIpIdN []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) OutsideIpIdN(outsideIpIdN []int64) ApiVpnTunnelTerminationsListRequest {
 	r.outsideIpIdN = &outsideIpIdN
 	return r
 }
@@ -21257,7 +19974,7 @@ func (r ApiVpnTunnelTerminationsListRequest) TagN(tagN []string) ApiVpnTunnelTer
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) TerminationId(terminationId []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) TerminationId(terminationId []int64) ApiVpnTunnelTerminationsListRequest {
 	r.terminationId = &terminationId
 	return r
 }
@@ -21267,27 +19984,27 @@ func (r ApiVpnTunnelTerminationsListRequest) TerminationIdEmpty(terminationIdEmp
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) TerminationIdGt(terminationIdGt []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) TerminationIdGt(terminationIdGt []int64) ApiVpnTunnelTerminationsListRequest {
 	r.terminationIdGt = &terminationIdGt
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) TerminationIdGte(terminationIdGte []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) TerminationIdGte(terminationIdGte []int64) ApiVpnTunnelTerminationsListRequest {
 	r.terminationIdGte = &terminationIdGte
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) TerminationIdLt(terminationIdLt []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) TerminationIdLt(terminationIdLt []int64) ApiVpnTunnelTerminationsListRequest {
 	r.terminationIdLt = &terminationIdLt
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) TerminationIdLte(terminationIdLte []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) TerminationIdLte(terminationIdLte []int64) ApiVpnTunnelTerminationsListRequest {
 	r.terminationIdLte = &terminationIdLte
 	return r
 }
 
-func (r ApiVpnTunnelTerminationsListRequest) TerminationIdN(terminationIdN []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) TerminationIdN(terminationIdN []int64) ApiVpnTunnelTerminationsListRequest {
 	r.terminationIdN = &terminationIdN
 	return r
 }
@@ -21315,13 +20032,13 @@ func (r ApiVpnTunnelTerminationsListRequest) TunnelN(tunnelN []string) ApiVpnTun
 }
 
 // Tunnel (ID)
-func (r ApiVpnTunnelTerminationsListRequest) TunnelId(tunnelId []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) TunnelId(tunnelId []int64) ApiVpnTunnelTerminationsListRequest {
 	r.tunnelId = &tunnelId
 	return r
 }
 
 // Tunnel (ID)
-func (r ApiVpnTunnelTerminationsListRequest) TunnelIdN(tunnelIdN []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) TunnelIdN(tunnelIdN []int64) ApiVpnTunnelTerminationsListRequest {
 	r.tunnelIdN = &tunnelIdN
 	return r
 }
@@ -21344,13 +20061,13 @@ func (r ApiVpnTunnelTerminationsListRequest) VminterfaceN(vminterfaceN []string)
 }
 
 // VM interface (ID)
-func (r ApiVpnTunnelTerminationsListRequest) VminterfaceId(vminterfaceId []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) VminterfaceId(vminterfaceId []int64) ApiVpnTunnelTerminationsListRequest {
 	r.vminterfaceId = &vminterfaceId
 	return r
 }
 
 // VM interface (ID)
-func (r ApiVpnTunnelTerminationsListRequest) VminterfaceIdN(vminterfaceIdN []int32) ApiVpnTunnelTerminationsListRequest {
+func (r ApiVpnTunnelTerminationsListRequest) VminterfaceIdN(vminterfaceIdN []int64) ApiVpnTunnelTerminationsListRequest {
 	r.vminterfaceIdN = &vminterfaceIdN
 	return r
 }
@@ -22073,8 +20790,8 @@ func (a *VpnAPIService) VpnTunnelTerminationsListExecute(r ApiVpnTunnelTerminati
 
 type ApiVpnTunnelTerminationsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	patchedWritableTunnelTerminationRequest *PatchedWritableTunnelTerminationRequest
 }
 
@@ -22096,7 +20813,7 @@ Patch a tunnel termination object.
  @param id A unique integer value identifying this tunnel termination.
  @return ApiVpnTunnelTerminationsPartialUpdateRequest
 */
-func (a *VpnAPIService) VpnTunnelTerminationsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelTerminationsPartialUpdateRequest {
+func (a *VpnAPIService) VpnTunnelTerminationsPartialUpdate(ctx context.Context, id int64) ApiVpnTunnelTerminationsPartialUpdateRequest {
 	return ApiVpnTunnelTerminationsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -22198,8 +20915,8 @@ func (a *VpnAPIService) VpnTunnelTerminationsPartialUpdateExecute(r ApiVpnTunnel
 
 type ApiVpnTunnelTerminationsRetrieveRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnTunnelTerminationsRetrieveRequest) Execute() (*TunnelTermination, *http.Response, error) {
@@ -22215,7 +20932,7 @@ Get a tunnel termination object.
  @param id A unique integer value identifying this tunnel termination.
  @return ApiVpnTunnelTerminationsRetrieveRequest
 */
-func (a *VpnAPIService) VpnTunnelTerminationsRetrieve(ctx context.Context, id int32) ApiVpnTunnelTerminationsRetrieveRequest {
+func (a *VpnAPIService) VpnTunnelTerminationsRetrieve(ctx context.Context, id int64) ApiVpnTunnelTerminationsRetrieveRequest {
 	return ApiVpnTunnelTerminationsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -22315,8 +21032,8 @@ func (a *VpnAPIService) VpnTunnelTerminationsRetrieveExecute(r ApiVpnTunnelTermi
 
 type ApiVpnTunnelTerminationsUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	writableTunnelTerminationRequest *WritableTunnelTerminationRequest
 }
 
@@ -22338,7 +21055,7 @@ Put a tunnel termination object.
  @param id A unique integer value identifying this tunnel termination.
  @return ApiVpnTunnelTerminationsUpdateRequest
 */
-func (a *VpnAPIService) VpnTunnelTerminationsUpdate(ctx context.Context, id int32) ApiVpnTunnelTerminationsUpdateRequest {
+func (a *VpnAPIService) VpnTunnelTerminationsUpdate(ctx context.Context, id int64) ApiVpnTunnelTerminationsUpdateRequest {
 	return ApiVpnTunnelTerminationsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -22443,7 +21160,7 @@ func (a *VpnAPIService) VpnTunnelTerminationsUpdateExecute(r ApiVpnTunnelTermina
 
 type ApiVpnTunnelsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	tunnelRequest *[]TunnelRequest
 }
 
@@ -22556,7 +21273,7 @@ func (a *VpnAPIService) VpnTunnelsBulkDestroyExecute(r ApiVpnTunnelsBulkDestroyR
 
 type ApiVpnTunnelsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	tunnelRequest *[]TunnelRequest
 }
 
@@ -22680,7 +21397,7 @@ func (a *VpnAPIService) VpnTunnelsBulkPartialUpdateExecute(r ApiVpnTunnelsBulkPa
 
 type ApiVpnTunnelsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	tunnelRequest *[]TunnelRequest
 }
 
@@ -22804,7 +21521,7 @@ func (a *VpnAPIService) VpnTunnelsBulkUpdateExecute(r ApiVpnTunnelsBulkUpdateReq
 
 type ApiVpnTunnelsCreateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	writableTunnelRequest *WritableTunnelRequest
 }
 
@@ -22928,8 +21645,8 @@ func (a *VpnAPIService) VpnTunnelsCreateExecute(r ApiVpnTunnelsCreateRequest) (*
 
 type ApiVpnTunnelsDestroyRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnTunnelsDestroyRequest) Execute() (*http.Response, error) {
@@ -22945,7 +21662,7 @@ Delete a tunnel object.
  @param id A unique integer value identifying this tunnel.
  @return ApiVpnTunnelsDestroyRequest
 */
-func (a *VpnAPIService) VpnTunnelsDestroy(ctx context.Context, id int32) ApiVpnTunnelsDestroyRequest {
+func (a *VpnAPIService) VpnTunnelsDestroy(ctx context.Context, id int64) ApiVpnTunnelsDestroyRequest {
 	return ApiVpnTunnelsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -23034,7 +21751,7 @@ func (a *VpnAPIService) VpnTunnelsDestroyExecute(r ApiVpnTunnelsDestroyRequest) 
 
 type ApiVpnTunnelsListRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
+	ApiService *VpnAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -23067,19 +21784,19 @@ type ApiVpnTunnelsListRequest struct {
 	encapsulationNisw *[]VpnTunnelsListEncapsulationIcParameterInner
 	group *[]string
 	groupN *[]string
-	groupId *[]*int32
-	groupIdN *[]*int32
-	id *[]int32
+	groupId *[]*int64
+	groupIdN *[]*int64
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	ipsecProfile *[]string
 	ipsecProfileN *[]string
-	ipsecProfileId *[]*int32
-	ipsecProfileIdN *[]*int32
+	ipsecProfileId *[]*int64
+	ipsecProfileIdN *[]*int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -23087,7 +21804,7 @@ type ApiVpnTunnelsListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
 	name *[]string
 	nameEmpty *bool
@@ -23100,7 +21817,7 @@ type ApiVpnTunnelsListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	q *string
 	status *[]string
@@ -23122,15 +21839,15 @@ type ApiVpnTunnelsListRequest struct {
 	tenantGroupN *[]string
 	tenantGroupId *[]string
 	tenantGroupIdN *[]string
-	tenantId *[]*int32
-	tenantIdN *[]*int32
-	tunnelId *[]int32
+	tenantId *[]*int64
+	tenantIdN *[]*int64
+	tunnelId *[]int64
 	tunnelIdEmpty *bool
-	tunnelIdGt *[]int32
-	tunnelIdGte *[]int32
-	tunnelIdLt *[]int32
-	tunnelIdLte *[]int32
-	tunnelIdN *[]int32
+	tunnelIdGt *[]int64
+	tunnelIdGte *[]int64
+	tunnelIdLt *[]int64
+	tunnelIdLte *[]int64
+	tunnelIdN *[]int64
 	updatedByRequest *string
 }
 
@@ -23306,18 +22023,18 @@ func (r ApiVpnTunnelsListRequest) GroupN(groupN []string) ApiVpnTunnelsListReque
 }
 
 // Tunnel group (ID)
-func (r ApiVpnTunnelsListRequest) GroupId(groupId []*int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) GroupId(groupId []*int64) ApiVpnTunnelsListRequest {
 	r.groupId = &groupId
 	return r
 }
 
 // Tunnel group (ID)
-func (r ApiVpnTunnelsListRequest) GroupIdN(groupIdN []*int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) GroupIdN(groupIdN []*int64) ApiVpnTunnelsListRequest {
 	r.groupIdN = &groupIdN
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) Id(id []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) Id(id []int64) ApiVpnTunnelsListRequest {
 	r.id = &id
 	return r
 }
@@ -23327,27 +22044,27 @@ func (r ApiVpnTunnelsListRequest) IdEmpty(idEmpty bool) ApiVpnTunnelsListRequest
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) IdGt(idGt []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) IdGt(idGt []int64) ApiVpnTunnelsListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) IdGte(idGte []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) IdGte(idGte []int64) ApiVpnTunnelsListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) IdLt(idLt []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) IdLt(idLt []int64) ApiVpnTunnelsListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) IdLte(idLte []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) IdLte(idLte []int64) ApiVpnTunnelsListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) IdN(idN []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) IdN(idN []int64) ApiVpnTunnelsListRequest {
 	r.idN = &idN
 	return r
 }
@@ -23365,13 +22082,13 @@ func (r ApiVpnTunnelsListRequest) IpsecProfileN(ipsecProfileN []string) ApiVpnTu
 }
 
 // IPSec profile (ID)
-func (r ApiVpnTunnelsListRequest) IpsecProfileId(ipsecProfileId []*int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) IpsecProfileId(ipsecProfileId []*int64) ApiVpnTunnelsListRequest {
 	r.ipsecProfileId = &ipsecProfileId
 	return r
 }
 
 // IPSec profile (ID)
-func (r ApiVpnTunnelsListRequest) IpsecProfileIdN(ipsecProfileIdN []*int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) IpsecProfileIdN(ipsecProfileIdN []*int64) ApiVpnTunnelsListRequest {
 	r.ipsecProfileIdN = &ipsecProfileIdN
 	return r
 }
@@ -23412,7 +22129,7 @@ func (r ApiVpnTunnelsListRequest) LastUpdatedN(lastUpdatedN []time.Time) ApiVpnT
 }
 
 // Number of results to return per page.
-func (r ApiVpnTunnelsListRequest) Limit(limit int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) Limit(limit int64) ApiVpnTunnelsListRequest {
 	r.limit = &limit
 	return r
 }
@@ -23478,7 +22195,7 @@ func (r ApiVpnTunnelsListRequest) NameNisw(nameNisw []string) ApiVpnTunnelsListR
 }
 
 // The initial index from which to return the results.
-func (r ApiVpnTunnelsListRequest) Offset(offset int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) Offset(offset int64) ApiVpnTunnelsListRequest {
 	r.offset = &offset
 	return r
 }
@@ -23602,18 +22319,18 @@ func (r ApiVpnTunnelsListRequest) TenantGroupIdN(tenantGroupIdN []string) ApiVpn
 }
 
 // Tenant (ID)
-func (r ApiVpnTunnelsListRequest) TenantId(tenantId []*int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) TenantId(tenantId []*int64) ApiVpnTunnelsListRequest {
 	r.tenantId = &tenantId
 	return r
 }
 
 // Tenant (ID)
-func (r ApiVpnTunnelsListRequest) TenantIdN(tenantIdN []*int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) TenantIdN(tenantIdN []*int64) ApiVpnTunnelsListRequest {
 	r.tenantIdN = &tenantIdN
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) TunnelId(tunnelId []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) TunnelId(tunnelId []int64) ApiVpnTunnelsListRequest {
 	r.tunnelId = &tunnelId
 	return r
 }
@@ -23623,27 +22340,27 @@ func (r ApiVpnTunnelsListRequest) TunnelIdEmpty(tunnelIdEmpty bool) ApiVpnTunnel
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) TunnelIdGt(tunnelIdGt []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) TunnelIdGt(tunnelIdGt []int64) ApiVpnTunnelsListRequest {
 	r.tunnelIdGt = &tunnelIdGt
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) TunnelIdGte(tunnelIdGte []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) TunnelIdGte(tunnelIdGte []int64) ApiVpnTunnelsListRequest {
 	r.tunnelIdGte = &tunnelIdGte
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) TunnelIdLt(tunnelIdLt []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) TunnelIdLt(tunnelIdLt []int64) ApiVpnTunnelsListRequest {
 	r.tunnelIdLt = &tunnelIdLt
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) TunnelIdLte(tunnelIdLte []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) TunnelIdLte(tunnelIdLte []int64) ApiVpnTunnelsListRequest {
 	r.tunnelIdLte = &tunnelIdLte
 	return r
 }
 
-func (r ApiVpnTunnelsListRequest) TunnelIdN(tunnelIdN []int32) ApiVpnTunnelsListRequest {
+func (r ApiVpnTunnelsListRequest) TunnelIdN(tunnelIdN []int64) ApiVpnTunnelsListRequest {
 	r.tunnelIdN = &tunnelIdN
 	return r
 }
@@ -24726,8 +23443,8 @@ func (a *VpnAPIService) VpnTunnelsListExecute(r ApiVpnTunnelsListRequest) (*Pagi
 
 type ApiVpnTunnelsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	patchedWritableTunnelRequest *PatchedWritableTunnelRequest
 }
 
@@ -24749,7 +23466,7 @@ Patch a tunnel object.
  @param id A unique integer value identifying this tunnel.
  @return ApiVpnTunnelsPartialUpdateRequest
 */
-func (a *VpnAPIService) VpnTunnelsPartialUpdate(ctx context.Context, id int32) ApiVpnTunnelsPartialUpdateRequest {
+func (a *VpnAPIService) VpnTunnelsPartialUpdate(ctx context.Context, id int64) ApiVpnTunnelsPartialUpdateRequest {
 	return ApiVpnTunnelsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -24851,8 +23568,8 @@ func (a *VpnAPIService) VpnTunnelsPartialUpdateExecute(r ApiVpnTunnelsPartialUpd
 
 type ApiVpnTunnelsRetrieveRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 }
 
 func (r ApiVpnTunnelsRetrieveRequest) Execute() (*Tunnel, *http.Response, error) {
@@ -24868,7 +23585,7 @@ Get a tunnel object.
  @param id A unique integer value identifying this tunnel.
  @return ApiVpnTunnelsRetrieveRequest
 */
-func (a *VpnAPIService) VpnTunnelsRetrieve(ctx context.Context, id int32) ApiVpnTunnelsRetrieveRequest {
+func (a *VpnAPIService) VpnTunnelsRetrieve(ctx context.Context, id int64) ApiVpnTunnelsRetrieveRequest {
 	return ApiVpnTunnelsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -24968,8 +23685,8 @@ func (a *VpnAPIService) VpnTunnelsRetrieveExecute(r ApiVpnTunnelsRetrieveRequest
 
 type ApiVpnTunnelsUpdateRequest struct {
 	ctx context.Context
-	ApiService VpnAPI
-	id int32
+	ApiService *VpnAPIService
+	id int64
 	writableTunnelRequest *WritableTunnelRequest
 }
 
@@ -24991,7 +23708,7 @@ Put a tunnel object.
  @param id A unique integer value identifying this tunnel.
  @return ApiVpnTunnelsUpdateRequest
 */
-func (a *VpnAPIService) VpnTunnelsUpdate(ctx context.Context, id int32) ApiVpnTunnelsUpdateRequest {
+func (a *VpnAPIService) VpnTunnelsUpdate(ctx context.Context, id int64) ApiVpnTunnelsUpdateRequest {
 	return ApiVpnTunnelsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,

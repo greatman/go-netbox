@@ -23,7 +23,7 @@ type WritableLocationRequest struct {
 	Name string `json:"name"`
 	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	Site BriefSiteRequest `json:"site"`
-	Parent NullableInt32 `json:"parent"`
+	Parent NullableInt64 `json:"parent"`
 	Status *LocationStatusValue `json:"status,omitempty"`
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
 	// Local facility ID or description
@@ -40,7 +40,7 @@ type _WritableLocationRequest WritableLocationRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableLocationRequest(name string, slug string, site BriefSiteRequest, parent NullableInt32) *WritableLocationRequest {
+func NewWritableLocationRequest(name string, slug string, site BriefSiteRequest, parent NullableInt64) *WritableLocationRequest {
 	this := WritableLocationRequest{}
 	this.Name = name
 	this.Slug = slug
@@ -130,10 +130,10 @@ func (o *WritableLocationRequest) SetSite(v BriefSiteRequest) {
 }
 
 // GetParent returns the Parent field value
-// If the value is explicit nil, the zero value for int32 will be returned
-func (o *WritableLocationRequest) GetParent() int32 {
+// If the value is explicit nil, the zero value for int64 will be returned
+func (o *WritableLocationRequest) GetParent() int64 {
 	if o == nil || o.Parent.Get() == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -143,7 +143,7 @@ func (o *WritableLocationRequest) GetParent() int32 {
 // GetParentOk returns a tuple with the Parent field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *WritableLocationRequest) GetParentOk() (*int32, bool) {
+func (o *WritableLocationRequest) GetParentOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -151,7 +151,7 @@ func (o *WritableLocationRequest) GetParentOk() (*int32, bool) {
 }
 
 // SetParent sets field value
-func (o *WritableLocationRequest) SetParent(v int32) {
+func (o *WritableLocationRequest) SetParent(v int64) {
 	o.Parent.Set(&v)
 }
 

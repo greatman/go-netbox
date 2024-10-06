@@ -21,7 +21,7 @@ var _ MappedNullable = &Circuit{}
 
 // Circuit Adds support for custom fields and tags.
 type Circuit struct {
-	Id int32 `json:"id"`
+	Id int64 `json:"id"`
 	Url string `json:"url"`
 	DisplayUrl string `json:"display_url"`
 	Display string `json:"display"`
@@ -35,7 +35,7 @@ type Circuit struct {
 	InstallDate NullableString `json:"install_date,omitempty"`
 	TerminationDate NullableString `json:"termination_date,omitempty"`
 	// Committed rate
-	CommitRate NullableInt32 `json:"commit_rate,omitempty"`
+	CommitRate NullableInt64 `json:"commit_rate,omitempty"`
 	Description *string `json:"description,omitempty"`
 	TerminationA NullableCircuitCircuitTermination `json:"termination_a"`
 	TerminationZ NullableCircuitCircuitTermination `json:"termination_z"`
@@ -54,7 +54,7 @@ type _Circuit Circuit
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCircuit(id int32, url string, displayUrl string, display string, cid string, provider BriefProvider, type_ BriefCircuitType, terminationA NullableCircuitCircuitTermination, terminationZ NullableCircuitCircuitTermination, created NullableTime, lastUpdated NullableTime) *Circuit {
+func NewCircuit(id int64, url string, displayUrl string, display string, cid string, provider BriefProvider, type_ BriefCircuitType, terminationA NullableCircuitCircuitTermination, terminationZ NullableCircuitCircuitTermination, created NullableTime, lastUpdated NullableTime) *Circuit {
 	this := Circuit{}
 	this.Id = id
 	this.Url = url
@@ -79,9 +79,9 @@ func NewCircuitWithDefaults() *Circuit {
 }
 
 // GetId returns the Id field value
-func (o *Circuit) GetId() int32 {
+func (o *Circuit) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -90,7 +90,7 @@ func (o *Circuit) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *Circuit) GetIdOk() (*int32, bool) {
+func (o *Circuit) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *Circuit) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *Circuit) SetId(v int32) {
+func (o *Circuit) SetId(v int64) {
 	o.Id = v
 }
 
@@ -447,9 +447,9 @@ func (o *Circuit) UnsetTerminationDate() {
 }
 
 // GetCommitRate returns the CommitRate field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Circuit) GetCommitRate() int32 {
+func (o *Circuit) GetCommitRate() int64 {
 	if o == nil || IsNil(o.CommitRate.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CommitRate.Get()
@@ -458,7 +458,7 @@ func (o *Circuit) GetCommitRate() int32 {
 // GetCommitRateOk returns a tuple with the CommitRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Circuit) GetCommitRateOk() (*int32, bool) {
+func (o *Circuit) GetCommitRateOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -474,8 +474,8 @@ func (o *Circuit) HasCommitRate() bool {
 	return false
 }
 
-// SetCommitRate gets a reference to the given NullableInt32 and assigns it to the CommitRate field.
-func (o *Circuit) SetCommitRate(v int32) {
+// SetCommitRate gets a reference to the given NullableInt64 and assigns it to the CommitRate field.
+func (o *Circuit) SetCommitRate(v int64) {
 	o.CommitRate.Set(&v)
 }
 // SetCommitRateNil sets the value for CommitRate to be an explicit nil

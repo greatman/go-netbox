@@ -25,12 +25,12 @@ type VMInterfaceRequest struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Parent NullableNestedVMInterfaceRequest `json:"parent,omitempty"`
 	Bridge NullableNestedVMInterfaceRequest `json:"bridge,omitempty"`
-	Mtu NullableInt32 `json:"mtu,omitempty"`
+	Mtu NullableInt64 `json:"mtu,omitempty"`
 	MacAddress NullableString `json:"mac_address,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Mode *InterfaceModeValue `json:"mode,omitempty"`
 	UntaggedVlan NullableBriefVLANRequest `json:"untagged_vlan,omitempty"`
-	TaggedVlans []int32 `json:"tagged_vlans,omitempty"`
+	TaggedVlans []int64 `json:"tagged_vlans,omitempty"`
 	Vrf NullableBriefVRFRequest `json:"vrf,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
 	CustomFields *map[string]string `json:"custom_fields,omitempty"`
@@ -223,9 +223,9 @@ func (o *VMInterfaceRequest) UnsetBridge() {
 }
 
 // GetMtu returns the Mtu field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VMInterfaceRequest) GetMtu() int32 {
+func (o *VMInterfaceRequest) GetMtu() int64 {
 	if o == nil || IsNil(o.Mtu.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Mtu.Get()
@@ -234,7 +234,7 @@ func (o *VMInterfaceRequest) GetMtu() int32 {
 // GetMtuOk returns a tuple with the Mtu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VMInterfaceRequest) GetMtuOk() (*int32, bool) {
+func (o *VMInterfaceRequest) GetMtuOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -250,8 +250,8 @@ func (o *VMInterfaceRequest) HasMtu() bool {
 	return false
 }
 
-// SetMtu gets a reference to the given NullableInt32 and assigns it to the Mtu field.
-func (o *VMInterfaceRequest) SetMtu(v int32) {
+// SetMtu gets a reference to the given NullableInt64 and assigns it to the Mtu field.
+func (o *VMInterfaceRequest) SetMtu(v int64) {
 	o.Mtu.Set(&v)
 }
 // SetMtuNil sets the value for Mtu to be an explicit nil
@@ -413,9 +413,9 @@ func (o *VMInterfaceRequest) UnsetUntaggedVlan() {
 }
 
 // GetTaggedVlans returns the TaggedVlans field value if set, zero value otherwise.
-func (o *VMInterfaceRequest) GetTaggedVlans() []int32 {
+func (o *VMInterfaceRequest) GetTaggedVlans() []int64 {
 	if o == nil || IsNil(o.TaggedVlans) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.TaggedVlans
@@ -423,7 +423,7 @@ func (o *VMInterfaceRequest) GetTaggedVlans() []int32 {
 
 // GetTaggedVlansOk returns a tuple with the TaggedVlans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VMInterfaceRequest) GetTaggedVlansOk() ([]int32, bool) {
+func (o *VMInterfaceRequest) GetTaggedVlansOk() ([]int64, bool) {
 	if o == nil || IsNil(o.TaggedVlans) {
 		return nil, false
 	}
@@ -439,8 +439,8 @@ func (o *VMInterfaceRequest) HasTaggedVlans() bool {
 	return false
 }
 
-// SetTaggedVlans gets a reference to the given []int32 and assigns it to the TaggedVlans field.
-func (o *VMInterfaceRequest) SetTaggedVlans(v []int32) {
+// SetTaggedVlans gets a reference to the given []int64 and assigns it to the TaggedVlans field.
+func (o *VMInterfaceRequest) SetTaggedVlans(v []int64) {
 	o.TaggedVlans = v
 }
 

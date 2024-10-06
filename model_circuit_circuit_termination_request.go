@@ -23,9 +23,9 @@ type CircuitCircuitTerminationRequest struct {
 	Site NullableBriefSiteRequest `json:"site"`
 	ProviderNetwork NullableBriefProviderNetworkRequest `json:"provider_network"`
 	// Physical circuit speed
-	PortSpeed NullableInt32 `json:"port_speed,omitempty"`
+	PortSpeed NullableInt64 `json:"port_speed,omitempty"`
 	// Upstream speed, if different from port speed
-	UpstreamSpeed NullableInt32 `json:"upstream_speed,omitempty"`
+	UpstreamSpeed NullableInt64 `json:"upstream_speed,omitempty"`
 	// ID of the local cross-connect
 	XconnectId *string `json:"xconnect_id,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -106,9 +106,9 @@ func (o *CircuitCircuitTerminationRequest) SetProviderNetwork(v BriefProviderNet
 }
 
 // GetPortSpeed returns the PortSpeed field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CircuitCircuitTerminationRequest) GetPortSpeed() int32 {
+func (o *CircuitCircuitTerminationRequest) GetPortSpeed() int64 {
 	if o == nil || IsNil(o.PortSpeed.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PortSpeed.Get()
@@ -117,7 +117,7 @@ func (o *CircuitCircuitTerminationRequest) GetPortSpeed() int32 {
 // GetPortSpeedOk returns a tuple with the PortSpeed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CircuitCircuitTerminationRequest) GetPortSpeedOk() (*int32, bool) {
+func (o *CircuitCircuitTerminationRequest) GetPortSpeedOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *CircuitCircuitTerminationRequest) HasPortSpeed() bool {
 	return false
 }
 
-// SetPortSpeed gets a reference to the given NullableInt32 and assigns it to the PortSpeed field.
-func (o *CircuitCircuitTerminationRequest) SetPortSpeed(v int32) {
+// SetPortSpeed gets a reference to the given NullableInt64 and assigns it to the PortSpeed field.
+func (o *CircuitCircuitTerminationRequest) SetPortSpeed(v int64) {
 	o.PortSpeed.Set(&v)
 }
 // SetPortSpeedNil sets the value for PortSpeed to be an explicit nil
@@ -148,9 +148,9 @@ func (o *CircuitCircuitTerminationRequest) UnsetPortSpeed() {
 }
 
 // GetUpstreamSpeed returns the UpstreamSpeed field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CircuitCircuitTerminationRequest) GetUpstreamSpeed() int32 {
+func (o *CircuitCircuitTerminationRequest) GetUpstreamSpeed() int64 {
 	if o == nil || IsNil(o.UpstreamSpeed.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.UpstreamSpeed.Get()
@@ -159,7 +159,7 @@ func (o *CircuitCircuitTerminationRequest) GetUpstreamSpeed() int32 {
 // GetUpstreamSpeedOk returns a tuple with the UpstreamSpeed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CircuitCircuitTerminationRequest) GetUpstreamSpeedOk() (*int32, bool) {
+func (o *CircuitCircuitTerminationRequest) GetUpstreamSpeedOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -175,8 +175,8 @@ func (o *CircuitCircuitTerminationRequest) HasUpstreamSpeed() bool {
 	return false
 }
 
-// SetUpstreamSpeed gets a reference to the given NullableInt32 and assigns it to the UpstreamSpeed field.
-func (o *CircuitCircuitTerminationRequest) SetUpstreamSpeed(v int32) {
+// SetUpstreamSpeed gets a reference to the given NullableInt64 and assigns it to the UpstreamSpeed field.
+func (o *CircuitCircuitTerminationRequest) SetUpstreamSpeed(v int64) {
 	o.UpstreamSpeed.Set(&v)
 }
 // SetUpstreamSpeedNil sets the value for UpstreamSpeed to be an explicit nil

@@ -16,35 +16,16 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"time"
 )
 
-
-type SchemaAPI interface {
-
-	/*
-	SchemaRetrieve Method for SchemaRetrieve
-
-	OpenApi3 schema for this API. Format can be selected via content negotiation.
-
-- YAML: application/vnd.oai.openapi
-- JSON: application/vnd.oai.openapi+json
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSchemaRetrieveRequest
-	*/
-	SchemaRetrieve(ctx context.Context) ApiSchemaRetrieveRequest
-
-	// SchemaRetrieveExecute executes the request
-	//  @return map[string]interface{}
-	SchemaRetrieveExecute(r ApiSchemaRetrieveRequest) (map[string]interface{}, *http.Response, error)
-}
 
 // SchemaAPIService SchemaAPI service
 type SchemaAPIService service
 
 type ApiSchemaRetrieveRequest struct {
 	ctx context.Context
-	ApiService SchemaAPI
+	ApiService *SchemaAPIService
 	format *SchemaRetrieveFormatParameter
 	lang *SchemaRetrieveLangParameter
 }

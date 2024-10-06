@@ -16,7 +16,7 @@ import (
 )
 
 // VpnIkeProposalsListGroupIcParameterInner the model 'VpnIkeProposalsListGroupIcParameterInner'
-type VpnIkeProposalsListGroupIcParameterInner int32
+type VpnIkeProposalsListGroupIcParameterInner int64
 
 // List of vpn_ike_proposals_list_group__ic_parameter_inner
 const (
@@ -75,7 +75,7 @@ var AllowedVpnIkeProposalsListGroupIcParameterInnerEnumValues = []VpnIkeProposal
 }
 
 func (v *VpnIkeProposalsListGroupIcParameterInner) UnmarshalJSON(src []byte) error {
-	var value int32
+	var value int64
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
@@ -93,7 +93,7 @@ func (v *VpnIkeProposalsListGroupIcParameterInner) UnmarshalJSON(src []byte) err
 
 // NewVpnIkeProposalsListGroupIcParameterInnerFromValue returns a pointer to a valid VpnIkeProposalsListGroupIcParameterInner
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewVpnIkeProposalsListGroupIcParameterInnerFromValue(v int32) (*VpnIkeProposalsListGroupIcParameterInner, error) {
+func NewVpnIkeProposalsListGroupIcParameterInnerFromValue(v int64) (*VpnIkeProposalsListGroupIcParameterInner, error) {
 	ev := VpnIkeProposalsListGroupIcParameterInner(v)
 	if ev.IsValid() {
 		return &ev, nil

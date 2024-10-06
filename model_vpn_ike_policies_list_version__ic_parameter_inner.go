@@ -16,7 +16,7 @@ import (
 )
 
 // VpnIkePoliciesListVersionIcParameterInner the model 'VpnIkePoliciesListVersionIcParameterInner'
-type VpnIkePoliciesListVersionIcParameterInner int32
+type VpnIkePoliciesListVersionIcParameterInner int64
 
 // List of vpn_ike_policies_list_version__ic_parameter_inner
 const (
@@ -31,7 +31,7 @@ var AllowedVpnIkePoliciesListVersionIcParameterInnerEnumValues = []VpnIkePolicie
 }
 
 func (v *VpnIkePoliciesListVersionIcParameterInner) UnmarshalJSON(src []byte) error {
-	var value int32
+	var value int64
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
@@ -49,7 +49,7 @@ func (v *VpnIkePoliciesListVersionIcParameterInner) UnmarshalJSON(src []byte) er
 
 // NewVpnIkePoliciesListVersionIcParameterInnerFromValue returns a pointer to a valid VpnIkePoliciesListVersionIcParameterInner
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewVpnIkePoliciesListVersionIcParameterInnerFromValue(v int32) (*VpnIkePoliciesListVersionIcParameterInner, error) {
+func NewVpnIkePoliciesListVersionIcParameterInnerFromValue(v int64) (*VpnIkePoliciesListVersionIcParameterInner, error) {
 	ev := VpnIkePoliciesListVersionIcParameterInner(v)
 	if ev.IsValid() {
 		return &ev, nil

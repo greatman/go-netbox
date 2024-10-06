@@ -28,9 +28,9 @@ type PowerPortTemplateRequest struct {
 	Label *string `json:"label,omitempty"`
 	Type NullablePowerPortRequestType `json:"type,omitempty"`
 	// Maximum power draw (watts)
-	MaximumDraw NullableInt32 `json:"maximum_draw,omitempty"`
+	MaximumDraw NullableInt64 `json:"maximum_draw,omitempty"`
 	// Allocated power draw (watts)
-	AllocatedDraw NullableInt32 `json:"allocated_draw,omitempty"`
+	AllocatedDraw NullableInt64 `json:"allocated_draw,omitempty"`
 	Description *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -238,9 +238,9 @@ func (o *PowerPortTemplateRequest) UnsetType() {
 }
 
 // GetMaximumDraw returns the MaximumDraw field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PowerPortTemplateRequest) GetMaximumDraw() int32 {
+func (o *PowerPortTemplateRequest) GetMaximumDraw() int64 {
 	if o == nil || IsNil(o.MaximumDraw.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumDraw.Get()
@@ -249,7 +249,7 @@ func (o *PowerPortTemplateRequest) GetMaximumDraw() int32 {
 // GetMaximumDrawOk returns a tuple with the MaximumDraw field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PowerPortTemplateRequest) GetMaximumDrawOk() (*int32, bool) {
+func (o *PowerPortTemplateRequest) GetMaximumDrawOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -265,8 +265,8 @@ func (o *PowerPortTemplateRequest) HasMaximumDraw() bool {
 	return false
 }
 
-// SetMaximumDraw gets a reference to the given NullableInt32 and assigns it to the MaximumDraw field.
-func (o *PowerPortTemplateRequest) SetMaximumDraw(v int32) {
+// SetMaximumDraw gets a reference to the given NullableInt64 and assigns it to the MaximumDraw field.
+func (o *PowerPortTemplateRequest) SetMaximumDraw(v int64) {
 	o.MaximumDraw.Set(&v)
 }
 // SetMaximumDrawNil sets the value for MaximumDraw to be an explicit nil
@@ -280,9 +280,9 @@ func (o *PowerPortTemplateRequest) UnsetMaximumDraw() {
 }
 
 // GetAllocatedDraw returns the AllocatedDraw field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PowerPortTemplateRequest) GetAllocatedDraw() int32 {
+func (o *PowerPortTemplateRequest) GetAllocatedDraw() int64 {
 	if o == nil || IsNil(o.AllocatedDraw.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllocatedDraw.Get()
@@ -291,7 +291,7 @@ func (o *PowerPortTemplateRequest) GetAllocatedDraw() int32 {
 // GetAllocatedDrawOk returns a tuple with the AllocatedDraw field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PowerPortTemplateRequest) GetAllocatedDrawOk() (*int32, bool) {
+func (o *PowerPortTemplateRequest) GetAllocatedDrawOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -307,8 +307,8 @@ func (o *PowerPortTemplateRequest) HasAllocatedDraw() bool {
 	return false
 }
 
-// SetAllocatedDraw gets a reference to the given NullableInt32 and assigns it to the AllocatedDraw field.
-func (o *PowerPortTemplateRequest) SetAllocatedDraw(v int32) {
+// SetAllocatedDraw gets a reference to the given NullableInt64 and assigns it to the AllocatedDraw field.
+func (o *PowerPortTemplateRequest) SetAllocatedDraw(v int64) {
 	o.AllocatedDraw.Set(&v)
 }
 // SetAllocatedDrawNil sets the value for AllocatedDraw to be an explicit nil

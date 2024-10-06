@@ -24,7 +24,7 @@ type WritableIKEPolicyRequest struct {
 	Description *string `json:"description,omitempty"`
 	Version *PatchedWritableIKEPolicyRequestVersion `json:"version,omitempty"`
 	Mode *PatchedWritableIKEPolicyRequestMode `json:"mode,omitempty"`
-	Proposals []int32 `json:"proposals,omitempty"`
+	Proposals []int64 `json:"proposals,omitempty"`
 	PresharedKey *string `json:"preshared_key,omitempty"`
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
@@ -173,9 +173,9 @@ func (o *WritableIKEPolicyRequest) SetMode(v PatchedWritableIKEPolicyRequestMode
 }
 
 // GetProposals returns the Proposals field value if set, zero value otherwise.
-func (o *WritableIKEPolicyRequest) GetProposals() []int32 {
+func (o *WritableIKEPolicyRequest) GetProposals() []int64 {
 	if o == nil || IsNil(o.Proposals) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Proposals
@@ -183,7 +183,7 @@ func (o *WritableIKEPolicyRequest) GetProposals() []int32 {
 
 // GetProposalsOk returns a tuple with the Proposals field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableIKEPolicyRequest) GetProposalsOk() ([]int32, bool) {
+func (o *WritableIKEPolicyRequest) GetProposalsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Proposals) {
 		return nil, false
 	}
@@ -199,8 +199,8 @@ func (o *WritableIKEPolicyRequest) HasProposals() bool {
 	return false
 }
 
-// SetProposals gets a reference to the given []int32 and assigns it to the Proposals field.
-func (o *WritableIKEPolicyRequest) SetProposals(v []int32) {
+// SetProposals gets a reference to the given []int64 and assigns it to the Proposals field.
+func (o *WritableIKEPolicyRequest) SetProposals(v []int64) {
 	o.Proposals = v
 }
 

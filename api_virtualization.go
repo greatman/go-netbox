@@ -22,798 +22,12 @@ import (
 )
 
 
-type VirtualizationAPI interface {
-
-	/*
-	VirtualizationClusterGroupsBulkDestroy Method for VirtualizationClusterGroupsBulkDestroy
-
-	Delete a list of cluster group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClusterGroupsBulkDestroyRequest
-	*/
-	VirtualizationClusterGroupsBulkDestroy(ctx context.Context) ApiVirtualizationClusterGroupsBulkDestroyRequest
-
-	// VirtualizationClusterGroupsBulkDestroyExecute executes the request
-	VirtualizationClusterGroupsBulkDestroyExecute(r ApiVirtualizationClusterGroupsBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationClusterGroupsBulkPartialUpdate Method for VirtualizationClusterGroupsBulkPartialUpdate
-
-	Patch a list of cluster group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClusterGroupsBulkPartialUpdateRequest
-	*/
-	VirtualizationClusterGroupsBulkPartialUpdate(ctx context.Context) ApiVirtualizationClusterGroupsBulkPartialUpdateRequest
-
-	// VirtualizationClusterGroupsBulkPartialUpdateExecute executes the request
-	//  @return []ClusterGroup
-	VirtualizationClusterGroupsBulkPartialUpdateExecute(r ApiVirtualizationClusterGroupsBulkPartialUpdateRequest) ([]ClusterGroup, *http.Response, error)
-
-	/*
-	VirtualizationClusterGroupsBulkUpdate Method for VirtualizationClusterGroupsBulkUpdate
-
-	Put a list of cluster group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClusterGroupsBulkUpdateRequest
-	*/
-	VirtualizationClusterGroupsBulkUpdate(ctx context.Context) ApiVirtualizationClusterGroupsBulkUpdateRequest
-
-	// VirtualizationClusterGroupsBulkUpdateExecute executes the request
-	//  @return []ClusterGroup
-	VirtualizationClusterGroupsBulkUpdateExecute(r ApiVirtualizationClusterGroupsBulkUpdateRequest) ([]ClusterGroup, *http.Response, error)
-
-	/*
-	VirtualizationClusterGroupsCreate Method for VirtualizationClusterGroupsCreate
-
-	Post a list of cluster group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClusterGroupsCreateRequest
-	*/
-	VirtualizationClusterGroupsCreate(ctx context.Context) ApiVirtualizationClusterGroupsCreateRequest
-
-	// VirtualizationClusterGroupsCreateExecute executes the request
-	//  @return ClusterGroup
-	VirtualizationClusterGroupsCreateExecute(r ApiVirtualizationClusterGroupsCreateRequest) (*ClusterGroup, *http.Response, error)
-
-	/*
-	VirtualizationClusterGroupsDestroy Method for VirtualizationClusterGroupsDestroy
-
-	Delete a cluster group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster group.
-	@return ApiVirtualizationClusterGroupsDestroyRequest
-	*/
-	VirtualizationClusterGroupsDestroy(ctx context.Context, id int32) ApiVirtualizationClusterGroupsDestroyRequest
-
-	// VirtualizationClusterGroupsDestroyExecute executes the request
-	VirtualizationClusterGroupsDestroyExecute(r ApiVirtualizationClusterGroupsDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationClusterGroupsList Method for VirtualizationClusterGroupsList
-
-	Get a list of cluster group objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClusterGroupsListRequest
-	*/
-	VirtualizationClusterGroupsList(ctx context.Context) ApiVirtualizationClusterGroupsListRequest
-
-	// VirtualizationClusterGroupsListExecute executes the request
-	//  @return PaginatedClusterGroupList
-	VirtualizationClusterGroupsListExecute(r ApiVirtualizationClusterGroupsListRequest) (*PaginatedClusterGroupList, *http.Response, error)
-
-	/*
-	VirtualizationClusterGroupsPartialUpdate Method for VirtualizationClusterGroupsPartialUpdate
-
-	Patch a cluster group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster group.
-	@return ApiVirtualizationClusterGroupsPartialUpdateRequest
-	*/
-	VirtualizationClusterGroupsPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClusterGroupsPartialUpdateRequest
-
-	// VirtualizationClusterGroupsPartialUpdateExecute executes the request
-	//  @return ClusterGroup
-	VirtualizationClusterGroupsPartialUpdateExecute(r ApiVirtualizationClusterGroupsPartialUpdateRequest) (*ClusterGroup, *http.Response, error)
-
-	/*
-	VirtualizationClusterGroupsRetrieve Method for VirtualizationClusterGroupsRetrieve
-
-	Get a cluster group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster group.
-	@return ApiVirtualizationClusterGroupsRetrieveRequest
-	*/
-	VirtualizationClusterGroupsRetrieve(ctx context.Context, id int32) ApiVirtualizationClusterGroupsRetrieveRequest
-
-	// VirtualizationClusterGroupsRetrieveExecute executes the request
-	//  @return ClusterGroup
-	VirtualizationClusterGroupsRetrieveExecute(r ApiVirtualizationClusterGroupsRetrieveRequest) (*ClusterGroup, *http.Response, error)
-
-	/*
-	VirtualizationClusterGroupsUpdate Method for VirtualizationClusterGroupsUpdate
-
-	Put a cluster group object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster group.
-	@return ApiVirtualizationClusterGroupsUpdateRequest
-	*/
-	VirtualizationClusterGroupsUpdate(ctx context.Context, id int32) ApiVirtualizationClusterGroupsUpdateRequest
-
-	// VirtualizationClusterGroupsUpdateExecute executes the request
-	//  @return ClusterGroup
-	VirtualizationClusterGroupsUpdateExecute(r ApiVirtualizationClusterGroupsUpdateRequest) (*ClusterGroup, *http.Response, error)
-
-	/*
-	VirtualizationClusterTypesBulkDestroy Method for VirtualizationClusterTypesBulkDestroy
-
-	Delete a list of cluster type objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClusterTypesBulkDestroyRequest
-	*/
-	VirtualizationClusterTypesBulkDestroy(ctx context.Context) ApiVirtualizationClusterTypesBulkDestroyRequest
-
-	// VirtualizationClusterTypesBulkDestroyExecute executes the request
-	VirtualizationClusterTypesBulkDestroyExecute(r ApiVirtualizationClusterTypesBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationClusterTypesBulkPartialUpdate Method for VirtualizationClusterTypesBulkPartialUpdate
-
-	Patch a list of cluster type objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClusterTypesBulkPartialUpdateRequest
-	*/
-	VirtualizationClusterTypesBulkPartialUpdate(ctx context.Context) ApiVirtualizationClusterTypesBulkPartialUpdateRequest
-
-	// VirtualizationClusterTypesBulkPartialUpdateExecute executes the request
-	//  @return []ClusterType
-	VirtualizationClusterTypesBulkPartialUpdateExecute(r ApiVirtualizationClusterTypesBulkPartialUpdateRequest) ([]ClusterType, *http.Response, error)
-
-	/*
-	VirtualizationClusterTypesBulkUpdate Method for VirtualizationClusterTypesBulkUpdate
-
-	Put a list of cluster type objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClusterTypesBulkUpdateRequest
-	*/
-	VirtualizationClusterTypesBulkUpdate(ctx context.Context) ApiVirtualizationClusterTypesBulkUpdateRequest
-
-	// VirtualizationClusterTypesBulkUpdateExecute executes the request
-	//  @return []ClusterType
-	VirtualizationClusterTypesBulkUpdateExecute(r ApiVirtualizationClusterTypesBulkUpdateRequest) ([]ClusterType, *http.Response, error)
-
-	/*
-	VirtualizationClusterTypesCreate Method for VirtualizationClusterTypesCreate
-
-	Post a list of cluster type objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClusterTypesCreateRequest
-	*/
-	VirtualizationClusterTypesCreate(ctx context.Context) ApiVirtualizationClusterTypesCreateRequest
-
-	// VirtualizationClusterTypesCreateExecute executes the request
-	//  @return ClusterType
-	VirtualizationClusterTypesCreateExecute(r ApiVirtualizationClusterTypesCreateRequest) (*ClusterType, *http.Response, error)
-
-	/*
-	VirtualizationClusterTypesDestroy Method for VirtualizationClusterTypesDestroy
-
-	Delete a cluster type object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster type.
-	@return ApiVirtualizationClusterTypesDestroyRequest
-	*/
-	VirtualizationClusterTypesDestroy(ctx context.Context, id int32) ApiVirtualizationClusterTypesDestroyRequest
-
-	// VirtualizationClusterTypesDestroyExecute executes the request
-	VirtualizationClusterTypesDestroyExecute(r ApiVirtualizationClusterTypesDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationClusterTypesList Method for VirtualizationClusterTypesList
-
-	Get a list of cluster type objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClusterTypesListRequest
-	*/
-	VirtualizationClusterTypesList(ctx context.Context) ApiVirtualizationClusterTypesListRequest
-
-	// VirtualizationClusterTypesListExecute executes the request
-	//  @return PaginatedClusterTypeList
-	VirtualizationClusterTypesListExecute(r ApiVirtualizationClusterTypesListRequest) (*PaginatedClusterTypeList, *http.Response, error)
-
-	/*
-	VirtualizationClusterTypesPartialUpdate Method for VirtualizationClusterTypesPartialUpdate
-
-	Patch a cluster type object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster type.
-	@return ApiVirtualizationClusterTypesPartialUpdateRequest
-	*/
-	VirtualizationClusterTypesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClusterTypesPartialUpdateRequest
-
-	// VirtualizationClusterTypesPartialUpdateExecute executes the request
-	//  @return ClusterType
-	VirtualizationClusterTypesPartialUpdateExecute(r ApiVirtualizationClusterTypesPartialUpdateRequest) (*ClusterType, *http.Response, error)
-
-	/*
-	VirtualizationClusterTypesRetrieve Method for VirtualizationClusterTypesRetrieve
-
-	Get a cluster type object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster type.
-	@return ApiVirtualizationClusterTypesRetrieveRequest
-	*/
-	VirtualizationClusterTypesRetrieve(ctx context.Context, id int32) ApiVirtualizationClusterTypesRetrieveRequest
-
-	// VirtualizationClusterTypesRetrieveExecute executes the request
-	//  @return ClusterType
-	VirtualizationClusterTypesRetrieveExecute(r ApiVirtualizationClusterTypesRetrieveRequest) (*ClusterType, *http.Response, error)
-
-	/*
-	VirtualizationClusterTypesUpdate Method for VirtualizationClusterTypesUpdate
-
-	Put a cluster type object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster type.
-	@return ApiVirtualizationClusterTypesUpdateRequest
-	*/
-	VirtualizationClusterTypesUpdate(ctx context.Context, id int32) ApiVirtualizationClusterTypesUpdateRequest
-
-	// VirtualizationClusterTypesUpdateExecute executes the request
-	//  @return ClusterType
-	VirtualizationClusterTypesUpdateExecute(r ApiVirtualizationClusterTypesUpdateRequest) (*ClusterType, *http.Response, error)
-
-	/*
-	VirtualizationClustersBulkDestroy Method for VirtualizationClustersBulkDestroy
-
-	Delete a list of cluster objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClustersBulkDestroyRequest
-	*/
-	VirtualizationClustersBulkDestroy(ctx context.Context) ApiVirtualizationClustersBulkDestroyRequest
-
-	// VirtualizationClustersBulkDestroyExecute executes the request
-	VirtualizationClustersBulkDestroyExecute(r ApiVirtualizationClustersBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationClustersBulkPartialUpdate Method for VirtualizationClustersBulkPartialUpdate
-
-	Patch a list of cluster objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClustersBulkPartialUpdateRequest
-	*/
-	VirtualizationClustersBulkPartialUpdate(ctx context.Context) ApiVirtualizationClustersBulkPartialUpdateRequest
-
-	// VirtualizationClustersBulkPartialUpdateExecute executes the request
-	//  @return []Cluster
-	VirtualizationClustersBulkPartialUpdateExecute(r ApiVirtualizationClustersBulkPartialUpdateRequest) ([]Cluster, *http.Response, error)
-
-	/*
-	VirtualizationClustersBulkUpdate Method for VirtualizationClustersBulkUpdate
-
-	Put a list of cluster objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClustersBulkUpdateRequest
-	*/
-	VirtualizationClustersBulkUpdate(ctx context.Context) ApiVirtualizationClustersBulkUpdateRequest
-
-	// VirtualizationClustersBulkUpdateExecute executes the request
-	//  @return []Cluster
-	VirtualizationClustersBulkUpdateExecute(r ApiVirtualizationClustersBulkUpdateRequest) ([]Cluster, *http.Response, error)
-
-	/*
-	VirtualizationClustersCreate Method for VirtualizationClustersCreate
-
-	Post a list of cluster objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClustersCreateRequest
-	*/
-	VirtualizationClustersCreate(ctx context.Context) ApiVirtualizationClustersCreateRequest
-
-	// VirtualizationClustersCreateExecute executes the request
-	//  @return Cluster
-	VirtualizationClustersCreateExecute(r ApiVirtualizationClustersCreateRequest) (*Cluster, *http.Response, error)
-
-	/*
-	VirtualizationClustersDestroy Method for VirtualizationClustersDestroy
-
-	Delete a cluster object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster.
-	@return ApiVirtualizationClustersDestroyRequest
-	*/
-	VirtualizationClustersDestroy(ctx context.Context, id int32) ApiVirtualizationClustersDestroyRequest
-
-	// VirtualizationClustersDestroyExecute executes the request
-	VirtualizationClustersDestroyExecute(r ApiVirtualizationClustersDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationClustersList Method for VirtualizationClustersList
-
-	Get a list of cluster objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationClustersListRequest
-	*/
-	VirtualizationClustersList(ctx context.Context) ApiVirtualizationClustersListRequest
-
-	// VirtualizationClustersListExecute executes the request
-	//  @return PaginatedClusterList
-	VirtualizationClustersListExecute(r ApiVirtualizationClustersListRequest) (*PaginatedClusterList, *http.Response, error)
-
-	/*
-	VirtualizationClustersPartialUpdate Method for VirtualizationClustersPartialUpdate
-
-	Patch a cluster object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster.
-	@return ApiVirtualizationClustersPartialUpdateRequest
-	*/
-	VirtualizationClustersPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClustersPartialUpdateRequest
-
-	// VirtualizationClustersPartialUpdateExecute executes the request
-	//  @return Cluster
-	VirtualizationClustersPartialUpdateExecute(r ApiVirtualizationClustersPartialUpdateRequest) (*Cluster, *http.Response, error)
-
-	/*
-	VirtualizationClustersRetrieve Method for VirtualizationClustersRetrieve
-
-	Get a cluster object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster.
-	@return ApiVirtualizationClustersRetrieveRequest
-	*/
-	VirtualizationClustersRetrieve(ctx context.Context, id int32) ApiVirtualizationClustersRetrieveRequest
-
-	// VirtualizationClustersRetrieveExecute executes the request
-	//  @return Cluster
-	VirtualizationClustersRetrieveExecute(r ApiVirtualizationClustersRetrieveRequest) (*Cluster, *http.Response, error)
-
-	/*
-	VirtualizationClustersUpdate Method for VirtualizationClustersUpdate
-
-	Put a cluster object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this cluster.
-	@return ApiVirtualizationClustersUpdateRequest
-	*/
-	VirtualizationClustersUpdate(ctx context.Context, id int32) ApiVirtualizationClustersUpdateRequest
-
-	// VirtualizationClustersUpdateExecute executes the request
-	//  @return Cluster
-	VirtualizationClustersUpdateExecute(r ApiVirtualizationClustersUpdateRequest) (*Cluster, *http.Response, error)
-
-	/*
-	VirtualizationInterfacesBulkDestroy Method for VirtualizationInterfacesBulkDestroy
-
-	Delete a list of interface objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationInterfacesBulkDestroyRequest
-	*/
-	VirtualizationInterfacesBulkDestroy(ctx context.Context) ApiVirtualizationInterfacesBulkDestroyRequest
-
-	// VirtualizationInterfacesBulkDestroyExecute executes the request
-	VirtualizationInterfacesBulkDestroyExecute(r ApiVirtualizationInterfacesBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationInterfacesBulkPartialUpdate Method for VirtualizationInterfacesBulkPartialUpdate
-
-	Patch a list of interface objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationInterfacesBulkPartialUpdateRequest
-	*/
-	VirtualizationInterfacesBulkPartialUpdate(ctx context.Context) ApiVirtualizationInterfacesBulkPartialUpdateRequest
-
-	// VirtualizationInterfacesBulkPartialUpdateExecute executes the request
-	//  @return []VMInterface
-	VirtualizationInterfacesBulkPartialUpdateExecute(r ApiVirtualizationInterfacesBulkPartialUpdateRequest) ([]VMInterface, *http.Response, error)
-
-	/*
-	VirtualizationInterfacesBulkUpdate Method for VirtualizationInterfacesBulkUpdate
-
-	Put a list of interface objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationInterfacesBulkUpdateRequest
-	*/
-	VirtualizationInterfacesBulkUpdate(ctx context.Context) ApiVirtualizationInterfacesBulkUpdateRequest
-
-	// VirtualizationInterfacesBulkUpdateExecute executes the request
-	//  @return []VMInterface
-	VirtualizationInterfacesBulkUpdateExecute(r ApiVirtualizationInterfacesBulkUpdateRequest) ([]VMInterface, *http.Response, error)
-
-	/*
-	VirtualizationInterfacesCreate Method for VirtualizationInterfacesCreate
-
-	Post a list of interface objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationInterfacesCreateRequest
-	*/
-	VirtualizationInterfacesCreate(ctx context.Context) ApiVirtualizationInterfacesCreateRequest
-
-	// VirtualizationInterfacesCreateExecute executes the request
-	//  @return VMInterface
-	VirtualizationInterfacesCreateExecute(r ApiVirtualizationInterfacesCreateRequest) (*VMInterface, *http.Response, error)
-
-	/*
-	VirtualizationInterfacesDestroy Method for VirtualizationInterfacesDestroy
-
-	Delete a interface object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this interface.
-	@return ApiVirtualizationInterfacesDestroyRequest
-	*/
-	VirtualizationInterfacesDestroy(ctx context.Context, id int32) ApiVirtualizationInterfacesDestroyRequest
-
-	// VirtualizationInterfacesDestroyExecute executes the request
-	VirtualizationInterfacesDestroyExecute(r ApiVirtualizationInterfacesDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationInterfacesList Method for VirtualizationInterfacesList
-
-	Get a list of interface objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationInterfacesListRequest
-	*/
-	VirtualizationInterfacesList(ctx context.Context) ApiVirtualizationInterfacesListRequest
-
-	// VirtualizationInterfacesListExecute executes the request
-	//  @return PaginatedVMInterfaceList
-	VirtualizationInterfacesListExecute(r ApiVirtualizationInterfacesListRequest) (*PaginatedVMInterfaceList, *http.Response, error)
-
-	/*
-	VirtualizationInterfacesPartialUpdate Method for VirtualizationInterfacesPartialUpdate
-
-	Patch a interface object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this interface.
-	@return ApiVirtualizationInterfacesPartialUpdateRequest
-	*/
-	VirtualizationInterfacesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationInterfacesPartialUpdateRequest
-
-	// VirtualizationInterfacesPartialUpdateExecute executes the request
-	//  @return VMInterface
-	VirtualizationInterfacesPartialUpdateExecute(r ApiVirtualizationInterfacesPartialUpdateRequest) (*VMInterface, *http.Response, error)
-
-	/*
-	VirtualizationInterfacesRetrieve Method for VirtualizationInterfacesRetrieve
-
-	Get a interface object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this interface.
-	@return ApiVirtualizationInterfacesRetrieveRequest
-	*/
-	VirtualizationInterfacesRetrieve(ctx context.Context, id int32) ApiVirtualizationInterfacesRetrieveRequest
-
-	// VirtualizationInterfacesRetrieveExecute executes the request
-	//  @return VMInterface
-	VirtualizationInterfacesRetrieveExecute(r ApiVirtualizationInterfacesRetrieveRequest) (*VMInterface, *http.Response, error)
-
-	/*
-	VirtualizationInterfacesUpdate Method for VirtualizationInterfacesUpdate
-
-	Put a interface object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this interface.
-	@return ApiVirtualizationInterfacesUpdateRequest
-	*/
-	VirtualizationInterfacesUpdate(ctx context.Context, id int32) ApiVirtualizationInterfacesUpdateRequest
-
-	// VirtualizationInterfacesUpdateExecute executes the request
-	//  @return VMInterface
-	VirtualizationInterfacesUpdateExecute(r ApiVirtualizationInterfacesUpdateRequest) (*VMInterface, *http.Response, error)
-
-	/*
-	VirtualizationVirtualDisksBulkDestroy Method for VirtualizationVirtualDisksBulkDestroy
-
-	Delete a list of virtual disk objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationVirtualDisksBulkDestroyRequest
-	*/
-	VirtualizationVirtualDisksBulkDestroy(ctx context.Context) ApiVirtualizationVirtualDisksBulkDestroyRequest
-
-	// VirtualizationVirtualDisksBulkDestroyExecute executes the request
-	VirtualizationVirtualDisksBulkDestroyExecute(r ApiVirtualizationVirtualDisksBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationVirtualDisksBulkPartialUpdate Method for VirtualizationVirtualDisksBulkPartialUpdate
-
-	Patch a list of virtual disk objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationVirtualDisksBulkPartialUpdateRequest
-	*/
-	VirtualizationVirtualDisksBulkPartialUpdate(ctx context.Context) ApiVirtualizationVirtualDisksBulkPartialUpdateRequest
-
-	// VirtualizationVirtualDisksBulkPartialUpdateExecute executes the request
-	//  @return []VirtualDisk
-	VirtualizationVirtualDisksBulkPartialUpdateExecute(r ApiVirtualizationVirtualDisksBulkPartialUpdateRequest) ([]VirtualDisk, *http.Response, error)
-
-	/*
-	VirtualizationVirtualDisksBulkUpdate Method for VirtualizationVirtualDisksBulkUpdate
-
-	Put a list of virtual disk objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationVirtualDisksBulkUpdateRequest
-	*/
-	VirtualizationVirtualDisksBulkUpdate(ctx context.Context) ApiVirtualizationVirtualDisksBulkUpdateRequest
-
-	// VirtualizationVirtualDisksBulkUpdateExecute executes the request
-	//  @return []VirtualDisk
-	VirtualizationVirtualDisksBulkUpdateExecute(r ApiVirtualizationVirtualDisksBulkUpdateRequest) ([]VirtualDisk, *http.Response, error)
-
-	/*
-	VirtualizationVirtualDisksCreate Method for VirtualizationVirtualDisksCreate
-
-	Post a list of virtual disk objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationVirtualDisksCreateRequest
-	*/
-	VirtualizationVirtualDisksCreate(ctx context.Context) ApiVirtualizationVirtualDisksCreateRequest
-
-	// VirtualizationVirtualDisksCreateExecute executes the request
-	//  @return VirtualDisk
-	VirtualizationVirtualDisksCreateExecute(r ApiVirtualizationVirtualDisksCreateRequest) (*VirtualDisk, *http.Response, error)
-
-	/*
-	VirtualizationVirtualDisksDestroy Method for VirtualizationVirtualDisksDestroy
-
-	Delete a virtual disk object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this virtual disk.
-	@return ApiVirtualizationVirtualDisksDestroyRequest
-	*/
-	VirtualizationVirtualDisksDestroy(ctx context.Context, id int32) ApiVirtualizationVirtualDisksDestroyRequest
-
-	// VirtualizationVirtualDisksDestroyExecute executes the request
-	VirtualizationVirtualDisksDestroyExecute(r ApiVirtualizationVirtualDisksDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationVirtualDisksList Method for VirtualizationVirtualDisksList
-
-	Get a list of virtual disk objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationVirtualDisksListRequest
-	*/
-	VirtualizationVirtualDisksList(ctx context.Context) ApiVirtualizationVirtualDisksListRequest
-
-	// VirtualizationVirtualDisksListExecute executes the request
-	//  @return PaginatedVirtualDiskList
-	VirtualizationVirtualDisksListExecute(r ApiVirtualizationVirtualDisksListRequest) (*PaginatedVirtualDiskList, *http.Response, error)
-
-	/*
-	VirtualizationVirtualDisksPartialUpdate Method for VirtualizationVirtualDisksPartialUpdate
-
-	Patch a virtual disk object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this virtual disk.
-	@return ApiVirtualizationVirtualDisksPartialUpdateRequest
-	*/
-	VirtualizationVirtualDisksPartialUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualDisksPartialUpdateRequest
-
-	// VirtualizationVirtualDisksPartialUpdateExecute executes the request
-	//  @return VirtualDisk
-	VirtualizationVirtualDisksPartialUpdateExecute(r ApiVirtualizationVirtualDisksPartialUpdateRequest) (*VirtualDisk, *http.Response, error)
-
-	/*
-	VirtualizationVirtualDisksRetrieve Method for VirtualizationVirtualDisksRetrieve
-
-	Get a virtual disk object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this virtual disk.
-	@return ApiVirtualizationVirtualDisksRetrieveRequest
-	*/
-	VirtualizationVirtualDisksRetrieve(ctx context.Context, id int32) ApiVirtualizationVirtualDisksRetrieveRequest
-
-	// VirtualizationVirtualDisksRetrieveExecute executes the request
-	//  @return VirtualDisk
-	VirtualizationVirtualDisksRetrieveExecute(r ApiVirtualizationVirtualDisksRetrieveRequest) (*VirtualDisk, *http.Response, error)
-
-	/*
-	VirtualizationVirtualDisksUpdate Method for VirtualizationVirtualDisksUpdate
-
-	Put a virtual disk object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this virtual disk.
-	@return ApiVirtualizationVirtualDisksUpdateRequest
-	*/
-	VirtualizationVirtualDisksUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualDisksUpdateRequest
-
-	// VirtualizationVirtualDisksUpdateExecute executes the request
-	//  @return VirtualDisk
-	VirtualizationVirtualDisksUpdateExecute(r ApiVirtualizationVirtualDisksUpdateRequest) (*VirtualDisk, *http.Response, error)
-
-	/*
-	VirtualizationVirtualMachinesBulkDestroy Method for VirtualizationVirtualMachinesBulkDestroy
-
-	Delete a list of virtual machine objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationVirtualMachinesBulkDestroyRequest
-	*/
-	VirtualizationVirtualMachinesBulkDestroy(ctx context.Context) ApiVirtualizationVirtualMachinesBulkDestroyRequest
-
-	// VirtualizationVirtualMachinesBulkDestroyExecute executes the request
-	VirtualizationVirtualMachinesBulkDestroyExecute(r ApiVirtualizationVirtualMachinesBulkDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationVirtualMachinesBulkPartialUpdate Method for VirtualizationVirtualMachinesBulkPartialUpdate
-
-	Patch a list of virtual machine objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationVirtualMachinesBulkPartialUpdateRequest
-	*/
-	VirtualizationVirtualMachinesBulkPartialUpdate(ctx context.Context) ApiVirtualizationVirtualMachinesBulkPartialUpdateRequest
-
-	// VirtualizationVirtualMachinesBulkPartialUpdateExecute executes the request
-	//  @return []VirtualMachineWithConfigContext
-	VirtualizationVirtualMachinesBulkPartialUpdateExecute(r ApiVirtualizationVirtualMachinesBulkPartialUpdateRequest) ([]VirtualMachineWithConfigContext, *http.Response, error)
-
-	/*
-	VirtualizationVirtualMachinesBulkUpdate Method for VirtualizationVirtualMachinesBulkUpdate
-
-	Put a list of virtual machine objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationVirtualMachinesBulkUpdateRequest
-	*/
-	VirtualizationVirtualMachinesBulkUpdate(ctx context.Context) ApiVirtualizationVirtualMachinesBulkUpdateRequest
-
-	// VirtualizationVirtualMachinesBulkUpdateExecute executes the request
-	//  @return []VirtualMachineWithConfigContext
-	VirtualizationVirtualMachinesBulkUpdateExecute(r ApiVirtualizationVirtualMachinesBulkUpdateRequest) ([]VirtualMachineWithConfigContext, *http.Response, error)
-
-	/*
-	VirtualizationVirtualMachinesCreate Method for VirtualizationVirtualMachinesCreate
-
-	Post a list of virtual machine objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationVirtualMachinesCreateRequest
-	*/
-	VirtualizationVirtualMachinesCreate(ctx context.Context) ApiVirtualizationVirtualMachinesCreateRequest
-
-	// VirtualizationVirtualMachinesCreateExecute executes the request
-	//  @return VirtualMachineWithConfigContext
-	VirtualizationVirtualMachinesCreateExecute(r ApiVirtualizationVirtualMachinesCreateRequest) (*VirtualMachineWithConfigContext, *http.Response, error)
-
-	/*
-	VirtualizationVirtualMachinesDestroy Method for VirtualizationVirtualMachinesDestroy
-
-	Delete a virtual machine object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this virtual machine.
-	@return ApiVirtualizationVirtualMachinesDestroyRequest
-	*/
-	VirtualizationVirtualMachinesDestroy(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesDestroyRequest
-
-	// VirtualizationVirtualMachinesDestroyExecute executes the request
-	VirtualizationVirtualMachinesDestroyExecute(r ApiVirtualizationVirtualMachinesDestroyRequest) (*http.Response, error)
-
-	/*
-	VirtualizationVirtualMachinesList Method for VirtualizationVirtualMachinesList
-
-	Get a list of virtual machine objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVirtualizationVirtualMachinesListRequest
-	*/
-	VirtualizationVirtualMachinesList(ctx context.Context) ApiVirtualizationVirtualMachinesListRequest
-
-	// VirtualizationVirtualMachinesListExecute executes the request
-	//  @return PaginatedVirtualMachineWithConfigContextList
-	VirtualizationVirtualMachinesListExecute(r ApiVirtualizationVirtualMachinesListRequest) (*PaginatedVirtualMachineWithConfigContextList, *http.Response, error)
-
-	/*
-	VirtualizationVirtualMachinesPartialUpdate Method for VirtualizationVirtualMachinesPartialUpdate
-
-	Patch a virtual machine object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this virtual machine.
-	@return ApiVirtualizationVirtualMachinesPartialUpdateRequest
-	*/
-	VirtualizationVirtualMachinesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesPartialUpdateRequest
-
-	// VirtualizationVirtualMachinesPartialUpdateExecute executes the request
-	//  @return VirtualMachineWithConfigContext
-	VirtualizationVirtualMachinesPartialUpdateExecute(r ApiVirtualizationVirtualMachinesPartialUpdateRequest) (*VirtualMachineWithConfigContext, *http.Response, error)
-
-	/*
-	VirtualizationVirtualMachinesRenderConfigCreate Method for VirtualizationVirtualMachinesRenderConfigCreate
-
-	Resolve and render the preferred ConfigTemplate for this Device.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this virtual machine.
-	@return ApiVirtualizationVirtualMachinesRenderConfigCreateRequest
-	*/
-	VirtualizationVirtualMachinesRenderConfigCreate(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesRenderConfigCreateRequest
-
-	// VirtualizationVirtualMachinesRenderConfigCreateExecute executes the request
-	//  @return VirtualMachineWithConfigContext
-	VirtualizationVirtualMachinesRenderConfigCreateExecute(r ApiVirtualizationVirtualMachinesRenderConfigCreateRequest) (*VirtualMachineWithConfigContext, *http.Response, error)
-
-	/*
-	VirtualizationVirtualMachinesRetrieve Method for VirtualizationVirtualMachinesRetrieve
-
-	Get a virtual machine object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this virtual machine.
-	@return ApiVirtualizationVirtualMachinesRetrieveRequest
-	*/
-	VirtualizationVirtualMachinesRetrieve(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesRetrieveRequest
-
-	// VirtualizationVirtualMachinesRetrieveExecute executes the request
-	//  @return VirtualMachineWithConfigContext
-	VirtualizationVirtualMachinesRetrieveExecute(r ApiVirtualizationVirtualMachinesRetrieveRequest) (*VirtualMachineWithConfigContext, *http.Response, error)
-
-	/*
-	VirtualizationVirtualMachinesUpdate Method for VirtualizationVirtualMachinesUpdate
-
-	Put a virtual machine object.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id A unique integer value identifying this virtual machine.
-	@return ApiVirtualizationVirtualMachinesUpdateRequest
-	*/
-	VirtualizationVirtualMachinesUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesUpdateRequest
-
-	// VirtualizationVirtualMachinesUpdateExecute executes the request
-	//  @return VirtualMachineWithConfigContext
-	VirtualizationVirtualMachinesUpdateExecute(r ApiVirtualizationVirtualMachinesUpdateRequest) (*VirtualMachineWithConfigContext, *http.Response, error)
-}
-
 // VirtualizationAPIService VirtualizationAPI service
 type VirtualizationAPIService service
 
 type ApiVirtualizationClusterGroupsBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	clusterGroupRequest *[]ClusterGroupRequest
 }
 
@@ -926,7 +140,7 @@ func (a *VirtualizationAPIService) VirtualizationClusterGroupsBulkDestroyExecute
 
 type ApiVirtualizationClusterGroupsBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	clusterGroupRequest *[]ClusterGroupRequest
 }
 
@@ -1050,7 +264,7 @@ func (a *VirtualizationAPIService) VirtualizationClusterGroupsBulkPartialUpdateE
 
 type ApiVirtualizationClusterGroupsBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	clusterGroupRequest *[]ClusterGroupRequest
 }
 
@@ -1174,7 +388,7 @@ func (a *VirtualizationAPIService) VirtualizationClusterGroupsBulkUpdateExecute(
 
 type ApiVirtualizationClusterGroupsCreateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	clusterGroupRequest *ClusterGroupRequest
 }
 
@@ -1298,8 +512,8 @@ func (a *VirtualizationAPIService) VirtualizationClusterGroupsCreateExecute(r Ap
 
 type ApiVirtualizationClusterGroupsDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationClusterGroupsDestroyRequest) Execute() (*http.Response, error) {
@@ -1315,7 +529,7 @@ Delete a cluster group object.
  @param id A unique integer value identifying this cluster group.
  @return ApiVirtualizationClusterGroupsDestroyRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClusterGroupsDestroy(ctx context.Context, id int32) ApiVirtualizationClusterGroupsDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsDestroy(ctx context.Context, id int64) ApiVirtualizationClusterGroupsDestroyRequest {
 	return ApiVirtualizationClusterGroupsDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1404,13 +618,13 @@ func (a *VirtualizationAPIService) VirtualizationClusterGroupsDestroyExecute(r A
 
 type ApiVirtualizationClusterGroupsListRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	contact *[]int32
-	contactN *[]int32
+	ApiService *VirtualizationAPIService
+	contact *[]int64
+	contactN *[]int64
 	contactGroup *[]string
 	contactGroupN *[]string
-	contactRole *[]int32
-	contactRoleN *[]int32
+	contactRole *[]int64
+	contactRoleN *[]int64
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -1430,13 +644,13 @@ type ApiVirtualizationClusterGroupsListRequest struct {
 	descriptionNie *[]string
 	descriptionNiew *[]string
 	descriptionNisw *[]string
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -1444,7 +658,7 @@ type ApiVirtualizationClusterGroupsListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
 	name *[]string
 	nameEmpty *bool
@@ -1457,7 +671,7 @@ type ApiVirtualizationClusterGroupsListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	q *string
 	slug *[]string
@@ -1477,13 +691,13 @@ type ApiVirtualizationClusterGroupsListRequest struct {
 }
 
 // Contact
-func (r ApiVirtualizationClusterGroupsListRequest) Contact(contact []int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) Contact(contact []int64) ApiVirtualizationClusterGroupsListRequest {
 	r.contact = &contact
 	return r
 }
 
 // Contact
-func (r ApiVirtualizationClusterGroupsListRequest) ContactN(contactN []int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) ContactN(contactN []int64) ApiVirtualizationClusterGroupsListRequest {
 	r.contactN = &contactN
 	return r
 }
@@ -1499,13 +713,13 @@ func (r ApiVirtualizationClusterGroupsListRequest) ContactGroupN(contactGroupN [
 }
 
 // Contact Role
-func (r ApiVirtualizationClusterGroupsListRequest) ContactRole(contactRole []int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) ContactRole(contactRole []int64) ApiVirtualizationClusterGroupsListRequest {
 	r.contactRole = &contactRole
 	return r
 }
 
 // Contact Role
-func (r ApiVirtualizationClusterGroupsListRequest) ContactRoleN(contactRoleN []int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) ContactRoleN(contactRoleN []int64) ApiVirtualizationClusterGroupsListRequest {
 	r.contactRoleN = &contactRoleN
 	return r
 }
@@ -1605,7 +819,7 @@ func (r ApiVirtualizationClusterGroupsListRequest) DescriptionNisw(descriptionNi
 	return r
 }
 
-func (r ApiVirtualizationClusterGroupsListRequest) Id(id []int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) Id(id []int64) ApiVirtualizationClusterGroupsListRequest {
 	r.id = &id
 	return r
 }
@@ -1615,27 +829,27 @@ func (r ApiVirtualizationClusterGroupsListRequest) IdEmpty(idEmpty bool) ApiVirt
 	return r
 }
 
-func (r ApiVirtualizationClusterGroupsListRequest) IdGt(idGt []int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) IdGt(idGt []int64) ApiVirtualizationClusterGroupsListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVirtualizationClusterGroupsListRequest) IdGte(idGte []int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) IdGte(idGte []int64) ApiVirtualizationClusterGroupsListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVirtualizationClusterGroupsListRequest) IdLt(idLt []int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) IdLt(idLt []int64) ApiVirtualizationClusterGroupsListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVirtualizationClusterGroupsListRequest) IdLte(idLte []int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) IdLte(idLte []int64) ApiVirtualizationClusterGroupsListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVirtualizationClusterGroupsListRequest) IdN(idN []int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) IdN(idN []int64) ApiVirtualizationClusterGroupsListRequest {
 	r.idN = &idN
 	return r
 }
@@ -1676,7 +890,7 @@ func (r ApiVirtualizationClusterGroupsListRequest) LastUpdatedN(lastUpdatedN []t
 }
 
 // Number of results to return per page.
-func (r ApiVirtualizationClusterGroupsListRequest) Limit(limit int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) Limit(limit int64) ApiVirtualizationClusterGroupsListRequest {
 	r.limit = &limit
 	return r
 }
@@ -1742,7 +956,7 @@ func (r ApiVirtualizationClusterGroupsListRequest) NameNisw(nameNisw []string) A
 }
 
 // The initial index from which to return the results.
-func (r ApiVirtualizationClusterGroupsListRequest) Offset(offset int32) ApiVirtualizationClusterGroupsListRequest {
+func (r ApiVirtualizationClusterGroupsListRequest) Offset(offset int64) ApiVirtualizationClusterGroupsListRequest {
 	r.offset = &offset
 	return r
 }
@@ -2610,8 +1824,8 @@ func (a *VirtualizationAPIService) VirtualizationClusterGroupsListExecute(r ApiV
 
 type ApiVirtualizationClusterGroupsPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	patchedClusterGroupRequest *PatchedClusterGroupRequest
 }
 
@@ -2633,7 +1847,7 @@ Patch a cluster group object.
  @param id A unique integer value identifying this cluster group.
  @return ApiVirtualizationClusterGroupsPartialUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClusterGroupsPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClusterGroupsPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsPartialUpdate(ctx context.Context, id int64) ApiVirtualizationClusterGroupsPartialUpdateRequest {
 	return ApiVirtualizationClusterGroupsPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2735,8 +1949,8 @@ func (a *VirtualizationAPIService) VirtualizationClusterGroupsPartialUpdateExecu
 
 type ApiVirtualizationClusterGroupsRetrieveRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationClusterGroupsRetrieveRequest) Execute() (*ClusterGroup, *http.Response, error) {
@@ -2752,7 +1966,7 @@ Get a cluster group object.
  @param id A unique integer value identifying this cluster group.
  @return ApiVirtualizationClusterGroupsRetrieveRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClusterGroupsRetrieve(ctx context.Context, id int32) ApiVirtualizationClusterGroupsRetrieveRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsRetrieve(ctx context.Context, id int64) ApiVirtualizationClusterGroupsRetrieveRequest {
 	return ApiVirtualizationClusterGroupsRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2852,8 +2066,8 @@ func (a *VirtualizationAPIService) VirtualizationClusterGroupsRetrieveExecute(r 
 
 type ApiVirtualizationClusterGroupsUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	clusterGroupRequest *ClusterGroupRequest
 }
 
@@ -2875,7 +2089,7 @@ Put a cluster group object.
  @param id A unique integer value identifying this cluster group.
  @return ApiVirtualizationClusterGroupsUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClusterGroupsUpdate(ctx context.Context, id int32) ApiVirtualizationClusterGroupsUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterGroupsUpdate(ctx context.Context, id int64) ApiVirtualizationClusterGroupsUpdateRequest {
 	return ApiVirtualizationClusterGroupsUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2980,7 +2194,7 @@ func (a *VirtualizationAPIService) VirtualizationClusterGroupsUpdateExecute(r Ap
 
 type ApiVirtualizationClusterTypesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	clusterTypeRequest *[]ClusterTypeRequest
 }
 
@@ -3093,7 +2307,7 @@ func (a *VirtualizationAPIService) VirtualizationClusterTypesBulkDestroyExecute(
 
 type ApiVirtualizationClusterTypesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	clusterTypeRequest *[]ClusterTypeRequest
 }
 
@@ -3217,7 +2431,7 @@ func (a *VirtualizationAPIService) VirtualizationClusterTypesBulkPartialUpdateEx
 
 type ApiVirtualizationClusterTypesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	clusterTypeRequest *[]ClusterTypeRequest
 }
 
@@ -3341,7 +2555,7 @@ func (a *VirtualizationAPIService) VirtualizationClusterTypesBulkUpdateExecute(r
 
 type ApiVirtualizationClusterTypesCreateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	clusterTypeRequest *ClusterTypeRequest
 }
 
@@ -3465,8 +2679,8 @@ func (a *VirtualizationAPIService) VirtualizationClusterTypesCreateExecute(r Api
 
 type ApiVirtualizationClusterTypesDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationClusterTypesDestroyRequest) Execute() (*http.Response, error) {
@@ -3482,7 +2696,7 @@ Delete a cluster type object.
  @param id A unique integer value identifying this cluster type.
  @return ApiVirtualizationClusterTypesDestroyRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClusterTypesDestroy(ctx context.Context, id int32) ApiVirtualizationClusterTypesDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesDestroy(ctx context.Context, id int64) ApiVirtualizationClusterTypesDestroyRequest {
 	return ApiVirtualizationClusterTypesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3571,7 +2785,7 @@ func (a *VirtualizationAPIService) VirtualizationClusterTypesDestroyExecute(r Ap
 
 type ApiVirtualizationClusterTypesListRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -3591,13 +2805,13 @@ type ApiVirtualizationClusterTypesListRequest struct {
 	descriptionNie *[]string
 	descriptionNiew *[]string
 	descriptionNisw *[]string
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -3605,7 +2819,7 @@ type ApiVirtualizationClusterTypesListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
 	name *[]string
 	nameEmpty *bool
@@ -3618,7 +2832,7 @@ type ApiVirtualizationClusterTypesListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	q *string
 	slug *[]string
@@ -3732,7 +2946,7 @@ func (r ApiVirtualizationClusterTypesListRequest) DescriptionNisw(descriptionNis
 	return r
 }
 
-func (r ApiVirtualizationClusterTypesListRequest) Id(id []int32) ApiVirtualizationClusterTypesListRequest {
+func (r ApiVirtualizationClusterTypesListRequest) Id(id []int64) ApiVirtualizationClusterTypesListRequest {
 	r.id = &id
 	return r
 }
@@ -3742,27 +2956,27 @@ func (r ApiVirtualizationClusterTypesListRequest) IdEmpty(idEmpty bool) ApiVirtu
 	return r
 }
 
-func (r ApiVirtualizationClusterTypesListRequest) IdGt(idGt []int32) ApiVirtualizationClusterTypesListRequest {
+func (r ApiVirtualizationClusterTypesListRequest) IdGt(idGt []int64) ApiVirtualizationClusterTypesListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVirtualizationClusterTypesListRequest) IdGte(idGte []int32) ApiVirtualizationClusterTypesListRequest {
+func (r ApiVirtualizationClusterTypesListRequest) IdGte(idGte []int64) ApiVirtualizationClusterTypesListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVirtualizationClusterTypesListRequest) IdLt(idLt []int32) ApiVirtualizationClusterTypesListRequest {
+func (r ApiVirtualizationClusterTypesListRequest) IdLt(idLt []int64) ApiVirtualizationClusterTypesListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVirtualizationClusterTypesListRequest) IdLte(idLte []int32) ApiVirtualizationClusterTypesListRequest {
+func (r ApiVirtualizationClusterTypesListRequest) IdLte(idLte []int64) ApiVirtualizationClusterTypesListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVirtualizationClusterTypesListRequest) IdN(idN []int32) ApiVirtualizationClusterTypesListRequest {
+func (r ApiVirtualizationClusterTypesListRequest) IdN(idN []int64) ApiVirtualizationClusterTypesListRequest {
 	r.idN = &idN
 	return r
 }
@@ -3803,7 +3017,7 @@ func (r ApiVirtualizationClusterTypesListRequest) LastUpdatedN(lastUpdatedN []ti
 }
 
 // Number of results to return per page.
-func (r ApiVirtualizationClusterTypesListRequest) Limit(limit int32) ApiVirtualizationClusterTypesListRequest {
+func (r ApiVirtualizationClusterTypesListRequest) Limit(limit int64) ApiVirtualizationClusterTypesListRequest {
 	r.limit = &limit
 	return r
 }
@@ -3869,7 +3083,7 @@ func (r ApiVirtualizationClusterTypesListRequest) NameNisw(nameNisw []string) Ap
 }
 
 // The initial index from which to return the results.
-func (r ApiVirtualizationClusterTypesListRequest) Offset(offset int32) ApiVirtualizationClusterTypesListRequest {
+func (r ApiVirtualizationClusterTypesListRequest) Offset(offset int64) ApiVirtualizationClusterTypesListRequest {
 	r.offset = &offset
 	return r
 }
@@ -4671,8 +3885,8 @@ func (a *VirtualizationAPIService) VirtualizationClusterTypesListExecute(r ApiVi
 
 type ApiVirtualizationClusterTypesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	patchedClusterTypeRequest *PatchedClusterTypeRequest
 }
 
@@ -4694,7 +3908,7 @@ Patch a cluster type object.
  @param id A unique integer value identifying this cluster type.
  @return ApiVirtualizationClusterTypesPartialUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClusterTypesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClusterTypesPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesPartialUpdate(ctx context.Context, id int64) ApiVirtualizationClusterTypesPartialUpdateRequest {
 	return ApiVirtualizationClusterTypesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4796,8 +4010,8 @@ func (a *VirtualizationAPIService) VirtualizationClusterTypesPartialUpdateExecut
 
 type ApiVirtualizationClusterTypesRetrieveRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationClusterTypesRetrieveRequest) Execute() (*ClusterType, *http.Response, error) {
@@ -4813,7 +4027,7 @@ Get a cluster type object.
  @param id A unique integer value identifying this cluster type.
  @return ApiVirtualizationClusterTypesRetrieveRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClusterTypesRetrieve(ctx context.Context, id int32) ApiVirtualizationClusterTypesRetrieveRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesRetrieve(ctx context.Context, id int64) ApiVirtualizationClusterTypesRetrieveRequest {
 	return ApiVirtualizationClusterTypesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4913,8 +4127,8 @@ func (a *VirtualizationAPIService) VirtualizationClusterTypesRetrieveExecute(r A
 
 type ApiVirtualizationClusterTypesUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	clusterTypeRequest *ClusterTypeRequest
 }
 
@@ -4936,7 +4150,7 @@ Put a cluster type object.
  @param id A unique integer value identifying this cluster type.
  @return ApiVirtualizationClusterTypesUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClusterTypesUpdate(ctx context.Context, id int32) ApiVirtualizationClusterTypesUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClusterTypesUpdate(ctx context.Context, id int64) ApiVirtualizationClusterTypesUpdateRequest {
 	return ApiVirtualizationClusterTypesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5041,7 +4255,7 @@ func (a *VirtualizationAPIService) VirtualizationClusterTypesUpdateExecute(r Api
 
 type ApiVirtualizationClustersBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	clusterRequest *[]ClusterRequest
 }
 
@@ -5154,7 +4368,7 @@ func (a *VirtualizationAPIService) VirtualizationClustersBulkDestroyExecute(r Ap
 
 type ApiVirtualizationClustersBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	clusterRequest *[]ClusterRequest
 }
 
@@ -5278,7 +4492,7 @@ func (a *VirtualizationAPIService) VirtualizationClustersBulkPartialUpdateExecut
 
 type ApiVirtualizationClustersBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	clusterRequest *[]ClusterRequest
 }
 
@@ -5402,7 +4616,7 @@ func (a *VirtualizationAPIService) VirtualizationClustersBulkUpdateExecute(r Api
 
 type ApiVirtualizationClustersCreateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	writableClusterRequest *WritableClusterRequest
 }
 
@@ -5526,8 +4740,8 @@ func (a *VirtualizationAPIService) VirtualizationClustersCreateExecute(r ApiVirt
 
 type ApiVirtualizationClustersDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationClustersDestroyRequest) Execute() (*http.Response, error) {
@@ -5543,7 +4757,7 @@ Delete a cluster object.
  @param id A unique integer value identifying this cluster.
  @return ApiVirtualizationClustersDestroyRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClustersDestroy(ctx context.Context, id int32) ApiVirtualizationClustersDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersDestroy(ctx context.Context, id int64) ApiVirtualizationClustersDestroyRequest {
 	return ApiVirtualizationClustersDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5632,13 +4846,13 @@ func (a *VirtualizationAPIService) VirtualizationClustersDestroyExecute(r ApiVir
 
 type ApiVirtualizationClustersListRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	contact *[]int32
-	contactN *[]int32
+	ApiService *VirtualizationAPIService
+	contact *[]int64
+	contactN *[]int64
 	contactGroup *[]string
 	contactGroupN *[]string
-	contactRole *[]int32
-	contactRoleN *[]int32
+	contactRole *[]int64
+	contactRoleN *[]int64
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -5660,15 +4874,15 @@ type ApiVirtualizationClustersListRequest struct {
 	descriptionNisw *[]string
 	group *[]string
 	groupN *[]string
-	groupId *[]*int32
-	groupIdN *[]*int32
-	id *[]int32
+	groupId *[]*int64
+	groupIdN *[]*int64
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -5676,7 +4890,7 @@ type ApiVirtualizationClustersListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
 	name *[]string
 	nameEmpty *bool
@@ -5689,7 +4903,7 @@ type ApiVirtualizationClustersListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	q *string
 	region *[]string
@@ -5702,8 +4916,8 @@ type ApiVirtualizationClustersListRequest struct {
 	siteGroupN *[]string
 	siteGroupId *[]string
 	siteGroupIdN *[]string
-	siteId *[]*int32
-	siteIdN *[]*int32
+	siteId *[]*int64
+	siteIdN *[]*int64
 	status *[]string
 	statusEmpty *bool
 	statusIc *[]VirtualizationClustersListStatusIcParameterInner
@@ -5723,23 +4937,23 @@ type ApiVirtualizationClustersListRequest struct {
 	tenantGroupN *[]string
 	tenantGroupId *[]string
 	tenantGroupIdN *[]string
-	tenantId *[]*int32
-	tenantIdN *[]*int32
+	tenantId *[]*int64
+	tenantIdN *[]*int64
 	type_ *[]string
 	typeN *[]string
-	typeId *[]int32
-	typeIdN *[]int32
+	typeId *[]int64
+	typeIdN *[]int64
 	updatedByRequest *string
 }
 
 // Contact
-func (r ApiVirtualizationClustersListRequest) Contact(contact []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) Contact(contact []int64) ApiVirtualizationClustersListRequest {
 	r.contact = &contact
 	return r
 }
 
 // Contact
-func (r ApiVirtualizationClustersListRequest) ContactN(contactN []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) ContactN(contactN []int64) ApiVirtualizationClustersListRequest {
 	r.contactN = &contactN
 	return r
 }
@@ -5755,13 +4969,13 @@ func (r ApiVirtualizationClustersListRequest) ContactGroupN(contactGroupN []stri
 }
 
 // Contact Role
-func (r ApiVirtualizationClustersListRequest) ContactRole(contactRole []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) ContactRole(contactRole []int64) ApiVirtualizationClustersListRequest {
 	r.contactRole = &contactRole
 	return r
 }
 
 // Contact Role
-func (r ApiVirtualizationClustersListRequest) ContactRoleN(contactRoleN []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) ContactRoleN(contactRoleN []int64) ApiVirtualizationClustersListRequest {
 	r.contactRoleN = &contactRoleN
 	return r
 }
@@ -5874,18 +5088,18 @@ func (r ApiVirtualizationClustersListRequest) GroupN(groupN []string) ApiVirtual
 }
 
 // Parent group (ID)
-func (r ApiVirtualizationClustersListRequest) GroupId(groupId []*int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) GroupId(groupId []*int64) ApiVirtualizationClustersListRequest {
 	r.groupId = &groupId
 	return r
 }
 
 // Parent group (ID)
-func (r ApiVirtualizationClustersListRequest) GroupIdN(groupIdN []*int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) GroupIdN(groupIdN []*int64) ApiVirtualizationClustersListRequest {
 	r.groupIdN = &groupIdN
 	return r
 }
 
-func (r ApiVirtualizationClustersListRequest) Id(id []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) Id(id []int64) ApiVirtualizationClustersListRequest {
 	r.id = &id
 	return r
 }
@@ -5895,27 +5109,27 @@ func (r ApiVirtualizationClustersListRequest) IdEmpty(idEmpty bool) ApiVirtualiz
 	return r
 }
 
-func (r ApiVirtualizationClustersListRequest) IdGt(idGt []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) IdGt(idGt []int64) ApiVirtualizationClustersListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVirtualizationClustersListRequest) IdGte(idGte []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) IdGte(idGte []int64) ApiVirtualizationClustersListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVirtualizationClustersListRequest) IdLt(idLt []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) IdLt(idLt []int64) ApiVirtualizationClustersListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVirtualizationClustersListRequest) IdLte(idLte []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) IdLte(idLte []int64) ApiVirtualizationClustersListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVirtualizationClustersListRequest) IdN(idN []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) IdN(idN []int64) ApiVirtualizationClustersListRequest {
 	r.idN = &idN
 	return r
 }
@@ -5956,7 +5170,7 @@ func (r ApiVirtualizationClustersListRequest) LastUpdatedN(lastUpdatedN []time.T
 }
 
 // Number of results to return per page.
-func (r ApiVirtualizationClustersListRequest) Limit(limit int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) Limit(limit int64) ApiVirtualizationClustersListRequest {
 	r.limit = &limit
 	return r
 }
@@ -6022,7 +5236,7 @@ func (r ApiVirtualizationClustersListRequest) NameNisw(nameNisw []string) ApiVir
 }
 
 // The initial index from which to return the results.
-func (r ApiVirtualizationClustersListRequest) Offset(offset int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) Offset(offset int64) ApiVirtualizationClustersListRequest {
 	r.offset = &offset
 	return r
 }
@@ -6092,13 +5306,13 @@ func (r ApiVirtualizationClustersListRequest) SiteGroupIdN(siteGroupIdN []string
 }
 
 // Site (ID)
-func (r ApiVirtualizationClustersListRequest) SiteId(siteId []*int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) SiteId(siteId []*int64) ApiVirtualizationClustersListRequest {
 	r.siteId = &siteId
 	return r
 }
 
 // Site (ID)
-func (r ApiVirtualizationClustersListRequest) SiteIdN(siteIdN []*int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) SiteIdN(siteIdN []*int64) ApiVirtualizationClustersListRequest {
 	r.siteIdN = &siteIdN
 	return r
 }
@@ -6210,13 +5424,13 @@ func (r ApiVirtualizationClustersListRequest) TenantGroupIdN(tenantGroupIdN []st
 }
 
 // Tenant (ID)
-func (r ApiVirtualizationClustersListRequest) TenantId(tenantId []*int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) TenantId(tenantId []*int64) ApiVirtualizationClustersListRequest {
 	r.tenantId = &tenantId
 	return r
 }
 
 // Tenant (ID)
-func (r ApiVirtualizationClustersListRequest) TenantIdN(tenantIdN []*int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) TenantIdN(tenantIdN []*int64) ApiVirtualizationClustersListRequest {
 	r.tenantIdN = &tenantIdN
 	return r
 }
@@ -6234,13 +5448,13 @@ func (r ApiVirtualizationClustersListRequest) TypeN(typeN []string) ApiVirtualiz
 }
 
 // Cluster type (ID)
-func (r ApiVirtualizationClustersListRequest) TypeId(typeId []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) TypeId(typeId []int64) ApiVirtualizationClustersListRequest {
 	r.typeId = &typeId
 	return r
 }
 
 // Cluster type (ID)
-func (r ApiVirtualizationClustersListRequest) TypeIdN(typeIdN []int32) ApiVirtualizationClustersListRequest {
+func (r ApiVirtualizationClustersListRequest) TypeIdN(typeIdN []int64) ApiVirtualizationClustersListRequest {
 	r.typeIdN = &typeIdN
 	return r
 }
@@ -7339,8 +6553,8 @@ func (a *VirtualizationAPIService) VirtualizationClustersListExecute(r ApiVirtua
 
 type ApiVirtualizationClustersPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	patchedWritableClusterRequest *PatchedWritableClusterRequest
 }
 
@@ -7362,7 +6576,7 @@ Patch a cluster object.
  @param id A unique integer value identifying this cluster.
  @return ApiVirtualizationClustersPartialUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClustersPartialUpdate(ctx context.Context, id int32) ApiVirtualizationClustersPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersPartialUpdate(ctx context.Context, id int64) ApiVirtualizationClustersPartialUpdateRequest {
 	return ApiVirtualizationClustersPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7464,8 +6678,8 @@ func (a *VirtualizationAPIService) VirtualizationClustersPartialUpdateExecute(r 
 
 type ApiVirtualizationClustersRetrieveRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationClustersRetrieveRequest) Execute() (*Cluster, *http.Response, error) {
@@ -7481,7 +6695,7 @@ Get a cluster object.
  @param id A unique integer value identifying this cluster.
  @return ApiVirtualizationClustersRetrieveRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClustersRetrieve(ctx context.Context, id int32) ApiVirtualizationClustersRetrieveRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersRetrieve(ctx context.Context, id int64) ApiVirtualizationClustersRetrieveRequest {
 	return ApiVirtualizationClustersRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7581,8 +6795,8 @@ func (a *VirtualizationAPIService) VirtualizationClustersRetrieveExecute(r ApiVi
 
 type ApiVirtualizationClustersUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	writableClusterRequest *WritableClusterRequest
 }
 
@@ -7604,7 +6818,7 @@ Put a cluster object.
  @param id A unique integer value identifying this cluster.
  @return ApiVirtualizationClustersUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationClustersUpdate(ctx context.Context, id int32) ApiVirtualizationClustersUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationClustersUpdate(ctx context.Context, id int64) ApiVirtualizationClustersUpdateRequest {
 	return ApiVirtualizationClustersUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7709,7 +6923,7 @@ func (a *VirtualizationAPIService) VirtualizationClustersUpdateExecute(r ApiVirt
 
 type ApiVirtualizationInterfacesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	vMInterfaceRequest *[]VMInterfaceRequest
 }
 
@@ -7822,7 +7036,7 @@ func (a *VirtualizationAPIService) VirtualizationInterfacesBulkDestroyExecute(r 
 
 type ApiVirtualizationInterfacesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	vMInterfaceRequest *[]VMInterfaceRequest
 }
 
@@ -7946,7 +7160,7 @@ func (a *VirtualizationAPIService) VirtualizationInterfacesBulkPartialUpdateExec
 
 type ApiVirtualizationInterfacesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	vMInterfaceRequest *[]VMInterfaceRequest
 }
 
@@ -8070,7 +7284,7 @@ func (a *VirtualizationAPIService) VirtualizationInterfacesBulkUpdateExecute(r A
 
 type ApiVirtualizationInterfacesCreateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	writableVMInterfaceRequest *WritableVMInterfaceRequest
 }
 
@@ -8194,8 +7408,8 @@ func (a *VirtualizationAPIService) VirtualizationInterfacesCreateExecute(r ApiVi
 
 type ApiVirtualizationInterfacesDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationInterfacesDestroyRequest) Execute() (*http.Response, error) {
@@ -8211,7 +7425,7 @@ Delete a interface object.
  @param id A unique integer value identifying this interface.
  @return ApiVirtualizationInterfacesDestroyRequest
 */
-func (a *VirtualizationAPIService) VirtualizationInterfacesDestroy(ctx context.Context, id int32) ApiVirtualizationInterfacesDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesDestroy(ctx context.Context, id int64) ApiVirtualizationInterfacesDestroyRequest {
 	return ApiVirtualizationInterfacesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8300,13 +7514,13 @@ func (a *VirtualizationAPIService) VirtualizationInterfacesDestroyExecute(r ApiV
 
 type ApiVirtualizationInterfacesListRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	bridgeId *[]int32
-	bridgeIdN *[]int32
+	ApiService *VirtualizationAPIService
+	bridgeId *[]int64
+	bridgeIdN *[]int64
 	cluster *[]string
 	clusterN *[]string
-	clusterId *[]int32
-	clusterIdN *[]int32
+	clusterId *[]int64
+	clusterIdN *[]int64
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -8327,17 +7541,17 @@ type ApiVirtualizationInterfacesListRequest struct {
 	descriptionNiew *[]string
 	descriptionNisw *[]string
 	enabled *bool
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	l2vpn *[]*int64
 	l2vpnN *[]*int64
-	l2vpnId *[]int32
-	l2vpnIdN *[]int32
+	l2vpnId *[]int64
+	l2vpnIdN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -8345,7 +7559,7 @@ type ApiVirtualizationInterfacesListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	macAddress *[]string
 	macAddressIc *[]string
 	macAddressIe *[]string
@@ -8358,13 +7572,13 @@ type ApiVirtualizationInterfacesListRequest struct {
 	macAddressNisw *[]string
 	mode *DcimInterfacesListModeParameter
 	modifiedByRequest *string
-	mtu *[]int32
+	mtu *[]int64
 	mtuEmpty *bool
-	mtuGt *[]int32
-	mtuGte *[]int32
-	mtuLt *[]int32
-	mtuLte *[]int32
-	mtuN *[]int32
+	mtuGt *[]int64
+	mtuGte *[]int64
+	mtuLt *[]int64
+	mtuLte *[]int64
+	mtuN *[]int64
 	name *[]string
 	nameEmpty *bool
 	nameIc *[]string
@@ -8376,34 +7590,34 @@ type ApiVirtualizationInterfacesListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
-	parentId *[]int32
-	parentIdN *[]int32
+	parentId *[]int64
+	parentIdN *[]int64
 	q *string
 	tag *[]string
 	tagN *[]string
 	updatedByRequest *string
 	virtualMachine *[]string
 	virtualMachineN *[]string
-	virtualMachineId *[]int32
-	virtualMachineIdN *[]int32
+	virtualMachineId *[]int64
+	virtualMachineIdN *[]int64
 	vlan *string
 	vlanId *string
 	vrf *[]*string
 	vrfN *[]*string
-	vrfId *[]int32
-	vrfIdN *[]int32
+	vrfId *[]int64
+	vrfIdN *[]int64
 }
 
 // Bridged interface (ID)
-func (r ApiVirtualizationInterfacesListRequest) BridgeId(bridgeId []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) BridgeId(bridgeId []int64) ApiVirtualizationInterfacesListRequest {
 	r.bridgeId = &bridgeId
 	return r
 }
 
 // Bridged interface (ID)
-func (r ApiVirtualizationInterfacesListRequest) BridgeIdN(bridgeIdN []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) BridgeIdN(bridgeIdN []int64) ApiVirtualizationInterfacesListRequest {
 	r.bridgeIdN = &bridgeIdN
 	return r
 }
@@ -8421,13 +7635,13 @@ func (r ApiVirtualizationInterfacesListRequest) ClusterN(clusterN []string) ApiV
 }
 
 // Cluster (ID)
-func (r ApiVirtualizationInterfacesListRequest) ClusterId(clusterId []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) ClusterId(clusterId []int64) ApiVirtualizationInterfacesListRequest {
 	r.clusterId = &clusterId
 	return r
 }
 
 // Cluster (ID)
-func (r ApiVirtualizationInterfacesListRequest) ClusterIdN(clusterIdN []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) ClusterIdN(clusterIdN []int64) ApiVirtualizationInterfacesListRequest {
 	r.clusterIdN = &clusterIdN
 	return r
 }
@@ -8532,7 +7746,7 @@ func (r ApiVirtualizationInterfacesListRequest) Enabled(enabled bool) ApiVirtual
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) Id(id []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) Id(id []int64) ApiVirtualizationInterfacesListRequest {
 	r.id = &id
 	return r
 }
@@ -8542,27 +7756,27 @@ func (r ApiVirtualizationInterfacesListRequest) IdEmpty(idEmpty bool) ApiVirtual
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) IdGt(idGt []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) IdGt(idGt []int64) ApiVirtualizationInterfacesListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) IdGte(idGte []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) IdGte(idGte []int64) ApiVirtualizationInterfacesListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) IdLt(idLt []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) IdLt(idLt []int64) ApiVirtualizationInterfacesListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) IdLte(idLte []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) IdLte(idLte []int64) ApiVirtualizationInterfacesListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) IdN(idN []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) IdN(idN []int64) ApiVirtualizationInterfacesListRequest {
 	r.idN = &idN
 	return r
 }
@@ -8580,13 +7794,13 @@ func (r ApiVirtualizationInterfacesListRequest) L2vpnN(l2vpnN []*int64) ApiVirtu
 }
 
 // L2VPN (ID)
-func (r ApiVirtualizationInterfacesListRequest) L2vpnId(l2vpnId []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) L2vpnId(l2vpnId []int64) ApiVirtualizationInterfacesListRequest {
 	r.l2vpnId = &l2vpnId
 	return r
 }
 
 // L2VPN (ID)
-func (r ApiVirtualizationInterfacesListRequest) L2vpnIdN(l2vpnIdN []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) L2vpnIdN(l2vpnIdN []int64) ApiVirtualizationInterfacesListRequest {
 	r.l2vpnIdN = &l2vpnIdN
 	return r
 }
@@ -8627,7 +7841,7 @@ func (r ApiVirtualizationInterfacesListRequest) LastUpdatedN(lastUpdatedN []time
 }
 
 // Number of results to return per page.
-func (r ApiVirtualizationInterfacesListRequest) Limit(limit int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) Limit(limit int64) ApiVirtualizationInterfacesListRequest {
 	r.limit = &limit
 	return r
 }
@@ -8693,7 +7907,7 @@ func (r ApiVirtualizationInterfacesListRequest) ModifiedByRequest(modifiedByRequ
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) Mtu(mtu []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) Mtu(mtu []int64) ApiVirtualizationInterfacesListRequest {
 	r.mtu = &mtu
 	return r
 }
@@ -8703,27 +7917,27 @@ func (r ApiVirtualizationInterfacesListRequest) MtuEmpty(mtuEmpty bool) ApiVirtu
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) MtuGt(mtuGt []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) MtuGt(mtuGt []int64) ApiVirtualizationInterfacesListRequest {
 	r.mtuGt = &mtuGt
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) MtuGte(mtuGte []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) MtuGte(mtuGte []int64) ApiVirtualizationInterfacesListRequest {
 	r.mtuGte = &mtuGte
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) MtuLt(mtuLt []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) MtuLt(mtuLt []int64) ApiVirtualizationInterfacesListRequest {
 	r.mtuLt = &mtuLt
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) MtuLte(mtuLte []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) MtuLte(mtuLte []int64) ApiVirtualizationInterfacesListRequest {
 	r.mtuLte = &mtuLte
 	return r
 }
 
-func (r ApiVirtualizationInterfacesListRequest) MtuN(mtuN []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) MtuN(mtuN []int64) ApiVirtualizationInterfacesListRequest {
 	r.mtuN = &mtuN
 	return r
 }
@@ -8784,7 +7998,7 @@ func (r ApiVirtualizationInterfacesListRequest) NameNisw(nameNisw []string) ApiV
 }
 
 // The initial index from which to return the results.
-func (r ApiVirtualizationInterfacesListRequest) Offset(offset int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) Offset(offset int64) ApiVirtualizationInterfacesListRequest {
 	r.offset = &offset
 	return r
 }
@@ -8796,13 +8010,13 @@ func (r ApiVirtualizationInterfacesListRequest) Ordering(ordering string) ApiVir
 }
 
 // Parent interface (ID)
-func (r ApiVirtualizationInterfacesListRequest) ParentId(parentId []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) ParentId(parentId []int64) ApiVirtualizationInterfacesListRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Parent interface (ID)
-func (r ApiVirtualizationInterfacesListRequest) ParentIdN(parentIdN []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) ParentIdN(parentIdN []int64) ApiVirtualizationInterfacesListRequest {
 	r.parentIdN = &parentIdN
 	return r
 }
@@ -8841,13 +8055,13 @@ func (r ApiVirtualizationInterfacesListRequest) VirtualMachineN(virtualMachineN 
 }
 
 // Virtual machine (ID)
-func (r ApiVirtualizationInterfacesListRequest) VirtualMachineId(virtualMachineId []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) VirtualMachineId(virtualMachineId []int64) ApiVirtualizationInterfacesListRequest {
 	r.virtualMachineId = &virtualMachineId
 	return r
 }
 
 // Virtual machine (ID)
-func (r ApiVirtualizationInterfacesListRequest) VirtualMachineIdN(virtualMachineIdN []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) VirtualMachineIdN(virtualMachineIdN []int64) ApiVirtualizationInterfacesListRequest {
 	r.virtualMachineIdN = &virtualMachineIdN
 	return r
 }
@@ -8877,13 +8091,13 @@ func (r ApiVirtualizationInterfacesListRequest) VrfN(vrfN []*string) ApiVirtuali
 }
 
 // VRF
-func (r ApiVirtualizationInterfacesListRequest) VrfId(vrfId []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) VrfId(vrfId []int64) ApiVirtualizationInterfacesListRequest {
 	r.vrfId = &vrfId
 	return r
 }
 
 // VRF
-func (r ApiVirtualizationInterfacesListRequest) VrfIdN(vrfIdN []int32) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) VrfIdN(vrfIdN []int64) ApiVirtualizationInterfacesListRequest {
 	r.vrfIdN = &vrfIdN
 	return r
 }
@@ -9901,8 +9115,8 @@ func (a *VirtualizationAPIService) VirtualizationInterfacesListExecute(r ApiVirt
 
 type ApiVirtualizationInterfacesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	patchedWritableVMInterfaceRequest *PatchedWritableVMInterfaceRequest
 }
 
@@ -9924,7 +9138,7 @@ Patch a interface object.
  @param id A unique integer value identifying this interface.
  @return ApiVirtualizationInterfacesPartialUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationInterfacesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationInterfacesPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesPartialUpdate(ctx context.Context, id int64) ApiVirtualizationInterfacesPartialUpdateRequest {
 	return ApiVirtualizationInterfacesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10026,8 +9240,8 @@ func (a *VirtualizationAPIService) VirtualizationInterfacesPartialUpdateExecute(
 
 type ApiVirtualizationInterfacesRetrieveRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationInterfacesRetrieveRequest) Execute() (*VMInterface, *http.Response, error) {
@@ -10043,7 +9257,7 @@ Get a interface object.
  @param id A unique integer value identifying this interface.
  @return ApiVirtualizationInterfacesRetrieveRequest
 */
-func (a *VirtualizationAPIService) VirtualizationInterfacesRetrieve(ctx context.Context, id int32) ApiVirtualizationInterfacesRetrieveRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesRetrieve(ctx context.Context, id int64) ApiVirtualizationInterfacesRetrieveRequest {
 	return ApiVirtualizationInterfacesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10143,8 +9357,8 @@ func (a *VirtualizationAPIService) VirtualizationInterfacesRetrieveExecute(r Api
 
 type ApiVirtualizationInterfacesUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	writableVMInterfaceRequest *WritableVMInterfaceRequest
 }
 
@@ -10166,7 +9380,7 @@ Put a interface object.
  @param id A unique integer value identifying this interface.
  @return ApiVirtualizationInterfacesUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationInterfacesUpdate(ctx context.Context, id int32) ApiVirtualizationInterfacesUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationInterfacesUpdate(ctx context.Context, id int64) ApiVirtualizationInterfacesUpdateRequest {
 	return ApiVirtualizationInterfacesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10271,7 +9485,7 @@ func (a *VirtualizationAPIService) VirtualizationInterfacesUpdateExecute(r ApiVi
 
 type ApiVirtualizationVirtualDisksBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	virtualDiskRequest *[]VirtualDiskRequest
 }
 
@@ -10384,7 +9598,7 @@ func (a *VirtualizationAPIService) VirtualizationVirtualDisksBulkDestroyExecute(
 
 type ApiVirtualizationVirtualDisksBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	virtualDiskRequest *[]VirtualDiskRequest
 }
 
@@ -10508,7 +9722,7 @@ func (a *VirtualizationAPIService) VirtualizationVirtualDisksBulkPartialUpdateEx
 
 type ApiVirtualizationVirtualDisksBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	virtualDiskRequest *[]VirtualDiskRequest
 }
 
@@ -10632,7 +9846,7 @@ func (a *VirtualizationAPIService) VirtualizationVirtualDisksBulkUpdateExecute(r
 
 type ApiVirtualizationVirtualDisksCreateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	virtualDiskRequest *VirtualDiskRequest
 }
 
@@ -10756,8 +9970,8 @@ func (a *VirtualizationAPIService) VirtualizationVirtualDisksCreateExecute(r Api
 
 type ApiVirtualizationVirtualDisksDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationVirtualDisksDestroyRequest) Execute() (*http.Response, error) {
@@ -10773,7 +9987,7 @@ Delete a virtual disk object.
  @param id A unique integer value identifying this virtual disk.
  @return ApiVirtualizationVirtualDisksDestroyRequest
 */
-func (a *VirtualizationAPIService) VirtualizationVirtualDisksDestroy(ctx context.Context, id int32) ApiVirtualizationVirtualDisksDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualDisksDestroy(ctx context.Context, id int64) ApiVirtualizationVirtualDisksDestroyRequest {
 	return ApiVirtualizationVirtualDisksDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -10862,7 +10076,7 @@ func (a *VirtualizationAPIService) VirtualizationVirtualDisksDestroyExecute(r Ap
 
 type ApiVirtualizationVirtualDisksListRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -10882,13 +10096,13 @@ type ApiVirtualizationVirtualDisksListRequest struct {
 	descriptionNie *[]string
 	descriptionNiew *[]string
 	descriptionNisw *[]string
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -10896,7 +10110,7 @@ type ApiVirtualizationVirtualDisksListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	modifiedByRequest *string
 	name *[]string
 	nameEmpty *bool
@@ -10909,23 +10123,23 @@ type ApiVirtualizationVirtualDisksListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	q *string
-	size *[]int32
+	size *[]int64
 	sizeEmpty *bool
-	sizeGt *[]int32
-	sizeGte *[]int32
-	sizeLt *[]int32
-	sizeLte *[]int32
-	sizeN *[]int32
+	sizeGt *[]int64
+	sizeGte *[]int64
+	sizeLt *[]int64
+	sizeLte *[]int64
+	sizeN *[]int64
 	tag *[]string
 	tagN *[]string
 	updatedByRequest *string
 	virtualMachine *[]string
 	virtualMachineN *[]string
-	virtualMachineId *[]int32
-	virtualMachineIdN *[]int32
+	virtualMachineId *[]int64
+	virtualMachineIdN *[]int64
 }
 
 func (r ApiVirtualizationVirtualDisksListRequest) Created(created []time.Time) ApiVirtualizationVirtualDisksListRequest {
@@ -11023,7 +10237,7 @@ func (r ApiVirtualizationVirtualDisksListRequest) DescriptionNisw(descriptionNis
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) Id(id []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) Id(id []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.id = &id
 	return r
 }
@@ -11033,27 +10247,27 @@ func (r ApiVirtualizationVirtualDisksListRequest) IdEmpty(idEmpty bool) ApiVirtu
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) IdGt(idGt []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) IdGt(idGt []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) IdGte(idGte []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) IdGte(idGte []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) IdLt(idLt []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) IdLt(idLt []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) IdLte(idLte []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) IdLte(idLte []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) IdN(idN []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) IdN(idN []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.idN = &idN
 	return r
 }
@@ -11094,7 +10308,7 @@ func (r ApiVirtualizationVirtualDisksListRequest) LastUpdatedN(lastUpdatedN []ti
 }
 
 // Number of results to return per page.
-func (r ApiVirtualizationVirtualDisksListRequest) Limit(limit int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) Limit(limit int64) ApiVirtualizationVirtualDisksListRequest {
 	r.limit = &limit
 	return r
 }
@@ -11160,7 +10374,7 @@ func (r ApiVirtualizationVirtualDisksListRequest) NameNisw(nameNisw []string) Ap
 }
 
 // The initial index from which to return the results.
-func (r ApiVirtualizationVirtualDisksListRequest) Offset(offset int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) Offset(offset int64) ApiVirtualizationVirtualDisksListRequest {
 	r.offset = &offset
 	return r
 }
@@ -11177,7 +10391,7 @@ func (r ApiVirtualizationVirtualDisksListRequest) Q(q string) ApiVirtualizationV
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) Size(size []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) Size(size []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.size = &size
 	return r
 }
@@ -11187,27 +10401,27 @@ func (r ApiVirtualizationVirtualDisksListRequest) SizeEmpty(sizeEmpty bool) ApiV
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) SizeGt(sizeGt []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) SizeGt(sizeGt []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.sizeGt = &sizeGt
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) SizeGte(sizeGte []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) SizeGte(sizeGte []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.sizeGte = &sizeGte
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) SizeLt(sizeLt []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) SizeLt(sizeLt []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.sizeLt = &sizeLt
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) SizeLte(sizeLte []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) SizeLte(sizeLte []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.sizeLte = &sizeLte
 	return r
 }
 
-func (r ApiVirtualizationVirtualDisksListRequest) SizeN(sizeN []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) SizeN(sizeN []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.sizeN = &sizeN
 	return r
 }
@@ -11240,13 +10454,13 @@ func (r ApiVirtualizationVirtualDisksListRequest) VirtualMachineN(virtualMachine
 }
 
 // Virtual machine (ID)
-func (r ApiVirtualizationVirtualDisksListRequest) VirtualMachineId(virtualMachineId []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) VirtualMachineId(virtualMachineId []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.virtualMachineId = &virtualMachineId
 	return r
 }
 
 // Virtual machine (ID)
-func (r ApiVirtualizationVirtualDisksListRequest) VirtualMachineIdN(virtualMachineIdN []int32) ApiVirtualizationVirtualDisksListRequest {
+func (r ApiVirtualizationVirtualDisksListRequest) VirtualMachineIdN(virtualMachineIdN []int64) ApiVirtualizationVirtualDisksListRequest {
 	r.virtualMachineIdN = &virtualMachineIdN
 	return r
 }
@@ -11966,8 +11180,8 @@ func (a *VirtualizationAPIService) VirtualizationVirtualDisksListExecute(r ApiVi
 
 type ApiVirtualizationVirtualDisksPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	patchedVirtualDiskRequest *PatchedVirtualDiskRequest
 }
 
@@ -11989,7 +11203,7 @@ Patch a virtual disk object.
  @param id A unique integer value identifying this virtual disk.
  @return ApiVirtualizationVirtualDisksPartialUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationVirtualDisksPartialUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualDisksPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualDisksPartialUpdate(ctx context.Context, id int64) ApiVirtualizationVirtualDisksPartialUpdateRequest {
 	return ApiVirtualizationVirtualDisksPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12091,8 +11305,8 @@ func (a *VirtualizationAPIService) VirtualizationVirtualDisksPartialUpdateExecut
 
 type ApiVirtualizationVirtualDisksRetrieveRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationVirtualDisksRetrieveRequest) Execute() (*VirtualDisk, *http.Response, error) {
@@ -12108,7 +11322,7 @@ Get a virtual disk object.
  @param id A unique integer value identifying this virtual disk.
  @return ApiVirtualizationVirtualDisksRetrieveRequest
 */
-func (a *VirtualizationAPIService) VirtualizationVirtualDisksRetrieve(ctx context.Context, id int32) ApiVirtualizationVirtualDisksRetrieveRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualDisksRetrieve(ctx context.Context, id int64) ApiVirtualizationVirtualDisksRetrieveRequest {
 	return ApiVirtualizationVirtualDisksRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12208,8 +11422,8 @@ func (a *VirtualizationAPIService) VirtualizationVirtualDisksRetrieveExecute(r A
 
 type ApiVirtualizationVirtualDisksUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	virtualDiskRequest *VirtualDiskRequest
 }
 
@@ -12231,7 +11445,7 @@ Put a virtual disk object.
  @param id A unique integer value identifying this virtual disk.
  @return ApiVirtualizationVirtualDisksUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationVirtualDisksUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualDisksUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualDisksUpdate(ctx context.Context, id int64) ApiVirtualizationVirtualDisksUpdateRequest {
 	return ApiVirtualizationVirtualDisksUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12336,7 +11550,7 @@ func (a *VirtualizationAPIService) VirtualizationVirtualDisksUpdateExecute(r Api
 
 type ApiVirtualizationVirtualMachinesBulkDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	virtualMachineWithConfigContextRequest *[]VirtualMachineWithConfigContextRequest
 }
 
@@ -12449,7 +11663,7 @@ func (a *VirtualizationAPIService) VirtualizationVirtualMachinesBulkDestroyExecu
 
 type ApiVirtualizationVirtualMachinesBulkPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	virtualMachineWithConfigContextRequest *[]VirtualMachineWithConfigContextRequest
 }
 
@@ -12573,7 +11787,7 @@ func (a *VirtualizationAPIService) VirtualizationVirtualMachinesBulkPartialUpdat
 
 type ApiVirtualizationVirtualMachinesBulkUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	virtualMachineWithConfigContextRequest *[]VirtualMachineWithConfigContextRequest
 }
 
@@ -12697,7 +11911,7 @@ func (a *VirtualizationAPIService) VirtualizationVirtualMachinesBulkUpdateExecut
 
 type ApiVirtualizationVirtualMachinesCreateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	writableVirtualMachineWithConfigContextRequest *WritableVirtualMachineWithConfigContextRequest
 }
 
@@ -12821,8 +12035,8 @@ func (a *VirtualizationAPIService) VirtualizationVirtualMachinesCreateExecute(r 
 
 type ApiVirtualizationVirtualMachinesDestroyRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationVirtualMachinesDestroyRequest) Execute() (*http.Response, error) {
@@ -12838,7 +12052,7 @@ Delete a virtual machine object.
  @param id A unique integer value identifying this virtual machine.
  @return ApiVirtualizationVirtualMachinesDestroyRequest
 */
-func (a *VirtualizationAPIService) VirtualizationVirtualMachinesDestroy(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesDestroyRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesDestroy(ctx context.Context, id int64) ApiVirtualizationVirtualMachinesDestroyRequest {
 	return ApiVirtualizationVirtualMachinesDestroyRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -12927,27 +12141,27 @@ func (a *VirtualizationAPIService) VirtualizationVirtualMachinesDestroyExecute(r
 
 type ApiVirtualizationVirtualMachinesListRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
+	ApiService *VirtualizationAPIService
 	cluster *[]string
 	clusterN *[]string
 	clusterGroup *[]string
 	clusterGroupN *[]string
-	clusterGroupId *[]int32
-	clusterGroupIdN *[]int32
-	clusterId *[]*int32
-	clusterIdN *[]*int32
+	clusterGroupId *[]int64
+	clusterGroupIdN *[]int64
+	clusterId *[]*int64
+	clusterIdN *[]*int64
 	clusterType *[]string
 	clusterTypeN *[]string
-	clusterTypeId *[]int32
-	clusterTypeIdN *[]int32
-	configTemplateId *[]*int32
-	configTemplateIdN *[]*int32
-	contact *[]int32
-	contactN *[]int32
+	clusterTypeId *[]int64
+	clusterTypeIdN *[]int64
+	configTemplateId *[]*int64
+	configTemplateIdN *[]*int64
+	contact *[]int64
+	contactN *[]int64
 	contactGroup *[]string
 	contactGroupN *[]string
-	contactRole *[]int32
-	contactRoleN *[]int32
+	contactRole *[]int64
+	contactRoleN *[]int64
 	created *[]time.Time
 	createdEmpty *[]time.Time
 	createdGt *[]time.Time
@@ -12969,30 +12183,30 @@ type ApiVirtualizationVirtualMachinesListRequest struct {
 	descriptionNisw *[]string
 	device *[]*string
 	deviceN *[]*string
-	deviceId *[]*int32
-	deviceIdN *[]*int32
-	disk *[]int32
+	deviceId *[]*int64
+	deviceIdN *[]*int64
+	disk *[]int64
 	diskEmpty *bool
-	diskGt *[]int32
-	diskGte *[]int32
-	diskLt *[]int32
-	diskLte *[]int32
-	diskN *[]int32
+	diskGt *[]int64
+	diskGte *[]int64
+	diskLt *[]int64
+	diskLte *[]int64
+	diskN *[]int64
 	hasPrimaryIp *bool
-	id *[]int32
+	id *[]int64
 	idEmpty *bool
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	interfaceCount *[]int32
+	idGt *[]int64
+	idGte *[]int64
+	idLt *[]int64
+	idLte *[]int64
+	idN *[]int64
+	interfaceCount *[]int64
 	interfaceCountEmpty *bool
-	interfaceCountGt *[]int32
-	interfaceCountGte *[]int32
-	interfaceCountLt *[]int32
-	interfaceCountLte *[]int32
-	interfaceCountN *[]int32
+	interfaceCountGt *[]int64
+	interfaceCountGte *[]int64
+	interfaceCountLt *[]int64
+	interfaceCountLte *[]int64
+	interfaceCountN *[]int64
 	lastUpdated *[]time.Time
 	lastUpdatedEmpty *[]time.Time
 	lastUpdatedGt *[]time.Time
@@ -13000,7 +12214,7 @@ type ApiVirtualizationVirtualMachinesListRequest struct {
 	lastUpdatedLt *[]time.Time
 	lastUpdatedLte *[]time.Time
 	lastUpdatedN *[]time.Time
-	limit *int32
+	limit *int64
 	localContextData *bool
 	macAddress *[]string
 	macAddressIc *[]string
@@ -13012,13 +12226,13 @@ type ApiVirtualizationVirtualMachinesListRequest struct {
 	macAddressNie *[]string
 	macAddressNiew *[]string
 	macAddressNisw *[]string
-	memory *[]int32
+	memory *[]int64
 	memoryEmpty *bool
-	memoryGt *[]int32
-	memoryGte *[]int32
-	memoryLt *[]int32
-	memoryLte *[]int32
-	memoryN *[]int32
+	memoryGt *[]int64
+	memoryGte *[]int64
+	memoryLt *[]int64
+	memoryLte *[]int64
+	memoryN *[]int64
 	modifiedByRequest *string
 	name *[]string
 	nameEmpty *bool
@@ -13031,16 +12245,16 @@ type ApiVirtualizationVirtualMachinesListRequest struct {
 	nameNie *[]string
 	nameNiew *[]string
 	nameNisw *[]string
-	offset *int32
+	offset *int64
 	ordering *string
 	platform *[]string
 	platformN *[]string
-	platformId *[]*int32
-	platformIdN *[]*int32
-	primaryIp4Id *[]int32
-	primaryIp4IdN *[]int32
-	primaryIp6Id *[]int32
-	primaryIp6IdN *[]int32
+	platformId *[]*int64
+	platformIdN *[]*int64
+	primaryIp4Id *[]int64
+	primaryIp4IdN *[]int64
+	primaryIp6Id *[]int64
+	primaryIp6IdN *[]int64
 	q *string
 	region *[]string
 	regionN *[]string
@@ -13048,8 +12262,8 @@ type ApiVirtualizationVirtualMachinesListRequest struct {
 	regionIdN *[]string
 	role *[]string
 	roleN *[]string
-	roleId *[]*int32
-	roleIdN *[]*int32
+	roleId *[]*int64
+	roleIdN *[]*int64
 	serial *[]string
 	serialEmpty *bool
 	serialIc *[]string
@@ -13067,8 +12281,8 @@ type ApiVirtualizationVirtualMachinesListRequest struct {
 	siteGroupN *[]string
 	siteGroupId *[]string
 	siteGroupIdN *[]string
-	siteId *[]*int32
-	siteIdN *[]*int32
+	siteId *[]*int64
+	siteIdN *[]*int64
 	status *[]string
 	statusEmpty *bool
 	statusIc *[]DcimModulesListStatusIcParameterInner
@@ -13088,8 +12302,8 @@ type ApiVirtualizationVirtualMachinesListRequest struct {
 	tenantGroupN *[]string
 	tenantGroupId *[]string
 	tenantGroupIdN *[]string
-	tenantId *[]*int32
-	tenantIdN *[]*int32
+	tenantId *[]*int64
+	tenantIdN *[]*int64
 	updatedByRequest *string
 	vcpus *[]float64
 	vcpusEmpty *bool
@@ -13098,13 +12312,13 @@ type ApiVirtualizationVirtualMachinesListRequest struct {
 	vcpusLt *[]float64
 	vcpusLte *[]float64
 	vcpusN *[]float64
-	virtualDiskCount *[]int32
+	virtualDiskCount *[]int64
 	virtualDiskCountEmpty *bool
-	virtualDiskCountGt *[]int32
-	virtualDiskCountGte *[]int32
-	virtualDiskCountLt *[]int32
-	virtualDiskCountLte *[]int32
-	virtualDiskCountN *[]int32
+	virtualDiskCountGt *[]int64
+	virtualDiskCountGte *[]int64
+	virtualDiskCountLt *[]int64
+	virtualDiskCountLte *[]int64
+	virtualDiskCountN *[]int64
 }
 
 // Cluster
@@ -13132,25 +12346,25 @@ func (r ApiVirtualizationVirtualMachinesListRequest) ClusterGroupN(clusterGroupN
 }
 
 // Cluster group (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) ClusterGroupId(clusterGroupId []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) ClusterGroupId(clusterGroupId []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.clusterGroupId = &clusterGroupId
 	return r
 }
 
 // Cluster group (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) ClusterGroupIdN(clusterGroupIdN []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) ClusterGroupIdN(clusterGroupIdN []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.clusterGroupIdN = &clusterGroupIdN
 	return r
 }
 
 // Cluster (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) ClusterId(clusterId []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) ClusterId(clusterId []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.clusterId = &clusterId
 	return r
 }
 
 // Cluster (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) ClusterIdN(clusterIdN []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) ClusterIdN(clusterIdN []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.clusterIdN = &clusterIdN
 	return r
 }
@@ -13168,37 +12382,37 @@ func (r ApiVirtualizationVirtualMachinesListRequest) ClusterTypeN(clusterTypeN [
 }
 
 // Cluster type (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) ClusterTypeId(clusterTypeId []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) ClusterTypeId(clusterTypeId []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.clusterTypeId = &clusterTypeId
 	return r
 }
 
 // Cluster type (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) ClusterTypeIdN(clusterTypeIdN []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) ClusterTypeIdN(clusterTypeIdN []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.clusterTypeIdN = &clusterTypeIdN
 	return r
 }
 
 // Config template (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) ConfigTemplateId(configTemplateId []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) ConfigTemplateId(configTemplateId []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.configTemplateId = &configTemplateId
 	return r
 }
 
 // Config template (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) ConfigTemplateIdN(configTemplateIdN []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) ConfigTemplateIdN(configTemplateIdN []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.configTemplateIdN = &configTemplateIdN
 	return r
 }
 
 // Contact
-func (r ApiVirtualizationVirtualMachinesListRequest) Contact(contact []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) Contact(contact []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.contact = &contact
 	return r
 }
 
 // Contact
-func (r ApiVirtualizationVirtualMachinesListRequest) ContactN(contactN []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) ContactN(contactN []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.contactN = &contactN
 	return r
 }
@@ -13214,13 +12428,13 @@ func (r ApiVirtualizationVirtualMachinesListRequest) ContactGroupN(contactGroupN
 }
 
 // Contact Role
-func (r ApiVirtualizationVirtualMachinesListRequest) ContactRole(contactRole []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) ContactRole(contactRole []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.contactRole = &contactRole
 	return r
 }
 
 // Contact Role
-func (r ApiVirtualizationVirtualMachinesListRequest) ContactRoleN(contactRoleN []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) ContactRoleN(contactRoleN []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.contactRoleN = &contactRoleN
 	return r
 }
@@ -13333,18 +12547,18 @@ func (r ApiVirtualizationVirtualMachinesListRequest) DeviceN(deviceN []*string) 
 }
 
 // Device (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) DeviceId(deviceId []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) DeviceId(deviceId []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Device (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) DeviceIdN(deviceIdN []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) DeviceIdN(deviceIdN []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.deviceIdN = &deviceIdN
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) Disk(disk []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) Disk(disk []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.disk = &disk
 	return r
 }
@@ -13354,27 +12568,27 @@ func (r ApiVirtualizationVirtualMachinesListRequest) DiskEmpty(diskEmpty bool) A
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) DiskGt(diskGt []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) DiskGt(diskGt []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.diskGt = &diskGt
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) DiskGte(diskGte []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) DiskGte(diskGte []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.diskGte = &diskGte
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) DiskLt(diskLt []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) DiskLt(diskLt []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.diskLt = &diskLt
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) DiskLte(diskLte []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) DiskLte(diskLte []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.diskLte = &diskLte
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) DiskN(diskN []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) DiskN(diskN []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.diskN = &diskN
 	return r
 }
@@ -13385,7 +12599,7 @@ func (r ApiVirtualizationVirtualMachinesListRequest) HasPrimaryIp(hasPrimaryIp b
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) Id(id []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) Id(id []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.id = &id
 	return r
 }
@@ -13395,32 +12609,32 @@ func (r ApiVirtualizationVirtualMachinesListRequest) IdEmpty(idEmpty bool) ApiVi
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) IdGt(idGt []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) IdGt(idGt []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.idGt = &idGt
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) IdGte(idGte []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) IdGte(idGte []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.idGte = &idGte
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) IdLt(idLt []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) IdLt(idLt []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.idLt = &idLt
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) IdLte(idLte []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) IdLte(idLte []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.idLte = &idLte
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) IdN(idN []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) IdN(idN []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.idN = &idN
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCount(interfaceCount []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCount(interfaceCount []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.interfaceCount = &interfaceCount
 	return r
 }
@@ -13430,27 +12644,27 @@ func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCountEmpty(interfa
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCountGt(interfaceCountGt []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCountGt(interfaceCountGt []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.interfaceCountGt = &interfaceCountGt
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCountGte(interfaceCountGte []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCountGte(interfaceCountGte []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.interfaceCountGte = &interfaceCountGte
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCountLt(interfaceCountLt []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCountLt(interfaceCountLt []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.interfaceCountLt = &interfaceCountLt
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCountLte(interfaceCountLte []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCountLte(interfaceCountLte []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.interfaceCountLte = &interfaceCountLte
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCountN(interfaceCountN []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) InterfaceCountN(interfaceCountN []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.interfaceCountN = &interfaceCountN
 	return r
 }
@@ -13491,7 +12705,7 @@ func (r ApiVirtualizationVirtualMachinesListRequest) LastUpdatedN(lastUpdatedN [
 }
 
 // Number of results to return per page.
-func (r ApiVirtualizationVirtualMachinesListRequest) Limit(limit int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) Limit(limit int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.limit = &limit
 	return r
 }
@@ -13552,7 +12766,7 @@ func (r ApiVirtualizationVirtualMachinesListRequest) MacAddressNisw(macAddressNi
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) Memory(memory []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) Memory(memory []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.memory = &memory
 	return r
 }
@@ -13562,27 +12776,27 @@ func (r ApiVirtualizationVirtualMachinesListRequest) MemoryEmpty(memoryEmpty boo
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) MemoryGt(memoryGt []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) MemoryGt(memoryGt []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.memoryGt = &memoryGt
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) MemoryGte(memoryGte []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) MemoryGte(memoryGte []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.memoryGte = &memoryGte
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) MemoryLt(memoryLt []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) MemoryLt(memoryLt []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.memoryLt = &memoryLt
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) MemoryLte(memoryLte []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) MemoryLte(memoryLte []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.memoryLte = &memoryLte
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) MemoryN(memoryN []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) MemoryN(memoryN []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.memoryN = &memoryN
 	return r
 }
@@ -13648,7 +12862,7 @@ func (r ApiVirtualizationVirtualMachinesListRequest) NameNisw(nameNisw []string)
 }
 
 // The initial index from which to return the results.
-func (r ApiVirtualizationVirtualMachinesListRequest) Offset(offset int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) Offset(offset int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.offset = &offset
 	return r
 }
@@ -13672,37 +12886,37 @@ func (r ApiVirtualizationVirtualMachinesListRequest) PlatformN(platformN []strin
 }
 
 // Platform (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) PlatformId(platformId []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) PlatformId(platformId []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.platformId = &platformId
 	return r
 }
 
 // Platform (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) PlatformIdN(platformIdN []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) PlatformIdN(platformIdN []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.platformIdN = &platformIdN
 	return r
 }
 
 // Primary IPv4 (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) PrimaryIp4Id(primaryIp4Id []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) PrimaryIp4Id(primaryIp4Id []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.primaryIp4Id = &primaryIp4Id
 	return r
 }
 
 // Primary IPv4 (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) PrimaryIp4IdN(primaryIp4IdN []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) PrimaryIp4IdN(primaryIp4IdN []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.primaryIp4IdN = &primaryIp4IdN
 	return r
 }
 
 // Primary IPv6 (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) PrimaryIp6Id(primaryIp6Id []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) PrimaryIp6Id(primaryIp6Id []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.primaryIp6Id = &primaryIp6Id
 	return r
 }
 
 // Primary IPv6 (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) PrimaryIp6IdN(primaryIp6IdN []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) PrimaryIp6IdN(primaryIp6IdN []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.primaryIp6IdN = &primaryIp6IdN
 	return r
 }
@@ -13746,13 +12960,13 @@ func (r ApiVirtualizationVirtualMachinesListRequest) RoleN(roleN []string) ApiVi
 }
 
 // Role (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) RoleId(roleId []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) RoleId(roleId []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.roleId = &roleId
 	return r
 }
 
 // Role (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) RoleIdN(roleIdN []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) RoleIdN(roleIdN []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.roleIdN = &roleIdN
 	return r
 }
@@ -13845,13 +13059,13 @@ func (r ApiVirtualizationVirtualMachinesListRequest) SiteGroupIdN(siteGroupIdN [
 }
 
 // Site (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) SiteId(siteId []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) SiteId(siteId []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.siteId = &siteId
 	return r
 }
 
 // Site (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) SiteIdN(siteIdN []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) SiteIdN(siteIdN []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.siteIdN = &siteIdN
 	return r
 }
@@ -13963,13 +13177,13 @@ func (r ApiVirtualizationVirtualMachinesListRequest) TenantGroupIdN(tenantGroupI
 }
 
 // Tenant (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) TenantId(tenantId []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) TenantId(tenantId []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.tenantId = &tenantId
 	return r
 }
 
 // Tenant (ID)
-func (r ApiVirtualizationVirtualMachinesListRequest) TenantIdN(tenantIdN []*int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) TenantIdN(tenantIdN []*int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.tenantIdN = &tenantIdN
 	return r
 }
@@ -14014,7 +13228,7 @@ func (r ApiVirtualizationVirtualMachinesListRequest) VcpusN(vcpusN []float64) Ap
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCount(virtualDiskCount []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCount(virtualDiskCount []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.virtualDiskCount = &virtualDiskCount
 	return r
 }
@@ -14024,27 +13238,27 @@ func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCountEmpty(virtu
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCountGt(virtualDiskCountGt []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCountGt(virtualDiskCountGt []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.virtualDiskCountGt = &virtualDiskCountGt
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCountGte(virtualDiskCountGte []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCountGte(virtualDiskCountGte []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.virtualDiskCountGte = &virtualDiskCountGte
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCountLt(virtualDiskCountLt []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCountLt(virtualDiskCountLt []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.virtualDiskCountLt = &virtualDiskCountLt
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCountLte(virtualDiskCountLte []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCountLte(virtualDiskCountLte []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.virtualDiskCountLte = &virtualDiskCountLte
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCountN(virtualDiskCountN []int32) ApiVirtualizationVirtualMachinesListRequest {
+func (r ApiVirtualizationVirtualMachinesListRequest) VirtualDiskCountN(virtualDiskCountN []int64) ApiVirtualizationVirtualMachinesListRequest {
 	r.virtualDiskCountN = &virtualDiskCountN
 	return r
 }
@@ -15954,8 +15168,8 @@ func (a *VirtualizationAPIService) VirtualizationVirtualMachinesListExecute(r Ap
 
 type ApiVirtualizationVirtualMachinesPartialUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	patchedWritableVirtualMachineWithConfigContextRequest *PatchedWritableVirtualMachineWithConfigContextRequest
 }
 
@@ -15977,7 +15191,7 @@ Patch a virtual machine object.
  @param id A unique integer value identifying this virtual machine.
  @return ApiVirtualizationVirtualMachinesPartialUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationVirtualMachinesPartialUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesPartialUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesPartialUpdate(ctx context.Context, id int64) ApiVirtualizationVirtualMachinesPartialUpdateRequest {
 	return ApiVirtualizationVirtualMachinesPartialUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -16079,8 +15293,8 @@ func (a *VirtualizationAPIService) VirtualizationVirtualMachinesPartialUpdateExe
 
 type ApiVirtualizationVirtualMachinesRenderConfigCreateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	writableVirtualMachineWithConfigContextRequest *WritableVirtualMachineWithConfigContextRequest
 	format *DcimDevicesRenderConfigCreateFormatParameter
 }
@@ -16108,7 +15322,7 @@ Resolve and render the preferred ConfigTemplate for this Device.
  @param id A unique integer value identifying this virtual machine.
  @return ApiVirtualizationVirtualMachinesRenderConfigCreateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationVirtualMachinesRenderConfigCreate(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesRenderConfigCreateRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesRenderConfigCreate(ctx context.Context, id int64) ApiVirtualizationVirtualMachinesRenderConfigCreateRequest {
 	return ApiVirtualizationVirtualMachinesRenderConfigCreateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -16216,8 +15430,8 @@ func (a *VirtualizationAPIService) VirtualizationVirtualMachinesRenderConfigCrea
 
 type ApiVirtualizationVirtualMachinesRetrieveRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 }
 
 func (r ApiVirtualizationVirtualMachinesRetrieveRequest) Execute() (*VirtualMachineWithConfigContext, *http.Response, error) {
@@ -16233,7 +15447,7 @@ Get a virtual machine object.
  @param id A unique integer value identifying this virtual machine.
  @return ApiVirtualizationVirtualMachinesRetrieveRequest
 */
-func (a *VirtualizationAPIService) VirtualizationVirtualMachinesRetrieve(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesRetrieveRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesRetrieve(ctx context.Context, id int64) ApiVirtualizationVirtualMachinesRetrieveRequest {
 	return ApiVirtualizationVirtualMachinesRetrieveRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -16333,8 +15547,8 @@ func (a *VirtualizationAPIService) VirtualizationVirtualMachinesRetrieveExecute(
 
 type ApiVirtualizationVirtualMachinesUpdateRequest struct {
 	ctx context.Context
-	ApiService VirtualizationAPI
-	id int32
+	ApiService *VirtualizationAPIService
+	id int64
 	writableVirtualMachineWithConfigContextRequest *WritableVirtualMachineWithConfigContextRequest
 }
 
@@ -16356,7 +15570,7 @@ Put a virtual machine object.
  @param id A unique integer value identifying this virtual machine.
  @return ApiVirtualizationVirtualMachinesUpdateRequest
 */
-func (a *VirtualizationAPIService) VirtualizationVirtualMachinesUpdate(ctx context.Context, id int32) ApiVirtualizationVirtualMachinesUpdateRequest {
+func (a *VirtualizationAPIService) VirtualizationVirtualMachinesUpdate(ctx context.Context, id int64) ApiVirtualizationVirtualMachinesUpdateRequest {
 	return ApiVirtualizationVirtualMachinesUpdateRequest{
 		ApiService: a,
 		ctx: ctx,

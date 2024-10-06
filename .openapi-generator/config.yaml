@@ -3,7 +3,6 @@ generatorName: go
 gitHost: github.com
 gitUserId: greatman
 gitRepoId: go-netbox/v4
-generateInterfaces: true
 packageName: netbox
 disallowAdditionalPropertiesIfNotPresent: false
 globalProperty:
@@ -11,7 +10,8 @@ globalProperty:
   modelDocs: false
   apiTests: false
   modelTests: false
-
+typeMappings:
+  integer: int64
 additionalProperties:
   disallowAdditionalPropertiesIfNotPresent: false
   packageVersion: "3"
